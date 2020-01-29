@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Solace Samples`,
     description: `These tutorials get you up to speed sending and receiving messages with Solace technology.`,
-    author: `@solace`,
+    author: `@solacedotcom`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +13,7 @@ module.exports = {
         name: `samples`,
       },
     },
+    // TODO - ADD GOOGLE TAG MANAGER (https://www.gatsbyjs.org/packages/gatsby-plugin-google-tagmanager/)
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
