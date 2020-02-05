@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
+import Intro from "./intro"
 import Footer from "./footer"
 import "../css/layout.css"
 
@@ -9,6 +10,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
+      <Intro />
       <div className="container">
         <main>{children}</main>
       </div>
