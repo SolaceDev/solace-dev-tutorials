@@ -149,7 +149,7 @@ The message is transferred to the Solace message router asynchronously, but if a
 
 Now it is time to receive the messages sent to your queue.
 
-![](../../../images/receiving-message-from-queue-300x160.png)
+![](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 Receiving guaranteed messages is different from the direct messaging case described in the the publish/subscribe tutorial.
 
@@ -266,7 +266,7 @@ Then bind to the destination queue by clicking the "Consume messages" button.
 
 The following is a screenshot of the tutorial’s `QueueConsumer.html` web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the "Connect" button was clicked and then the "Consume messages" button was clicked.
 
-![](../../../images/perswithqueues-javascript_img-1.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-1.png)
 
 
 
@@ -289,7 +289,7 @@ The following screenshots of the tutorial’s `QueueProducer.html` and `QueueCon
 
 This is the producer is sending a message (`QueueProducer.html)`:
 
-![](../../../images/perswithqueues-javascript_img-2.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-2.png)
 
 
 
@@ -305,7 +305,7 @@ This is the producer is sending a message (`QueueProducer.html)`:
 
 This is the consumer is receiving a message (`QueueConsumer.html)`:
 
-![](../../../images/perswithqueues-javascript_img-3.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-3.png)
 
 
 
