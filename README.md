@@ -15,6 +15,7 @@ This was created from the [Gatsby Default Starter](https://www.gatsbyjs.org/star
 - [gatsby-source-filesystem](https://www.gatsbyjs.org/packages/gatsby-source-filesystem)
 - [gatsby-transformer-sharp](https://www.gatsbyjs.org/packages/gatsby-transformer-sharp)
 - [gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark)
+- [gatsby-transformer-yaml](https://www.gatsbyjs.org/packages/gatsby-transformer-yaml/)
 - [prettier](https://npm.im/prettier)
 - [pro-types](https://npm.im/prop-types)
 - [react](https://npm.im/react)
