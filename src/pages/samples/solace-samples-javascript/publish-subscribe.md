@@ -153,7 +153,7 @@ See `solace.SessionEventCode` in the [Web Messaging API Reference]({{ site.docs-
 
 This tutorial uses “Direct” messages which are at most once delivery messages. So first, let’s create a listener and express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![](../../../images/pub-sub-receiving-message-300x134.png)
 
 With a subscriber session created in the previous step, we declare a message event listener.
 
@@ -201,7 +201,7 @@ After the subscription is successfully added the subscriber is ready to receive 
 
 Now it is time to send a message to the waiting consumer.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![](../../../images/pub-sub-sending-message-300x134.png)
 
 ### Creating and sending the message
 
@@ -295,7 +295,7 @@ Then subscribe to the subscription topic by clicking the “Subscribe” button.
 
 The following is a screenshot of the tutorial’s `TopicSubscriber.html` web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the “Connect” button was clicked and then the “Subscribe” button was clicked.
 
-![]({{ site.baseurl }}/assets/images/pubsub-javascript_img-1.png)
+![](../../../images/pubsub-javascript_img-1.png)
 
 Now, open `src/basic-samples/TopicPublisher/TopicPublisher.html` page in the browser and connect to the same Solace router by specifying the message router properties and clicking “Connect” button.
 
@@ -305,11 +305,11 @@ The following screenshots of the tutorial’s `TopicPublisher.html` and `TopicSu
 
 This is the publisher is publishing a message (`TopicPublisher.html)`:
 
-![]({{ site.baseurl }}/assets/images/pubsub-javascript_img-2.png)
+![](../../../images/pubsub-javascript_img-2.png)
 
 This is the subscriber receiving a message (`TopicSubscriber.html)`:
 
-![]({{ site.baseurl }}/assets/images/pubsub-javascript_img-3.png)
+![](../../../images/pubsub-javascript_img-3.png)
 
 With that you now know how to successfully implement publish-subscribe message exchange pattern using Direct messages.
 

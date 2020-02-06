@@ -1,13 +1,7 @@
 import React from "react"
 
-const Intro = () => (
-  <div>
-    <div className="container">
-      <h1>Title</h1>
-      <p>Summary</p>
-      <p>Links</p>
-    </div>
-  </div>
-)
+const SamplesIntro = () => {
+  return <h1>Title</h1>
+}
 
-export default Intro
+export default SamplesIntro

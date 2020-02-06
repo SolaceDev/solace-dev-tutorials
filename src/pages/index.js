@@ -1,12 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Intro from "../components/intro"
 
-const SamplesIndex = ({ data, location }) => {
+const SamplesIndex = ({ data }) => {
   const samples = data.allMarkdownRemark.edges
 
   return (
     <Layout>
+      <Intro />
       {samples.map(({ node }) => (
         <div className="col-4">
           <div className="card">

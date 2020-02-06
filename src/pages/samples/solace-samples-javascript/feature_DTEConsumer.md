@@ -35,7 +35,7 @@ consumer.messageConsumer = consumer.session.createMessageConsumer({
                     
 ~~~
 
-When running the full sample, first start this DTEConsumer sample and then run the [TopicPublisher]({{ site.baseurl }}/publish-subscribe) sample to send messages on this topic.
+When running the full sample, first start this DTEConsumer sample and then run the [TopicPublisher](publish-subscribe) sample to send messages on this topic.
 
 ## Learn More
 
