@@ -9,18 +9,18 @@ export default ({ data }) => (
         <div className="row">
           <div className="col-sm">
             <div className="card">
-              <div className="card-header">
-                <img src="" alt="" />
-                <h3 className="card-title">{node.frontmatter.title}</h3>
-              </div>
-              <div className="card-body">
-                <div className="tutorial-description">
-                  {node.frontmatter.summary}
+              <a href={node.fields.slug}>
+                <div className="card-header">
+                  <img src="" alt=" " />
+                  <h3 className="card-title">{node.frontmatter.title}</h3>
                 </div>
-              </div>
-              <div className="card-footer">
-                <a href={node.fields.slug}>Start tutorial</a>
-              </div>
+                <div className="card-body">
+                  <div className="tutorial-description">
+                    {node.frontmatter.summary}
+                  </div>
+                </div>
+                <div className="card-footer">Start tutorial</div>
+              </a>
             </div>
           </div>
         </div>
