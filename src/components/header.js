@@ -2,10 +2,10 @@ import PropTypes from "prop-types"
 import React from "react"
 import {Navbar, Nav} from 'react-bootstrap'
 const Header = ({ siteTitle }) => (
-<Navbar className="justify-end" collapseOnSelect expand="lg" bg="dark" variant="dark">
+<Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
   <Navbar.Brand href="TODO">Solace</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
+  <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
     <Nav>
       <Nav.Link href="TODO">Features</Nav.Link>
       <Nav.Link href="TODO">Pricing</Nav.Link>
