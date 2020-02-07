@@ -1,11 +1,11 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 export default ({ data }) => (
   <Layout>
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div className="container">
+      <div key={node.id} className="container">
         <div className="row">
           <div className="col-sm">
             <div className="card">
@@ -42,6 +42,7 @@ export const query = graphql`
           fields {
             slug
           }
+          id
         }
       }
     }
