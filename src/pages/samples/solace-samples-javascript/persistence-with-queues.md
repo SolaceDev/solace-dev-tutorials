@@ -14,7 +14,7 @@ links:
       link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), and will show you how to send and receive Persistent (Guaranteed) Messages from a Solace message router queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](publish-subscribe), and will show you how to send and receive Persistent (Guaranteed) Messages from a Solace message router queue in a point to point fashion.
 
 ## Assumptions
 
@@ -125,7 +125,7 @@ Now it is time to send a message to the queue. Remember that the queue must be p
 In the simplest case, the actual method calls to create and send guaranteed messages to a queue are similar to those used for direct messages in the publish/subscribe tutorial. The differences are:
 * a durable queue type destination is created and used; and
 * the delivery mode is set to PERSISTENT.
-* delivery to the Solace message router is confirmed (shown in the [Confirmed Delivery tutorial.]({{ site.baseurl }}/confirmed-delivery))
+* delivery to the Solace message router is confirmed (shown in the [Confirmed Delivery tutorial.](confirmed-delivery))
 
 ```javascript
 var messageText = 'Sample Message';
@@ -143,13 +143,13 @@ try {
 }
 ```
 
-The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial]({{ site.baseurl }}/confirmed-delivery) shows how to make sure it gets there.
+The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial](confirmed-delivery) shows how to make sure it gets there.
 
 ### Receiving a message from a queue
 
 Now it is time to receive the messages sent to your queue.
 
-![]({{ site.baseurl }}/assets/images/receiving-message-from-queue-300x160.png)
+![](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 Receiving guaranteed messages is different from the direct messaging case described in the the publish/subscribe tutorial.
 
@@ -229,7 +229,7 @@ Combining the example source code shown above results in the following source co
 {% endfor %}
 </ul>
 
-Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery.]({{ site.baseurl }}/confirmed-delivery)
+Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](confirmed-delivery).
 
 ### Getting the Source
 
@@ -266,7 +266,7 @@ Then bind to the destination queue by clicking the "Consume messages" button.
 
 The following is a screenshot of the tutorial’s `QueueConsumer.html` web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the "Connect" button was clicked and then the "Consume messages" button was clicked.
 
-![]({{ site.baseurl }}/assets/images/perswithqueues-javascript_img-1.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-1.png)
 
 
 
@@ -289,7 +289,7 @@ The following screenshots of the tutorial’s `QueueProducer.html` and `QueueCon
 
 This is the producer is sending a message (`QueueProducer.html)`:
 
-![]({{ site.baseurl }}/assets/images/perswithqueues-javascript_img-2.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-2.png)
 
 
 
@@ -305,7 +305,7 @@ This is the producer is sending a message (`QueueProducer.html)`:
 
 This is the consumer is receiving a message (`QueueConsumer.html)`:
 
-![]({{ site.baseurl }}/assets/images/perswithqueues-javascript_img-3.png)
+![](../../../images/screenshots/perswithqueues-javascript_img-3.png)
 
 
 

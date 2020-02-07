@@ -21,7 +21,7 @@ export default () => (
     `}
     render={data => (
       data.allSolaceSamplesJavascriptYaml.edges.map(({ node }) => (
-        <div className={`container tc`}>
+        <div key={node.id} className={`container tc`}>
           <h2 className="mt4">{node.title}</h2>
           <p className="mb3">{node.summary}</p>
           <Button className="mr3" href={node.github} variant="outline-primary">View on GitHub</Button>

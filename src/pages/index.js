@@ -1,33 +1,37 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
+import Intro from "../components/Intro"
 
-export default ({ data }) => (
-  <Layout>
-    {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id} className="container">
-        <div className="row">
-          <div className="col-sm">
-            <div className="card">
-              <a href={node.fields.slug}>
-                <div className="card-header">
-                  <img src="" alt=" " />
-                  <h3 className="card-title">{node.frontmatter.title}</h3>
+const SamplesIndex = ({ data }) => {
+  const samples = data.allMarkdownRemark.edges
+
+  return (
+    <Layout>
+      <Intro />
+      {samples.map(({ node }) => (
+        <div key={node.id} className="col-4">
+          <div className="card">
+            <a href={node.fields.slug}>
+              <div className="card-header">
+                <img src="" alt=" " />
+                <h3 className="card-title">{node.frontmatter.title}</h3>
+              </div>
+              <div className="card-body">
+                <div className="tutorial-description">
+                  {node.frontmatter.summary}
                 </div>
-                <div className="card-body">
-                  <div className="tutorial-description">
-                    {node.frontmatter.summary}
-                  </div>
-                </div>
-                <div className="card-footer">Start tutorial</div>
-              </a>
-            </div>
+              </div>
+              <div className="card-footer">Start tutorial</div>
+            </a>
           </div>
         </div>
-      </div>
-    ))}
-  </Layout>
-)
+      ))}
+    </Layout>
+  )
+}
+
+export default SamplesIndex
 
 export const query = graphql`
   {

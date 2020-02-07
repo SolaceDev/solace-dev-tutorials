@@ -1,0 +1,10 @@
+- title: Apache Qpid JMS 2.0 AMQP Tutorials
+  tutorials:
+  - publish-subscribe
+  - persistence-with-queues
+  - request-reply
+  - confirmed-delivery
+  - topic-to-queue-mapping
+
+  features:
+  - feature_DurableTopicSubscriber
