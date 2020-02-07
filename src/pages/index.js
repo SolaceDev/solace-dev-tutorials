@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Intro from "../components/intro"
+import Layout from "../components/Layout"
+import Intro from "../components/Intro"
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allMarkdownRemark.edges
@@ -10,7 +10,7 @@ const SamplesIndex = ({ data }) => {
     <Layout>
       <Intro />
       {samples.map(({ node }) => (
-        <div className="col-4">
+        <div key={node.id} className="col-4">
           <div className="card">
             <a href={node.fields.slug}>
               <div className="card-header">
@@ -46,6 +46,7 @@ export const query = graphql`
           fields {
             slug
           }
+          id
         }
       }
     }

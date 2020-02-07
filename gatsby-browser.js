@@ -5,3 +5,6 @@
  */
 
 // You can delete this file if you're not using it
+import "./node_modules/bootstrap/dist/css/bootstrap.css"
+import "./src/css/global.css"
+
