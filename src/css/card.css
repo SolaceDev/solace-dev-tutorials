@@ -1,6 +1,7 @@
 .card {
+    border: 0;
     border-radius: 8px;
-    box-shadow: 2px 4px 6px 0 rgba(0,0,0,.2);
+    box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
 }
 
 .card a {
@@ -8,15 +9,17 @@
 }
 
 .card a:hover {
+    border-radius: 8px;
     color: #474747;
-    box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.3);
+    box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
     cursor: pointer;
-    transform: translatey(-4px);
+    transform: translatey(-2px);
     text-decoration: none;
     transition: all .2s ease;
 }
 
 .card-title {
+    border-radius: 8px 8px 0 0;
     background: linear-gradient(
             #00c895,
             #00ad93);
@@ -29,7 +32,7 @@
 }
 
 .card-body {
-
+    padding: 0;
 }
 
 .card-footer {

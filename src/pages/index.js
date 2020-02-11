@@ -16,10 +16,10 @@ const SamplesIndex = ({ data }) => {
             <Card className="mt4">
               <a href={node.fields.slug}>
                 <Card.Body>
-                  <Card.Title className="fw4">
+                  <Card.Title className="pa3 fw4">
                     {node.frontmatter.title}
                   </Card.Title>
-                  <Card.Text className="fw1">
+                  <Card.Text className="pl3 pr3 fw1">
                     {node.frontmatter.summary}
                   </Card.Text>
                   <div className="card-footer fw3">Start tutorial</div>
