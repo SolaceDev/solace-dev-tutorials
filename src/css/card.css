@@ -1,6 +1,7 @@
 .card {
+    flex-direction: row;
     border: 0;
-    border-radius: 8px;
+    border-radius: 5px;
     box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
 }
 
@@ -9,7 +10,7 @@
 }
 
 .card a:hover {
-    border-radius: 8px;
+    border-radius: 5px;
     color: #474747;
     box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
     cursor: pointer;
