@@ -1,8 +1,9 @@
 import React from "react"
+import { Container } from "react-bootstrap"
 
 const Footer = () => (
   <footer>
-    <div className="container">© {new Date().getFullYear()} Solace</div>
+    <Container>© {new Date().getFullYear()} Solace</Container>
   </footer>
 )
 
