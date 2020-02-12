@@ -1,5 +1,4 @@
 .card {
-    flex-direction: row;
     border: 0;
     border-radius: 5px;
     box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
@@ -20,7 +19,7 @@
 }
 
 .card-title {
-    border-radius: 8px 8px 0 0;
+    border-radius: 5px 5px 0 0;
     background: linear-gradient(
             #00c895,
             #00ad93);
@@ -39,5 +38,6 @@
 .card-footer {
     font-size: 16px;
     text-transform: uppercase;
+    color: #00ad93;
 }
 

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Intro from "../components/Intro"
 import { Container, Row, Col, Card } from "react-bootstrap"
+// TODO - ADD SEO COMPONENT
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allMarkdownRemark.edges
@@ -23,9 +24,7 @@ const SamplesIndex = ({ data }) => {
                     <Card.Text className="pl3 pr3 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Text className="card-footer fw3">
-                      Start Tutorial
-                    </Card.Text>
+                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
                   </Card.Body>
                 </a>
               </Card>
