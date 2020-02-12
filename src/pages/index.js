@@ -18,6 +18,10 @@ const SamplesIndex = ({ data }) => {
               <Card key={node.id} className="mt4">
                 <a href={node.fields.slug}>
                   <Card.Body>
+                    <Card.Img
+                      src={node.frontmatter.icon}
+                      alt={node.frontmatter.title}
+                    />
                     <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
                     </Card.Title>

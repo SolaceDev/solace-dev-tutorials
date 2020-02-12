@@ -6,7 +6,7 @@ body {
 
 footer {
     background: #202326;
-    padding: 20px 0;
+    border-top: solid 2px #ccc;
     color: #fff;
     text-align: center;
 }
