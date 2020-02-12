@@ -24,7 +24,7 @@ export default () => (
         <Container key={node.id} className="tc">
           <Row>
             <Col>
-              <h2 className="mt4">{node.title}</h2>
+              <h1 className="mt4">{node.title}</h1>
               <p className="mb3">{node.summary}</p>
               <Button
                 className="mr3"
