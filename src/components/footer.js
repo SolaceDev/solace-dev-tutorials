@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 const Footer = () => (
   <footer className="mt5">
     <Container>
-      <Row className="pa4">
+      <Row className="pa2">
         <Col xs={12} sm={12} md={6} lg={3} xl={3}>
           Column 1 Nav Products Links
         </Col>
@@ -18,7 +18,7 @@ const Footer = () => (
           Solace Logo and Social Icons
         </Col>
       </Row>
-      <Row className="pa4">
+      <Row className="pa2">
         <Col xs={12} sm={12} md={12} lg={12} xl={12}>
           © {new Date().getFullYear()} Solace Corporation
         </Col>
