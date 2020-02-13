@@ -35,7 +35,7 @@ export default SamplesIndex
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/^(?!.*assets).*$/"}}) {
       edges {
         node {
           frontmatter {
@@ -47,6 +47,7 @@ export const query = graphql`
             slug
           }
           id
+          fileAbsolutePath
         }
       }
     }

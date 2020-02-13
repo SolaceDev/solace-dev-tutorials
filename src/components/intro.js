@@ -6,21 +6,20 @@ export default () => (
   <StaticQuery
     query={graphql`
       {
-        allSolaceSamplesJavascriptYaml {
+        allTutorialsYaml {
           edges {
             node {
               id
               summary
-              download
-              github
               title
+              tutorials
             }
           }
         }
       }
     `}
     render={data => (
-      data.allSolaceSamplesJavascriptYaml.edges.map(({ node }) => (
+      data.allTutorialsYaml.edges.map(({ node }) => (
         <div key={node.id} className={`container tc`}>
           <h2 className="mt4">{node.title}</h2>
           <p className="mb3">{node.summary}</p>
