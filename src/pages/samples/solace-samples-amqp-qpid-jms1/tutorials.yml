@@ -1,9 +1,5 @@
 - title: Apache Qpid JMS 1.1 AMQP Tutorials
-  tutorials:
-  - publish-subscribe
-  - persistence-with-queues
-  - request-reply
-  - confirmed-delivery
-  - topic-to-queue-mapping
-
-  features:
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Apache Qpid JMS 1.1 with AMQP.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO

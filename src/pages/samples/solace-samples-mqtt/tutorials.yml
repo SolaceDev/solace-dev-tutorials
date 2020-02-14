@@ -1,11 +1,5 @@
-- title: Solace MQTT Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology using the MQTT APIs.
+- title: MQTT Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology using MQTT.
   buttons:
     github: https://github.com/SolaceSamples/solace-samples-mqtt
     download: https://github.com/SolaceSamples/solace-samples-mqtt/archive/master.zip
-  tutorials:
-    - publish-subscribe
-    - persistence-with-queues
-    - request-reply
-    - confirmed-delivery
-    - topic-to-queue-mapping

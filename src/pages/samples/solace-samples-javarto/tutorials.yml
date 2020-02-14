@@ -1,5 +1,5 @@
 - title: JavaRTO Tutorials
-  tutorials:
-  - publish-subscribe
-
-  features:
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JavaRTO applications.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO

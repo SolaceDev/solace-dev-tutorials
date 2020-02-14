@@ -1,32 +1,29 @@
 import React from "react"
-import { graphql, StaticQuery } from 'gatsby'
-import { Button } from 'react-bootstrap'
+import { Container, Row, Col, Button } from "react-bootstrap"
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      {
-        allTutorialsYaml {
-          edges {
-            node {
-              id
-              summary
-              title
-              tutorials
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      data.allTutorialsYaml.edges.map(({ node }) => (
-        <div key={node.id} className={`container tc`}>
-          <h2 className="mt4">{node.title}</h2>
-          <p className="mb3">{node.summary}</p>
-          <Button className="mr3" href={node.github} variant="outline-primary">View on GitHub</Button>
-          <Button className="mr3" href={node.download} variant="outline-primary">Download Source</Button>
-        </div>
-      ))
-    )}
-  />
-);
+const Intro = (props) => {
+  return (
+    <Container className="tc">
+      <Row>
+        <Col>
+          <h1 className="mt4">{props.title}</h1>
+          <p className="mb3">{props.summary}</p>
+          <Button
+            className="mr3"
+            href={props.github}
+            variant="outline-primary">
+            View on GitHub
+          </Button>
+          <Button
+            className="mr3"
+            href={props.download}
+            variant="outline-primary">
+            Download Source
+          </Button>
+        </Col>
+      </Row>
+    </Container>
+  )
+}
+
+export default Intro

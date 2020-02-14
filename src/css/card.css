@@ -1,8 +1,7 @@
 .card {
-    border-radius: 8px;
-    width: 300px;
-    margin: 10px 0;
-    box-shadow: 2px 4px 6px 0 rgba(0,0,0,.2);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
 }
 
 .card a {
@@ -10,38 +9,35 @@
 }
 
 .card a:hover {
+    border-radius: 5px;
     color: #474747;
-    box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.3);
+    box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
     cursor: pointer;
-    transform: translatey(-4px);
+    transform: translatey(-2px);
     text-decoration: none;
     transition: all .2s ease;
 }
 
-.card-header {
+.card-title {
+    border-radius: 5px 5px 0 0;
     background: linear-gradient(
             #00c895,
             #00ad93);
-}
-
-.card-title {
     color: #ffffff;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
     font-size: 20px;
 }
 
-.card-body {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 100;
+.card-text {
     font-size: 14px;
-    line-height: 1.5em;
+}
+
+.card-body {
+    padding: 0;
 }
 
 .card-footer {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
     font-size: 16px;
     text-transform: uppercase;
+    color: #00ad93;
 }
 

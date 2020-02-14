@@ -1,11 +1,5 @@
-- title: Solace JavaScript Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology.
+- title: JavaScript Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JavaScript applications.
   buttons:
     github: https://github.com/SolaceSamples/solace-samples-javascript
     download: https://github.com/SolaceSamples/solace-samples-javascript/archive/master.zip
-  tutorials:
-    - confirmed-delivery
-    - persistence-with-queues
-    - request-reply
-    - topic-to-queue-mapping
-    - publish-subscribe

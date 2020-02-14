@@ -149,7 +149,7 @@
 .pt6 { padding-top: var(--spacing-extra-extra-large); }
 .pt7 { padding-top: var(--spacing-extra-extra-extra-large); }
 
-.pr0 { padding-right: 0 };
+.pr0 { padding-right: 0 }
 .pr1 { padding-right: .25rem }
 .pr2 { padding-right: .5rem }
 .pr3 { padding-right: 1rem }
@@ -211,7 +211,7 @@
 .tj  { text-align: justify; }
 
 /* Screen Height Percentage */
-.vh-0 { height: 0vh; }
+.vh-0 { height: 0; }
 .vh-25 {  height:  25vh; }
 .vh-50 {  height:  50vh; }
 .vh-75 {  height:  75vh; }
@@ -224,6 +224,25 @@ html {
 	font-size: 15px;
 	color: rgba(0, 0, 0, 1);
 	font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+main {
+	min-height: 75vh
+}
+
+footer {
+    background: #202326;
+    border-top: solid 2px #ccc;
+    color: #fff;
+	text-align: center;
+	width: 100%;
+	margin-top: auto;
 }
 
 h1 {

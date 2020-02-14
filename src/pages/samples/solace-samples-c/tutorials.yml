@@ -1,9 +1,5 @@
 - title: C API Tutorials
-  tutorials:
-  - publish-subscribe
-  - persistence-with-queues
-  - request-reply
-  - topic-to-queue-mapping
-
-  features:
-  - feature_message-replay
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use the Solace C APIs.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO

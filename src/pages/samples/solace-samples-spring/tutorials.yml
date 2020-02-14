@@ -1,6 +1,5 @@
 - title: Spring Tutorials
-  tutorials:
-  - spring-cloud-streams
-  - spring-boot-autoconfigure
-
-  features:
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Spring.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO

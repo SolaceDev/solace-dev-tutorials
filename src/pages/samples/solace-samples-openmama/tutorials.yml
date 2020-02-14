@@ -1,7 +1,5 @@
 - title: OpenMAMA Tutorials
-  tutorials:
-  - installation-linux
-  - hello-world
-  - publish-subscribe
-
-  features:
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use OpenMAMA.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO
