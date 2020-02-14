@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Publish / Subscribe
-summary: Learn how pub/sub using Solace REST Messaging with a Solace VMR.
+summary: Learn how to pub/sub using Solace REST Messaging with a Solace VMR.
 icon: I_dev_P+S.svg
 ---
 

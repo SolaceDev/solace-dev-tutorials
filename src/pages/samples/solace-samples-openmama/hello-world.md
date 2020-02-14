@@ -9,7 +9,6 @@ links:
     - label: topicPublishOne.c
       link: /blob/master/src/helloworld/topicPublishOne.c
 ---
-<br><br>
 
 ## Assumptions
 

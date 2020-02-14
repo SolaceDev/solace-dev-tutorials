@@ -78,7 +78,7 @@ const samplesTemplate = ({ data, pageContext }) => {
 
 // query to get all markdowns that are not assets
 export const query = graphql`
-  query myQuery($slugRoot: String) {
+  query mySamplesQuery($slugRoot: String) {
     allTutorialsYaml(filter: {fields: {slugRoot: {eq: $slugRoot}}}) {
       edges {
         node {
