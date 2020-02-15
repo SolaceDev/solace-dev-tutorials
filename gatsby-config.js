@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/samples/`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -46,6 +46,20 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+        {
+          resolve: "gatsby-remark-external-links",
+          options: {
+            target: "_self",
+            rel: "nofollow"
+          }
+        }
+        ]
+      }
     },
   ],
 }

@@ -1,12 +1,21 @@
 - title: SEMP Tutorials
-  tutorials:
-  - curl
-  - generate-semp-client-lib
-  - java-client
-  - messagevpn-with-queue-java
-  - messagevpn-with-queue-python
-  - messagevpn-with-queue-ruby
-  tutorials-solace-cloud:
-  - curl
-  - generate-semp-client-lib
-  - java-client
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use SEMP.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO
+
+
+# GHAITH TODO are there tutorials missing here that we can't fetch??
+
+# - title: SEMP Tutorials
+# tutorials:
+# - curl
+# - generate-semp-client-lib
+# - java-client
+# - messagevpn-with-queue-java
+# - messagevpn-with-queue-python
+# - messagevpn-with-queue-ruby
+# tutorials-solace-cloud:
+# - curl
+# - generate-semp-client-lib
+# - java-client

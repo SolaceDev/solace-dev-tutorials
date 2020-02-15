@@ -226,6 +226,25 @@ html {
 	font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+main {
+	min-height: 75vh
+}
+
+footer {
+    background: #202326;
+    border-top: solid 2px #ccc;
+    color: #fff;
+	text-align: center;
+	width: 100%;
+	margin-top: auto;
+}
+
 h1 {
 	font-size: 36px;
 	font-weight: 300;

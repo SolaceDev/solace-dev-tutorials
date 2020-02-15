@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
 const Footer = () => (
-  <footer className="mt5">
+  <footer className="footer">
     <Container>
       <Row className="pa2">
         <Col xs={12} sm={12} md={6} lg={3} xl={3}>

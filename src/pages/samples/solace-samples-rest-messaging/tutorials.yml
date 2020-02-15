@@ -1,5 +1,5 @@
-- title: REST Messaging Tutorials
-  tutorials:
-  - publish-subscribe
-
-  features:
+- title: REST Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use REST.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO
