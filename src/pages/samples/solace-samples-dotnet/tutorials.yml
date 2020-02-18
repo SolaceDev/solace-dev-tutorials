@@ -1,9 +1,5 @@
 - title: C#/.NET Tutorials
-  tutorials:
-  - publish-subscribe
-  - persistence-with-queues
-  - request-reply
-  - confirmed-delivery
-  - topic-to-queue-mapping
-
-  features:
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your C#/.NET applications.
+  buttons:
+    github: GHAITH BLAIN TODO
+    download: GHAITH BLAIN TODO

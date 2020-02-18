@@ -1,32 +1,46 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import Intro from "../components/Intro"
+import { Container, Row, Col, Card } from "react-bootstrap"
+// TODO - ADD SEO COMPONENT
 
 const SamplesIndex = ({ data }) => {
-  const samples = data.allMarkdownRemark.edges
+  const samples = data.allTutorialsYaml.edges
 
   return (
     <Layout>
-      <Intro />
-      {samples.map(({ node }) => (
-        <div key={node.id} className="col-4">
-          <div className="card">
-            <a href={node.fields.slug}>
-              <div className="card-header">
-                <img src="" alt=" " />
-                <h3 className="card-title">{node.frontmatter.title}</h3>
-              </div>
-              <div className="card-body">
-                <div className="tutorial-description">
-                  {node.frontmatter.summary}
-                </div>
-              </div>
-              <div className="card-footer">Start tutorial</div>
-            </a>
-          </div>
-        </div>
-      ))}
+      <Container>
+        <Row className="tc">
+          <Col>
+            <h1 className="mt4">Solace Samples</h1>
+            <p className="mb3">Below are samples that will help you integrate your applications with Solace technologies.</p>
+          </Col>
+        </Row>
+        <Row>
+          {samples.map(({ node }) => (
+            <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
+              <Card key={node.id} className="mt4">
+                <a href={node.fields.slug}>
+                  <Card.Body>
+                    <Card.Img
+                      // TODO ADD IMAGES
+                      // src={node.frontmatter.icon}
+                      // alt={node.frontmatter.title}
+                    />
+                    <Card.Title className="pa3 fw4">
+                      {node.title}
+                    </Card.Title>
+                    <Card.Text className="pl3 pr3 fw1">
+                      {node.summary}
+                    </Card.Text>
+                    <Card.Footer className="fw4">Go To Tutorials</Card.Footer>
+                  </Card.Body>
+                </a>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
     </Layout>
   )
 }
@@ -35,18 +49,15 @@ export default SamplesIndex
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allTutorialsYaml {
       edges {
         node {
-          frontmatter {
-            title
-            summary
-            icon
-          }
+          id
+          summary
+          title
           fields {
             slug
           }
-          id
         }
       }
     }
