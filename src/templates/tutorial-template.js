@@ -18,7 +18,7 @@ const tutorialTemplate = ({ data }) => {
 
 export const query = graphql`
   query myTutorialQuery($slug: String) {
-    allMarkdownRemark(filter: {fields: {slug: {eq: $slug}}}) {
+    allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
           html

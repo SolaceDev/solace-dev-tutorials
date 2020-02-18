@@ -51,7 +51,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Create pages for each sample's tutorial
   const resultTutorial = await graphql(`
     {
-      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/^(?!.*assets).*$/"}}) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/^(?!.*assets).*$/" } }
+      ) {
         edges {
           node {
             fields {
@@ -71,7 +73,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
-        slugRoot: node.fields.slugRoot
+        slugRoot: node.fields.slugRoot,
       },
     })
   })
@@ -100,7 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: node.fields.slug,
-        slugRoot: node.fields.slugRoot
+        slugRoot: node.fields.slugRoot,
       },
     })
   })

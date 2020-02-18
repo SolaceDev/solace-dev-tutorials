@@ -5,15 +5,19 @@ import Intro from "../components/Intro"
 import { Container, Row, Col, Card } from "react-bootstrap"
 
 const samplesTemplate = ({ data, pageContext }) => {
-
   const meta = data.allTutorialsYaml.edges
-  const tutorials = data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.layout === "tutorials")
-  const features = data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.layout === "features")
+  const tutorials = data.allMarkdownRemark.edges.filter(
+    edge => edge.node.frontmatter.layout === "tutorials"
+  )
+  const features = data.allMarkdownRemark.edges.filter(
+    edge => edge.node.frontmatter.layout === "features"
+  )
 
   return (
     <Layout>
       {meta.map(({ node }) => (
-        <Intro key={node.id}
+        <Intro
+          key={node.id}
           title={node.title}
           summary={node.summary}
           github={node.buttons.github}
@@ -21,7 +25,9 @@ const samplesTemplate = ({ data, pageContext }) => {
         ></Intro>
       ))}
       <Container>
-        {tutorials.length !== 0 && <h2 className="mt5">Key Message Exchange Patterns</h2>}
+        {tutorials.length !== 0 && (
+          <h2 className="mt5">Key Message Exchange Patterns</h2>
+        )}
         <Row>
           {tutorials.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -47,7 +53,9 @@ const samplesTemplate = ({ data, pageContext }) => {
         </Row>
       </Container>
       <Container>
-        {features.length !== 0 && <h2 className="mt5">API Features Introductions</h2>}
+        {features.length !== 0 && (
+          <h2 className="mt5">API Features Introductions</h2>
+        )}
         <Row>
           {features.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -79,7 +87,7 @@ const samplesTemplate = ({ data, pageContext }) => {
 // query to get all markdowns that are not assets
 export const query = graphql`
   query mySamplesQuery($slugRoot: String) {
-    allTutorialsYaml(filter: {fields: {slugRoot: {eq: $slugRoot}}}) {
+    allTutorialsYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {
       edges {
         node {
           fields {
@@ -95,7 +103,12 @@ export const query = graphql`
         }
       }
     }
-    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/^(?!.*assets).*$/"}, fields: {slugRoot: {eq: $slugRoot}}}) {
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/^(?!.*assets).*$/" }
+        fields: { slugRoot: { eq: $slugRoot } }
+      }
+    ) {
       edges {
         node {
           frontmatter {
@@ -114,7 +127,6 @@ export const query = graphql`
       }
     }
   }
-
 `
 
 export default samplesTemplate

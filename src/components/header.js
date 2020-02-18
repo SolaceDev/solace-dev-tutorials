@@ -7,8 +7,12 @@ const Header = ({ siteTitle }) => (
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
       <Nav>
-        <Nav.Link href="https://solace.com/products/event-broker/cloud/">Features</Nav.Link>
-        <Nav.Link href="https://solace.com/products/event-broker/cloud/pricing/">Pricing</Nav.Link>
+        <Nav.Link href="https://solace.com/products/event-broker/cloud/">
+          Features
+        </Nav.Link>
+        <Nav.Link href="https://solace.com/products/event-broker/cloud/pricing/">
+          Pricing
+        </Nav.Link>
         <Nav.Link href="https://solace.com/learn/">Learn</Nav.Link>
         <Nav.Link href="https://solace.com/contact/">Talk to Sales</Nav.Link>
         <Nav.Link href="https://solace.com/try-it-now/">Try PubSub+</Nav.Link>
