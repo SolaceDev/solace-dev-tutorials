@@ -1,0 +1,35 @@
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+code[class*="language-"].language-text {
+  font-size: 14px;
+  background: #eef;
+}
+.gatsby-highlight pre[class*="language-"] {
+  background: #eef;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.8em;
+  background: #eef;
+}
+
+/**
+* If you only want to use line numbering
+*/
+.gatsby-highlight {
+  font-size: 12px;
+  border-radius: 0.3em;
+  margin: 2em 0;
+  padding: 0.5em 0;
+  overflow: auto;
+  background: #eef;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  /* overflow: initial; */
+}
