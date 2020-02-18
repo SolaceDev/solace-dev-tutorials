@@ -43,6 +43,14 @@ module.exports = {
             },
           },
           {
+            resolve: "gatsby-remark-embed-markdown",
+            options: {
+              // Example code links are relative to this dir.
+              // eg examples/path/to/file.js
+              directory: `${__dirname}/src/pages/samples/common-assets`,
+            }
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -107,6 +115,7 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          // TODO make gatsby-remark-external-links work or remove it!
           {
             resolve: "gatsby-remark-external-links",
             options: {
