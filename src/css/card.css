@@ -1,43 +1,43 @@
 .card {
-    border: 0;
-    border-radius: 5px;
-    box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
 }
 
 .card a {
-    color: #474747;
+  color: #474747;
 }
 
 .card a:hover {
-    border-radius: 5px;
-    color: #474747;
-    box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
-    cursor: pointer;
-    transform: translatey(-2px);
-    text-decoration: none;
-    transition: all .2s ease;
+  border-radius: 5px;
+  color: #474747;
+  box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
+  cursor: pointer;
+  transform: translatey(-2px);
+  text-decoration: none;
+  transition: all .2s ease;
 }
 
 .card-title {
-    border-radius: 5px 5px 0 0;
-    background: linear-gradient(
-            #00c895,
-            #00ad93);
-    color: #ffffff;
-    font-size: 20px;
+  border-radius: 5px 5px 0 0;
+  background: linear-gradient(
+          #00c895,
+          #00ad93);
+  color: #ffffff;
+  font-size: 20px;
 }
 
 .card-text {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .card-body {
-    padding: 0;
+  padding: 0;
 }
 
 .card-footer {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #00ad93;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #00ad93;
 }
 
