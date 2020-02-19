@@ -3,8 +3,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Intro from "../components/Intro"
 import { Container, Row, Col, Card } from "react-bootstrap"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const samplesTemplate = ({ data, pageContext }) => {
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
   const meta = data.allTutorialsYaml.edges
   const tutorials = data.allMarkdownRemark.edges.filter(
     edge => edge.node.frontmatter.layout === "tutorials"
@@ -15,6 +19,9 @@ const samplesTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Container className="mt1 mb3">
+        <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
+      </Container>
       {meta.map(({ node }) => (
         <Intro
           key={node.id}

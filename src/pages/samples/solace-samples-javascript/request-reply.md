@@ -39,7 +39,7 @@ The goals of this tutorial are to understand the following:
     1.  How to detect a request expecting a reply
     2.  How to generate a reply message
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 
 ## Overview

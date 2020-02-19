@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
+// TODO fix styling for 404, etc.
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
