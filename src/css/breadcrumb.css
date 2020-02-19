@@ -1,0 +1,32 @@
+.breadcrumb {
+  display: inline-block;
+  background-color: unset;
+  padding: 0;
+}
+.breadcrumb:last-child {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+}
+.breadcrumb:last-child:hover {
+  transform: none;
+}
+.breadcrumb a:hover {
+  color: unset;
+}
+.breadcrumb__link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+  transition: transform .2s;
+}
+.breadcrumb__link:hover {
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.breadcrumb__separator {
+  font-size: 16px;
+  padding: 0px 9px;
+  color: rgba(0, 0, 0, 0.6);
+}

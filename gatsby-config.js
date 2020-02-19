@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Solace Samples`,
+    siteUrl: "http://localhost:8000", // TODO change to prod URL
     description: `These tutorials get you up to speed sending and receiving messages with Solace technology.`,
     author: `@solacedotcom`,
   },
@@ -126,5 +127,91 @@ module.exports = {
         ]
       }
     }, // end of gatsby-transformer-remark
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        // useAutoGen: required 'true' to use autogen
+        useAutoGen: true,
+        // autoGenHomeLabel: optional 'Home' is default
+        autoGenHomeLabel: `Solace Samples`,
+        // exlude: optional, include to overwrite these default excluded pages
+        exclude: [
+          `/dev-404-page`,
+          `/404`,
+          `/404.html`,
+          `/offline-plugin-app-shell-fallback`,
+        ],
+        // crumbLabelUpdates: optional, update specific crumbLabels in the path
+        // unfortunately we have to update the crumb labels manually whenever we add a new sample
+        crumbLabelUpdates: [
+          {
+            pathname: '/solace-samples-spring',
+            crumbLabel: 'Spring'
+          },
+          {
+            pathname: '/solace-samples-rest-messaging',
+            crumbLabel: 'REST'
+          },
+          {
+            pathname: '/solace-samples-semp',
+            crumbLabel: 'SEMP'
+          },
+          {
+            pathname: '/solace-samples-nodejs',
+            crumbLabel: 'Node.js'
+          },
+          {
+            pathname: '/solace-samples-openmama',
+            crumbLabel: 'OpenMAMA'
+          },
+          {
+            pathname: '/solace-samples-javascript',
+            crumbLabel: 'JavaScript'
+          },
+          {
+            pathname: '/solace-samples-jms',
+            crumbLabel: 'JMS'
+          },
+          {
+            pathname: '/solace-samples-mqtt',
+            crumbLabel: 'MQTT'
+          },
+          {
+            pathname: '/solace-samples-javarto',
+            crumbLabel: 'JavaRTO'
+          },
+          {
+            pathname: '/solace-samples-dotnet',
+            crumbLabel: 'C#/.NET'
+          },
+          {
+            pathname: '/solace-samples-java',
+            crumbLabel: 'Java'
+          },
+          {
+            pathname: '/solace-samples-cloudfoundry-java',
+            crumbLabel: 'CloudFoundry Java'
+          },
+          {
+            pathname: '/solace-samples-c',
+            crumbLabel: 'C'
+          },
+          {
+            pathname: '/solace-samples-amqp-qpid-jms1',
+            crumbLabel: 'Apache Qpid JMS 1.1 AMQP'
+          },
+          {
+            pathname: '/solace-samples-amqp-nodejs',
+            crumbLabel: 'AMQP Node.js'
+          },
+          {
+            pathname: '/solace-samples-amqp-qpid-jms2',
+            crumbLabel: 'Apache Qpid JMS 2.0 AMQP'
+          },
+        ],
+        // optional: switch to className styling (styling is under breadcrumb.css)
+        useClassNames: true,
+      }
+    }
   ],
 }

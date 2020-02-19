@@ -33,7 +33,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     createNodeField({
       node,
-      value: slug,
+      value: slug.split("/")[1],
       name: "slug",
     })
 
