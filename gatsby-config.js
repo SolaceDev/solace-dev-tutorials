@@ -22,7 +22,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
-    // TODO - ADD GOOGLE TAG MANAGER (https://www.gatsbyjs.org/packages/gatsby-plugin-google-tagmanager/)
     {
       resolve: `gatsby-source-filesystem`,
       options: {
