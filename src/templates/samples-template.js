@@ -69,11 +69,7 @@ const samplesTemplate = ({ data, pageContext }) => {
               <Card key={node.id} className="mt4">
                 <a href={node.fields.slug}>
                   <Card.Body>
-                    <Card.Img
-                      src={node.frontmatter.icon}
-                      alt={node.frontmatter.title}
-                    />
-                    <Card.Title className="pa3 fw4">
+                    <Card.Title className="feature pa3 fw4">
                       {node.frontmatter.title}
                     </Card.Title>
                     <Card.Text className="pl3 pr3 fw1">
@@ -122,7 +118,6 @@ export const query = graphql`
             title
             layout
             summary
-            icon
           }
           fields {
             slug

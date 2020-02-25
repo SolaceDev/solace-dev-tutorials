@@ -27,6 +27,12 @@
   font-size: 20px;
 }
 
+.feature {
+  background: linear-gradient(
+          #009192,
+          #4b6c6c) !important;
+}
+
 .card-text {
   font-size: 14px;
 }
