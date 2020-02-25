@@ -40,6 +40,16 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-images`, // Pulls in images within Markdown
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+            },
+          },
+          {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
               offsetY: `100`,
