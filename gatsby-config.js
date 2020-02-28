@@ -31,6 +31,9 @@ module.exports = {
     `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    // This configuration assumes images are all stored in the "images" directory
+    // in your project root. Configure gatsby-source-filesystem multiple times if
+    // you have images in many places.
     {
       resolve: `gatsby-source-filesystem`,
       options: {

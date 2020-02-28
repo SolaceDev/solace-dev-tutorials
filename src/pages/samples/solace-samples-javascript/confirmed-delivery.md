@@ -209,7 +209,7 @@ Observe the confirmation for the delivery of all 10 messages.
 
 The following is a screenshot of the tutorial’s `ConfirmedPublish.html` web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the “Connect” button was clicked and then the “Consume messages” button was clicked.
 
-![](../../../images/screenshots/confirmeddelivery-javascript_img-1.png)
+![Screenshot: Confirmed Delivery](../../../images/screenshots/confirmeddelivery-javascript_img-1.png)
 
 You have now successfully sent guaranteed messages to a Solace router and confirmed its receipt by correlating the acknowledgement.
 

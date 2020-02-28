@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 
-const Intro = (props) => {
+const Intro = props => {
   return (
     <Container className="tc">
       <Row>
@@ -11,13 +11,17 @@ const Intro = (props) => {
           <Button
             className="mr3"
             href={props.github}
-            variant="outline-primary">
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View on GitHub
           </Button>
           <Button
             className="mr3"
             href={props.download}
-            variant="outline-primary">
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Download Source
           </Button>
         </Col>

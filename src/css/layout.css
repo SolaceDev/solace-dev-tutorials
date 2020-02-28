@@ -1,1 +1,10 @@
 @import "card.css";
+
+.btn {
+    background: #20262a;
+    border-radius: 40px;
+    padding: 8px 25px;
+    color: #00c895;
+    border: none;
+
+}
