@@ -19,7 +19,7 @@ const samplesTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Container className="mt1 mb3">
+      <Container className="mt3 mb3">
         <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
       </Container>
       {meta.map(({ node }) => (

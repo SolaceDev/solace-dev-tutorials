@@ -6,8 +6,8 @@ const Intro = props => {
     <Container className="tc">
       <Row>
         <Col>
-          <h1 className="mt4">{props.title}</h1>
-          <p className="mb3">{props.summary}</p>
+          <h1 className="mt4 mb4">{props.title}</h1>
+          <p className="mb4">{props.summary}</p>
           <Button
             className="mr3"
             href={props.github}

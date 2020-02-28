@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 
-const Community = props => {
+const SubFooter = props => {
   return (
-    <Container>
+    <Container className="mt5 mb5">
       <Row>
         <Col>
           <h2>Questions</h2>
@@ -24,4 +24,4 @@ const Community = props => {
   )
 }
 
-export default Community
+export default SubFooter

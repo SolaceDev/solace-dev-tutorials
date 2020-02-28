@@ -1,4 +1,5 @@
 @import "card.css";
+@import "footer.css";
 
 .btn {
     background: #20262a;
@@ -8,3 +9,4 @@
     border: none;
 
 }
+
