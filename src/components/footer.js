@@ -1,11 +1,19 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import solaceLogo from "../images/solace-logo-white.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {
+  faDev,
+  faGithub,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons"
 
 const Footer = () => (
-  <footer className="site-footer">
+  <footer>
     <Container>
-      <Row className="footer-top pt5 pb5">
+      <Row className="pt5 pb5">
         <Col xs={12} sm={12} md={6} lg={3} xl={3}>
           1
         </Col>
@@ -23,6 +31,11 @@ const Footer = () => (
           >
             <img src={solaceLogo} alt="Solace Logo" />
           </a>
+          <FontAwesomeIcon icon={faDev} />
+          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon icon={faYoutube} />
         </Col>
       </Row>
     </Container>

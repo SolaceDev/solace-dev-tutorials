@@ -1,3 +1,13 @@
+@import "subfooter.css";
+
+footer {
+    background: #202326;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
 footer img {
     max-width: 100%;
     text-align: center;
