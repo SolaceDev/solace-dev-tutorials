@@ -3,9 +3,30 @@
 footer {
     background: #202326;
     color: #fff;
-    text-align: center;
     width: 100%;
     margin-top: auto;
+}
+
+footer a {
+    color: #00c895;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer .menu a{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+footer .sub-menu a {
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: none;
+
 }
 
 footer img {
