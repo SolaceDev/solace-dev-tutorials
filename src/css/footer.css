@@ -1,10 +1,11 @@
 @import "subfooter.css";
 
 footer {
-    background: #202326;
+    background: linear-gradient(32.99deg,#20262B 0%,#20262B 45%,#3C4652 100%);
     color: #fff;
     width: 100%;
     margin-top: auto;
+    border-top: 1px solid #ddd;
 }
 
 footer a {
@@ -13,12 +14,14 @@ footer a {
 
 footer ul {
     list-style: none;
+    padding: 0;
 }
 
 footer .menu a{
     font-size: 16px;
     text-transform: uppercase;
     font-weight: 400;
+    border-bottom: 1px solid #474747;
 }
 
 footer .sub-menu a {
@@ -26,10 +29,24 @@ footer .sub-menu a {
     font-size: 14px;
     font-weight: 100;
     text-transform: none;
+    border-bottom: none;
 
 }
 
 footer img {
     max-width: 100%;
     text-align: center;
+}
+
+a:hover .svg-inline--fa{
+    color: #00ad93;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+.copyright {
+
 }

@@ -1,6 +1,22 @@
 @import "card.css";
 @import "footer.css";
 
+.navbar-brand img {
+    max-width: 300px;
+}
+
+h1, h2, h3, h4 {
+    padding-left: 0;
+}
+
+#intro {
+    background: linear-gradient(
+            #fafafa,
+            #f1f1f1) !important;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
 .btn {
     background: #20262a;
     border-radius: 40px;

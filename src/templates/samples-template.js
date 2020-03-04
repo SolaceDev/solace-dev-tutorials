@@ -19,7 +19,7 @@ const samplesTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Container className="mt3 mb3">
+      <Container>
         <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
       </Container>
       {meta.map(({ node }) => (
@@ -71,7 +71,7 @@ const samplesTemplate = ({ data, pageContext }) => {
                     <Card.Text className="pl3 pr3 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
+                    <Card.Footer className="fw4">Start Tutorial </Card.Footer>
                   </Card.Body>
                 </a>
               </Card>
