@@ -2,10 +2,11 @@
 
 footer {
     background: linear-gradient(32.99deg,#20262B 0%,#20262B 45%,#3C4652 100%);
+    box-shadow: 0 -10px 20px -5px rgba(0,0,0,.4);
+    border-top: 1px solid #3c4652;
     color: #fff;
     width: 100%;
     margin-top: auto;
-    border-top: 1px solid #3c4652;
 }
 
 footer a {
@@ -38,9 +39,7 @@ footer img {
     text-align: center;
 }
 
-a:hover .svg-inline--fa{
-    color: #00ad93;
-}
+
 
 .footer-bottom {
     border-top: 1px solid #3c4652;
@@ -50,7 +49,11 @@ a:hover .svg-inline--fa{
 }
 
 .footer-bottom a {
-    color: #333;
+    color: rgba(255,255,255,.3);
+}
+
+a:hover .svg-inline--fa{
+    color: rgba(255,255,255,.8);
 }
 
 .copyright {

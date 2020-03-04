@@ -210,7 +210,7 @@ const Footer = () => (
       </Row>
     </Container>
     <Container>
-      <Row className="footer-bottom">
+      <Row className="footer-bottom pt4 pb2">
         <Col xs={12} sm={12} md={12} lg={6} xl={6} className="tl">
           &copy; {new Date().getFullYear()}{" "}
           <a
