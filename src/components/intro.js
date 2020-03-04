@@ -6,11 +6,17 @@ const Intro = props => {
     <section id="intro">
       <Container className="tc">
         <Row>
-          <Col>
+          <Col
+            xs={12}
+            sm={12}
+            md={12}
+            lg={{ span: 8, offset: 2 }}
+            xl={{ span: 8, offset: 2 }}
+          >
             <h1 className="mt4 mb4">{props.title}</h1>
             <p className="mb4">{props.summary}</p>
             <Button
-              className="mr3"
+              className="mr2"
               href={props.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -18,7 +24,7 @@ const Intro = props => {
               View on GitHub
             </Button>
             <Button
-              className="mr3"
+              className="ml2"
               href={props.download}
               target="_blank"
               rel="noopener noreferrer"

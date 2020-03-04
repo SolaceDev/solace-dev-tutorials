@@ -1,8 +1,11 @@
 #subfooter {
-    background: linear-gradient(
-            #fafafa,
-            #f1f1f1) !important;
+    margin-bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6)),
+    url("../images/bg/mountains-bg.jpg") no-repeat top center;
+    background-size: cover;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
     border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
 }
 

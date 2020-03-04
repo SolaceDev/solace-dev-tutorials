@@ -212,13 +212,21 @@ const Footer = () => (
     <Container>
       <Row className="footer-bottom">
         <Col xs={12} sm={12} md={12} lg={6} xl={6} className="tl">
-          &copy; {new Date().getFullYear()} Solace Corporation |
+          &copy; {new Date().getFullYear()}{" "}
+          <a
+            href="https://solace.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Solace Corporation
+          </a>{" "}
+          |
           <a
             href="https://solace.com/legal/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Legal
+            Terms
           </a>{" "}
           |{" "}
           <a
@@ -226,7 +234,7 @@ const Footer = () => (
             target="_blank"
             rel="noopener noreferrer"
           >
-            Legal
+            Privacy
           </a>{" "}
           |
           <a
