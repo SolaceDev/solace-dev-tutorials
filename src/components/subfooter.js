@@ -6,21 +6,20 @@ const SubFooter = props => {
     <section id="subfooter" className="pt5 pb5">
       <Container>
         <Row>
-          <Col>
+          <Col
+            xs={12}
+            sm={12}
+            md={6}
+            lg={{ span: 8, offset: 2 }}
+            xl={{ span: 8, offset: 2 }}
+          >
             <h2>Have Questions?</h2>
-            <p>
-              If you have any issues or questions check the{" "}
-              <a
-                href="https://www.solace.community"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Solace Community
-              </a>{" "}
-              for answers and discussions.
+            <p className="fw4 f4">
+              If you have any issues or questions check the Solace Community for
+              answers and discussions.
             </p>
             <Button
-              className="ml2"
+              className="ma4"
               href={props.download}
               target="_blank"
               rel="noopener noreferrer"
@@ -28,7 +27,7 @@ const SubFooter = props => {
               Visit the Community
             </Button>
             <Button
-              className="ml2"
+              className="ma4"
               href={props.download}
               target="_blank"
               rel="noopener noreferrer"

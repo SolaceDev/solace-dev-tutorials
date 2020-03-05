@@ -31,14 +31,12 @@ const samplesTemplate = ({ data, pageContext }) => {
           download={node.buttons.download}
         ></Intro>
       ))}
-      <Container>
-        {tutorials.length !== 0 && (
-          <h2 className="mt5">Key Message Exchange Patterns</h2>
-        )}
+      <Container className="mt4">
+        {tutorials.length !== 0 && <h2>Key Message Exchange Patterns</h2>}
         <Row>
           {tutorials.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
-              <Card key={node.id} className="mt4">
+              <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <Card.Body>
                     <Card.Title className="pa3 fw4">
@@ -55,14 +53,12 @@ const samplesTemplate = ({ data, pageContext }) => {
           ))}
         </Row>
       </Container>
-      <Container>
-        {features.length !== 0 && (
-          <h2 className="mt5">API Features Introductions</h2>
-        )}
+      <Container className="mt4">
+        {features.length !== 0 && <h2>API Features Introductions</h2>}
         <Row>
           {features.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
-              <Card key={node.id} className="mt4">
+              <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <Card.Body>
                     <Card.Title className="feature pa3 fw4">

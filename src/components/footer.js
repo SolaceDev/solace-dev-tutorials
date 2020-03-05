@@ -211,7 +211,7 @@ const Footer = () => (
     </Container>
     <Container>
       <Row className="footer-bottom">
-        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="pt3 pb3">
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt3 pb3">
           &copy; {new Date().getFullYear()}{" "}
           <a
             href="https://solace.com"
