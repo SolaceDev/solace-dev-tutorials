@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn how to set up pub/sub messaging on a Solace VMR.
-icon: I_dev_P+S.svg
+icon: I_dev_P+S.png
 links:
     - label: TopicPublisher.html
       link: /blob/master/src/basic-samples/TopicPublisher/TopicPublisher.html

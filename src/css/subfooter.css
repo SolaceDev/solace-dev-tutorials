@@ -1,0 +1,15 @@
+#subfooter {
+    margin-bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.6)),
+    url("../images/bg/mountains-bg.jpg") no-repeat top center;
+    background-size: cover;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+#subfooter h2, #subfooter p {
+    color: #ffffff;
+}

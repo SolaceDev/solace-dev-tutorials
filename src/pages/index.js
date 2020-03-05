@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import { Container, Row, Col, Card } from "react-bootstrap"
-// TODO - ADD SEO COMPONENT
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allTutorialsYaml.edges
@@ -13,7 +12,10 @@ const SamplesIndex = ({ data }) => {
         <Row className="tc">
           <Col>
             <h1 className="mt4">Solace Samples</h1>
-            <p className="mb3">Below are samples that will help you integrate your applications with Solace technologies.</p>
+            <p className="mb3">
+              Below are samples that will help you integrate your applications
+              with Solace technologies.
+            </p>
           </Col>
         </Row>
         <Row>
@@ -22,14 +24,7 @@ const SamplesIndex = ({ data }) => {
               <Card key={node.id} className="mt4">
                 <a href={node.fields.slug}>
                   <Card.Body>
-                    <Card.Img
-                      // TODO ADD IMAGES
-                      // src={node.frontmatter.icon}
-                      // alt={node.frontmatter.title}
-                    />
-                    <Card.Title className="pa3 fw4">
-                      {node.title}
-                    </Card.Title>
+                    <Card.Title className="pa3 fw4">{node.title}</Card.Title>
                     <Card.Text className="pl3 pr3 fw1">
                       {node.summary}
                     </Card.Text>

@@ -1,1 +1,28 @@
 @import "card.css";
+@import "footer.css";
+
+.navbar-brand img {
+    max-width: 300px;
+}
+
+h1, h2, h3, h4 {
+    padding-left: 0;
+}
+
+#intro {
+    background: linear-gradient(
+            #f7f7f7,
+            #f7f7f7) !important;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.btn {
+    background: #20262a;
+    border-radius: 40px;
+    padding: 8px 25px;
+    color: #00c895;
+    border: none;
+
+}
+

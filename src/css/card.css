@@ -1,7 +1,7 @@
 .card {
   border: 0;
   border-radius: 5px;
-  box-shadow: 2px 4px 6px 0 rgba(0,0,0,.3);
+  box-shadow: 0 2px 4px rgba(27,31,35,.15);
 }
 
 .card a {
@@ -11,7 +11,7 @@
 .card a:hover {
   border-radius: 5px;
   color: #474747;
-  box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(27,31,35,.40);
   cursor: pointer;
   transform: translatey(-2px);
   text-decoration: none;
@@ -27,8 +27,18 @@
   font-size: 20px;
 }
 
+.feature {
+  background: linear-gradient(
+          #20262A,
+          #37404A) !important;
+
+
+
+
+}
+
 .card-text {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .card-body {

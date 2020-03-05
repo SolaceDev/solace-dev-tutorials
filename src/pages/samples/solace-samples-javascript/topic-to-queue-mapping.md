@@ -2,7 +2,7 @@
 layout: tutorials
 title: Topic to Queue Mapping
 summary: Learn how to map existing topics to Solace queues.
-icon: I_dev_topic2q.svg
+icon: I_dev_topic2q.png
 ---
 
 This tutorial builds on the basic concepts introduced in the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial and will show you how to make use of one of Solace’s advanced queueing features called `Topic to Queue Mapping` with a JavaScript API client using Solace messaging.
@@ -13,7 +13,7 @@ In addition to persistent messages published directly to a durable queue, it is 
 
 The following diagram illustrates this feature.
 
-<img src="{{ site.baseurl }}/assets/images/topic-to-queue-mapping-details.png" width="500" height="206" />
+![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-details.png)
 
 If you have a durable queue named “Q”, it will receive messages published directly to the queue destination named “Q”. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics “A” and “B”. Once these subscriptions are added, the queue will start receiving messages published to topic destinations “A” and “B”. When you combine this with wildcard support provided by Solace topics, this opens up a number of interesting use cases.
 
@@ -30,5 +30,3 @@ Once having Topic to Queue Mapping configured, the `QueueConsumer` sample from t
 JavaScript applications wishing to take advantage of this Solace Message Router feature have only one option:
 
 *   [Use one of the Solace management interfaces and directly configure the topic subscriptions on the queue]({{ site.docs-topic-mapping }}){:target="_top"}.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

@@ -1,0 +1,61 @@
+@import "subfooter.css";
+
+footer {
+    background: linear-gradient(32.99deg,#20262B 0%,#20262B 45%,#3C4652 100%);
+    box-shadow: 0 -10px 20px -5px rgba(0,0,0,.4);
+    border-top: 1px solid #3c4652;
+    color: #fff;
+    width: 100%;
+    margin-top: auto;
+}
+
+footer a {
+    color: #00c895;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer .menu a{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid #3c4652;
+}
+
+footer .sub-menu a {
+    color: #f2f2f2;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: none;
+    border-bottom: none;
+
+}
+
+footer img {
+    max-width: 100%;
+    text-align: center;
+}
+
+
+
+.footer-bottom {
+    border-top: 1px solid #3c4652;
+    text-align: center;
+    font-size: 12px;
+    color: #3c4652;
+}
+
+.footer-bottom a {
+    color: rgba(255,255,255,.3);
+}
+
+a:hover .svg-inline--fa{
+    color: rgba(255,255,255,.8);
+}
+
+.copyright {
+
+}

@@ -6,8 +6,22 @@ module.exports = {
     author: `@solacedotcom`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-KDMNNWW",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
+      },
+    },
     `gatsby-plugin-react-helmet`,
-    // TODO - ADD GOOGLE TAG MANAGER (https://www.gatsbyjs.org/packages/gatsby-plugin-google-tagmanager/)
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,8 +29,18 @@ module.exports = {
       },
     },
     `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    // This configuration assumes images are all stored in the "images" directory
+    // in your project root. Configure gatsby-source-filesystem multiple times if
+    // you have images in many places.
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -32,6 +56,16 @@ module.exports = {
       resolve: `gatsby-transformer-remark`, // Transformer Plugin - Convert Markdown --> HTML
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-images`, // Pulls in images within Markdown
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+              linkImagesToOriginal: false,
+            },
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -49,7 +83,7 @@ module.exports = {
               // Example code links are relative to this dir.
               // eg examples/path/to/file.js
               directory: `${__dirname}/src/pages/samples/common-assets`,
-            }
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -121,11 +155,11 @@ module.exports = {
             resolve: "gatsby-remark-external-links",
             options: {
               target: "_self",
-              rel: "nofollow"
-            }
-          }
-        ]
-      }
+              rel: "nofollow",
+            },
+          },
+        ],
+      },
     }, // end of gatsby-transformer-remark
     {
       resolve: `gatsby-plugin-breadcrumb`,
@@ -145,73 +179,73 @@ module.exports = {
         // unfortunately we have to update the crumb labels manually whenever we add a new sample
         crumbLabelUpdates: [
           {
-            pathname: '/solace-samples-spring',
-            crumbLabel: 'Spring'
+            pathname: "/solace-samples-spring",
+            crumbLabel: "Spring",
           },
           {
-            pathname: '/solace-samples-rest-messaging',
-            crumbLabel: 'REST'
+            pathname: "/solace-samples-rest-messaging",
+            crumbLabel: "REST",
           },
           {
-            pathname: '/solace-samples-semp',
-            crumbLabel: 'SEMP'
+            pathname: "/solace-samples-semp",
+            crumbLabel: "SEMP",
           },
           {
-            pathname: '/solace-samples-nodejs',
-            crumbLabel: 'Node.js'
+            pathname: "/solace-samples-nodejs",
+            crumbLabel: "Node.js",
           },
           {
-            pathname: '/solace-samples-openmama',
-            crumbLabel: 'OpenMAMA'
+            pathname: "/solace-samples-openmama",
+            crumbLabel: "OpenMAMA",
           },
           {
-            pathname: '/solace-samples-javascript',
-            crumbLabel: 'JavaScript'
+            pathname: "/solace-samples-javascript",
+            crumbLabel: "JavaScript",
           },
           {
-            pathname: '/solace-samples-jms',
-            crumbLabel: 'JMS'
+            pathname: "/solace-samples-jms",
+            crumbLabel: "JMS",
           },
           {
-            pathname: '/solace-samples-mqtt',
-            crumbLabel: 'MQTT'
+            pathname: "/solace-samples-mqtt",
+            crumbLabel: "MQTT",
           },
           {
-            pathname: '/solace-samples-javarto',
-            crumbLabel: 'JavaRTO'
+            pathname: "/solace-samples-javarto",
+            crumbLabel: "JavaRTO",
           },
           {
-            pathname: '/solace-samples-dotnet',
-            crumbLabel: 'C#/.NET'
+            pathname: "/solace-samples-dotnet",
+            crumbLabel: "C#/.NET",
           },
           {
-            pathname: '/solace-samples-java',
-            crumbLabel: 'Java'
+            pathname: "/solace-samples-java",
+            crumbLabel: "Java",
           },
           {
-            pathname: '/solace-samples-cloudfoundry-java',
-            crumbLabel: 'CloudFoundry Java'
+            pathname: "/solace-samples-cloudfoundry-java",
+            crumbLabel: "CloudFoundry Java",
           },
           {
-            pathname: '/solace-samples-c',
-            crumbLabel: 'C'
+            pathname: "/solace-samples-c",
+            crumbLabel: "C",
           },
           {
-            pathname: '/solace-samples-amqp-qpid-jms1',
-            crumbLabel: 'Apache Qpid JMS 1.1 AMQP'
+            pathname: "/solace-samples-amqp-qpid-jms1",
+            crumbLabel: "Apache Qpid JMS 1.1 AMQP",
           },
           {
-            pathname: '/solace-samples-amqp-nodejs',
-            crumbLabel: 'AMQP Node.js'
+            pathname: "/solace-samples-amqp-nodejs",
+            crumbLabel: "AMQP Node.js",
           },
           {
-            pathname: '/solace-samples-amqp-qpid-jms2',
-            crumbLabel: 'Apache Qpid JMS 2.0 AMQP'
+            pathname: "/solace-samples-amqp-qpid-jms2",
+            crumbLabel: "Apache Qpid JMS 2.0 AMQP",
           },
         ],
         // optional: switch to className styling (styling is under breadcrumb.css)
         useClassNames: true,
-      }
-    }
+      },
+    },
   ],
 }
