@@ -4,7 +4,7 @@ import { Container, Row, Col, Button } from "react-bootstrap"
 const Intro = props => {
   return (
     <section id="intro">
-      <Container className="tc">
+      <Container className="tc pb4">
         <Row>
           <Col
             xs={12}

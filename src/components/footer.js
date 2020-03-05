@@ -210,8 +210,8 @@ const Footer = () => (
       </Row>
     </Container>
     <Container>
-      <Row className="footer-bottom pt4 pb2">
-        <Col xs={12} sm={12} md={12} lg={6} xl={6} className="tl">
+      <Row className="footer-bottom">
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="pt3 pb3">
           &copy; {new Date().getFullYear()}{" "}
           <a
             href="https://solace.com"
@@ -245,7 +245,7 @@ const Footer = () => (
             Legal
           </a>
         </Col>
-        <Col xs={12} sm={12} md={12} lg={6} xl={6} className="tr">
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tr pt2 pb2">
           <a
             href="https://dev.to/solacedevs"
             target="_blank"
