@@ -243,5 +243,3 @@ $ node ConfirmedPublish.js ws://192.168.133.64 testuser@default passw
 ```
 
 You have now successfully sent guaranteed messages to a Solace router and confirmed its receipt by correlating the acknowledgement.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

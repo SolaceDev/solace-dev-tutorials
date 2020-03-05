@@ -23,5 +23,3 @@ MQTT is a standard wireline protocol with a design goal of being a light weight 
 ## Summarizing
 
 So in summary MQTT applications take advantage of this feature by using QoS 1 subscriptions. There is nothing further that they must do.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

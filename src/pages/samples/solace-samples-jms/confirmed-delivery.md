@@ -18,6 +18,3 @@ Refer to the [JMS specification](http://download.oracle.com/otndocs/jcp/7195-jms
 ## Summarizing
 
 For a JMS version 1.1 applications there is nothing further they must do to confirm message delivery with Solace messaging. This is handled by the API by making the send call blocking.
-
-If you have any further questions ask the [Solace community]({{ site.links-community }}){:target="_top"}.
-

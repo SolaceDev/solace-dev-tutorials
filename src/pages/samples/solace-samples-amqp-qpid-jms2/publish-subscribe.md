@@ -179,5 +179,3 @@ Message received: 'Hello world!'
 ```
 
 You now know how to use Apache Qpid JMS 2.0 API over AMQP using Solace messaging to implement the publish/subscribe message exchange pattern.
-
-If you have any issues publishing and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

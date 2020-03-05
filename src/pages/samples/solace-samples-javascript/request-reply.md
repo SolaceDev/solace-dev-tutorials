@@ -210,5 +210,3 @@ This is the replier is receiving the request and replying to it (_BasicReplier/B
 ![](../../../images/screenshots/javascript-request-reply_3.png)
 
 With that you now know how to successfully implement request-reply message exchange pattern using Direct messages.
-
-If you have any issues sending and replying a message, check the [Solace community Q&A]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

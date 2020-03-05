@@ -264,5 +264,3 @@ XML:                                    len=12
 The received message is printed to the screen. The `TextMessage` contents was “Hello world!” as expected and the message dump contains extra information about the Solace message that was received.
 
 You have now successfully connected a client, subscribed to a topic and exchanged messages using this topic.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

@@ -28,5 +28,3 @@ Applications can use this API by logging into Solace messaging using a Message-V
 ## Summary
 
 Node.js applications wishing to take advantage of this feature have the option of [using one of the Solace management interfaces and directly configure the topic subscriptions on the queue]({{ site.docs-topic-mapping }}){:target="_top"}.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

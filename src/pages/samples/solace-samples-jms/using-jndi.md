@@ -294,5 +294,3 @@ $ ./build/staged/bin/queueConsumerJNDI <host:port> <client-username>@<message-vp
 ```
 
 You have now successfully connected a client, sent persistent messages to a queue and received them from a consumer flow.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

@@ -192,6 +192,4 @@ Exiting
 
 The received message is printed to the screen. The message contents were "Hello world from MQTT!" as expected and the output contains extra information about the Solace message that was received.
 
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} Q&A for answers to common issues seen.
-
 You have now successfully connected a MQTT client, subscribed to a topic and exchanged messages using this topic.

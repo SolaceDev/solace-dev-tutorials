@@ -74,5 +74,3 @@ $ ldd topicPublishOne
 ```
 
 If you have any problems installing OpenMAMA, ask OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA){:target="_blank"}.
-
-If you have any problems installing the Solace components, check the [Solace community]({{ site.link-community }}){:target="_top"} for answers to common issues.

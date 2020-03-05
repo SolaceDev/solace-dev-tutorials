@@ -34,5 +34,3 @@ One option is to use a management interface to administratively configure the to
 Apache Qpid JMS 2.0 JMS applications using AMQP and wishing to take advantage of this Solace messaging feature have only one option:
 
 *   [Use one of the Solace management interfaces and directly configure the topic subscriptions on the queue]({{ site.docs-topic-mapping }}){:target="_top"}.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

@@ -210,5 +210,3 @@ JmsTextMessage { org.apache.qpid.jms.provider.amqp.message.AmqpJmsTextMessageFac
 ```
 
 With that you now know how to use the Apache Qpid JMS 1.1 over AMQP using Solace messaging to implement the publish/subscribe message exchange pattern.
-
-If you have any issues with publishing and receiving messages, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

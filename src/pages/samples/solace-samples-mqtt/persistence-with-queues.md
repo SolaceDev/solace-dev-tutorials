@@ -189,6 +189,4 @@ Exiting
 
 The received message is printed to the screen. The message contents were “Hello world from MQTT!” as expected with a QoS level of 1 and the output contains extra information about the Solace message that was received.
 
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.
-
 You have now successfully sent and received QoS 1 MQTT messages which are equivalent to Solace guaranteed messages.

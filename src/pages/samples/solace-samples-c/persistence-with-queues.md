@@ -258,5 +258,3 @@ Exiting.
 You can also run `QueuePublisher` a few more times to let the queue to build up a little before running `QueueSubscriber`. The `QueueSubscriber` will consume all queued messages and display them. 
 
 You have now successfully connected a client, sent persistent messages to a queue and received and acknowledged them.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

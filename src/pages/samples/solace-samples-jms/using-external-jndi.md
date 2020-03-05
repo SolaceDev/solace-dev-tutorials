@@ -284,5 +284,3 @@ $ ./build/staged/bin/extJndiTest -jndiUrl file:///tmp/ \
 ```
 
 You have now successfully imported settings into the external JNDI server, then used it to access the Solace message broker for JMS messaging.
-
-If you have any issues importing or sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

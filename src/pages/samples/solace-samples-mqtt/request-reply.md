@@ -298,5 +298,3 @@ Exiting
 ```
 
 With that you now know how to successfully implement the request-reply message exchange pattern using MQTT.
-
-If you have any issues sending and receiving a message, check the [Solace community Q&A]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

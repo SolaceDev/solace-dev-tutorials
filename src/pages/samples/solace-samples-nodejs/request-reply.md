@@ -258,5 +258,3 @@ Binary Attachment:                      len=17
 ```
 
 With that you now know how to successfully implement the request-reply message exchange pattern using Direct messages.
-
-If you have any issues sending and replying a message, check the [Solace community Q&A]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

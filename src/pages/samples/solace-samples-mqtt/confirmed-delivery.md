@@ -121,5 +121,3 @@ Exiting
 ```
 
 When the text “Message was successfully delivered to Solace” is printed on screen, you have confirmed that the published QoS 1 message has been delivered successfully to the broker.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

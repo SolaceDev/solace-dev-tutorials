@@ -260,5 +260,3 @@ Responded successfully. Exiting...
 ```
 
 Now you know how to use Apache Qpid JMS 2.0 API over AMQP using Solace messaging to implement the request/reply message exchange pattern.
-
-If you have any issues sending and receiving request or reply, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

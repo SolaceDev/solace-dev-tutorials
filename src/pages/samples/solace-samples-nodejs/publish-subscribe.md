@@ -323,7 +323,3 @@ Expiration:                             0 (Wed Dec 31 1969 19:00:00 GMT-0500 (Ea
 Binary Attachment:                      len=14
   53 61 6d 70 6c 65 20 4d    65 73 73 61 67 65          Sample.Message
 ```
-
-With that you now know how to successfully implement publish-subscribe message exchange pattern using Direct messages.
-
-If you have any issues publishing and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

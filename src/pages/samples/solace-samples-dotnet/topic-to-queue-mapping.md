@@ -213,5 +213,3 @@ Received message.
 Message content: Topic to Queue Mapping Tutorial! Message ID: 4
 Finished.
 ```
-
-If you have any problems with this tutorial, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

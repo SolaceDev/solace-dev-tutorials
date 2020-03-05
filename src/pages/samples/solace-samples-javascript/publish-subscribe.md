@@ -312,5 +312,3 @@ This is the subscriber receiving a message (`TopicSubscriber.html)`:
 ![](../../../images/screenshots/pubsub-javascript_img-3.png)
 
 With that you now know how to successfully implement publish-subscribe message exchange pattern using Direct messages.
-
-If you have any issues publishing and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.
