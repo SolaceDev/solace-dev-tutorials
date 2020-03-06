@@ -370,3 +370,12 @@ p {
 a:hover {
   text-decoration: none;
 }
+
+.btn-primary {
+  background: #20262A;
+  font-weight: 100;
+}
+
+.btn-primary:hover {
+  background: #20262A;
+}

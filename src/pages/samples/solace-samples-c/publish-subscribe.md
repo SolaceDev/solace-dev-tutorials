@@ -157,6 +157,3 @@ Exiting.
 The received message is printed to the screen. The message contents was "Hello world!" as expected and shown in the contents of the message dump along with additional information about the PubSub+ message that was received.
 
 You have now successfully connected a client, subscribed to a topic and exchanged messages using this topic.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.
-

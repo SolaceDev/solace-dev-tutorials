@@ -19,9 +19,11 @@ const samplesTemplate = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Container className="pt3">
-        <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
-      </Container>
+      <section id="breadcrumbs">
+        <Container className="pt3">
+          <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
+        </Container>
+      </section>
       {meta.map(({ node }) => (
         <Intro
           key={node.id}

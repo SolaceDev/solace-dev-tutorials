@@ -17,13 +17,15 @@ const tutorialTemplate = ({ data, pageContext }) => {
   )
   return (
     <Layout>
-      <Container className="mt1 mb3">
-        <Breadcrumb
-          crumbs={crumbs}
-          crumbLabel={node.frontmatter.title}
-          crumbSeparator=" > "
-        />
-      </Container>
+      <section id="breadcrumbs">
+        <Container className="pt3">
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbLabel={node.frontmatter.title}
+            crumbSeparator=" > "
+          />
+        </Container>
+      </section>
       <Container className="flex-row">
         <div className="max-w-70">
           <h1 className="mt5">{node.frontmatter.title}</h1>

@@ -163,5 +163,3 @@ Notice how the message is received by the `QueueConsumer`.
 ```
 
 Now you know how to use the **amqp10** AMQP 1.0 compliant Node.js client with Solace messaging to send and receive persistent messages from a queue.
-
-If you have any issues sending and receiving message or reply, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

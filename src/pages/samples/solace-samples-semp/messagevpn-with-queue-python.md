@@ -243,5 +243,3 @@ Now it is possible to easily create as many message-VPNs as required and share a
 ```
 ./build/staged/bin/queueProducer <HOST> myNewVPN
 ```
-
-If you have any issues using SEMP, check the [Solace community.]({{ site.solace-community }}){:target="_top"} for answers to common issues.

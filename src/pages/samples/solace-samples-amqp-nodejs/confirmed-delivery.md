@@ -18,5 +18,3 @@ This behavior also means that persistent message producers are forced to block o
 ## Summary
 
 For Node.js applications there is nothing further they must do to confirm message delivery with Solace messaging. This is handled by the underlying client by making the `send()` call blocking.
-
-If you have any further questions ask the [Solace community]({{ site.links-community }}){:target="_top"}.

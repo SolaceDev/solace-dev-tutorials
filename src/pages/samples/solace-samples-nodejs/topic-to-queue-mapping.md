@@ -30,5 +30,3 @@ Once having Topic to Queue Mapping configured, the `QueueConsumer` sample from t
 Node.js applications wishing to take advantage of this Solace Message Router feature have only one option:
 
 *   [Use one of the Solace management interfaces and directly configure the topic subscriptions on the queue]({{ site.docs-topic-mapping }}){:target="_top"}.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

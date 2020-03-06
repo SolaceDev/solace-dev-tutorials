@@ -211,5 +211,3 @@ Finished.
 You have now successfully connected a client, sent persistent messages to a queue and received and acknowledged them.
 
 Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery.]({{ site.baseurl }}/confirmed-delivery)
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

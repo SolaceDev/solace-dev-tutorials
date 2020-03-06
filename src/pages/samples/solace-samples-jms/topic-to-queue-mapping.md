@@ -29,5 +29,3 @@ So in summary JMS applications wishing to take advantage of this feature have tw
 
 *   [Use one of the Solace management interfaces and directly configure the topic subscriptions on the queue]({{ site.docs-topic-mapping }}){:target="_top"}.
 *   [Use the Solace API for Java directly for this part of your application]({{ site.links-java-tutorial }}){:target="_top"}.
-
-If you have any issues or questions check the [Solace community]({{ site.links-community }}){:target="_top"} for answers and discussions.

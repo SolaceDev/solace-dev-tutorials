@@ -226,5 +226,3 @@ JmsTextMessage { org.apache.qpid.jms.provider.amqp.message.AmqpJmsTextMessageFac
 ```
 
 Now you know how to use Apache Qpid JMS 1.1 over AMQP using Solace messaging to send and receive persistent messages from a queue.
-
-If you have any issues sending and receiving message or reply, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues seen.

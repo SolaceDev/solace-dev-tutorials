@@ -233,5 +233,3 @@ Finished.
 ```
 
 You have now successfully sent persistent messages to a Solace router and confirmed its receipt by correlating the acknowledgement.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

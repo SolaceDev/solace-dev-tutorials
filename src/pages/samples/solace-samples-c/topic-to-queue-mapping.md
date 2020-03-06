@@ -196,5 +196,3 @@ Binary Attachment:                      len=16
   6d 79 20 61 74 74 61 63  68 65 64 20 64 61 74 61      my attac   hed data
 ```
 You have now added a topic subscription to a queue and successfully published persistent messages to the topic and had them arrive on your Queue endpoint.
-
-If you have any problems with this tutorial, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.
