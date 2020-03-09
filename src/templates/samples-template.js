@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import Intro from "../components/Intro"
+import Layout from "../components/layout"
+import Intro from "../components/intro"
 import { Container, Row, Col, Card } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
