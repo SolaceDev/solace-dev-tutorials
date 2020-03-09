@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import SubFooter from "./subFooter"
+import SubFooter from "./subfooter"
 import Footer from "./footer"
 
 import "../css/layout.css"
