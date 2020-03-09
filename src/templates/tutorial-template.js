@@ -88,7 +88,6 @@ export const query = graphql`
             slugRoot
           }
           frontmatter {
-            icon
             title
             summary
             layout
