@@ -18,13 +18,13 @@ At the end, this tutorial walks through downloading and running the sample from 
 
 This tutorial assumes the following:
 
-* You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+* You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 * You have access to Solace messaging with the following configuration details:
     * Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     * Enabled client username and password
     * Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -69,7 +69,7 @@ At this point the application is connected to Solace messaging and ready to send
 
 In order to send a message to a queue a *Sender* needs to be created.
 
-![sending-message-to-queue]({{ site.baseurl }}/assets/images/persistence-with-queues-details-2.png)
+![Diagram: Sending Message to Queue](../../../images/diagrams/persistence-with-queues-details-2.png)
 
 The name of the queue for sending messages is given to *Sender* when it is being created.
 
@@ -85,7 +85,7 @@ amqpClient.connect(self.hostname).then(()
 
 To receive a persistent message from a queue a *Receiver* needs to be created.
 
-![]({{ site.baseurl }}/assets/images/persistence-with-queues-details-1.png)
+![Diagram: Persistence with Queues Details](../../../images/diagrams/persistence-with-queues-details-1.png)
 
 The name of the queue for sending messages is given to *Receiver* when it is being created and it is the same as the one we send messages to.
 
@@ -109,19 +109,16 @@ amqpClient.connect(self.hostname).then(() => {
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-amqp-nodejs/blob/master/src/QueueProducer.js)
+* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-amqp-nodejs/blob/master/src/QueueConsumer.js)
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-amqp-nodejs
+cd solace-samples-amqp-nodejs
 ```
 
 ### Running

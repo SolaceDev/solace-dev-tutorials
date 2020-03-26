@@ -30,7 +30,7 @@ There are several ways you can get access to Solace Messaging and find these req
 
 ### Option 1: Use Solace Cloud
 
-* Follow [these instructions]({{ site.links-solaceCloud-setup }}){:target="_top"} to quickly spin up a cloud-based Solace messaging service for your applications.
+* Follow [these instructions](https://solace.com/cloud/) to quickly spin up a cloud-based Solace messaging service for your applications.
 * The messaging connectivity information is found in the service details in the connectivity tab (shown below). You will need:
     * Host:Port (use the AMQP URI)
     * Client Username
@@ -40,7 +40,7 @@ There are several ways you can get access to Solace Messaging and find these req
 
 ### Option 2: Start a Solace VMR
 
-* Follow [these instructions]({{ site.docs-vmr-setup }}){:target="_top"} to start the Solace VMR in leading Clouds, Container Platforms or Hypervisors. The tutorials outline where to download and how to install the Solace VMR.
+* Follow [these instructions](https://docs.solace.com/Solace-VMR-Set-Up/Setting-Up-VMRs.htm) to start the Solace VMR in leading Clouds, Container Platforms or Hypervisors. The tutorials outline where to download and how to install the Solace VMR.
 * The messaging connectivity information are the following:
     * Host: \<public_ip> (IP address assigned to the VMR in tutorial instructions)
     * Client Username: sampleUser (can be any value)

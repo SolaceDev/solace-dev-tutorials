@@ -38,29 +38,29 @@ const Footer = () => (
               <ul className="sub-menu">
                 <li>
                   <a
-                    href="https://solace.com/products/event-broker/software/"
+                    href="https://solace.com/products/platform/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Software
+                    PubSub+ Platform
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://solace.com/products/event-broker/appliance/"
+                    href="https://solace.com/products/event-broker/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Appliance
+                    PubSub+ Event Broker
                   </a>
                 </li>
                 <li>
                   <a
-                    href="https://solace.com/products/event-broker/cloud/"
+                    href="https://solace.com/products/portal/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Cloud
+                    PubSub+ Event Portal
                   </a>
                 </li>
               </ul>
