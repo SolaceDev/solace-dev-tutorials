@@ -9,7 +9,7 @@ links:
 
 This sample shows how to consume messages from a Durable Topic Endpoint (DTE). The sample will bind to a DTE and subscribe with the topic "tutorial/topic".
 
-The example code builds on the Consumer in the [QueueConsumer]({{ site.baseurl }}/persistence-with-queues) tutorial.
+The example code builds on the Consumer in the [QueueConsumer](../persistence-with-queues/) tutorial.
 
 ## Feature Overview
 
