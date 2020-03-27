@@ -5,7 +5,7 @@ summary: Learn how to map existing topics to Solace queues.
 icon: I_dev_topic2q.svg
 ---
 
-This tutorial builds on the basic concepts introduced in [Persistence with Queues](https://solace.com/samples/solace-samples-amqp-nodejs/persistence-with-queues) tutorial and will show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”
+This tutorial builds on the basic concepts introduced in [Persistence with Queues](../solace-samples-amqp-nodejs/persistence-with-queues) tutorial and will show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”
 
 ## Overview
 
