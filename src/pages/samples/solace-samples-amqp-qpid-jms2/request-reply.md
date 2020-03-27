@@ -10,26 +10,22 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/BasicReplier.java
 ---
 
-This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial](../publish-subscribe/).
 
 At the end, this tutorial walks through downloading and running the sample from source.
 
-This tutorial focuses on using a non-Solace JMS API implementation. For using the Solace JMS API see [Solace Getting Started JMS Tutorials]({% if jekyll.environment == 'solaceCloud' %}
-  {{ site.links-get-started-jms-cloud }}
-{% else %}
-    {{ site.links-get-started-jms-dev }}
-{% endif %}){:target="_blank"}.
+This tutorial focuses on using a non-Solace JMS API implementation. For using the Solace JMS API see [Solace Getting Started JMS Tutorials](../../solace-samples-jms/).
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -45,17 +41,13 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 2.0 API o
 
 JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
 
-1. [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html){:target="_blank"}.
-2. [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service){:target="_blank"}
-3. [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3){:target="_blank"}
+1. [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html)
+2. [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
+3. [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
 
 The last (Oracle docs) link points you to the JEE official tutorials which provide a good introduction to JMS.
 
-This tutorial focuses on using [JMS 2.0 (May 21, 2013)]({{ site.links-jms2-specification }}){:target="_blank"}, for [JMS 1.1 (April 12, 2002)]({{ site.links-jms1-specification }}){:target="_blank"} see [Solace Getting Started AMQP JMS 1.1 Tutorials]({% if jekyll.environment == 'solaceCloud' %}
-  {{ site.links-get-started-amqp-jms1-cloud }}
-{% else %}
-    {{ site.links-get-started-amqp-jms1-dev }}
-{% endif %}){:target="_blank"}.
+This tutorial focuses on using [JMS 2.0 (May 21, 2013)](https://download.oracle.com/otndocs/jcp/jms-2_0-fr-spec/), for [JMS 1.1 (April 12, 2002)](https://download.oracle.com/otndocs/jcp/7195-jms-1.1-fr-spec-oth-JSpec/) see [Solace Getting Started AMQP JMS 1.1 Tutorials](https://docs.solace.com/Configuring-and-Managing/AMQP-Tasks/Managing-AMQP-Messaging.htm).
 
 ## Connecting to the Solace Messaging
 
@@ -88,7 +80,7 @@ At this point the application is connected to Solace messaging and ready to send
 
 In order to send a request a JMS *Producer* needs to be created.
 
-![sending-message-to-queue]({{ site.baseurl }}/assets/images/request-reply-details-2.png)
+![Diagram: Request Reply](../../../images/diagrams/request-reply-details-2.png)
 
 Also, it is necessary to allocate a temporary queue for receiving the reply.
 
@@ -105,8 +97,7 @@ The `JMSCorrelationID` property needs to have an unique value so the requestor t
 
 The figure below outlines the exchange of messages and the role of both properties.
 
-![]({{ site.baseurl }}/assets/images/request-reply-details-1.png)
-
+![Diagram: Request Reply](../../../images/diagrams/request-reply-details-1.png)
 
 *BasicRequestor.java*
 ```java
@@ -146,7 +137,7 @@ Message request = context.createConsumer(requestTopic).receive();
 
 To reply to a received request a JMS *Producer* needs to be created.
 
-![Request-Reply_diagram-3]({{ site.baseurl }}/assets/images/request-reply-details-3.png)
+![Diagram: Request Reply](../../../images/diagrams/request-reply-details-3.png)
 
 The reply message must have the `JMSCorrelationID` property value assigned from the received request. Create the reply message using the current `JMSContext` and assign its `JMSCorrelationID` property from the request value:
 
@@ -196,19 +187,16 @@ If you execute the `BasicReplier.java` program, it will block at the `context.cr
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2/blob/master/src/main/java/com/solace/samples/BasicRequestor.java)
+* [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2/blob/master/src/main/java/com/solace/samples/BasicReplier.java)
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2
+cd solace-samples-amqp-qpid-jms2
 ```
 
 ### Building

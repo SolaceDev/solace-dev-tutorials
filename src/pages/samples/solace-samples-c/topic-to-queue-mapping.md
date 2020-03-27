@@ -10,13 +10,13 @@ links:
       link: /blob/master/src/intro/common.c
 ---
 
-This tutorial builds on the basic concepts introduced in the [Persistence with Queues tutorial]({{ site.baseurl }}/persistence-with-queues) and will show you how to make use of one of PubSub+’s advanced queueing features called “Topic to Queue Mapping.”
+This tutorial builds on the basic concepts introduced in the [Persistence with Queues tutorial](../persistence-with-queues/) and will show you how to make use of one of PubSub+’s advanced queueing features called “Topic to Queue Mapping.”
 
-In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here]({{ site.docs-topic-queue}}){:target="_top"}.
+In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 
 The following diagram illustrates this feature.
 
-<img src="{{ site.baseurl }}/assets/images/topic-to-queue-mapping-detail.png" width="500" height="206" />
+![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
 
 If you have a durable queue named `Q`, it will receive messages published directly to the queue destination named `Q`. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics `A` and `B`. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations `A` and `B`. When you combine this with the wildcard support provided by PubSub+ topics this opens up a number of interesting use cases.
 
@@ -29,7 +29,7 @@ This tutorial assumes the following:
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to PubSub+ messaging quickly is to create a messaging service in PubSub+ Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to PubSub+ messaging below.
+One simple way to get access to PubSub+ messaging quickly is to create a messaging service in PubSub+ Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to PubSub+ messaging below.
 
 ## Goals
 
@@ -46,7 +46,7 @@ The goal of this tutorial is to understand the following:
 
 ## Review: Receiving message from a queue
 
-The [Persistence with Queues tutorial]({{ site.baseurl }}/persistence-with-queues) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub]({{ site.repository }}/blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs){:target="_blank"}.
+The [Persistence with Queues tutorial](../persistence-with-queues/) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs).
 
 ## Adding a Subscription to a Queue
 
@@ -110,13 +110,10 @@ Once the subscription is added to the queue, all that is left to do in this tuto
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-c). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicToQueueMapping.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/TopicToQueueMapping.c)
+* [common.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/common.c)
 
 ### Building
 

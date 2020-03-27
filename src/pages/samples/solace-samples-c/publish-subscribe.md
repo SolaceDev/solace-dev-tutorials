@@ -18,12 +18,12 @@ This tutorial will introduce you to the fundamentals of the Solace PubSub+ API b
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace PubSub+ [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace PubSub+ [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to PubSub+ messaging with the following configuration details:
     *   Connectivity information for a PubSub+ message-VPN
     *   Enabled client username and password
 
-One simple way to get access to PubSub+ messaging quickly is to create a messaging service in PubSub+ Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to PubSub+ messaging below.
+One simple way to get access to PubSub+ messaging quickly is to create a messaging service in PubSub+ Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to PubSub+ messaging below.
 
 
 ## Goals
@@ -42,7 +42,7 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 
 This tutorial is uses "Direct" messages which are at most once delivery messages. So first, let's express interest in the messages by subscribing to a PubSub+ topic. Then you can look at publishing a matching message and see it received.  
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 With a session connected in the previous step, then you must subscribe to a topic in order to express interest in receiving messages. This tutorial uses the topics "topic/topic1".
 
@@ -66,7 +66,7 @@ while ( msgCount < 1 ) {
 
 Now it is time to send a message to the waiting consumer.  
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 To send a message, you must create a message and a topic destination. This tutorial will send a PubSub+ binary message with contents "Hello world!". Then you must send the message to the PubSub+ message router.
 
@@ -106,13 +106,12 @@ At this point the producer has sent a message to the PubSub+ message router and 
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-c). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+
+* [TopicPublisher.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/TopicPublisher.c)
+* [TopicSubscriber.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/TopicSubscriber.c)
+* [os.h](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/os.h)
 
 The OS source code simply provides platform abstraction. The subscriber sample makes use of this for the sleep in the main loop.
 

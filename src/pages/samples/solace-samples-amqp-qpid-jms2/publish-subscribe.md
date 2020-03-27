@@ -14,22 +14,18 @@ This tutorial will show you to how to connect a Apache Qpid JMS 2.0 API client t
 
 At the end, this tutorial walks through downloading and running the sample from source.
 
-This tutorial focuses on using a non-Solace JMS API implementation. For using the Solace JMS API see [Solace Getting Started JMS Tutorials]({% if jekyll.environment == 'solaceCloud' %}
-  {{ site.links-get-started-jms-cloud }}
-{% else %}
-    {{ site.links-get-started-jms-dev }}
-{% endif %}){:target="_blank"}.
+This tutorial focuses on using a non-Solace JMS API implementation. For using the Solace JMS API see [Solace Getting Started JMS Tutorials](../../solace-samples-jms/).
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://https//solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -45,17 +41,13 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 2.0 API o
 
 JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
 
-1. [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html){:target="_blank"}.
-2. [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service){:target="_blank"}
-3. [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3){:target="_blank"}
+1. [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html)
+2. [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
+3. [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
 
 The last (Oracle docs) link points you to the JEE official tutorials which provide a good introduction to JMS.
 
-This tutorial focuses on using [JMS 2.0 (May 21, 2013)]({{ site.links-jms2-specification }}){:target="_blank"}, for [JMS 1.1 (April 12, 2002)]({{ site.links-jms1-specification }}){:target="_blank"} see [Solace Getting Started AMQP JMS 1.1 Tutorials]({% if jekyll.environment == 'solaceCloud' %}
-  {{ site.links-get-started-amqp-jms1-cloud }}
-{% else %}
-    {{ site.links-get-started-amqp-jms1-dev }}
-{% endif %}){:target="_blank"}.
+This tutorial focuses on using [JMS 2.0 (May 21, 2013)](https://download.oracle.com/otndocs/jcp/jms-2_0-fr-spec/), for [JMS 1.1 (April 12, 2002)](https://download.oracle.com/otndocs/jcp/7195-jms-1.1-fr-spec-oth-JSpec/) see [Solace Getting Started AMQP JMS 1.1 Tutorials](https://docs.solace.com/Configuring-and-Managing/AMQP-Tasks/Managing-AMQP-Messaging.htm).
 
 ## Connecting to the Solace Messaging
 
@@ -84,7 +76,7 @@ At this point the application is connected to Solace messaging and ready to publ
 
 A JMS *Producer* needs to be created in order to publish a message to a topic.
 
-![]({{ site.baseurl }}/assets/images/publish-subscribe-details-2.png)
+![Diagram: Sending a Persistent Message to a Queue](../../../images/diagrams/persistence-with-queues-details-2.png)
 
 The JMS 2.0 API allows the use of *method chaining* to create the producer, set the delivery mode and publish the message. We assign its delivery mode to `non-persistent` for better performance.
 
@@ -121,19 +113,17 @@ If you execute the `TopicSubscriber.java` program, it will block at the `receive
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2//blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2
+cd solace-samples-amqp-qpid-jms2
 ```
 
 ### Building

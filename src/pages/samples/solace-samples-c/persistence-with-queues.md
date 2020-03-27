@@ -11,19 +11,19 @@ links:
 
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), and will show you how to send and receive persistent messages from a PubSub+ queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a PubSub+ queue in a point to point fashion.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace PubSub+ [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace PubSub+ [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to PubSub+ messaging with the following configuration details:
     *   Connectivity information for a PubSub+ message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace PubSub+ Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace PubSub+ Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -39,9 +39,9 @@ The goal of this tutorial is to understand the following:
 
 ## Provisioning a Queue through the API
 
-![message-router-queue]({{ site.baseurl }}/assets/images/message-router-queue.png)
+![Diagram: Message Router Queue](../../../images/diagrams/message-router-queue.png)
 
-The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here]({{ site.docs-endpoints }}){:target="_top"}.
+The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here](https://docs.solace.com/PubSub-Basics/Endpoints.htm).
 
 Durable endpoints are not auto created on Solace message routers. However there are two ways to provision them.
 
@@ -52,7 +52,7 @@ Using the Solace PubSub+ APIs to provision an endpoint can be a convenient way o
 
 Provisioning an endpoint through the API requires the “Guaranteed Endpoint Create” permission in the client-profile. You can confirm this is enabled by looking at the client profile in SolAdmin. If it is correctly set you will see the following:
 
-![persistence-dotnet-1]({{ site.baseurl }}/assets/images/persistence-tutorial-image-3.png)
+![Screenshot: Persistence](../../../images/screenshots/persistence-tutorial-image-3.png)
 
 Provisioning the queue involves three steps.
 
@@ -67,7 +67,7 @@ Provisioning the queue involves three steps.
     }
 
    ```
-2. Set the properties for your queue. This example sets the permission and the quota of the endpoint. More detail on the possible settings can be found in [developer documentation]({{ site.docs-api-ref }}){:target="_top"}.
+2. Set the properties for your queue. This example sets the permission and the quota of the endpoint. More detail on the possible settings can be found in [developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/c/index.html).
    ```cpp
     /* Provision Properties */
     const char     *provProps[20] = {0, };
@@ -106,7 +106,7 @@ Provisioning the queue involves three steps.
 
 Now it is time to send a message to the queue.
 
-![sending-message-to-queue]({{ site.baseurl }}/assets/images/sending-message-to-queue.png)
+![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue.png)
 
 To send a message, you must create a message and a queue destination. This tutorial will send a PubSub+ binary message with contents "Hello world!". Then you must send the message to the PubSub+ message router.
 
@@ -147,7 +147,7 @@ The message is transferred to the PubSub+ message router asynchronously, but if 
 
 Now it is time to receive the messages sent to your queue.
 
-![receiving-message-from-queue]({{ site.baseurl }}/assets/images/receiving-message-from-queue.png)
+![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue.png)
 
 You still need to connect a session just as you did with the publisher. With a connected session, you then need to bind to the PubSub+ message router queue with a flow receiver. Flow receivers allow applications to receive messages from a PubSub+ guaranteed message flow. Flows encapsulate all of the acknowledgement behaviour required for guaranteed messaging. Conveniently flow receivers have the same interface as message consumers but flows also require some additional properties on creation.
 
@@ -206,7 +206,7 @@ solClient_session_createFlow ( ( char ** ) flowProps,
                                 &flow_p, &flowFuncInfo, sizeof ( flowFuncInfo ) );
 ```
 
-Both flow properties and endpoint properties are explained in more detail in the [developer documentation]({{ site.docs-api-ref }}){:target="_top"}.
+Both flow properties and endpoint properties are explained in more detail in the [developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/c/index.html).
 
 Same as direct messaging, all messages will be received thru the invocation of `sessionEventCallback`.
 
@@ -214,11 +214,8 @@ Same as direct messaging, all messages will be received thru the invocation of `
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueuePublisher.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/QueuePublisher.c)
+* [QueueSubscriber.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/QueueSubscriber.c)
 
 ## Building
 
