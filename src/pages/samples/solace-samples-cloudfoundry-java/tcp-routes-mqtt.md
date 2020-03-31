@@ -7,17 +7,16 @@ icon: I_mqtt_iot.svg
 
 ## Overview
 
-This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network]({{ site.links-ext-pivotal }}){:target="_blank"}. You can see the [Solace Messaging for Pivotal Cloud Foundry Documentation]({{ site.links-ext-pivotal-solace }}){:target="_blank"} for full details.
+This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network](https://network.pivotal.io/). You can see the [Solace Messaging for Pivotal Cloud Foundry Documentation](https://docs.pivotal.io/solace-messaging) for full details.
 
 This tutorial will introduce you to Solace Messaging for Pivotal Cloud Foundry by creating a Java application which connects to a Solace Messaging service with enabled TCP Routes as trivial example of an IoT use case.
 TCP Routes is a feature that allows a Solace Messaging service hosted in a Pivotal Cloud Foundry deployment to become accessible "outside" the PCF domain.
 
-
-![overview]({{ site.baseurl }}/assets/images/tcp-routes-architecture.png){: .center-image}
+![Diagram: TCP Routes Architecture](../../../images/diagrams/tcp-routes-architecture.png)
 
 ## Goals
 
-The goal of this tutorial is to demonstrate how an application can use Cloud Foundry provided [Service Keys]({{ site.links-ext-service-keys }}){:target="_blank"} for a Solace Messaging [Service Instance]({{ site.links-ext-service-instances }}){:target="_blank"}. Using [Service Keys]({{ site.links-ext-service-keys }}){:target="_blank"} an application running "outside" of Cloud Foundry can obtain [credentials]({{ site.links-ext-credentials-servicekey-example }}){:target="_blank"} to access a Solace Messaging [Service Instance]({{ site.links-ext-service-instances }}){:target="_blank"}. An application running "outside" of Cloud Foundry should use [Service Keys]({{ site.links-ext-service-keys }}){:target="_blank"} and [TCP Routes]({{ site.links-ext-pivotal-tcp-routes }}){:target="_blank"}{:target="_blank"}.
+The goal of this tutorial is to demonstrate how an application can use Cloud Foundry provided [Service Keys](https://docs.pivotal.io/solace-messaging/service-keys.html) for a Solace Messaging [Service Instance](https://docs.pivotal.io/solace-messaging/service-instances.html). Using [Service Keys](https://docs.pivotal.io/solace-messaging/service-keys.html) an application running "outside" of Cloud Foundry can obtain [credentials](https://docs.pivotal.io/solace-messaging/credentials.html#servicekey-example) to access a Solace Messaging [Service Instance](https://docs.pivotal.io/solace-messaging/service-instances.html). An application running "outside" of Cloud Foundry should use [Service Keys](https://docs.pivotal.io/solace-messaging/service-keys.html) and [TCP Routes](https://docs.pivotal.io/solace-messaging/installing.html#optional_tcp_routes).
 
 This tutorial will show you:
 
@@ -30,11 +29,11 @@ This tutorial will show you:
 
 This tutorial assumes the following:
 
-* You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}).
-* You are familiar with [Spring RESTful Web Services]({{ site.links-ext-spring-rest }}){:target="_blank"}.
-* You are familiar with [Cloud Foundry]({{ site.links-ext-cloudfoundry }}){:target="_blank"}.
+* You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+* You are familiar with [Spring RESTful Web Services](https://spring.io/guides/gs/rest-service).
+* You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.
-* You are familiar with Using Solace Messaging [Service Instances]({{ site.links-ext-service-instances }}){:target="_blank"} and [Service Keys]({{ site.links-ext-service-keys }}){:target="_blank"}
+* You are familiar with Using Solace Messaging [Service Instances](https://docs.pivotal.io/solace-messaging/service-instances.html) and [Service Keys](https://docs.pivotal.io/solace-messaging/service-keys.html).
 * Solace Messaging for PCF has been installed in your Pivotal Cloud Foundry environment having enabled [TCP Routes]({{ site.links-ext-pivotal-tcp-routes }}){:target="_blank"}{:target="_blank"} with 'MQTT / Plain-Text' set to "Enabled by default" or "Disabled by default"
 
 ## Code Walk Through
@@ -73,7 +72,7 @@ Here is an example of a SERVICE_KEY with all the fields of interest to us, notic
 }
 ```
 
-You can find out from the [Solace Messaging for PCF documentation Service Key example]({{ site.links-ext-credentials-servicekey-example }}){:target="_blank"}.
+You can find out from the [Solace Messaging for PCF documentation Service Key example](https://docs.pivotal.io/solace-messaging/credentials.html#servicekey-example).
 
 The sample starts by extracting the SERVICE_KEY environment variable, logging its content and confirming it contains useful information.  This is done in the `init()` method:
 
@@ -154,7 +153,7 @@ try {
 
 ### Connecting to the Solace Messaging Service
 
-Once the credentials are extracted, you can create and then connect the Solace Session in the conventional way as outlined in the [MQTT Publish/Subscribe tutorial]({{ site.links-mqtt-pubsub-tutorial }}).
+Once the credentials are extracted, you can create and then connect the Solace Session in the conventional way as outlined in the [MQTT Publish/Subscribe tutorial](../../solace-samples-mqtt/publish-subscribe/).
 
 Create an mqtt client and connection properties.
 
@@ -249,7 +248,7 @@ try {
 
 ### Publishing, Subscribing and Receiving Messages
 
-The simpleMqttCallback created in the previous step will only receive messages matching topics that the Solace mqtt connection is subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscripion. For example: `{"subscription": "test"}`. Here is the method signature:
+The simpleMqttCallback created in the previous step will only receive messages matching topics that the Solace mqtt connection is subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscription. For example: `{"subscription": "test"}`. Here is the method signature:
 
 ```java
 @RequestMapping(value = "/subscription", method = RequestMethod.POST)
@@ -278,11 +277,11 @@ public ResponseEntity<SimpleMessage> getLastMessageReceived() {
 
 The subscription JSON document used by the `/subscription` endpoint is modeled by the `SimpleSubscription` class, whereas the `/message` endpoint JSON document is modeled by the `SimpleMessage` class.
 
-For more details on sending and receiving messages, you can checkout the [MQTT Publish/Subscribe tutorial]({{ site.links-mqtt-pubsub-tutorial }}).
+For more details on sending and receiving messages, you can checkout the [MQTT Publish/Subscribe tutorial](../../solace-samples-mqtt/publish-subscribe/).
 
 ## Building
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. To build, just clone and use gradle. Here is an example:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
 git clone {{ site.repository }}

@@ -9,19 +9,19 @@ icon-width: 180px
 
 ## Overview
 
-This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network]({{ site.links-ext-pivotal }}){:target="_blank"}. You can see the [Solace Messaging for Pivotal Cloud Foundry Documentation]({{ site.links-ext-pivotal-solace }}){:target="_blank"} for full details.
+This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network](https://network.pivotal.io/). You can see the [Solace Messaging for Pivotal Cloud Foundry Documentation](https://docs.pivotal.io/solace-messaging) for full details.
 
-This tutorial is similar to the [Spring Cloud Auto-Config JMS]({{ site.baseurl }}/spring-cloud-autoconf-jms) tutorial. Like the Spring Cloud Auto-Config JMS tutorial, it will introduce you to Solace Messaging for Pivotal Cloud Foundry using JMS messaging.  In contrast to the [Spring Cloud Auto-Config JMS]({{ site.baseurl }}/spring-cloud-autoconf-jms), this application uses JNDI to look up JMS objects on the Solace message router and [solace-jms-spring-boot]({{ site.links-ext-github-sp-solace-jms-spring-boot }}){:target="_blank"} which in turn is using the Spring Cloud Connectors library and Spring Auto Configuration can auto inject a Spring [`JndiTemplate`]({{ site.links-ext-spring-jndi-template }}){:target="_blank"} directly into your application.
+This tutorial is similar to the [Spring Cloud Auto-Config JMS](../spring-cloud-autoconf-jms/) tutorial. Like the Spring Cloud Auto-Config JMS tutorial, it will introduce you to Solace Messaging for Pivotal Cloud Foundry using JMS messaging.  In contrast to the [Spring Cloud Auto-Config JMS](../spring-cloud-autoconf-jms/), this application uses JNDI to look up JMS objects on the Solace message router and [solace-jms-spring-boot](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-starters/solace-jms-spring-boot-starter) which in turn is using the Spring Cloud Connectors library and Spring Auto Configuration can auto inject a Spring [`JndiTemplate`](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jndi/JndiTemplate.html) directly into your application.
 
-![overview]({{ site.baseurl }}/assets/images/spring-cloud-app-architecture.png){: .center-image}
+![Diagram: Spring Cloud App Architecture](../../../images/diagrams/spring-cloud-app-architecture.png)
 
 ## Goals
 
-The goal of this tutorial is to demonstrate auto injecting a [Spring JndiTemplate]({{ site.links-ext-spring-jndi-template }}){:target="_blank"} based on  the application's Cloud Foundry Service Bindings and connect to the Solace Messaging service instance.  This tutorial will show you:
+The goal of this tutorial is to demonstrate auto injecting a [Spring JndiTemplate](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jndi/JndiTemplate.html) based on  the application's Cloud Foundry Service Bindings and connect to the Solace Messaging service instance.  This tutorial will show you:
 
-1. How to Autowire a [`JndiTemplate`]({{ site.links-ext-spring-jndi-template }}){:target="_blank"} into your application
-1. How to Autowire the [SolaceServiceCredentials]({{ site.links-ext-github-solace-service-credentials-java }}){:target="_blank"} provided by the Cloud Foundry environment using Spring Cloud Connectors.
-1. How to Autowire [SpringSolJmsJndiTemplateCloudFactory]({{ site.links-ext-github-spring-sol-jms-jndi-template-cloud-factory-java }}){:target="_blank"} which you can use to access other Cloud Available Solace Messaging Instances and create other Solace implementations of the Sprint `JndiTemplate`.
+1. How to Autowire a [`JndiTemplate`](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jndi/JndiTemplate.html) into your application
+1. How to Autowire the [SolaceServiceCredentials](https://github.com/SolaceProducts/solace-services-info/blob/master/src/main/java/com/solace/services/core/model/SolaceServiceCredentials.java) provided by the Cloud Foundry environment using Spring Cloud Connectors.
+1. How to Autowire [SpringSolJmsJndiTemplateCloudFactory](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-autoconfigure/solace-jms-spring-boot-autoconfigure/src/main/java/com/solacesystems/jms/SpringSolJmsJndiTemplateCloudFactory.java) which you can use to access other Cloud Available Solace Messaging Instances and create other Solace implementations of the Sprint `JndiTemplate`.
 1. How to establish a connection to the Solace Messaging service.
 1. How to publish, subscribe and receive messages.
 
@@ -29,9 +29,9 @@ The goal of this tutorial is to demonstrate auto injecting a [Spring JndiTemplat
 
 This tutorial assumes the following:
 
-* You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}).
-* You are familiar with [Spring RESTful Web Services]({{ site.links-ext-spring-rest }}){:target="_blank"}.
-* You are familiar with [Cloud Foundry]({{ site.links-ext-cloudfoundry }}){:target="_blank"}.
+* You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+* You are familiar with [Spring RESTful Web Services](https://spring.io/guides/gs/rest-service).
+* You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.
 * Solace Messaging for PCF has been installed in your Pivotal Cloud Foundry environment.
 
@@ -57,7 +57,7 @@ compile("com.solacesystems:sol-jms:${solaceJMSVersion}")
 
 ### Get the API: Using the Solace Developer Portal
 
-The JMS API library can be [downloaded here]({{ site.links-downloads }}). The JMS API is distributed as a zip file containing the required jars, API documentation, and examples.
+The JMS API library can be [downloaded here](https://www.solace.com/downloads/). The JMS API is distributed as a zip file containing the required jars, API documentation, and examples.
 
 ## Code Walk Through
 
@@ -106,9 +106,9 @@ The Pivotal Cloud Foundry environment exposes any bound Service Instances in a J
 }
 ```
 
-You can see the full structure of the Solace Messaging `VCAP_SERVICES` in the [Solace Messaging for PCF documentation]({{ site.links-ext-vcap }}){:target="_blank"}.
+You can see the full structure of the Solace Messaging `VCAP_SERVICES` in the [Solace Messaging for PCF documentation](https://docs.pivotal.io/solace-messaging/credentials.html).
 
-This sample uses the [solace-jms-spring-boot]({{ site.links-ext-links-github-sp-solace-jms-spring-boot }}){:target="_blank"} which can auto detect and auto wire the available Solace Messaging Services from the Cloud Foundry environment into your application.
+This sample uses the [solace-jms-spring-boot](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-starters/solace-jms-spring-boot-starter) which can auto detect and auto wire the available Solace Messaging Services from the Cloud Foundry environment into your application.
 
 Spring provided `@Autowire` is used to access all auto configuration available beans which include an auto selected Factory.
 
@@ -155,7 +155,7 @@ for (SolaceServiceCredentials discoveredSolaceMessagingService : SpringSolJmsJnd
 
 ### Use of Spring JMS in the sample
 
-This Spring Cloud Auto-Config JMS sample app is making use of Spring JMS for messaging. To learn more about Spring JMS, refer to the [Spring JMS Integration documentation]({{ site.links-ext-spring-jms-integration }}){:target="_blank"}.
+This Spring Cloud Auto-Config JMS sample app is making use of Spring JMS for messaging. To learn more about Spring JMS, refer to the [Spring JMS Integration documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#jms).
 
 ### Creating the Message Producer and Consumer
 
@@ -308,7 +308,7 @@ listenercontainer.start();
 
 ### Publishing, Subscribing and Receiving Messages
 
-The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscripion. For example: `{"subscription": "test"}`. Here is the method signature:
+The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscription. For example: `{"subscription": "test"}`. Here is the method signature:
 
 ```java
 @RequestMapping(value = "/subscription", method = RequestMethod.POST)
@@ -337,11 +337,11 @@ public ResponseEntity<SimpleMessage> getLastMessageReceived() {
 
 The subscription JSON document used by the `/subscription` endpoint is modeled by the `SimpleSubscription` class, whereas the `/message` endpoint JSON document is modeled by the `SimpleMessage` class.
 
-For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial]({{ site.links-pubsub-tutorial }}).
+For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/).
 
 ## Building
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. To build, just clone and use gradle. Here is an example:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
 git clone {{ site.repository }}
@@ -370,9 +370,9 @@ This will push the application and will give the application the name specified 
 
 ## Providing other Properties to the application.
 
-The configuration properties affecting the creation of Sessions is stored in [SolaceJmsProperties]({{ site.links-ext-github-solace-jms-properties-java }}){:target="_blank"}, the Auto Configuration takes care of injecting Cloud Provided Solace Messaging Credentials into the `SolaceJmsProperties` which is used by the Solace ConnectionFactory implementation instance.
+The configuration properties affecting the creation of Sessions is stored in [SolaceJmsProperties](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-autoconfigure/solace-jms-spring-boot-autoconfigure/src/main/java/com/solace/spring/boot/autoconfigure/SolaceJmsProperties.java), the Auto Configuration takes care of injecting Cloud Provided Solace Messaging Credentials into the `SolaceJmsProperties` which is used by the Solace ConnectionFactory implementation instance.
 
-Additional properties can be set in `SolaceJmsProperties`, for naming details refer to the [Application Properties section of `solace-jms-spring-boot`]({{ site.links-ext-solace-jms-spring-boot-application-properties-section }}){:target="_blank"}.
+Additional properties can be set in `SolaceJmsProperties`, for naming details refer to the [Application Properties section of `solace-jms-spring-boot`](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-starters/solace-jms-spring-boot-starter#updating-your-application-properties).
 
 This example will set set the JNDI connection factory name.
 

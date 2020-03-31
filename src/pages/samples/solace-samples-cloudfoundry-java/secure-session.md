@@ -7,10 +7,10 @@ icon: I_secure_session.svg
 
 ## Overview
 
-This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a tile on the [Pivotal Network]({{ site.links-ext-pivotal }}){:target="_blank"}. you can see the [Solace Messaging for Pivotal Cloud Foundry Documentation]({{ site.links-ext-pivotal-solace }}){:target="_blank"} for full details.
+This tutorial is part of a series of tutorials which aims to introduce users to Solace Messaging in Pivotal Cloud Foundry. Solace Messaging in Pivotal Cloud Foundry is delivered as a tile on the [Pivotal Network](https://network.pivotal.io/). you can see the [Solace Messaging for Pivotal Cloud Foundry Documentation](https://docs.pivotal.io/solace-messaging) for full details.
 
 
-This tutorial is based on the [Spring Cloud]({{ site.baseurl }}/spring-cloud) tutorial, adding a demonstration on how to connect to the Solace Messaging service using TLS.
+This tutorial is based on the [Spring Cloud](../spring-cloud/) tutorial, adding a demonstration on how to connect to the Solace Messaging service using TLS.
 
 ## Goals
 
@@ -20,15 +20,15 @@ The goal of this tutorial is to demonstrate how to connect to the Solace Messagi
 
 This tutorial assumes the following:
 
-* You have completed the [Spring Cloud]({{ site.baseurl }}/spring-cloud) tutorial.
-* You are familiar with [Transport Level Security]({{ site.links-ext-tls }}){:target="_blank"} concepts, including how to create or obtain certificates.
+* You have completed the [Spring Cloud](../spring-cloud/) tutorial.
+* You are familiar with [Transport Level Security](https://en.wikipedia.org/wiki/Transport_Layer_Security) concepts, including how to create or obtain certificates.
 
 
 ## Working with a Trusted Certificate
 
 In order to use Transport Level Security, your Solace Message Router needs to be configured for TLS with an installed servcer certificate.
 The instructions for doing that are described in the Pivotal/Solace Messaging documentation -
-see [Tile Installation and Configuration]({{ site.links-ext-tls-server }}){:target="_blank"},
+see [Tile Installation and Configuration](https://docs.pivotal.io/solace-messaging/installing.html#configure),
 look for the step named Configure Message Routers RSA certificate.
 
 This section assumes that you have a Solace Messaging Service Instance properly configured for TLS access with a certificate that has been purchased from a certificate authority. Instructions for working with self-signed certificates are below.
@@ -66,7 +66,7 @@ to validated your CA-issued certificate.
 
 ## Working with a Self-signed Certificate
 
-You can install your Solace Messaging service for PCF with a self-signed certificate. For instructions on how to do this see the [Solace Messaging Documentation]({{ site.links-ext-tls-server }}){:target="_blank"}.
+You can install your Solace Messaging service for PCF with a self-signed certificate. For instructions on how to do this see the [Solace Messaging Documentation](https://docs.pivotal.io/solace-messaging/installing.html#configure).
 
 With self-signed certificates you have two choices. Either you can have the client validate the self-signed certificate,
 or not. For testing purposes, you can choose to not validate the certificate simply by
@@ -110,7 +110,7 @@ Note that we only need to do this when we want the client to validate a self-sig
 
 ## Building
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. To build, just clone and use gradle. Here is an example:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
 git clone {{ site.repository }}
