@@ -17,12 +17,12 @@ This tutorial outlines both roles in the request-response message exchange patte
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 The build instructions in this tutorial assume you are using a Linux shell. If your environment differs, adapt the instructions.
 
@@ -42,13 +42,13 @@ The goal of this tutorial is to understand the following:
 
 Request-reply messaging is supported by the Solace message router for all delivery modes. For direct messaging, the Solace APIs provide the Requestor object for convenience. This object makes it easy to send a request and wait for the reply message. It is a convenience object that makes use of the API provided “inbox” topic that is automatically created for each Solace client and automatically correlates requests with replies using the message correlation ID. (See Message Correlation below for more details). On the reply side another convenience method enables applications to easily send replies for specific requests. Direct messaging request reply is the delivery mode that is illustrated in this sample.
 
-It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. The requestor and replier must manually correlate the messages. This is explained further in the [Solace documentation]({{ site.docs-gm-rr }}){:target="_top"} and shown in the API samples named `RRGuaranteedRequestor` and `RRGuaranteedReplier`.
+It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. The requestor and replier must manually correlate the messages. This is explained further in the [Solace documentation](https://docs.solace.com/Solace-Messaging-APIs/Request-Reply-Messaging.htm) and shown in the API samples named `RRGuaranteedRequestor` and `RRGuaranteedReplier`.
 
 ### Message Correlation
 
 For request-reply messaging to be successful it must be possible for the requestor to correlate the request with the subsequent reply. Solace messages support two fields that are needed to enable request-reply correlation. The reply-to field can be used by the requestor to indicate a Solace Topic or Queue where the reply should be sent. A natural choice for this is often the unique `P2PInboxInUse` topic which is an auto-generated unique topic per client which is accessible as a session property. The second requirement is to be able to detect the reply message from the stream of incoming messages. This is accomplished using the correlation-id field. This field will transit the Solace messaging system unmodified. Repliers can include the same correlation-id in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-1.png)
+![Diagram: Request Replay](../../../images/diagrams/Request-Reply_diagram-1.png)
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
@@ -59,7 +59,7 @@ For direct messages however, this is simplified through the use of the `Requesto
 
 First let’s look at the requestor. This is the application that will send the initial request message and wait for the reply.
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-2.png)
+![Diagram: Making a Request](../../../images/diagrams/Request-Reply_diagram-2.png)
 
 The requestor must create a message and the topic to send the message to:
 
@@ -86,7 +86,7 @@ If the timeout is set to zero then the `SendRequest` call becomes non-blocking a
 
 Now it is time to receive the request and generate an appropriate reply.
 
-![Request-Reply_diagram-3]({{ site.baseurl }}/assets/images/Request-Reply_diagram-3.png)
+![Diagram: Replying to a Request](../../../images/diagrams/Request-Reply_diagram-3.png)
 
 Just as with previous tutorials, you still need to connect a session and subscribe to the topics that requests are sent on. The following is an example of such reply.
 
@@ -147,13 +147,11 @@ else
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-dotnet). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [BasicRequestor.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/BasicRequestor/BasicRequestor.cs)
+* [BasicReplier.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/BasicReplier/BasicReplier.cs)
+
 
 
 ### Getting the Source

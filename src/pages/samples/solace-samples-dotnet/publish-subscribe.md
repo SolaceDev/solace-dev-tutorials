@@ -16,12 +16,12 @@ This tutorial will introduce you to the fundamentals of the Solace API by connec
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](http://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 
 ## Goals
@@ -51,7 +51,7 @@ cfp.LogToConsoleError();
 ContextFactory.Instance.Init(cfp);
 ```
 
-Then the `ContextFactory` instance can be used to create the context `IContext` (see API [concepts]({{ site.docs-api-concepts }}){:target="_top"}) that is used to create Solace sessions (ISession) from a set of `SessionProperties`.
+Then the `ContextFactory` instance can be used to create the context `IContext` (see API [concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm) that is used to create Solace sessions (ISession) from a set of `SessionProperties`.
 
 Notice the optional `HandleMessage` parameter in the `CreateSession` call. This is the message consumer. It needs to be present only for receiving a message (see details on how to receive a message in the next section of this tutorial).
 
@@ -85,7 +85,7 @@ At this point your client is connected to the Solace message router. You can use
 
 This tutorial uses “Direct” messages which are at most once delivery messages. So first, let’s express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the asynchronous receipt of messages through callbacks. These callbacks are defined in CSCSMP by the message receive delegate.
 
@@ -129,7 +129,7 @@ WaitEventWaitHandle.WaitOne();
 
 ## Sending a message
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 Now it is time to send a message to the waiting consumer.
 
@@ -162,12 +162,8 @@ At this point a message to the Solace message router has been sent and your wait
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
-
+* [TopicPublisher.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/TopicPublisher/TopicPublisher.cs)
+* [TopicSubscriber.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/TopicSubscriber/TopicSubscriber.cs)
 
 ## Building
 

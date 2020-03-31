@@ -8,13 +8,13 @@ links:
       link: /blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs
 ---
 
-This tutorial builds on the basic concepts introduced in the [Persistence with Queues tutorial]({{ site.baseurl }}/persistence-with-queues) and will show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”
+This tutorial builds on the basic concepts introduced in the [Persistence with Queues tutorial](../persistence-with-queues/) and will show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”
 
-In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here]({{ site.docs-topic-queue}}){:target="_top"}.
+In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 
 The following diagram illustrates this feature.
 
-<img src="{{ site.baseurl }}/assets/images/topic-to-queue-mapping-detail.png" width="500" height="206" />
+![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
 
 If you have a durable queue named `Q`, it will receive messages published directly to the queue destination named `Q`. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics `A` and `B`. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations `A` and `B`. When you combine this with the wildcard support provided by Solace topics this opens up a number of interesting use cases.
 
@@ -27,7 +27,7 @@ This tutorial assumes the following:
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -74,11 +74,11 @@ The only difference in the above is the duplicate subscription processing proper
 
 One aspect to consider when adding subscriptions is how your application wishes the Solace API to behave in the face of pre-existing duplicate subscriptions. The default behavior is to throw an exception if an application tries to add a subscription that already exists. In this tutorial, we’ll relax that behavior and change our session so that it will tolerate the subscription already existing.
 
-For more details on this session flag, refer to [the product documentation]({{ site.docs-dotnet }}){:target="_top"}.
+For more details on this session flag, refer to [the product documentation](https://docs.solace.com/Solace-Messaging-APIs/net-api-home.htm).
 
 ## Review: Receiving message from a queue
 
-The [Persistence with Queues tutorial]({{ site.baseurl }}/persistence-with-queues) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub]({{ site.repository }}/blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs){:target="_blank"}.
+The [Persistence with Queues tutorial](../persistence-with-queues/) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs).
 
 ## Confirming Message Router Capabilities
 
@@ -101,7 +101,7 @@ else
 }
 ```
 
-In this case the tutorial requires permission to send and receive guaranteed messages, configure endpoints and manage queue subscriptions. If these capabilities are not available on the message router the tutorial will not proceed. If these capabilities are missing, you update the client-profile used by the client-username to enable them. See the [Solace documentation]({{ site.docs-client-profile}}){:target="_top"} for details.
+In this case the tutorial requires permission to send and receive guaranteed messages, configure endpoints and manage queue subscriptions. If these capabilities are not available on the message router the tutorial will not proceed. If these capabilities are missing, you update the client-profile used by the client-username to enable them. See the [Solace documentation](https://docs.solace.com/Features/Core-Concepts.htm#client-profile) for details.
 
 ## Adding a Subscription to a Queue
 
@@ -158,13 +158,9 @@ CountdownEvent.Wait();
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-dotnet). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicToQueueMapping.cs](https://github.com/SolaceSamples/solace-samples-dotnet)
 
 ### Building
 

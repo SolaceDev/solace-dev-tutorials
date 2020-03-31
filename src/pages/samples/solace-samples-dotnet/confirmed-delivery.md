@@ -8,19 +8,19 @@ links:
       link: /blob/master/src/ConfirmedDelivery/ConfirmedPublish.cs
 ---
 
-This tutorial builds on the basic concepts introduced in [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
+This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 
 ## Goals
@@ -28,7 +28,6 @@ One simple way to get access to Solace messaging quickly is to create a messagin
 The goal of this tutorial is to understand the following:
 
 *  How to properly handle persistent message acknowledgements on message send.
-
 
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/solaceApi.md %}
@@ -97,7 +96,7 @@ using (ISession session = context.CreateSession(
 
 ## Adding Message Correlation on Send
 
-The [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial demonstrated how to send persistent messages using code very similar to the following.
+The [Persistence with Queues](../persistence-with-queues/) tutorial demonstrated how to send persistent messages using code very similar to the following.
 
 ```csharp
 using (IMessage message = ContextFactory.Instance.CreateMessage())
@@ -177,11 +176,7 @@ public void HandleSessionEvent(object sender, SessionEventArgs args)
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [ConfirmedPublish.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/ConfirmedDelivery/ConfirmedPublish.cs)
 
 ### Building
 

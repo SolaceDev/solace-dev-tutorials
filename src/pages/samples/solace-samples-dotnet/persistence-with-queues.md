@@ -11,19 +11,19 @@ links:
 
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), and will show you how to send and receive persistent messages from a Solace message router queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a Solace message router queue in a point to point fashion.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 
 ## Goals
@@ -39,9 +39,9 @@ The goal of this tutorial is to understand the following:
 
 ## Provisioning a Queue through the API
 
-![message-router-queue]({{ site.baseurl }}/assets/images/message-router-queue.png)
+![Diagram: Message Router Queue](../../../images/diagrams/message-router-queue.png)
 
-The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here]({{ site.docs-endpoints }}){:target="_top"}.
+The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 
 Durable endpoints are not auto created on Solace message routers. However there are two ways to provision them.
 
@@ -52,12 +52,12 @@ Using the Solace APIs to provision an endpoint can be a convenient way of gettin
 
 Provisioning an endpoint through the API requires the “Guaranteed Endpoint Create” permission in the client-profile. You can confirm this is enabled by looking at the client profile in SolAdmin. If it is correctly set you will see the following:
 
-![persistence-dotnet-1]({{ site.baseurl }}/assets/images/persistence-tutorial-image-3.png)
+![Screenshot: Persistence](../../../images/screenshots/persistence-tutorial-image-3.png)
 
 Provisioning the queue involves three steps.
 
 1.  Obtaining IQueue interface instance representing the queue you wish to create.
-2.  Setting the properties that you wish for your queue. This examples permits consumption of messages and sets the queue type to exclusive. More details on queue permissions can be found under EndpointProperties.EndpointPermission Enumeration section in the [developer documentation]({{ site.docs-dotnet-api }}){:target="_top"}.
+2.  Setting the properties that you wish for your queue. This examples permits consumption of messages and sets the queue type to exclusive. More details on queue permissions can be found under EndpointProperties.EndpointPermission Enumeration section in the [developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/net/index.html).
 3.  Provisioning the Queue on the Solace message router
 
 The following code shows you this for the queue named “Q/tutorial”.
@@ -85,9 +85,9 @@ The `WaitForConfirm` flags tells the API to wait for the provision complete conf
 
 Now it is time to send a message to the queue.
 
-![sending-message-to-queue]({{ site.baseurl }}/assets/images/sending-message-to-queue.png)
+![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue.png)
 
-In the simplest case, there is really no difference in the actual calls to the ISession object instance when sending a persistent message as compared to a direct message shown in the publish/subscribe tutorial. The difference in the persistent message is that the Solace message router will acknowledge the message once it is successfully stored on the message router. The next tutorial titled [Confirmed Delivery]({{ site.baseurl }}/confirmed-delivery) demonstrates the proper handling of those acknowlegements.
+In the simplest case, there is really no difference in the actual calls to the ISession object instance when sending a persistent message as compared to a direct message shown in the publish/subscribe tutorial. The difference in the persistent message is that the Solace message router will acknowledge the message once it is successfully stored on the message router. The next tutorial titled [Confirmed Delivery](../confirmed-delivery/) demonstrates the proper handling of those acknowlegements.
 
 To send a message, you must still create a message. The main difference from sending a direct message is that you must set the message delivery mode to persistent. When you send the message you also update the call to send to include your queue object as the destination.
 
@@ -111,13 +111,13 @@ using (IMessage message = ContextFactory.Instance.CreateMessage())
 }
 ```
 
-The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial]({{ site.baseurl }}/confirmed-delivery) shows how to make sure it gets there.
+The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial](../confirmed-delivery/) shows how to make sure it gets there.
 
 ## Receiving a message from a queue
 
 Now it is time to receive the messages sent to your queue.
 
-![receiving-message-from-queue]({{ site.baseurl }}/assets/images/receiving-message-from-queue.png)
+![Diagram: Receiving a Message to a Queue](../../../images/diagrams/receiving-message-from-queue.png)
 
 You still need to connect a session just as you did with the publisher. With a connected session, you then need to bind to the Solace message router queue with a flow receiver. Flow receivers allow applications to receive messages from a Solace guaranteed message flow. Flows encapsulate all of the acknowledgement behaviour required for guaranteed messaging. Conveniently flow receivers have the same interface as message consumers but flows also require some additional properties on creation.
 
@@ -138,7 +138,7 @@ queue, null, HandleMessageEvent, HandleFlowEvent);
 Flow.Start();
 ```
 
-Both flow properties and endpoint properties are explained in more detail in the [developer documentation]({{ site.docs-dotnet-api }}){:target="_top"}.
+Both flow properties and endpoint properties are explained in more detail in the [developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/net/index.html).
 
 The following example shows you a basic flow receiver which receives messages, prints them to the console and acknowledges them as consumed back to the Solace message router so it can remove them.
 
@@ -161,11 +161,8 @@ private void HandleMessageEvent(object source, MessageEventArgs args)
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueueProducer.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/QueueProducer/QueueProducer.cs)
+* [QueueConsumer.cs](https://github.com/SolaceSamples/solace-samples-dotnet/blob/master/src/QueueConsumer/QueueConsumer.cs)
 
 ### Building
 
@@ -210,4 +207,4 @@ Finished.
 
 You have now successfully connected a client, sent persistent messages to a queue and received and acknowledged them.
 
-Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery.]({{ site.baseurl }}/confirmed-delivery)
+Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
