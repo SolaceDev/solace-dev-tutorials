@@ -14,18 +14,18 @@ links:
       link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](publish-subscribe), and will show you how to send and receive Persistent (Guaranteed) Messages from a Solace message router queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive Persistent (Guaranteed) Messages from a Solace message router queue in a point to point fashion.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -120,12 +120,12 @@ Note that the application logic can be triggered only after receiving the `solac
 
 Now it is time to send a message to the queue. Remember that the queue must be pre-configured on the message router as described in the "Creating a Durable Queue" section.
 
-![sending-message-to-queue]({{ site.baseurl }}/assets/images/sending-message-to-queue-300x160.png)
+![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue-300x160.png)
 
 In the simplest case, the actual method calls to create and send guaranteed messages to a queue are similar to those used for direct messages in the publish/subscribe tutorial. The differences are:
 * a durable queue type destination is created and used; and
 * the delivery mode is set to PERSISTENT.
-* delivery to the Solace message router is confirmed (shown in the [Confirmed Delivery tutorial.](confirmed-delivery))
+* delivery to the Solace message router is confirmed (shown in the [Confirmed Delivery tutorial](../confirmed-delivery/).
 
 ```javascript
 var messageText = 'Sample Message';
@@ -143,13 +143,13 @@ try {
 }
 ```
 
-The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial](confirmed-delivery) shows how to make sure it gets there.
+The message is transferred to the Solace message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial](../confirmed-delivery/) shows how to make sure it gets there.
 
 ### Receiving a message from a queue
 
 Now it is time to receive the messages sent to your queue.
 
-![](../../../images/diagrams/receiving-message-from-queue-300x160.png)
+![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 Receiving guaranteed messages is different from the direct messaging case described in the the publish/subscribe tutorial.
 
@@ -174,7 +174,7 @@ try {
 }
 ```
 
-Notice that here we use the Solace "Client acknowledgement mode", which allows the consumers to acknowledge each message individually. You can learn more about acknowledgement modes in the [Solace Documentation – Acknowledging Messages Received by Clients]({{ site.docs-msg-consumer-ack-modes }}){:target="_top"}.
+Notice that here we use the Solace "Client acknowledgement mode", which allows the consumers to acknowledge each message individually. You can learn more about acknowledgement modes in the [Solace Documentation – Acknowledging Messages Received by Clients](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Acknowledging-Messages.htm).
 
 ```javascript
     acknowledgeMode: solace.MessageConsumerAcknowledgeMode.CLIENT, // Enabling Client ack
@@ -223,21 +223,21 @@ consumer.messageConsumer.on(solace.MessageConsumerEventName.MESSAGE, function (m
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueueProducer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueProducer/QueueProducer.html)
+* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueProducer/QueueProducer.js)
+* [QueueConsumer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueConsumer/QueueConsumer.html)
+* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js)
 
-Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](confirmed-delivery).
+
+Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-javascript
+cd solace-samples-javascript
 ```
 
 Note: the code in the `master` branch of this repository depends on Solace JavaScript API version 10 or later. If you want to work with an older version clone the branch that corresponds your version.
@@ -249,8 +249,6 @@ It is assumed that the `lib` directory containing the API libraries will be inst
 ```bash
 cp -R <path_to_unzipped_API_distribution_package>/lib/ .
 ```
-
-
 
 ### Running the Samples
 
@@ -266,55 +264,20 @@ Then bind to the destination queue by clicking the "Consume messages" button.
 
 The following is a screenshot of the tutorial’s `QueueConsumer.html` web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the "Connect" button was clicked and then the "Consume messages" button was clicked.
 
-![](../../../images/screenshots/perswithqueues-javascript_img-1.png)
-
-
-
-
-
-
-
-
-
-
-
+![Screenshot: Queue Consumer](../../../images/screenshots/perswithqueues-javascript_img-1.png)
 
 Now, open `src/basic-samples/QueueProducer/QueueProducer.html` page in the browser and connect to the same Solace router by specifying the message router properties and clicking "Connect" button.
 
 Send messages by clicking the "Send Message" button on the page.
 
-
-
 The following screenshots of the tutorial’s `QueueProducer.html` and `QueueConsumer.html` web pages with the JavaScript debug console open in the Firefox browser. It captures the pages after a message was sent and received.
 
 This is the producer is sending a message (`QueueProducer.html)`:
 
-![](../../../images/screenshots/perswithqueues-javascript_img-2.png)
-
-
-
-
-
-
-
-
-
-
-
-
+![Screenshot: Queue Producer](../../../images/screenshots/perswithqueues-javascript_img-2.png)
 
 This is the consumer is receiving a message (`QueueConsumer.html)`:
 
-![](../../../images/screenshots/perswithqueues-javascript_img-3.png)
-
-
-
-
-
-
-
-
-
+![Screenshot: Queue Consumer](../../../images/screenshots/perswithqueues-javascript_img-3.png)
 
 You have now successfully connected a client, sent guaranteed messages to a queue and received them from a message consumer.
-
