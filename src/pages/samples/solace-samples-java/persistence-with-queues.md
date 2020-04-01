@@ -10,21 +10,19 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumer.java
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), and will show you how to send
-and receive persistent messages from a Solace message router queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a Solace message router queue in a point to point fashion.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
-    *   Client-profile enabled with guaranteed messaging permissions.
+    *   Client-profile enabled with guaranteed messaging permissions
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
-
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -34,19 +32,14 @@ The goal of this tutorial is to understand the following:
 2.  How to send a persistent message to a Solace queue
 3.  How to bind to this queue and receive a persistent message
 
-
-
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/solaceApi.md %}
 
-
 ## Provisioning a Queue through the API
 
-<div style="float: right">
-  <img src="{{ site.baseurl }}/assets/images/message-router-queue.png"/>
-</div>
+The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here](https://docs.solace.com/PubSub-Basics/Endpoints.htm).
 
-The first requirement for guaranteed messaging using a Solace message router is to provision a guaranteed message endpoint. For this tutorial we will use a point-to-point queue. To learn more about different guaranteed message endpoints see [here]({{ site.docs-endpoints }}){:target="_top"}.
+![Diagram: Message Router Queue](../../../images/diagrams/message-router-queue.png)
 
 Durable endpoints are not auto created on Solace message routers. However there are two ways to provision them.
 
@@ -57,12 +50,12 @@ Using the Solace APIs to provision an endpoint can be a convenient way of gettin
 
 Provisioning an endpoint through the API requires the “Guaranteed Endpoint Create” permission in the client-profile. You can confirm this is enabled by looking at the client profile in SolAdmin. If it is correctly set you will see the following:
 
-![]({{ site.baseurl }}/assets/images/persistence-tutoral-image-3.png)
+![Screenshot: Provisioning an endpoint through the API](../../../images/screenshots/persistence-tutoral-image-3.png)
 
 Provisioning the queue involves three steps.
 
 *   Obtaining a Java API Queue object representing the queue you wish to create.
-*   Setting the Queue properties that you wish for your queue. This examples permits consumption of messages and sets the queue type to exclusive. More details on queue permissions can be found in the [Java developer documentation]({{ site.docs-api-endpoints }}){:target="_top"}.
+*   Setting the Queue properties that you wish for your queue. This examples permits consumption of messages and sets the queue type to exclusive. More details on queue permissions can be found in the [Java developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/java/com/solacesystems/jcsmp/EndpointProperties.html).
 *   Provisioning the Queue on the Solace message router
 
 The following code shows you this for the queue named `Q/tutorial`.
@@ -87,11 +80,11 @@ The ignore already exists flags signals to the API that the application is toler
 
 Now it is time to send a message to the queue.
 
-![]({{ site.baseurl }}/assets/images/sending-message-to-queue-300x160.png)
+![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue-300x160.png)
 
 There is really no difference in the actual calls to the JCSMP message producer when sending a persistent message as compared to a direct message shown in the publish/subscribe tutorial. The difference in the persistent message is that the Solace message router will acknowledge the message once it is successfully stored on the message router.
 
-This is still handled by the message producer event handler and again producers can implement either the `JCSMPStreamingPublishEventHandler` or the `JCSMPStreamingPublishCorrelatingEventHandler`. The `JCSMPStreamingPublishEventHandler` is the simplest and is sufficient for demonstrating basic message persistence. The [tutorial]({{ site.baseurl }}/confirmed-delivery) on handling acknowledgements will get into more advanced acknowledgement handling with proper correlation.
+This is still handled by the message producer event handler and again producers can implement either the `JCSMPStreamingPublishEventHandler` or the `JCSMPStreamingPublishCorrelatingEventHandler`. The `JCSMPStreamingPublishEventHandler` is the simplest and is sufficient for demonstrating basic message persistence. The [tutorial](../confirmed-delivery/) on handling acknowledgements will get into more advanced acknowledgement handling with proper correlation.
 
 So the message producer creation code can remain the same as shown here:
 
@@ -123,14 +116,13 @@ msg.setText(text);
 prod.send(msg, queue);
 ```
 
-At this point the producer has sent a message to the Solace message router and if all goes well it will be waiting for your consumer on the queue.
-The [Confirmed Delivery tutorial]({{ site.baseurl }}/confirmed-delivery) shows how to make sure it gets there.
+At this point the producer has sent a message to the Solace message router and if all goes well it will be waiting for your consumer on the queue. The [Confirmed Delivery tutorial](../confirmed-delivery/) shows how to make sure it gets there.
 
 ## Receiving a message from a queue
 
 Now it is time to receive the messages sent to your queue.
 
-![]({{ site.baseurl }}/assets/images/receiving-message-from-queue-300x160.png)
+![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 You still need to connect a session just as you did with the publisher. With a connected session, you then need to bind to the Solace message router queue with a flow receiver. Flow receivers allow applications to receive messages from a Solace guaranteed message flow. Flows encapsulate all of the acknowledgement behavior required for guaranteed messaging. Conveniently flow receivers have the same interface as message consumers but flows also require some additional properties on creation.
 
@@ -149,7 +141,7 @@ EndpointProperties endpoint_props = new EndpointProperties();
 endpoint_props.setAccessType(EndpointProperties.ACCESSTYPE_EXCLUSIVE);
 ```
 
-Both flow properties and endpoint properties are explained in more detail in the [Java developer documentation]({{ site.docs-api-ref }}){:target="_top"}.
+Both flow properties and endpoint properties are explained in more detail in the [Java developer documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/java/index.html).
 
 Flows are created from Solace session objects just as direct message consumers are. Flows can take up to four arguments during creation:
 
@@ -205,21 +197,19 @@ try {
 
 The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueProducer.java)
+* [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueConsumer.java)
 
-Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery.]({{ site.baseurl }}/confirmed-delivery)
+
+Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
 
 ### Getting the Source
 
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-java
+cd solace-samples-java
 ```
 
 ### Building
