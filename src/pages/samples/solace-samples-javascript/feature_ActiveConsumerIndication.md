@@ -9,7 +9,7 @@ links:
 
 This feature introduction shows how multiple consumers can bind to an exclusive queue, but only one client at a time can actively receive messages.
 
-The example code builds on the Subscriber in the [publish/subscribe]({{ site.baseurl }}/publish-subscribe) messaging pattern.
+The example code builds on the Subscriber in the [publish/subscribe](../publish-subscribe/) messaging pattern.
 
 ## Feature Overview
 
@@ -48,16 +48,13 @@ sample.createConsumer = function (session, messageConsumerName) {
                     
 ~~~
 
-When running the full sample, first start this sample and then run the [confirmed-delivery]({{ site.baseurl }}/confirmed-delivery) sample to send 10 messages.
+When running the full sample, first start this sample and then run the [confirmed-delivery](../confirmed-delivery/) sample to send 10 messages.
 
 ## Learn More
 
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="{{ site.docs-active-flow-indication }}" target="_blank">Solace Feature Documentation</a></li>
-</ul>
+* Related Source Code: [ActiveConsumerIndication](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/ActiveConsumerIndication)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication)
+
 
 
  

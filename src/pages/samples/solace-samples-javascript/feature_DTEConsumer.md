@@ -23,7 +23,7 @@ This sample requires that the the DTE with the name "tutorial/dte" has been prov
 
 ## Code
 
-The following code shows how to bind to a Durable Topic Endpoint. The key is to specify the desired topic in the `topicEndpointSubscription` field and properly set the `queueDescriptor` with the name of the DTE and the type `solace.QueueType.TOPIC_ENDPOINT`. The rest of the message consumption is the same as shown in the [QueueConsumer]({{ site.baseurl }}/persistence-with-queues) sample.
+The following code shows how to bind to a Durable Topic Endpoint. The key is to specify the desired topic in the `topicEndpointSubscription` field and properly set the `queueDescriptor` with the name of the DTE and the type `solace.QueueType.TOPIC_ENDPOINT`. The rest of the message consumption is the same as shown in the [QueueConsumer](../persistence-with-queues/) sample.
 
 ~~~javascript
 // Create a message consumer
@@ -35,13 +35,9 @@ consumer.messageConsumer = consumer.session.createMessageConsumer({
                     
 ~~~
 
-When running the full sample, first start this DTEConsumer sample and then run the [TopicPublisher](publish-subscribe) sample to send messages on this topic.
+When running the full sample, first start this DTEConsumer sample and then run the [TopicPublisher](../publish-subscribe/) sample to send messages on this topic.
 
 ## Learn More
 
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="{{ site.docs-dte }}" target="_blank">Solace Feature Documentation</a></li>
-</ul>
+* Related Source Code: [DTEConsumer](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/DTEConsumer)
+* [Solace Feature Documentation](https://docs.solace.com/PubSub-Basics/Endpoints.htm)

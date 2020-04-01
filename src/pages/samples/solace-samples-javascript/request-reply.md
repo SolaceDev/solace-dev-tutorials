@@ -14,18 +14,18 @@ links:
       link: /blob/master/src/basic-samples/BasicReplier/BasicReplier.js
 ---
 
-This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial](../publish-subscribe/).
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -50,7 +50,7 @@ Request-reply messaging is supported by the Solace message router for all delive
 
 For request-reply messaging to be successful it must be possible for the requestor to correlate the request with the subsequent reply. Solace messages support two fields that are needed to enable request-reply correlation. The reply-to field can be used by the requestor to indicate a Solace Topic where the reply should be sent. A natural choice for this is often the unique `P2PINBOX_IN_USE` topic which is an auto-generated unique topic per client which is accessible as a session property. The second requirement is to be able to detect the reply message from the stream of incoming messages. This is accomplished using the `correlation-id` field. This field will transit the Solace messaging system unmodified. Repliers can include the same `correlation-id` in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
 
-![](../../../images/diagrams/Request-Reply_diagram-1.png)
+![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
@@ -64,7 +64,7 @@ The structure of the requestor application is similar to the publish/subscribe t
 
 The structure of the replier application is similar to the topic subscriber. It differs in that when receiving the request it doesn't only log the message but sends a reply.
 
-The followings are exactly the same as in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), refer to it for all the detailed descriptions.
+The followings are exactly the same as in the [publish/subscribe tutorial](../publish-subscribe/), refer to it for all the detailed descriptions.
 
 * Loading and Initializing Solace Web Messaging API for JavaScript
 * Connecting to the Solace message router
@@ -75,7 +75,7 @@ The followings are exactly the same as in the [publish/subscribe tutorial]({{ si
 
 First let’s look at the requestor. This is the application that will send the initial request message and wait for the reply.
 
-![](../../../images/diagrams/Request-Reply_diagram-2.png)
+![Diagram: Making a Request](../../../images/diagrams/Request-Reply_diagram-2.png)
 
 The requestor must create a message and the topic to send the message to:
 
@@ -111,7 +111,7 @@ try {
 
 Now it is time to receive the request and generate an appropriate reply.
 
-![](../../../images/diagrams/Request-Reply_diagram-3.png)
+![Diagram: Replying to a Request](../../../images/diagrams/Request-Reply_diagram-3.png)
 
 Just as with previous tutorials, you still need to connect a session and subscribe to the topics that requests are sent on (the request topic). The following is an example of such a reply.
 
@@ -160,11 +160,10 @@ requestor.requestFailedCb = function (session, event) {
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [BasicRequestor.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/BasicRequestor/BasicRequestor.html)
+* [BasicRequestor.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/BasicRequestor/BasicRequestor.js)
+* [BasicReplier.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/BasicReplier/BasicReplier.html)
+* [BasicReplier.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/BasicReplier/BasicReplier.js)
 
 ### Getting the Source
 
@@ -195,7 +194,7 @@ First open _BasicReplier/BasicReplier.html_ page in the browser and connect to a
 
 The following is a screenshot of the tutorial’s _BasicReplier/BasicReplier.html_ web page with the JavaScript debug console open in the Firefox browser. It captures the page after it was loaded and the “Connect” button was clicked and then the “Subscribe” button was clicked.
 
-![](../../../images/screenshots/javascript-request-reply_1.png)
+![Screenshot: Basic Replier](../../../images/screenshots/javascript-request-reply_1.png)
 
 Now, open _BasicRequestor/BasicRequestor.html_ page in the browser and connect to the same Solace message router as the _BasicReplier_ specifying the router’s URL and clicking “Connect” button. Then send the request by clicking the “Send Request” button on the _BasicRequestor/BasicRequestor.html_ page.
 
@@ -203,10 +202,10 @@ The following screenshots of the tutorial’s _BasicRequestor/BasicRequestor.htm
 
 This is the requestor is having sent a request and receiving a reply (_BasicRequestor/BasicRequestor.html)_:
 
-![](../../../images/screenshots/javascript-request-reply_2.png)
+![Screenshot: Basic Requestor](../../../images/screenshots/javascript-request-reply_2.png)
 
 This is the replier is receiving the request and replying to it (_BasicReplier/BasicReplier.html)_:
 
-![](../../../images/screenshots/javascript-request-reply_3.png)
+![Screenshot: Basic Replier](../../../images/screenshots/javascript-request-reply_3.png)
 
 With that you now know how to successfully implement request-reply message exchange pattern using Direct messages.
