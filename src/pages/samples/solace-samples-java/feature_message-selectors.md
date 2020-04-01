@@ -17,7 +17,7 @@ When a selector is used, a client only receives a message if the selector evalua
 
 ## Prerequisite
 
-The [Client Profile]({{ site.docs-client-profile }}) must be configured to [allow receiving guaranteed messages]({{ site.docs-client-profile-allow-g-receives }}).
+The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow receiving guaranteed messages](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-G-Msg-Receives).
 
 NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
 
@@ -46,12 +46,9 @@ for (String p : new String[] { "macaroni", "fettuccini", "farfalle", "fiori", "r
 
 ## Learn More
 
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="https://docs.solace.com/Solace-JMS-API/Selectors.htm?Highlight=selector" target="_blank">Solace Feature Documentation</a></li>
-</ul>
+* Related Source Code: [MessageSelectorsOnQueue.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/MessageSelectorsOnQueue.java)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Selectors.htm?Highlight=selector)
+
 
 
  

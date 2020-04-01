@@ -19,7 +19,7 @@ This feature can be used to guarantee that a message is not removed from the mes
 
 ## Prerequisite
 
-The [Client Profile]({{ site.docs-client-profile }}) must be configured to [allow transacted sessions]({{ site.docs-client-profile-allow-transacted }}).
+The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow transacted sessions](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-Trans-Sess).
 
 NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
 
@@ -76,12 +76,9 @@ public void onReceive(BytesXMLMessage message) {
 
 ## Learn More
 
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="https://docs.solace.com/Solace-JMS-API/Using-Transacted-Sessions.htm?Highlight=Transactions" target="_blank">Solace Feature Documentation</a></li>
-</ul>
+* Related Source Code: [Transactions.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/Transactions.java)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Using-Transacted-Sessions.htm?Highlight=Transactions)
+
 
 
  

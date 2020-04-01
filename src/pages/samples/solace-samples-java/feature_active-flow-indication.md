@@ -19,7 +19,7 @@ Using the Active Flow Indication, a client application can learn if it is the pr
 
 ## Prerequisite
 
-The [Client Profile]({{ site.docs-client-profile }}) must be configured to [allow receiving guaranteed messages]({{ site.docs-client-profile-allow-g-receives }}).
+The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow receiving guaranteed messages](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-G-Msg-Receives).
 
 NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
 
@@ -72,6 +72,10 @@ flowOne.close(); // Active flow indication event for flowTwo fires now that flow
 ```
 
 ## Learn More
+
+* Related Source Code: [QueueProvisionAndRequestActiveFlowIndication.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndRequestActiveFlowIndication.java)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication)
+
 
 <ul>
 {% for item in page.links %}

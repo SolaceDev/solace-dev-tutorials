@@ -16,13 +16,12 @@ This tutorial will introduce you to the fundamentals of the Solace API by connec
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
-
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -31,10 +30,8 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 1.  How to build and send a message on a topic
 2.  How to subscribe to a topic and receive a message
 
-
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/solaceApi.md %}
-
 
 ## Connecting to the Solace message router
 
@@ -63,7 +60,7 @@ This tutorial uses “Direct” messages which are at most once delivery message
 
 With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the asynchronous receipt of messages through callbacks. These callbacks are defined in JCSMP by the XMLMessageListener interface.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 ```java
 final CountDownLatch latch = new CountDownLatch(1);
@@ -114,7 +111,7 @@ try {
 
 Now it is time to send a message to the waiting consumer.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 ### Establishing the publisher flow
 
@@ -154,21 +151,18 @@ At this point the producer has sent a message to the Solace message router and y
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
 
 ### Getting the Source
 
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-java
+cd solace-samples-java
 ```
 
 ### Building

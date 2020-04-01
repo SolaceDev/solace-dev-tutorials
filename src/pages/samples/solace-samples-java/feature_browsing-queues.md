@@ -17,7 +17,7 @@ A Browser could be used by an application to pre-screen messages by detecting me
 
 ## Prerequisite
 
-The [Client Profile]({{ site.docs-client-profile }}) must be configured to [allow receiving guaranteed messages]({{ site.docs-client-profile-allow-g-receives }})
+The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow receiving guaranteed messages](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-G-Msg-Receives)
 
 NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
 
@@ -50,12 +50,5 @@ do {
 
 ## Learn More
 
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Browsing-Guaranteed-Mess.htm?Highlight=Browsing" target="_blank">Solace Feature Documentation</a></li>
-</ul>
-
-
- 
+* Related Source Code: [QueueProvisionAndRequestActiveFlowIndication.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndRequestActiveFlowIndication.java)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication)
