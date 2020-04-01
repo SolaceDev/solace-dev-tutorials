@@ -111,7 +111,7 @@ try {
 
 Now it is time to send a message to the waiting consumer.
 
-![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 ### Establishing the publisher flow
 

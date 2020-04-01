@@ -17,12 +17,12 @@ This tutorial will introduce you to the fundamentals of the Solace API by connec
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://solace.com/samples/solace-samples-javarto/publish-subscribe/).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -30,7 +30,6 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 
 1.  How to build and send a message on a topic
 2.  How to subscribe to a topic and receive a message
-
 
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/solaceApi.md %}
@@ -107,7 +106,7 @@ SessionEventCallback sessionEventCallback = new SessionEventCallback() {
 
 The `messageCallback` is invoked for each Direct message received by the Session. In this sample, the message is printed to the screen. For the purpose of this tutorial a countdown latch is used to block the consumer thread until a single message has been received.
 
-The `sessionEventCallback` is invoked for various significant session events like connection, disconnection, and other API session events. In this sample, simply prints the events. See the [JavaRTO API documentation]({{ site.docs-javarto-api }}){:target="_top"} and samples for details on the session events.
+The `sessionEventCallback` is invoked for various significant session events like connection, disconnection, and other API session events. In this sample, simply prints the events. See the [JavaRTO API documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/jrto/index.html) and samples for details on the session events.
 
 ### Session Creation
 
@@ -144,7 +143,7 @@ At this point your client is connected to the Solace message router. You can use
 
 This tutorial is uses "Direct" messages which are at most once delivery messages. So first, let's express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.  
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 With a session connected in the previous step, then you must subscribe to a topic in order to express interest in receiving messages. This tutorial uses the topics "tutorial/topic".
 
@@ -168,7 +167,7 @@ try {
 
 Now it is time to send a message to the waiting consumer.  
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 To send a message, you must create a message and a topic destination. This tutorial will send a Solace binary message with contents "Hello world!". Then you must send the message to the Solace message router.
 
@@ -207,21 +206,18 @@ At this point the producer has sent a message to the Solace message router and y
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-javarto). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
 
 ### Getting the Source
 
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-javarto
+cd solace-samples-javarto
 ```
 
 ### Building
