@@ -25,7 +25,7 @@ This tutorial assumes the following:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -40,19 +40,18 @@ The goal of this tutorial is to demonstrate the use of Spring Cloud Streams with
 “Spring Cloud Stream is a framework for building highly scalable event-driven microservices connected with shared messaging systems."
 It is based on Spring Boot, Spring Cloud, Spring Integration and Spring Messaging
 Solace PubSub+ is a partner maintained binder implementation for Spring Cloud Streams. 
-1. Spring Cloud Stream Project Home: [https://spring.io/projects/spring-cloud-stream](https://spring.io/projects/spring-cloud-stream){:target="_blank"}
-2. The Reference Guide for that current version is available [here](https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle){:target="_blank"}
-3. PubSub+ Binder [https://github.com/SolaceProducts/spring-cloud-stream-binder-solace](https://github.com/SolaceProducts/spring-cloud-stream-binder-solace){:target="_blank"}
+1. Spring Cloud Stream Project Home: [https://spring.io/projects/spring-cloud-stream](https://spring.io/projects/spring-cloud-stream)
+2. The Reference Guide for that current version is available [here](https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle)
+3. PubSub+ Binder [https://github.com/SolaceProducts/spring-cloud-stream-binder-solace](https://github.com/SolaceProducts/spring-cloud-stream-binder-solace)
 
 {% include_relative assets/solaceMessaging.md %}
-
 
 ## Getting the Source
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: "/" | last }}
+git clone https://github.com/SolaceSamples/solace-samples-spring
+cd solace-samples-spring
 ```
 
 ## Project Setup
@@ -278,12 +277,12 @@ Sample code [is here](https://github.com/SolaceSamples/solace-samples-spring/tre
 ### ConvertFtoCProcessor.java
 Open a new console/terminal if needed. 
 Open the ConvertFtoCProcessor.java file in the "cloud-streams-processor" project. 
-This class shows how simple it is to write a Spring Cloud Streams app that receives, processesses & sends to PubSub+.
+This class shows how simple it is to write a Spring Cloud Streams app that receives, processes & sends to PubSub+.
 The class is a processor which receives SensorReadings in Fahrenheit from one topic, converts them to Celsius and publishes the updated SensorReadings to a Celsius topic
 
 A few things to take note of: 
 * As before the [@SpringBootApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-using-springbootapplication-annotation.html) annotation enables auto-configuration and component scanning
-* The @EnableBinding(Processor.class) annotation tells us that we are creating a Spring Cloud Streams Processor application and enables the Input & Output channels on the Processor binding interface. This Prcoessor's input & output channels will be bound to our messaging system at run time.
+* The @EnableBinding(Processor.class) annotation tells us that we are creating a Spring Cloud Streams Processor application and enables the Input & Output channels on the Processor binding interface. This Processor's input & output channels will be bound to our messaging system at run time.
 * The @StreamListener annotation defines which method should be invoked when an event is received on our Processor.INPUT channel. 
 * The @SendTo annotation defines that returned objects from the method should be sent to the Processor.OUTPUT channel. 
 
