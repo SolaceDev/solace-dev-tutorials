@@ -24,7 +24,7 @@ This tutorial assumes the following:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -36,14 +36,14 @@ This tutorial will show you:
 
 ## Spring Boot Introduction
 The Spring Boot project makes it easy to create production grade Spring based Applications. Instead of having to manually inject each dependency Spring Boot takes an opinionated view that gets you started more quickly. More information can be found at the link below.
-1. [Spring Boot Project](https://spring.io/projects/spring-boot){:target="_blank"}
+1. [Spring Boot Project](https://spring.io/projects/spring-boot)
 
 ## Java Messaging Service (JMS) Introduction
 
 The Java Message Service (JMS) API is a Java message-oriented middleware API for sending messages between two or more clients. It is very commonly used by Java Developers to build event driven applications. More information can be found at the links below. 
 
-1.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service){:target="_blank"}
-2.  [Basic JMS API Concepts](https://docs.oracle.com/javaee/6/tutorial/doc/bncdx.html){:target="_blank"}
+1.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
+2.  [Basic JMS API Concepts](https://docs.oracle.com/javaee/6/tutorial/doc/bncdx.html)
 
 {% include_relative assets/solaceMessaging.md %}
 
@@ -65,8 +65,8 @@ solace(configure/message-spool)# create queue SpringTestQueue
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: "/" | last }}
+git clone https://github.com/SolaceSamples/solace-samples-spring
+cd solace-samples-spring
 ```
 
 ## Project Setup
