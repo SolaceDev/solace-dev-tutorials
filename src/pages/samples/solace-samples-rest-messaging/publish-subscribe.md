@@ -11,7 +11,7 @@ This tutorial will introduce you to the fundamentals of the Solace REST messagin
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to a running Solace message router with the following configuration:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
@@ -20,9 +20,9 @@ This tutorial assumes the following:
 
 *   REST service enabled for incoming and outgoing messages
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
-You can learn all about REST on Solace messaging by referring to the [Online REST Messaging Documentation]({{ site.docs-rest-messaging }}){:target="_top"}.
+You can learn all about REST on Solace messaging by referring to the [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm).
 
 ## Goals
 
@@ -33,15 +33,15 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 
 ## Solace REST Messaging API Introduction
 
-As outlined in the [Online REST Messaging Documentation]({{ site.docs-rest-messaging }}){:target="_top"}, the API enable users to send messages to and asynchronously receive messages with Solace messaging over HTTP using a RESTful API.
+As outlined in the [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm), the API enable users to send messages to and asynchronously receive messages with Solace messaging over HTTP using a RESTful API.
 
 The Solace API uses HTTP POST requests to allow clients to publish message Solace messaging. On the subscribe side, the Solace API follows the asynchronous notification pattern and uses an HTTP POST from Solace messaging to the client to delivery messages. This means that pub and sub messages are sent on different HTTP connections than they are received as shown in the following figure.
 
-![solace-rest-messaging-api]({{ site.baseurl }}/assets/images/solace-rest-messaging-api.png)
+![Diagram: Solace REST Messaging API](../../../images/diagrams/solace-rest-messaging-api.png)
 
 There are several benefits to this approach. First it removes the possibility of message loss which can exist when using HTTP GET requests without explicit separate acknowledgement. It also enables much higher performance and overall message rate when multiple, parallel HTTP connections are used.
 
-The [Online REST Messaging Documentation]({{ site.docs-rest-messaging }}){:target="_top"} has the following parts which explain the API in more detail:
+The [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm) has the following parts which explain the API in more detail:
 
 * REST Messaging Introduction & REST Messaging Concepts which explains the API at an architectural level.
 * REST Messaging Protocol which explains the wireline details - like how to format the HTTP messages etc.
@@ -52,17 +52,17 @@ Because of the difference between publishing and subscribing, these topics are i
 
 ## Obtaining the Solace API
 
-There is no API to obtain. The Solace REST messaging API is a wireline RESTful HTTP protocol. It is fully outlined in [REST Messaging Protocol]({{ site.docs-rest-protocol }}){:target="_top"}.
+There is no API to obtain. The Solace REST messaging API is a wireline RESTful HTTP protocol. It is fully outlined in [REST Messaging Protocol](https://docs.solace.com/RESTMessagingPrtl/Solace-REST-Overview.htm).
 
 ## Receiving a message
 
 First this tutorial will show how to setup the subscriber side so that you are ready to receive messages that are published.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 On the consume side, the Solace REST messaging API depends on a guaranteed messaging queue. As such it is a requirement for REST consumers that Solace messaging support guaranteed messaging and have this feature configured as outlined in the [assumptions section above](#assumptions).
 
-In order to receive REST messages from Solace messaging, you must configure a Guaranteed messaging queue and a REST delivery point. The queue is used to attract messages to the consumer application. The REST delivery point is the Solace message router component that delivers the messages from the queue to the consumer application asynchronously through HTTP POST requests. This is explained in more detail in the [REST Messaging Concepts]({{ site.docs-rest-concepts }}){:target="_top"} where the REST consumers are explained. This tutorial will walk you through the required Solace messaging configuration steps required to create a queue and REST delivery point to connect to your REST consumer application.
+In order to receive REST messages from Solace messaging, you must configure a Guaranteed messaging queue and a REST delivery point. The queue is used to attract messages to the consumer application. The REST delivery point is the Solace message router component that delivers the messages from the queue to the consumer application asynchronously through HTTP POST requests. This is explained in more detail in the [REST Messaging Concepts](https://docs.solace.com/Features/REST-Messaging-Concepts/REST-Msging-Concepts.htm) where the REST consumers are explained. This tutorial will walk you through the required Solace messaging configuration steps required to create a queue and REST delivery point to connect to your REST consumer application.
 
 ### A Simple REST Consumer
 
@@ -96,7 +96,7 @@ Again in your environment, the RC_HOST and RC_PORT will be the host/IP and port 
 
 
 
-**Note:** Even though this tutorial is illustrating how to publish with direct messages, for REST delivery points, the messages are always consumed from a queue. The incoming messages are promoted into the Solace queue as non-persistent messages and delivered to the REST consumer as non-persistent messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes]({{ site.docs-topic-matching }}){:target="_top"}.
+**Note:** Even though this tutorial is illustrating how to publish with direct messages, for REST delivery points, the messages are always consumed from a queue. The incoming messages are promoted into the Solace queue as non-persistent messages and delivered to the REST consumer as non-persistent messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes](https://docs.solace.com/PubSub-Basics/Topic-Matching-and-Delivery-Modes.htm).
 
 ### Configuring a REST Delivery Point
 
@@ -141,7 +141,7 @@ Next, you must configure a queue and REST delivery point on Solace messaging. Th
   </tr>
 </table>
 
-You can learn about each of these components using [Features – REST Introduction]({{ site.docs-rest-introduction }}){:target="_top"}. In the script below, update VPNNAME to match that of your Solace messaging solution, and the RC_HOST and RC_PORT to match your REST consumer application.
+You can learn about each of these components using [Features – REST Introduction](https://docs.solace.com/Open-APIs-Protocols/Using-REST.htm). In the script below, update VPNNAME to match that of your Solace messaging solution, and the RC_HOST and RC_PORT to match your REST consumer application.
 
 ```
 home
@@ -239,9 +239,9 @@ At this point the consumer is up and ready to receive messages.
 
 Now it is time to send a message to the waiting consumer.  
 
-[]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
-Sending a REST message to Solace is very simple. For this example, we will use the command line tool cURL to send the required HTTP. Refer to [REST Messaging Protocol Guide]({{ site.docs-rest-protocol }}){:target="_top"} for the full details of the Solace REST messaging API.
+Sending a REST message to Solace is very simple. For this example, we will use the command line tool cURL to send the required HTTP. Refer to [REST Messaging Protocol Guide](https://docs.solace.com/RESTMessagingPrtl/Solace-REST-Overview.htm) for the full details of the Solace REST messaging API.
 
 To send a message you can use the following command.
 
