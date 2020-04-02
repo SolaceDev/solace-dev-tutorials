@@ -5,17 +5,13 @@ summary: This tutorial shows you how to get the Solace OpenMAMA bridge installed
 icon: I_linux.svg
 ---
 
-<br><br>
-
-Download pre-packaged OpenMAMA from the [OpenMAMA GitHub releases page](https://github.com/OpenMAMA/OpenMAMA/releases){:target="_blank"}:
+Download pre-packaged OpenMAMA from the [OpenMAMA GitHub releases page](https://github.com/OpenMAMA/OpenMAMA/releases):
 
     $ wget https://github.com/OpenMAMA/OpenMAMA/releases/download/OpenMAMA-6.2.1-release/openmama-6.2.1-1.el7.centos.x86_64.rpm
-
 
 Install it with `rpm`:
 
     $ sudo rpm --install openmama-6.2.1-1.el7.centos.x86_64.rpm
-
 
 Files will be installed into `/opt/openmama` directory:
 
@@ -36,7 +32,7 @@ Bridge is what communicates with a specific messaging broker, and different brid
 
 Out-of-box `mama.properties` refers to the **Apache Qpid** middleware bridge, and most of the OpenMAMA sample applications by default refer to a different (proprietary) bridge, but we’re going to use the **Solace middleware bridge** that enables communication with a **Solace messaging**.
 
-The Solace middleware bridge is currently unavailable for public download. For access, please contact [Solace Customer Support]({{ site.link-support }}){:target="_top"}.
+The Solace middleware bridge is currently unavailable for public download. For access, please contact [Solace Customer Support](https://www.solace.com/support/).
 
     $ wget <…location...>/solopenmama_bridge_Linux26-x86_64_opt_7.3.0.7.tar.gz
 
@@ -44,7 +40,7 @@ Untar it into a dedicated location and append this location **lib** directory to
 
     $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<…>/solopenmama_bridge/lib
 
-The Solace middleware bridge implementation has a dependency on **Solace Messaging API for C**. The C API library can be [downloaded here]({{ site.link-downloads }}){:target="_top"}.
+The Solace middleware bridge implementation has a dependency on **Solace Messaging API for C**. The C API library can be [downloaded here](https://www.solace.com/downloads/).
 
     $ wget <…location…>/solclient_Linux26-x86_64_opt_7.3.0.7.tar.gz
 
@@ -52,7 +48,7 @@ Untar it into a dedicated location and append this location **lib** directory to
 
     $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<…>/solclient/lib
 
-Use `ldd` to verify dependences:
+Use `ldd` to verify dependencies:
 
 ```
 $ ldd topicPublishOne
@@ -73,4 +69,4 @@ $ ldd topicPublishOne
     /lib64/ld-linux-x86-64.so.2 (0x00007f9ed3810000)
 ```
 
-If you have any problems installing OpenMAMA, ask OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA){:target="_blank"}.
+If you have any problems installing OpenMAMA, ask OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA).
