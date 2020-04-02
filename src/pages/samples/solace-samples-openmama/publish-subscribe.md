@@ -11,26 +11,25 @@ links:
     - label: topicPublisher.c
       link: /blob/master/src/pubsub/topicPublisher.c
 ---
-<br><br>
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with OpenMAMA [core concepts]({{ site.docs-openmama-concepts }}){:target="_top"}.
-    *   If not, see [this OpenMAMA guide](http://www.openmama.org/content/quick-start-guide){:target="_blank"} and [Solace OpenMAMA “Hello World” tutorial]({{ site.baseurl }}/hello-world).
-*   You are familiar with Solace [core concepts]({{ site.docs-solace-concepts }}){:target="_top"}.
-*   You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases){:target="_blank"}.
+*   You are familiar with OpenMAMA [core concepts](https://docs.solace.com/Solace-OpenMama/Solace-OpenMAMA-Overview.htm).
+    *   If not, see [this OpenMAMA guide](https://www.openmama.org/content/quick-start-guide) and [Solace OpenMAMA “Hello World” tutorial](../hello-world/).
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
+*   You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases).
     *   Solace middleware bridge with its dependencies is also installed
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
-The goal of this tutorial is to demonstrate basic messaging interactions using OpenMAMA with the **Solace middleware bridge**. This tutorial’s samples are similar to the OpenMAMA’s [mamapublisherc.c](https://github.com/OpenMAMA/OpenMAMA/blob/master/mama/c_cpp/src/examples/c/mamapublisherc.c){:target="_blank"} and [mamasubscriberc.c](https://github.com/OpenMAMA/OpenMAMA/blob/master/mama/c_cpp/src/examples/c/mamasubscriberc.c){:target="_blank"}, but with a distinct focus on configuring OpenMAMA with **Solace messaging**. See the [Resources](#resources) section below for some further links to other OpenMAMA tutorials and examples.
+The goal of this tutorial is to demonstrate basic messaging interactions using OpenMAMA with the **Solace middleware bridge**. This tutorial’s samples are similar to the OpenMAMA’s [mamapublisherc.c](https://github.com/OpenMAMA/OpenMAMA/blob/master/mama/c_cpp/src/examples/c/mamapublisherc.c) and [mamasubscriberc.c](https://github.com/OpenMAMA/OpenMAMA/blob/master/mama/c_cpp/src/examples/c/mamasubscriberc.c), but with a distinct focus on configuring OpenMAMA with **Solace messaging**. See the [Resources](#resources) section below for some further links to other OpenMAMA tutorials and examples.
 
 This tutorial will show you how to publish a message with one string field to a specific topic on Solace messaging using OpenMAMA C API.
 
@@ -41,21 +40,21 @@ This tutorial will show you how to use OpenMAMA C API:
 
 ## Installation
 
-Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](http://www.openmama.org/content/quick-start-guide#main){:target="_blank"}.
+Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](https://www.openmama.org/content/quick-start-guide#main).
 
-Simplified installation instructions for OpenMAMA with Solace middleware bridge [are available]({{ site.baseurl }}/installation-linux).
+Simplified installation instructions for OpenMAMA with Solace middleware bridge [are available](../installation-linux/).
 
-For building OpenMAMA from source see [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki/Build-Instructions){:target="_blank"}.
+For building OpenMAMA from source see [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki/Build-Instructions).
 
 {% include_relative assets/solaceMessaging.md %}
 
-Example of specifying these properties [see here]({{ site.repository }}/blob/master/src/pubsub/mama.properties){:target="_blank"} and detailed explanation of them is in the [Solace OpenMAMA “Hello World” tutorial]({{ site.baseurl }}/hello-world).
+Example of specifying these properties [see here]({{ site.repository }}/blob/master/src/pubsub/mama.properties){:target="_blank"} and detailed explanation of them is in the [Solace OpenMAMA “Hello World” tutorial](../hello-world/).
 
 ## Receiving Message
 
-Before everything else, as you already know from the [Solace OpenMAMA “Hello World” tutorial]({{ site.baseurl }}/hello-world), we need to [initialize]({{ site.baseurl }}/hello-world/#initialize) the **Solace middleware bridge** and [create a transport]({{ site.baseurl }}/hello-world/#create-transport).
+Before everything else, as you already know from the [Solace OpenMAMA “Hello World” tutorial](../hello-world/), we need to [initialize](../hello-world/#initialize) the **Solace middleware bridge** and [create a transport](../hello-world/#create-transport).
 
-To learn more about how to initialize and configure **Solace middleware bridge as an OpenMAMA transport** see [Solace OpenMAMA User Guide]({{ site.docs-openmama-bridges }}){:target="_top"}
+To learn more about how to initialize and configure **Solace middleware bridge as an OpenMAMA transport** see [Solace OpenMAMA User Guide](https://docs.solace.com/Solace-OpenMama/Configuring-Solace-OpenMAMA-Bridges.htm).
 
 Now we can implement receiving a message.
 
@@ -65,7 +64,7 @@ In OpenMAMA subscribing to a topic means _creating a subscription_. When creatin
 
 You already know what the **transport** is.
 
-For details of the **event queue** see [OpenMAMA Developer’s Guide for C](http://www.openmama.org/sites/default/files/OpenMAMA%20Developer%27s%20Guide%20C.pdf){:target="_blank"}
+For details of the **event queue** see [OpenMAMA Developer’s Guide for C](http://www.openmama.org/sites/default/files/OpenMAMA%20Developer%27s%20Guide%20C.pdf).
 
 When multi-threading is not required it is recommended to use the _default internal event queue_ as an _event queue_:
 
@@ -212,9 +211,9 @@ void stopAll()
 
 ## Sending Message
 
-As usual, before everything else, we need to [initialize]({{ site.baseurl }}/hello-world/#initialize) the **Solace middleware bridge** and [create a transport]({{ site.baseurl }}/hello-world/#create-transport).
+As usual, before everything else, we need to [initialize](../hello-world/#initialize) the **Solace middleware bridge** and [create a transport](../hello-world/#create-transport).
 
-Now we can implement sending a message, and as you already know from the [Solace OpenMAMA “Hello World” tutorial]({{ site.baseurl }}/hello-world/#create-publisher), to publish a message we need to create a _publisher_.
+Now we can implement sending a message, and as you already know from the [Solace OpenMAMA “Hello World” tutorial](../hello-world/#create-publisher), to publish a message we need to create a _publisher_.
 
 A _publisher_ is created for a specific topic and refers to already created _transport_:
 
@@ -306,11 +305,9 @@ Our application consists of two executables: _topicSubscriber_ and _topicPublish
 
 If you combine the example source code shown above and split them into the two mentioned executables, it results in the source that is available for download:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [mama.properties](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/pubsub/mama.properties)
+* [topicSubscriber.c](https://github.com/SolaceSamples/solace-samples-openmamablob/master/src/pubsub/topicSubscriber.c)
+* [topicPublisher.c](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/pubsub/topicPublisher.c)
 
 ### Building
 
@@ -428,28 +425,26 @@ Closing Solace middleware bridge.
 
 Congratulations! You have now successfully subscribed to a topic and exchanged messages using this topic on using OpenMAMA with the Solace middleware bridge.
 
-If you have any issues with this program, check the [Solace community]({{ site.link-community }}){:target="_blank"} for answers to common issues.
-
 ## Resources
 
 For more information about OpenMAMA:
 
-*   The OpenMAMA website at: [http://www.openmama.org/](http://www.openmama.org/){:target="_blank"}.
-*   The OpenMAMA code repository on GitHub [https://github.com/OpenMAMA/OpenMAMA](https://github.com/OpenMAMA/OpenMAMA){:target="_blank"}.
-*   Chat with OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA){:target="_blank"}.
+*   The OpenMAMA [website](http://www.openmama.org/)
+*   The OpenMAMA code repository on [GitHub](https://github.com/OpenMAMA/OpenMAMA)
+*   Chat with OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA)
 
 For more information about Solace technology:
 
-*   The Solace Developer Portal website at: [{{ site.link-portal }}]({{ site.link-portal}}){:target="_top"}
-*   Get a better understanding of [Solace technology]({{ site.link-tech }}){:target="_top"}.
-*   Ask the [Solace community]({{ site.link-community }}){:target="_top"}.
+*   The [Solace Developer Portal website](https://www.solace.dev)
+*   Get a better understanding of [Solace technology](https://solace.com/products/tech/)
+*   Ask the [Solace community](https://solace.community)
 
 Other tutorials and related links:
 
-*   [OpenMAMA Quick Start Guide](http://www.openmama.org/content/quick-start-guide){:target="_blank"}
-*   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide){:target="_blank"}
-*   [OpenMAMA Example Walk Through](http://www.openmama.org/example-walk-through){:target="_blank"}.
-*   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples){:target="_blank"}
-*   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki){:target="_blank"}
-*   [OpenMAMA Documentation and Developers Guides](http://www.openmama.org/documentation){:target="_blank"}
-*   [Solace’s Solution for OpenMAMA]({{ site.link-tech-openmama }}){:target="_top"}
+*   [OpenMAMA Quick Start Guide](https://www.openmama.org/content/quick-start-guide)
+*   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
+*   [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through)
+*   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
+*   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
+*   [OpenMAMA Documentation and Developers Guides](https://www.openmama.org/documentation)
+*   [Solace’s Solution for OpenMAMA](https://solace.com/products/tech/)
