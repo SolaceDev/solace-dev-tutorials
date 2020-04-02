@@ -16,13 +16,13 @@ This tutorial will introduce you to the fundamentals of connecting an MQTT clien
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
     *   Enabled MQTT services
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://cloud.solace.com/create-messaging-service/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -35,8 +35,8 @@ The goal of this tutorial is to demonstrate the MQTT messaging interaction using
 
 MQTT is a standard lightweight protocol for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about MQTT. The following are good places to start
 
-1.  [http://mqtt.org/](http://mqtt.org/){:target="_blank"}
-2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/){:target="_blank"}
+1.  [http://mqtt.org/](http://mqtt.org/)
+2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/)
 
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/mqttApi.md %}
@@ -64,7 +64,7 @@ At this point your client is connected to the Solace messaging. You can use SolA
 
 This tutorial uses Quality of Service (QoS) level of 0 (equivalent to Solace "Direct" messages), which are at most once delivery messages. So first, let's express interest in the messages by subscribing to a topic filter. Then you can look at publishing a matching message and see it received.
 
-With a session connected in the previous step, the next step is to use the MQTT client to subscribe to a topic filter to receive messages. A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Topic Filters section of [MQTT Specification Conformance - Operational Behavior]({{ site.docs-ops-behavior }}){:target="_top"}.
+With a session connected in the previous step, the next step is to use the MQTT client to subscribe to a topic filter to receive messages. A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Topic Filters section of [MQTT Specification Conformance - Operational Behavior](https://docs.solace.com/MQTT-311-Prtl-Conformance-Spec/Operational_behavior.htm).
 
 Messages are received asynchronously through callbacks. These callbacks are defined in MQTT by the MqttCallback interface.
 
@@ -114,7 +114,7 @@ try {
 
 Now it is time to send a message to the waiting consumer.
 
-![pub-sub-sending-message]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png){:target="_top"}
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 To send a message, you must create a message using the MqttMessage class and set the QoS level. This tutorial will send a message to topic "T/GettingStarted/pubsub" with contents "Hello world from MQTT!" and a QoS level of 0, which are at most once delivery messages. We then use the MQTT client created earlier to publish the message
 
@@ -128,13 +128,11 @@ At this point the producer has sent a message to the Solace messaging and your w
 
 ## Summarizing
 
-The full source code for this example is available on [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available on [GitHub](https://github.com/SolaceSamples/solace-samples-mqtt). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
+
 
 ### Getting the Source
 
