@@ -10,17 +10,17 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/ExtJndiTest.java
 ---
 
-This tutorial shows how to provision and look up Solace JMS objects from an external [Java Naming and Directory Interface (JNDI)](https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface ) service, hosted outside the Solace message broker.
+This tutorial shows how to provision and look up Solace JMS objects from an external [Java Naming and Directory Interface (JNDI)](https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface) service, hosted outside the Solace message broker.
 
-The [Obtaining JMS objects using JNDI]({{ site.baseurl }}/using-jndi) tutorial provided an introduction to JNDI and the use of JNDI services hosted by the message broker. Using the Solace built-in (internal) JNDI server makes integration easy, but some enterprise use-cases already utilize a dedicated JNDI server, and prefer to store Solace JMS objects at the same location. 
+The [Obtaining JMS objects using JNDI](../using-jndi/) tutorial provided an introduction to JNDI and the use of JNDI services hosted by the message broker. Using the Solace built-in (internal) JNDI server makes integration easy, but some enterprise use-cases already utilize a dedicated JNDI server, and prefer to store Solace JMS objects at the same location. 
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with JNDI basics and the Solace message broker's built-in JNDI service. Refer to the [Java JNDI](https://docs.oracle.com/javase/jndi/tutorial/ ) and the [Obtaining JMS objects using JNDI]({{ site.baseurl }}/using-jndi) tutorials for more.
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
-*   You have an understanding, or you can refer to the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial for:
+*   You are familiar with JNDI basics and the Solace message broker's built-in JNDI service. Refer to the [Java JNDI](https://docs.oracle.com/javase/jndi/tutorial/) and the [Obtaining JMS objects using JNDI](../using-jndi/) tutorials for more.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
+*   You have an understanding, or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for:
     *   the Java Messaging Service (JMS) basics
     *   how to send and receive a message using the JMS API
     *   how obtain the Solace JMS API
@@ -29,8 +29,6 @@ This tutorial assumes the following:
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Admin level rights to configure the Message-VPN
-
-
 
 ## Goals
 
@@ -44,7 +42,7 @@ The goal of this tutorial is to provide guidance and sample code to:
 
 ## Overview
 
-This tutorial will use the two JMS objects from the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) and [Obtaining JMS objects using JNDI]({{ site.baseurl }}/using-jndi) tutorials:
+This tutorial will use the two JMS objects from the [Persistence with Queues](../persistence-with-queues/) and [Obtaining JMS objects using JNDI](../using-jndi/) tutorials:
 
 *   A `ConnectionFactory` – used by JMS clients to connect to the message broker
 *   A Queue `Destination` – used for publishing and subscribing to guaranteed messages.
@@ -53,7 +51,7 @@ This time they will be created from an external JNDI server lookup, essentially 
 
 JNDI has a wide range of server implementations. We will use the simplest: a local file system based JNDI implementation that is so simple that it will not even use authentication. Your JNDI service provider will likely be more complex in that you will need specific configuration, but this example will give an idea of usage, and the kind of data being stored in JNDI for the Solace JMS objects. Examples of JNDI providers include LDAP or CORBA Naming Service implementations, the native JNDI service of application servers like IBM WebSphere, JBoss and Oracle WebLogic.
 
-The first sample application will provision Solace JMS object data (entries) into the external JNDI server. The sample code will show how to create, read, update, or delete JNDI entries. When creating JNDI entries, we will import existing real JNDI data from the Solace internal JNDI server by using a separate JNDI connection to read from there. This tutorial can be used together with the [Obtaining JMS objects using JNDI]({{ site.baseurl }}/using-jndi) tutorial to learn more and experiment with the differences.
+The first sample application will provision Solace JMS object data (entries) into the external JNDI server. The sample code will show how to create, read, update, or delete JNDI entries. When creating JNDI entries, we will import existing real JNDI data from the Solace internal JNDI server by using a separate JNDI connection to read from there. This tutorial can be used together with the [Obtaining JMS objects using JNDI](../using-jndi/) tutorial to learn more and experiment with the differences.
 
 Next, another sample will look up the external JNDI data, and use it to connect and send a message to the message broker then read it back.
 
@@ -73,7 +71,7 @@ Additional basic administration operations included are:
 
 ### Connecting to a JNDI server
 
-JNDI clients need a Java jar library supplied by the service provider to connect and use the JNDI server. The jar client library contains the implementation of [javax.naming.spi.InitialContextFactory](https://docs.oracle.com/javase/8/docs/api/javax/naming/spi/InitialContextFactory.html ). For example, for the Solace message broker internal JNDI this is included in the Solace JMS API jar file, and the factory class is `com.solacesystems.jndi.SolJNDIInitialContextFactory`. The jar file for the file system based JNDI implementation used in this tutorial is [fscontext.jar](https://mvnrepository.com/artifact/com.sun.messaging.mq/fscontext ), and the factory class is `com.sun.jndi.fscontext.RefFSContextFactory`.
+JNDI clients need a Java jar library supplied by the service provider to connect and use the JNDI server. The jar client library contains the implementation of [javax.naming.spi.InitialContextFactory](https://docs.oracle.com/javase/8/docs/api/javax/naming/spi/InitialContextFactory.html). For example, for the Solace message broker internal JNDI this is included in the Solace JMS API jar file, and the factory class is `com.solacesystems.jndi.SolJNDIInitialContextFactory`. The jar file for the file system based JNDI implementation used in this tutorial is [fscontext.jar](https://mvnrepository.com/artifact/com.sun.messaging.mq/fscontext), and the factory class is `com.sun.jndi.fscontext.RefFSContextFactory`.
 
 This is the typical pattern to connect to a JNDI server. Generally, it requires the InitialContextFactory implementation class name (INITIAL_CONTEXT_FACTORY), connection url (PROVIDER_URL), username (SECURITY_PRINCIPAL), and password (SECURITY_CREDENTIALS). In our simple file system based JNDI example the username and password will be ignored.
 
@@ -186,7 +184,7 @@ The previous section described how the "ExtJndiImport" sample can be used to cre
 
 The "ExtJndiTest" sample will look up these JNDI entries to connect to the message broker and send or receive messages.
 
-The code consists of the building blocks from earlier sections of this tutorial and the [Obtaining JMS objects using JNDI]({{ site.baseurl }}/using-jndi) tutorial:
+The code consists of the building blocks from earlier sections of this tutorial and the [Obtaining JMS objects using JNDI](../using-jndi/) tutorial:
 
 - Create the LDAP Initial Context to the external JNDI server
 - Lookup the connection factory and queue destination by names and create the Solace JMS ConnectionFactory and Queue JMS objects
@@ -196,21 +194,19 @@ The code consists of the building blocks from earlier sections of this tutorial 
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [ExtJndiImport.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/ExtJndiImport.java)
+* [ExtJndiTest.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/ExtJndiTest.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-jms
+cd https://github.com/SolaceSamples/solace-samples-jms
 ```
 
 ### Building
@@ -223,11 +219,11 @@ Building these examples is simple; you can use Gradle.
 
 This builds all the JMS Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
 
-Note: the file-based JNDI provider jar "fscontext" is included as a Maven dependency in the Gradle build file [build.gradle]{{ /blob/master/build.gradle }}" target="_blank" . Replace this with your JNDI provider jar file's reference. If it is are not available from Maven create a directory "libs" under the project root (same level as the "src" directory) and place the jar file there as the build file has this directory in its source path.
+Note: the file-based JNDI provider jar "fscontext" is included as a Maven dependency in the Gradle build file `build.gradle`. Replace this with your JNDI provider jar file's reference. If it is are not available from Maven create a directory "libs" under the project root (same level as the "src" directory) and place the jar file there as the build file has this directory in its source path.
 
 ### Running the Sample
 
-First, ensure that the Solace internal JNDI has been configured as described in the [Obtaining JMS objects using JNDI tutorial]({{ site.baseurl }}/using-jndi#configuring-the-solace-messaging ), so we can assume followings exist:
+First, ensure that the Solace internal JNDI has been configured as described in the [Obtaining JMS objects using JNDI tutorial](../using-jndi#configuring-the-solace-messaging/), so we can assume followings exist:
 
 | Solace JNDI ConnectionFactory name | /JNDI/CF/GettingStarted |
 | Solace JNDI Queue name             | /JNDI/Q/tutorial |

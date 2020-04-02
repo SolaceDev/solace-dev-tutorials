@@ -11,18 +11,18 @@ links:
 ---
 
 
-This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial](../publish-subscribe/).
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -40,9 +40,9 @@ The goal of this tutorial is to understand the following:
 
 JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
 
-1.  [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html){:target="_blank"}.
-2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service){:target="_blank"}
-3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3){:target="_blank"}
+1.  [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html)
+2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
+3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
 
 The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
@@ -50,13 +50,13 @@ The oracle link points you to the JavaEE official tutorials which provide a good
 
 Request-reply messaging is supported by Solace messaging for all delivery modes. The JMS API does provide a `TopicRequestor` and `QueueRequestor` interface which is very simple. However, this interface lacks the ability to timeout the requests. This limitation means that it is often simpler to implement the request – reply pattern in your application. This tutorial will follow this approach.
 
-It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. This is explained further in the [Solace product documentation]({{ site.docs-gm-rr }}){:target="_top"} and shown in the API samples named `SolJMSRRGuaranteedRequestor` and `SolJMSRRGuaranteedReplier`.
+It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. This is explained further in the [Solace product documentation](https://docs.solace.com/Solace-JMS-API/Using-Topic-Requestors.htm) and shown in the API samples named `SolJMSRRGuaranteedRequestor` and `SolJMSRRGuaranteedReplier`.
 
 ### Message Correlation
 
 For request-reply messaging to be successful it must be possible for the requestor to correlate the request with the subsequent reply. Solace messages support two fields that are needed to enable request-reply correlation. The reply-to field can be used by the requestor to indicate a Solace Topic or Queue where the reply should be sent. In JMS, a natural choice for this is a temporary queue. The second requirement is to be able to identify the reply message within the stream of incoming messages. This is accomplished using the correlation-id field. This field will transit the Solace messaging system unmodified. Repliers can include the same correlation-id in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-1.png)
+![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
 Note: In JMS it also common for the requestor to put a unique message ID into the message on send and have the replier respond with this message ID in the correlation ID field of the response message. This is equally possible with the Solace JMS API. This tutorial favors the correlation ID approach because it works commonly with all Solace messaging APIs.
 
@@ -70,16 +70,17 @@ This tutorial will make use of two JMS administered objects:
 *   A ConnectionFactory object – Used by JMS clients to successfully connect to a message broker like Solace messaging
 *   A Queue Destination – Used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/requests`
 
-As described in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe) we will use the approach of programmatically creating the required objects.
+As described in the [publish/subscribe tutorial](../publish-subscribe/) we will use the approach of programmatically creating the required objects.
 
 ## Connecting a session to Solace Messaging
 
-As with other tutorials, this tutorial requires a JMS `Connection` connected to the default message VPN of a Solace VMR which has authentication disabled. So the only required information to proceed is the Solace VMR host string which this tutorial accepts as an argument. Connect the JMS `Connection` as outlined in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+As with other tutorials, this tutorial requires a JMS `Connection` connected to the default message VPN of a Solace VMR which has authentication disabled. So the only required information to proceed is the Solace VMR host string which this tutorial accepts as an argument. Connect the JMS `Connection` as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
 ## Making a request
 
 First let’s look at the requestor. This is the application that will send the initial request message and wait for the reply.  
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-2.png)
+
+![Diagram: Making a Request](../../../images/diagrams/Request-Reply_diagram-2.png)
 
 In order to be able to receive the response message back from the Replier, the Requestor must setup a JMS `Consumer`. For simplicity, this tutorial will use a blocking Consumer to receive the response messages using a temporary queue.
 
@@ -89,7 +90,7 @@ MessageConsumer replyConsumer = session.createConsumer(replyToQueue);
 connection.start();
 ```
 
-With the connection started, now the Requestor is ready to receive any reply messages on its temporary JMS Queue. Next you must create a message and the topic to send the message to. This is done in the same way as illustrated in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+With the connection started, now the Requestor is ready to receive any reply messages on its temporary JMS Queue. Next you must create a message and the topic to send the message to. This is done in the same way as illustrated in the [publish/subscribe tutorial](../publish-subscribe/).
 
 ```java
 final String REQUEST_TOPIC_NAME = "T/GettingStarted/requests";
@@ -123,7 +124,7 @@ If no response is received within the timeout specified (10 seconds in this exam
 
 Now it is time to receive the request and generate an appropriate reply.
 
-![Request-Reply_diagram-3]({{ site.baseurl }}/assets/images/Request-Reply_diagram-3.png)
+![Diagram: Replying to a Request](../../../images/diagrams/Request-Reply_diagram-3.png)
 
 Just as with previous tutorials, you still need to connect a JMS Connection and Session and create a MessageConsumer to receive request messages. However, in order to send replies back to the requestor, you will also need a MessageProducer. The following code will create the producer and consumer that is required.
 
@@ -194,21 +195,19 @@ System.out.printf("Message Content:%n%s%n", SolJmsUtility.dumpMessage(reply));
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/BasicRequestor.java)
+* [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/BasicReplier.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-jms
+cd solace-samples-jms
 ```
 
 ### Building

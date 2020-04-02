@@ -10,22 +10,22 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumerJNDI.java
 ---
 
-This tutorial outlines the use of Java Naming and Directory Interface (JNDI) to create JMS objects including ConnectionFactories and Topic or Queue destinations. The [Publish/Subscribe]({{ site.baseurl }}/publish-subscribe) and other tutorials use the approach of programmatically creating these JMS objects, which is usually recommended for developers but JNDI is also a good option which increases the portability of your JMS application code.
+This tutorial outlines the use of Java Naming and Directory Interface (JNDI) to create JMS objects including ConnectionFactories and Topic or Queue destinations. The [Publish/Subscribe](../publish-subscribe/) and other tutorials use the approach of programmatically creating these JMS objects, which is usually recommended for developers but JNDI is also a good option which increases the portability of your JMS application code.
 
-In this tutorial, we’ll follow the same flow as the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial but use JNDI to retrieve the JMS Objects.
+In this tutorial, we’ll follow the same flow as the [Persistence with Queues](../persistence-with-queues/) tutorial but use JNDI to retrieve the JMS Objects.
 
 Obtaining JMS objects using JNDI requires a lookup of a Solace messaging resource by its reference in a JNDI store and then creating a local JMS object from the information returned. With the local JMS object available, the client can start using the associated resource:
 
-![]({{ site.baseurl }}/assets/images/jndi-tutorial.png)
+![Diagram: Using Jindi](../../../images/diagrams/jndi-tutorial.png)
 
-Solace messaging provides a JNDI service to make this integration easy, which we will use here. Alternatively, it is possible to use other JNDI standard compliant services, such as an LDAP-based JNDI store on a remote host as described in the [Solace Documentation]({{ site.docs-jms-establishing-connections }}){:target="_top"}
+Solace messaging provides a JNDI service to make this integration easy, which we will use here. Alternatively, it is possible to use other JNDI standard compliant services, such as an LDAP-based JNDI store on a remote host as described in the [Solace Documentation](https://docs.solace.com/Solace-JMS-API/Obtaining-Connection-Fac.htm#establishing_connections_577400906_317143).
 
 ### Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
-*   You have an understanding or you can refer to the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial for
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
+*   You have an understanding or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for
     *   the Java Messaging Service (JMS) basics
     *   how to send and receive a message using the JMS API
     *   how obtain the Solace JMS API
@@ -35,7 +35,7 @@ This tutorial assumes the following:
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Admin level rights to configure the message-VPN
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ### Goals
 
@@ -50,7 +50,7 @@ The goal of this tutorial is to demonstrate the use of JNDI as a way to create J
 
 ## Step 1: Configuring the JNDI service
 
-This tutorial will make use of the same two JMS objects as the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues):
+This tutorial will make use of the same two JMS objects as the [Persistence with Queues](../persistence-with-queues/):
 
 *   A ConnectionFactory object – Used by JMS clients to successfully connect to a message broker like a Solace message router
 *   A Queue Destination – Used for publishing and subscribing to messages.
@@ -155,9 +155,9 @@ Password:
 ```
 
 
-See the [Solace Documentation - Solace Router CLI]({{site.docs-management-cli}}){:target="_top"} for more details.
+See the [Solace Documentation - Solace Router CLI](https://docs.solace.com/Solace-CLI/Using-Solace-CLI.htm) for more details.
 
-To learn how to use the SEMP API, refer to the [Solace Element Management Protocol (SEMP) tutorials]({{site.docs-semp-get-started}}){:target="_top"}. To learn about the SolAdmin management application, refer to the [Solace Documentation - SolAdmin Overview]({{site.docs-management-soladmin}}){:target="_top"} and the application's online Help. The application can be [downloaded here]({{ site.links-downloads }}){:target="_top"}.
+To learn how to use the SEMP API, refer to the [Solace Element Management Protocol (SEMP) tutorials](https://docs.solace.com/SEMP/SEMP-Get-Started.htm). To learn about the SolAdmin management application, refer to the [Solace Documentation - SolAdmin Overview](https://docs.solace.com/SolAdmin/SolAdmin-Overview.htm?Highlight=SolAdmin) and the application's online Help. The application can be [downloaded here](https://www.solace.com/downloads/).
 
 ## Step 2: Obtaining a JMS ConnectionFactory object using JNDI
 
@@ -190,8 +190,8 @@ This is a good place to talk about the JMS Properties, which provide access to S
 JMS Properties can be used to:
 
 *   Configure the JNDI or JMS data connection properties such as security, connection retry or timeouts
-*   Set message or message delivery properties, such as marking a message as a Reply Message, as seen in the [Request/Reply]({{ site.baseurl }}/request-reply) tutorial.
-*   Set general API properties, such as when Dynamic Durables were set to enable dynamic creation of a resource in the [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial.
+*   Set message or message delivery properties, such as marking a message as a Reply Message, as seen in the [Request/Reply](../request-reply/) tutorial.
+*   Set general API properties, such as when Dynamic Durables were set to enable dynamic creation of a resource in the [Persistence with Queues](../persistence-with-queues/) tutorial.
 
 JMS Properties can be passed to the API in several ways, allowing flexibility to have them preset or a runtime setting. Here we show the use of `Username` as a JMS Property, which the JMS standard does not define.
 
@@ -225,7 +225,7 @@ Some JMS properties can even be configured on Solace messaging and the API will 
 property "default-delivery-mode" "persistent"
 ```
 
-The [Solace JMS Documentation - JMS Properties Reference]({{site.docs-jms-properties-reference}}){:target="_top"} provides detailed description of the use and the list of all JMS properties with options how to configure them. It is recommended to carefully consider the effect of the JMS Properties applied in order to achieve the desired configuration goal.
+The [Solace JMS Documentation - JMS Properties Reference](https://docs.solace.com/Solace-JMS-API/JMS-Properties-Reference.htm) provides detailed description of the use and the list of all JMS properties with options how to configure them. It is recommended to carefully consider the effect of the JMS Properties applied in order to achieve the desired configuration goal.
 
 ### Connecting to the Solace Messaging
 
@@ -256,21 +256,19 @@ Once the JMS queue object has been created using JNDI, producers and consumers c
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QueueProducerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueProducerJNDI.java)
+* [QueueConsumerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueConsumerJNDI.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-jms
+cd solace-samples-jms
 ```
 
 ### Building

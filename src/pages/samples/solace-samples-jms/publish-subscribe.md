@@ -16,12 +16,12 @@ This tutorial will introduce you to the fundamentals of the JMS 1.1 API as imple
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -34,9 +34,9 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 
 JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
 
-1.  [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html){:target="_blank"}.
-2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service){:target="_blank"}
-3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3){:target="_blank"}
+1.  [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html)
+2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
+3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
 
 The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
@@ -50,7 +50,7 @@ This tutorial will make use of two JMS administered objects:
 *   A ConnectionFactory object – used by JMS clients to successfully connect to a message broker like a Solace message router
 *   A Topic Destination – used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/pubsub`
 
-The [JMS specification](http://java.sun.com/products/jms/docs.html){:target="_blank"} provides two ways to create administered objects:
+The [JMS specification](http://java.sun.com/products/jms/docs.html) provides two ways to create administered objects:
 
 *   JNDI Lookup
 *   Programmatic creation through the JMS API.
@@ -61,14 +61,14 @@ This tutorial will use the approach of programmatically creating the required ob
 *   No requirement to preconfigure the JNDI on Solace messaging or within an LDAP server
 *   Easier integration into frameworks by avoiding external JNDI lookups.
 
-The programmatic approach is also the convention most often followed with JMS samples. So it should be familiar to developers of JMS application. The Solace JMS API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about Solace JMS by referring to the [Solace JMS Documentation]({{ site.docs-jms-home }}){:target="_top"}.
+The programmatic approach is also the convention most often followed with JMS samples. So it should be familiar to developers of JMS application. The Solace JMS API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about Solace JMS by referring to the [Solace JMS Documentation](https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm).
 
 
 ## Connecting to Solace Messaging
 
 In order to send or receive messages, an application must connect to Solace messaging. In JMS, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a JMS `Session` is used as a factory for consumers and producers.
 
-The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace JMS Documentation - Obtaining Connection Factories]({{ site.docs-jms-obtaining-connection-factories }}){:target="_top"}.
+The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace JMS Documentation - Obtaining Connection Factories](https://docs.solace.com/Solace-JMS-API/Obtaining-Connection-Fac.htm).
 
 ```java
 
@@ -89,7 +89,7 @@ Connection connection = connectionFactory.createConnection();
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 ```
 
-This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in JMS to suit your application needs. Solace supports all of the JMS acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default JMS client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions]({{ site.docs-jms-managing-sessions }}){:target="_top"}.
+This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in JMS to suit your application needs. Solace supports all of the JMS acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default JMS client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
 
 At this point your client is connected to Solace messaging. You can use SolAdmin to view the client connection and related details.
 
@@ -99,9 +99,9 @@ This tutorial uses JMS “Non-Persistent” messages which are at most once deli
 
 With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the synchronous or asynchronous receipt of messages. Asynchronous receipt of messages is accomplished through callbacks. These callbacks are defined in JMS by the `MessageListener` interface.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-First a `Topic` object is required. Here we create a topic from the JMS Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations]({{ site.docs-jms-working-with-destinations }}){:target="_top"}.
+First a `Topic` object is required. Here we create a topic from the JMS Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
 
 Then create the `MessageConsumer` using the JMS `Session`.
 
@@ -156,7 +156,7 @@ At this point the consumer is ready to receive messages.
 
 Now it is time to send a message to the waiting consumer.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 ### Establishing the publisher flow
 
@@ -185,21 +185,19 @@ At this point the producer has sent a message to Solace messaging and your waiti
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-jms
+cd solace-samples-jms
 ```
 
 ### Building
