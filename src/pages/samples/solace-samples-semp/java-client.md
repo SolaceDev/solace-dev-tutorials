@@ -7,13 +7,13 @@ icon-height: 90px
 icon-width: 72px
 ---
 
-This is a quick tutorial to help you get started with the SEMP Java client library. You can learn more about the SEMP API using the [Online Documentation]({{ site.docs-semp-home }}){:target="_top"}. These documents explain the API concepts and details about the REST API. Additionally developers will find the [SEMP API Reference]({{ site.docs-api }}){:target="_top"} useful in understanding how to apply the concepts in this tutorial to other Solace Messaging objects.
+This is a quick tutorial to help you get started with the SEMP Java client library. You can learn more about the SEMP API using the [Online Documentation](https://docs.solace.com/SEMP/SEMP-Concepts.htm). These documents explain the API concepts and details about the REST API. Additionally developers will find the [SEMP API Reference](https://docs.solace.com/SEMP/SEMP-API-Ref.htm) useful in understanding how to apply the concepts in this tutorial to other Solace Messaging objects.
 
-**Note**: This tutorial applies to the SEMP API starting in version 2. For older versions of the SEMP API, you can see the [Legacy SEMP Documentation]({{ site.docs-semp-legacy }}){:target="_top"}
+**Note**: This tutorial applies to the SEMP API starting in version 2. For older versions of the SEMP API, you can see the [Legacy SEMP Documentation](https://docs.solace.com/SEMP/Using-Legacy-SEMP.htm).
 
 The following examples use a Java API generated from the SEMP specification and include an overview of the steps involved in creating this API. There is extensive support for creating SEMP client APIs in many programming languages. It should be easy enough to adapt the instructions and examples below to the programming language of your choosing.
 
-Alternatively, it is also possible to use SEMP directly through HTTP. If you are interested in using the API directly through HTTP, you can look at this [Quick Start tutorial]({{ site.baseurl }}/curl/) which walks you through the basics of making SEMP calls directly through HTTP.
+Alternatively, it is also possible to use SEMP directly through HTTP. If you are interested in using the API directly through HTTP, you can look at this [Quick Start tutorial](../curl/) which walks you through the basics of making SEMP calls directly through HTTP.
 
 ## Assumptions
 
@@ -28,11 +28,11 @@ The examples below make a few assumptions for simplicity:
 
 ## Generating the SEMP Client Library
 
-The [Generating the SEMP Client Library tutorial]({{ site.baseurl }}/generate-semp-client-lib/) provides details about generating the latest version of the library. The Gradle build script at the end of this tutorial will automatically generate the required SEMP Java Client Library for the first time if it doesn't exist yet, as part of the build.
+The [Generating the SEMP Client Library tutorial](../generate-semp-client-lib/) provides details about generating the latest version of the library. The Gradle build script at the end of this tutorial will automatically generate the required SEMP Java Client Library for the first time if it doesn't exist yet, as part of the build.
 
 ## Client Library Basics
 
-Before jumping to specific tasks like creating a Client Username, we will first introduce a few basic concepts common to the SEMP client library. If you have not already, you can learn more about these concepts and SEMP in general by checking out the [SEMP Concepts]({{ site.docs-architecture }}){:target="_top"}.
+Before jumping to specific tasks like creating a Client Username, we will first introduce a few basic concepts common to the SEMP client library. If you have not already, you can learn more about these concepts and SEMP in general by checking out the [SEMP Concepts](https://docs.solace.com/SEMP/SEMP-API-Archit.htm).
 
 ### Initializing the SEMP API
 
@@ -53,7 +53,7 @@ MsgVpnApi sempApiInstance = new MsgVpnApi(thisClient);
 
 Remember to update the values in the above example to match your environment.
 
-[*Source Reference: initialize() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: initialize() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ### Error handling
 
@@ -96,13 +96,13 @@ private void handleError(ApiException ae) {
 
 The code uses the `Gson` library to parse the JSON response, which is used internally by the Swagger client library. There's no reason why you can't use your own favourite JSON parser, of course. It then simply prints the relevant information to the console.
 
-[*Source Reference: handleError() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: handleError() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Creating an Object Using POST
 
 You create a Client Username from the `clientUsername` collection within the message-VPN. The Client Username has only one required attribute, its name. In this example I’ve chosen `tutorialUser`. For interest, I will also enable the new Client Username so it is ready for messaging clients to use. During creation, any attributes that are not specified will be created using default values.
 
-To create a Client Username, you use the `createMsgVpnClientUsername()` method. If you understand how the resource names are composed in the SEMP API, the method names should be easy to derive and understand. For details on resource name composition, you can check out the [SEMP Concepts - URI Structure]({{ site.docs-concepts-uri }}){:target="_top"}.
+To create a Client Username, you use the `createMsgVpnClientUsername()` method. If you understand how the resource names are composed in the SEMP API, the method names should be easy to derive and understand. For details on resource name composition, you can check out the [SEMP Concepts - URI Structure](https://docs.solace.com/SEMP/SEMP-API-Protocol.htm#URI).
 
 The new Client Username is represented by the `MsgVpnClientUsername` class from the model. Using this class, you can set any Client Username attributes you would like during creation.
 The `msgVpn` is set by the message-VPN name argument when you start this sample.
@@ -130,7 +130,7 @@ public void createObjectUsingPost() {
 }
 ```
 
-[*Source Reference: createObjectUsingPost() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: createObjectUsingPost() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Retrieving an Object Using GET
 
@@ -148,7 +148,7 @@ public void retrievingObjectUsingGet() {
 }
 ```
 
-[*Source Reference: retrievingObjectUsingGet() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: retrievingObjectUsingGet() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Retrieving a Collection of Objects Using GET
 
@@ -169,9 +169,9 @@ public void retrievingCollectionUsingGet() {
 }
 ```
 
-For large collections, the response will be paged. See [SEMP paging]({{ site.docs-concepts-paging }}){:target="_top"} for details.
+For large collections, the response will be paged. See [SEMP paging](https://docs.solace.com/SEMP/SEMP-API-Archit.htm#Paginati) for details.
 
-[*Source Reference: retrievingCollectionUsingGet() from BasicOperationsSample*]({{ site.repository}}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: retrievingCollectionUsingGet() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Partially Updating an Object Using PATCH
 
@@ -194,7 +194,7 @@ public void partialObjectUpdateUsingPatch() {
 }
 ```
 
-[*Source Reference: partialObjectUpdateUsingPatch() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: partialObjectUpdateUsingPatch() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Fully Updating an Object Using PUT
 
@@ -216,7 +216,7 @@ public void replaceObjectUpdateUsingPut() {
 }
 ```
 
-[*Source Reference: fullObjectUpdateUsingPut() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: fullObjectUpdateUsingPut() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Removing an Object Using DELETE
 
@@ -236,21 +236,21 @@ public void removingObjectUsingDelete() {
 }
 ```
 
-[*Source Reference: removingObjectUsingDelete() from BasicOperationsSample*]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+[*Source Reference: removingObjectUsingDelete() from BasicOperationsSample*](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ## Summary
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp). If you combine the example source code shown above results in the following source:
 
-*   [BasicOperationsSample.java]({{ site.repository }}/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java){:target="_blank"}
+* [BasicOperationsSample.java](https://github.com/SolaceSamples/solace-samples-semp/blob/master/java/src/main/java/com/solace/samples/BasicOperationsSample.java)
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}/java
+git clone https://github.com/SolaceSamples/solace-samples-semp
+cd solace-samples-semp
 ```
 
 ### Building
@@ -285,4 +285,4 @@ Client Username delete. Resp: 200
 
 At this point, you have created, retrieved, updated and deleted a Client Username object using SEMP. The examples used a generated client library in Java to interact with the Solace Messaging, but you can adapt the steps to any programming language of your choice.
 
-SEMP is an extensive API that lets you configure anything on your Solace Messaging so there is a lot more to understand. If you want to know more, you can either get more familiar with the SEMP concepts by checking out the [Concepts Guide]({{ site.docs-concepts }}){:target="_top"} or you can see the full [developer documentation for the API]({{ site.docs-api }}){:target="_top"}.
+SEMP is an extensive API that lets you configure anything on your Solace Messaging so there is a lot more to understand. If you want to know more, you can either get more familiar with the SEMP concepts by checking out the [Concepts Guide](https://docs.solace.com/SEMP/SEMP-Concepts.htm) or you can see the full [developer documentation for the API](https://docs.solace.com/SEMP/SEMP-API-Ref.htm).

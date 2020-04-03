@@ -23,7 +23,7 @@ Let's review the admin objectives:
 * The administrator may also want the ability to **delete a queue** or
 * **delete a message-VPN** when no longer needed.
 
-To accomplish this, we will create a set of tasks as building blocks that match the SEMP object model of the Solace Messaging and use a simple framework to demonstrate the integration and orchestration of these tasks to achieve above objectives. We will utilize the SEMP Ruby Client Library to implement these tasks which is a Ruby wrapper for the SEMP REST API introduced in the [Basic Operations - curl]({{ site.baseurl }}/curl) tutorial.
+To accomplish this, we will create a set of tasks as building blocks that match the SEMP object model of the Solace Messaging and use a simple framework to demonstrate the integration and orchestration of these tasks to achieve above objectives. We will utilize the SEMP Ruby Client Library to implement these tasks which is a Ruby wrapper for the SEMP REST API introduced in the [Basic Operations - curl](../curl/) tutorial.
 
 ### Assumptions
 
@@ -31,13 +31,13 @@ This tutorial assumes that you have access to a running Solace VMR with the foll
 
 * A management user authorized with a minimum access scope level of *global/read-write*.
 
-One simple way to get access to a Solace Messaging system is to start a Solace VMR as outlined [here]({{ site.docs-vmr-setup }}){:target="_top"}.
+One simple way to get access to a Solace Messaging system is to start a Solace VMR as outlined [here](https://docs.solace.com/Solace-VMR-Set-Up/Setting-Up-VMRs.htm).
 
 We also assume that Ruby is installed.
 
 ### Trying it yourself
 
-This tutorial is available in [GitHub]({{ site.repository }}){:target="_blank"} along with the other [Solace SEMP Getting Started Examples]({{ site.tutorials-home }}){:target="_blank"}.
+This tutorial is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp) along with the other [Solace SEMP Getting Started Examples](https://solacesamples.github.io/solace-samples-semp/).
 
 At the end, this tutorial walks through downloading and running the sample from source.
 
@@ -47,20 +47,20 @@ At the end, this tutorial walks through downloading and running the sample from 
 
 Here we introduce some important basic concepts that are required for the implementation of Solace Messaging management tasks using SEMP.
 
-As described in the introduction, message-VPNs provide isolated messaging domains for exclusive use. You can read more about message-VPNs in the [Solace Messaging Concepts]({{ site.docs-router-concepts }}){:target="_top"} document.
+As described in the introduction, message-VPNs provide isolated messaging domains for exclusive use. You can read more about message-VPNs in the [Solace Messaging Concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm) document.
 
-Solace Messaging management is divided into Router-global level and individual Message-VPN level management. A management user with *global/read-write* access scope is authorized for all router and all message-VPN level configurations, such as global configuration or administering a message-VPN. Conversely, *VPN/read-write* access scope only allows for management of objects that have an effect within the assigned VPN, such as configuring a queue. In this tutorial, we will use a management user with *global/read-write* access scope for all configurations. For more details, refer to the [Management User Authentication/Authorization]({{ site.docs-mgmt-user-aa }}){:target="_top"} documentation.
+Solace Messaging management is divided into Router-global level and individual Message-VPN level management. A management user with *global/read-write* access scope is authorized for all router and all message-VPN level configurations, such as global configuration or administering a message-VPN. Conversely, *VPN/read-write* access scope only allows for management of objects that have an effect within the assigned VPN, such as configuring a queue. In this tutorial, we will use a management user with *global/read-write* access scope for all configurations. For more details, refer to the [Management User Authentication/Authorization](https://docs.solace.com/Configuring-and-Managing/TLS-SSL-Encryption.htm) documentation.
 
-![]({{ site.baseurl }}/assets/images/message-vpn-semp-objects.png)
+![Diagram: SEMP Object Model - Solace Message VPNs](../../../images/diagrams/message-vpn-semp-objects.png)
 
 Clients can connect to a message-VPN and use its resources after proper authentication and authorization, controlled by the properties of the following SEMP objects on the Solace Messaging:
 
-* The [Message-VPN]({{ site.docs-msg-vpn }}){:target="_top"} object defines the type and details of client authentication applied and restrictions to the combined resource usage of all VPN clients.
-* A [Client Profile]({{ site.docs-client-profile }}){:target="_top"} object within a message-VPN defines resource usage restrictions applied to individual clients.
-* An [ACL (Access Control List) Profile]({{ site.docs-acl-profile }}){:target="_top"} object within a message-VPN defines access restrictions by listing allowance or denial of which clients can connect and to which topics and queues.
-* A [Client Username]({{ site.docs-client-username }}){:target="_top"} object within a message-VPN has an associated Client Profile and an ACL Profile. The username provided by the connecting client will be the Client Username applied to that connection or if it is not found then the default Client Username will be applied. The password property will be used if internal client authentication type has been specified for the message-VPN.
+* The [Message-VPN](https://docs.solace.com/Configuring-and-Managing/Configuring-VPNs.htm) object defines the type and details of client authentication applied and restrictions to the combined resource usage of all VPN clients.
+* A [Client Profile](https://docs.solace.com/Configuring-and-Managing/Client-Authorization.htm) object within a message-VPN defines resource usage restrictions applied to individual clients.
+* An [ACL (Access Control List) Profile](https://docs.solace.com/Configuring-and-Managing/Managing-Access-Control-Lists.htm) object within a message-VPN defines access restrictions by listing allowance or denial of which clients can connect and to which topics and queues.
+* A [Client Username](https://docs.solace.com/Configuring-and-Managing/Managing-Client-Authentic-and-Authoriz.htm) object within a message-VPN has an associated Client Profile and an ACL Profile. The username provided by the connecting client will be the Client Username applied to that connection or if it is not found then the default Client Username will be applied. The password property will be used if internal client authentication type has been specified for the message-VPN.
 
-Once connected, clients can send messages to message-VPN endpoints, represented as [Queue]({{ site.docs-queues }}){:target="_top"} or [Topic Endpoint]({{ site.docs-dtes }}){:target="_top"} SEMP objects within a message-VPN.
+Once connected, clients can send messages to message-VPN endpoints, represented as [Queue](https://docs.solace.com/Configuring-and-Managing/Configuring-Queues.htm) or [Topic Endpoint](https://docs.solace.com/Configuring-and-Managing/Configuring-DTEs.htm) SEMP objects within a message-VPN.
 
 You can learn more about above SEMP objects by following the provided links to the Solace documentation.
 
@@ -88,9 +88,9 @@ end
 
 ### Create a new message-VPN
 
-The first task is to create a new message-VPN with a name. Consulting the Solace documentation by following above [Message-VPN]({{ site.docs-msg-vpn }}){:target="_top"} link, we determine that it shall be configured for basic internal authentication, have the storage size increased for persistent message queues from default 0 and have it enabled. Tip: the [SolAdmin]({{ site.docs-soladmin-home }}){:target="_top"} management GUI tool can be used to show the default values for new created objects. If in doubt, try the intended management operation using SolAdmin, which can be [downloaded here]({{ site.docs-solace-downloads }}){:target="_top"}.
+The first task is to create a new message-VPN with a name. Consulting the Solace documentation by following above [Message-VPN](https://docs.solace.com/Configuring-and-Managing/Configuring-VPNs.htm) link, we determine that it shall be configured for basic internal authentication, have the storage size increased for persistent message queues from default 0 and have it enabled. Tip: the [SolAdmin](https://docs.solace.com/SolAdmin/SolAdmin-Overview.htm) management GUI tool can be used to show the default values for new created objects. If in doubt, try the intended management operation using SolAdmin, which can be [downloaded here](https://solace.com/downloads/).
 
-To understand how to implement this, let’s consult the [SEMP online API documentation]({{ site.docs-api }}){:target="_top"}:
+To understand how to implement this, let’s consult the [SEMP online API documentation](https://docs.solace.com/SEMP/SEMP-API-Ref.htm):
 - scrolling down to msgVPN and opening the `List Operations` link will show the color-coded options for all available operations. Clicking on `POST /msgVpns - Creates a Message VPN object` will open up the details. Scrolling down to `MsgVpn {`, here we can find the names of the attributes and we can derive the Ruby instance variable names using the rule: lowercase with words separated by underscores. For example, we look up the attribute `maxMsgSpoolUsage (integer)` and determine the instance variable name to be `max_msg_spool_usage`. Additionally, you can explore the SEMP Ruby Client Library specific documentation included in the `solace-sample-semp/ruby/docs` folder once you build the ruby project.
 
 ```ruby
@@ -199,17 +199,17 @@ We can now implement the admin objectives in the sample Ruby-based command-line 
 
 ## Summary
 
-The full source code for this example is available in [GitHub]({{ site.repository-ruby }}){:target="_blank"}. If you combine the example source code shown above, it results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp/tree/master/ruby). If you combine the example source code shown above, it results in the following source:
 
-* [manage_vpn.rb]({{ site.repository }}/blob/master/ruby/samples/manage_vpn.rb){:target="_blank"}
+* [manage_vpn.rb](https://github.com/SolaceSamples/solace-samples-semp/blob/master/ruby/samples/manage_vpn.rb)
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}/ruby
+git clone https://github.com/SolaceSamples/solace-samples-semp
+cd solace-samples-semp/ruby
 ```
 
 ### Builing and Installing the SEMP Ruby Client Library
@@ -251,7 +251,7 @@ ruby -Ilib samples/manage_vpn.rb delete <semp_base_path> <management_user> <mana
 
 This will detect that the queue `testQueue` and possibly other queues are still there so it will delete these first and then it will delete `myNewVPN`.
 
-Now it is possible to easily create as many message-VPNs as required and share an installed VMR with other developers. To try the new message-VPN, use the [Persistence with Queues]({{ site.solace-samples-jms-queues }}){:target="_top"} Java sample (which requires Java installed). Follow the instructions to get the source, build and then run from the appropriate directory with the additional optional parameter of the message-VPN name:
+Now it is possible to easily create as many message-VPNs as required and share an installed VMR with other developers. To try the new message-VPN, use the [Persistence with Queues](../../solace-samples-jms/persistence-with-queues/) Java sample (which requires Java installed). Follow the instructions to get the source, build and then run from the appropriate directory with the additional optional parameter of the message-VPN name:
 
 ```
 ./build/staged/bin/queueProducer <HOST> myNewVPN

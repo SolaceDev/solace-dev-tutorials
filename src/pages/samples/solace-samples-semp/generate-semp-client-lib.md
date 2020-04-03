@@ -7,8 +7,8 @@ icon-height: 70px
 icon-width: 228px
 ---
 
-Programmatic management of the Solace Messaging through the SEMP API can be done directly through accessing the system's HTTP REST protocol API (see the related [Basic Operations - curl tutorial]({{ site.baseurl }}/curl/)) or more conveniently, using a local SEMP client library which is:
-<br><br>
+Programmatic management of the Solace Messaging through the SEMP API can be done directly through accessing the system's HTTP REST protocol API (see the related [Basic Operations - curl tutorial](../curl/)) or more conveniently, using a local SEMP client library which is:
+
 * In a programming language that is native to your management code
 * Hides the REST protocol details
 * Enables to focus on the objects to be managed.
@@ -19,7 +19,7 @@ In this tutorial we will show and explain the steps to generate the latest versi
 
 ## Trying it yourself
 
-This tutorial is available in [GitHub]({{ site.repository }}){:target="_blank"} along with the other Solace SEMP Getting Started Examples.
+This tutorial is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp) along with the other Solace SEMP Getting Started Examples.
 
 You can manually follow the steps in the next sections to generate the SEMP client library for any supported programming language or use the provided automated Gradle script for `Java`, `Ruby` or `Python`.
 
@@ -27,7 +27,7 @@ As a pre-requisite, you will need to have Java installed.
 
 ## Overview
 
-The Solace Element Management Protocol (SEMP) API is based on the [OpenAPI (a.k.a. Swagger) specification]({{ site.swagger-spec }}){:target="_top"}, which enables an object oriented approach to the management of Solace Messaging by specifying management objects with valid operations and properties.
+The Solace Element Management Protocol (SEMP) API is based on the [OpenAPI (a.k.a. Swagger) specification](https://swagger.io/specification/), which enables an object oriented approach to the management of Solace Messaging by specifying management objects with valid operations and properties.
 
 * The API is defined as a JSON or YAML formatted specification
 * From this specification it is possible to programmatically generate client libraries in most popular languages
@@ -42,24 +42,22 @@ Following steps are required to generate the SEMP client library:
 3. Setting customization rules, such as the naming of the generated library.
 4. Generating the library.
 
-
 ## Step 1: Getting the API specification
 
 There are two ways to obtain the API specification:
 
-* The latest version from the Solace Developer Portal here: [SEMP Schema]({{ site.docs-schema }}){:target="_top"}
+* The latest version from the Solace Developer Portal here: [SEMP Schema](https://docs.solace.com/SEMP/SEMP-API-Archit.htm#SEMP)
 * From the Solace Messaging directly via a GET call to the following URI: [http://solacevmr:8080/SEMP/v2/config/spec](http://solacevmr:8080/SEMP/v2/config/spec) - Remember to update the host and port to match your Solace Messaging system.
 
 It is generally recommended to download the latest API specification from the Solace developer portal, which will support all the versions of your currently used Solace messaging routers.
 
-
 ## Step 2: Getting the tool
 
-We recommend using [Swagger Codegen]({{ site.swagger-codegen-site }}){:target="_top"} out of the several tools the Swagger community  [project website]({{ site.swagger-tools-site }}){:target="_top"} lists, because it provides the best customization.
+We recommend using [Swagger Codegen](https://swagger.io/swagger-codegen/) out of the several tools the Swagger community [project website](https://swagger.io/tools/) lists, because it provides the best customization.
 
-Swagger Codegen is an easy-to-use Java based command-line tool. It takes the API specification, target programming language and customization parameters as input and generates the native API client library for that language, API reference documentation and getting started documentation. It supports building an API client library for most popular programming languages. For full documentation including the list of available client programming languages, check the [Swagger Codegen GitHub project site]({{ site.swagger-codegen-github-overview }}).
+Swagger Codegen is an easy-to-use Java based command-line tool. It takes the API specification, target programming language and customization parameters as input and generates the native API client library for that language, API reference documentation and getting started documentation. It supports building an API client library for most popular programming languages. For full documentation including the list of available client programming languages, check the [Swagger Codegen GitHub project site](https://github.com/swagger-api/swagger-codegen#overview).
 
-The tool itself can be downloaded from Maven Central as [swagger-codegen-cli-2.2.2.jar]({{ site.swagger-codegenjar-from-mvncentral }}) or obtained other ways, as described at the above project site. Ensure you also have a Java JRE installed.
+The tool itself can be downloaded from Maven Central as [swagger-codegen-cli-2.2.2.jar](https://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar) or obtained other ways, as described at the above project site. Ensure you also have a Java JRE installed.
 
 ## Step 3: Customization
 
@@ -74,7 +72,6 @@ Customization options vary for each programming language but it is generally pos
 It is recommended to review the additional customization options provided by above command. For example for Java,  be aware what networking library the client will be using.
 
 For the `Java`, `Python` and `Ruby` samples we have provided example customizations in the `codegen_config_<language>.json` files in the language specific subdirectories.
-
 
 ## Step 4: Generating the SEMP client library
 
@@ -107,6 +104,6 @@ cd solace-samples-semp/<language>       # java, python or ruby
 
 We have shown how to generate the latest version of the SEMP client library, which is now ready to use. Use it in your project structure, adjust for any library names as required.
 
-If using it for the first time for a new client language, the getting started documentation (filtered out by default by the automated Gradle script) includes help to get to a basic working SEMP management example and it will advise of any additional specific steps for the language you are using. Reviewing the [Solace SEMP API Reference]({{ site.docs-api }}){:target="_top"} documentation{% if jekyll.environment != 'solaceCloud' %} and the provided [Java]({{ site.baseurl }}/messagevpn-with-queue-java/), [Python]({{ site.baseurl }}/messagevpn-with-queue-python/) or [Ruby]({{ site.baseurl }}/messagevpn-with-queue-ruby/) samples{% endif %} will help to understand some of the common ideas.
+If using it for the first time for a new client language, the getting started documentation (filtered out by default by the automated Gradle script) includes help to get to a basic working SEMP management example and it will advise of any additional specific steps for the language you are using. Reviewing the [Solace SEMP API Reference](https://docs.solace.com/SEMP/SEMP-API-Ref.htm) documentation and the provided [Java](../messagevpn-with-queue-java/), [Python](../messagevpn-with-queue-python/) or [Ruby](../messagevpn-with-queue-ruby/) samples will help to understand some of the common ideas.
 
-Our [Message VPN with Queue series]({{ site.baseurl }}/messagevpn-with-queue-java/) of samples also show how to create a high level library for common management tasks for Solace Messaging.
+Our [Message VPN with Queue series](../messagevpn-with-queue-java/) of samples also show how to create a high level library for common management tasks for Solace Messaging.
