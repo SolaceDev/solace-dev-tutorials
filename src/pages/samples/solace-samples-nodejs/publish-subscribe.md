@@ -16,12 +16,12 @@ This tutorial will introduce you to the fundamentals of the Solace Node.js API v
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -144,13 +144,13 @@ subscriber.session.on(solace.SessionEventCode.UP_NOTICE, function (sessionEvent)
 });
 ```
 
-See `solace.SessionEventCode` in the [Node.js API Reference]({{ site.docs-api-reference }}){:target="_top"} for the full list of session event codes.
+See `solace.SessionEventCode` in the [Node.js API Reference](https://docs.solace.com/API-Developer-Online-Ref-Documentation/nodejs/index.html) for the full list of session event codes.
 
 ## Receiving a message
 
 This tutorial uses “Direct” messages which are at most once delivery messages. So first, let’s create a listener and express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-receiving-message-300x134.png)
+![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
 With a subscriber session created in the previous step, we declare a message event listener.
 
@@ -199,7 +199,7 @@ After the subscription is successfully added the subscriber is ready to receive 
 
 Now it is time to send a message to the waiting consumer.
 
-![]({{ site.baseurl }}/assets/images/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 ### Creating and sending the message
 
@@ -233,19 +233,17 @@ At this point a message to the Solace message router has been sent and your wait
 
 Combining the example source code shown above results in the following source code files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [TopicPublisher.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/basic-samples/TopicPublisher.js)
+* [TopicSubscriber.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/basic-samples/TopicSubscriber.js)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-nodejs
+cd solace-samples-nodejs
 ```
 
 Note: the code in the `master` branch of this repository depends on Solace Node.js API version 10 or later. If you want to work with an older version clone the branch that corresponds your version.

@@ -8,20 +8,20 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/ConfirmedDeliveryProducer.java
 ---
 
-This tutorial builds on the basic concepts introduced in [Persistence with MQTT]({{ site.baseurl }}/persistence-with-queues) tutorial and will show you how to properly process publisher acknowledgements. When you receive an acknowledgement for a QoS level 1 message, you have confirmed your message have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
+This tutorial builds on the basic concepts introduced in [Persistence with MQTT](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. When you receive an acknowledgement for a QoS level 1 message, you have confirmed your message have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Enabled MQTT service
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -34,7 +34,7 @@ The goal of this tutorial is to understand the following:
 
 ## Connecting a session to Solace messaging
 
-This tutorial builds on the `QoS1Producer` introduced in Persistence with MQTT. So connect the `MqttClient` as outlined in the [Persistence with MQTT]({{ site.baseurl }}/persistence-with-queues) tutorial.
+This tutorial builds on the `QoS1Producer` introduced in Persistence with MQTT. So connect the `MqttClient` as outlined in the [Persistence with MQTT](../persistence-with-queues/) tutorial.
 
 ## Tracking the delivery of QoS 1 messages
 
@@ -77,21 +77,17 @@ try {
 
 ## Summarizing
 
-The full source code for this example is available on [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available on [GitHub](https://github.com/SolaceSamples/solace-samples-mqtt). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [ConfirmedDeliveryProducer.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/ConfirmedDeliveryProducer.java)
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-mqtt
+cd solace-samples-mqtt
 ```
 
 ### Building

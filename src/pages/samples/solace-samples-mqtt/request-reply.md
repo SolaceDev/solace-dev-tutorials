@@ -10,19 +10,19 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/BasicReplier.java
 ---
 
-This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial](../publish-subscribe/).
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
     *   Enabled MQTT services
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -41,14 +41,14 @@ The goal of this tutorial is to understand the following:
 
 MQTT is a standard lightweight protocol for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about MQTT. The following are good places to start
 
-1.  [http://mqtt.org/](http://mqtt.org/){:target="_blank"}
-2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/){:target="_blank"}
+1.  [http://mqtt.org/](http://mqtt.org/)
+2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/)
 
 ## Overview
 
-MQTT does not explicitly support the request-response message exchange pattern. However, this tutorial will implement the pattern by defining a topic structure to send requests and by obtaining a unique Reply-To topic from the Solace message router on which the response should be sent back to the requestor. Obtaining the Reply-To topic from a MQTT session is a Solace extension to MQTT and is achieved by adding a topic subscription to the designated special topic `“$SYS/client/reply-to”`. You can learn more details on requesting MQTT session information by referring to the [Solace Docs – Managing MQTT Messaging]({{ site.docs-managing-mqtt }}).
+MQTT does not explicitly support the request-response message exchange pattern. However, this tutorial will implement the pattern by defining a topic structure to send requests and by obtaining a unique Reply-To topic from the Solace message router on which the response should be sent back to the requestor. Obtaining the Reply-To topic from a MQTT session is a Solace extension to MQTT and is achieved by adding a topic subscription to the designated special topic `“$SYS/client/reply-to”`. You can learn more details on requesting MQTT session information by referring to the [Solace Docs – Managing MQTT Messaging](https://docs.solace.com/Configuring-and-Managing-Routers/Managing-MQTT-Messaging.htm).
 
-This tutorial will be using the MQTT Quality of Service (QoS) level 0 to send and receive request and response messages, but it is possible to use any of the QoS level 0, 1, or 2 for the request response scenarios.
+This tutorial will be using the MQTT Quality of Service (QoS) level 0 to send and receive request and response messages, but it is possible to use any of the QoS level 0, 1, or 2 for the request response scenarios. 
 
 ### Message Correlation
 
@@ -56,7 +56,7 @@ For request-response messaging to be successful it must be possible for the requ
 
 The second requirement is to be able to detect the reply message from the stream of incoming messages. This is accomplished by adding a correlation-id field. Repliers can include the same correlation-id in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-1.png)
+![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
 In this tutorial the payload of both the request and reply messages are formatted to JSON in order to add the reply-to field, the correlation-id field, and the message contents. You can use any payload format which both the requestor and replier understand, but for the purpose of this tutorial we choose JSON to structure the payload of the message and keep the tutorial simple. This tutorial will use the JSON-Simple Java library to both construct and parse the payload in JSON. The section below can be added to your pom.xml to configure the JSON-Simple dependency.
 
@@ -78,13 +78,13 @@ In this tutorial the payload of both the request and reply messages are formatte
 
 ## Connecting a Session to Solace Messaging
 
-This tutorial builds on the `TopicPublisher` introduced in Publish-Subscribe with MQTT. So connect the `MqttClient` as outlined in the [Publish-Subscribe with MQTT]({{ site.baseurl }}/publish-subscribe) tutorial.
+This tutorial builds on the `TopicPublisher` introduced in Publish-Subscribe with MQTT. So connect the `MqttClient` as outlined in the [Publish-Subscribe with MQTT](../publish-subscribe/) tutorial.
 
 ## Making a Request
 
 First let’s look at the requestor. This is the application that will send the initial request message and wait for the reply.
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-2.png)
+![Diagram: Making a Request](../../../images/diagrams/Request-Reply_diagram-2.png)
 
 The requestor must obtain the unique reply-to topic. Using Solace Messaging, this can be accomplished by adding a subscription to the designated special topic `“$SYS/client/reply-to”`. The reply-to topic is received asynchronously through callbacks. These callbacks are defined in MQTT by the `MqttCallback` interface. The same callback is also used to receive the actual reply message. In order to distinguish between the two messages we inspect the topic string provided in the `MqttCallback.messageArrived` method.
 
@@ -163,7 +163,7 @@ try {
 
 Now it is time to receive the request and generate an appropriate reply.  
 
-![]({{ site.baseurl }}/assets/images/Request-Reply_diagram-3.png)
+![Diagram: Replying to a Request](../../../images/diagrams/Request-Reply_diagram-3.png)
 
 
 Similar to the requestor, an `MqttClient` is created and connected to Solace messaging. Request messages are received asynchronously through callback defined by the `MqttCallback` interface. When a request message is received, the replier parses the payload of the message to a JSON object, constructs a reply message and adds the correlation-id field retrieved from the request payload. The reply message is published to the reply-to topic found in the body of the request message.
@@ -223,21 +223,19 @@ Then after the subscription is added, the replier is started. At this point the 
 
 ## Summarizing
 
-The full source code for this example is available on [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available on [GitHub](https://github.com/SolaceSamples/solace-samples-mqtt). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/BasicRequestor.java)
+* [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/BasicReplier.java)
+
 
 ### Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-mqtt
+cd solace-samples-mqtt
 ```
 
 ### Building

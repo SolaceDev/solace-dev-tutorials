@@ -11,21 +11,21 @@ links:
 
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe), and will show you how to send
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send
 and receive QoS 1 messages using Solace messaging.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Enabled MQTT service
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -38,34 +38,31 @@ The goal of this tutorial is to understand the following:
 
 MQTT is a standard lightweight protocol for sending and receiving messages. As such, in addition to informatoin provided on the Solace developer portal, you may also look at some external sources for more details about MQTT. The following are good places to start
 
-1. [http://mqtt.org/](http://mqtt.org/){:target="_blank"}
-2. [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/){:target="_blank"}
+1. [http://mqtt.org/](http://mqtt.org/)
+2. [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/)
 
 {% include_relative assets/solaceMessaging.md %}
 {% include_relative assets/mqttApi.md %}
 
 ## Connecting a session to Solace messaging
 
-The simplest way to connect to a Solace messaging in MQTT is to use an 'MqttClient', as done with other tutorials. So connect the 'MqttClient' as outlined in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+The simplest way to connect to a Solace messaging in MQTT is to use an 'MqttClient', as done with other tutorials. So connect the 'MqttClient' as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
-NOTE: If you use the default 'MqttConnectOptions', or set 'MqttConnectOptions.cleanSession' to 'true', as done in the publish/subscribe tutorial, then a Non-Durable (a.k.a. Temporary Endpoint) queue will automatically be created on Solace messaging when the client adds a QoS 1 subscription. Queues are used to store QoS 1 messages providing persistence for the 'MqttClient'. A Non-Durable queue is removed when the 'MqttClient' disconnects, which mean Solace messaging will not retain any messages for the client after it disconnects. Setting the 'MqttConnectOptions.cleanSession' to 'false' will create a Durable queue which will retain messages even after the client disconnects. You can learn more about Solace queue durability from the Endpoint Durability section of [Solace Features – Working with Guaranteed Messages]({{ site.docs-gm-feature }}){:target="_top"}.
+NOTE: If you use the default 'MqttConnectOptions', or set 'MqttConnectOptions.cleanSession' to 'true', as done in the publish/subscribe tutorial, then a Non-Durable (a.k.a. Temporary Endpoint) queue will automatically be created on Solace messaging when the client adds a QoS 1 subscription. Queues are used to store QoS 1 messages providing persistence for the 'MqttClient'. A Non-Durable queue is removed when the 'MqttClient' disconnects, which mean Solace messaging will not retain any messages for the client after it disconnects. Setting the 'MqttConnectOptions.cleanSession' to 'false' will create a Durable queue which will retain messages even after the client disconnects. You can learn more about Solace queue durability from the Endpoint Durability section of [Solace Features – Working with Guaranteed Messages](https://docs.solace.com/Features/Working-With-Guaranteed-Messages.htm).
 
 For the purpose of this tutorial and to clean up resources and state 'MqttConnectOptions.cleanSession' is set to 'true'.
-
 
 ## Receiving a QoS 1 message
 
 First connect and subscribe to receive the messages sent to a QoS 1 subscription.
 
-<div style="float: right">
-  <img src="{{ site.baseurl }}/assets/images/receiving-message-from-queue-300x160.png" alt="Receiving MQTT QoS 1 Message" />
-</div>
+![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 This tutorial uses Quality of Service (QoS) level of 1 (equivalent to Solace “Guaranteed” or “Persistent” messages), which are at least once delivery messages. So first, let’s express interest in the messages by subscribing to a topic filter.
 
-A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Filters section of [MQTT Specification Conformance – Operational Behavior]({{ site.docs-ops-behavior }}){:target="_top"}.
+A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Filters section of [MQTT Specification Conformance – Operational Behavior](https://docs.solace.com/MQTT-311-Prtl-Conformance-Spec/Operational_behavior.htm).
 
-As with other tutorials, this tutorial receives messages asynchronously through callbacks. So define a callback using the 'MqttCallback' interface as outlined in the [publish/subscribe tutorial]({{ site.baseurl }}/publish-subscribe).
+As with other tutorials, this tutorial receives messages asynchronously through callbacks. So define a callback using the 'MqttCallback' interface as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
 Then you must subscribe to a topic filter with a QoS level of 1 in order to express interest in receiving QoS 1 messages. This tutorial uses the topic '“Q/tutorial”'.
 
@@ -98,9 +95,7 @@ if (subToken.getGrantedQos()[0] != 1) {
 
 Now it is time to send a QoS 1 message to the subscriber.
 
-<div style="float: right">
-  <img src="{{ site.baseurl }}/assets/images/sending-message-to-queue-300x160.png" alt="Sending MQTT QoS 1 Message" />
-</div>
+![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue-300x160.png)
 
 You must first connect an 'MqttClient' as outlined above in the “Connecting a session to Solace messaging” section. To send a message, you must create a message using the 'MqttMessage' class and set the QoS level. This tutorial will send a message to topic '“Q/tutorial”' with contents “Hello world from MQTT!” and a QoS level of 1, which are at least once delivery messages or Persistent messages in Solace. With a QoS level to 1 set on the message the client will receive acknowledgments from Solace messaging when it has successfully stored the message.
 
@@ -116,21 +111,19 @@ At this point the producer has sent a message to Solace messaging which gets in 
 
 ## Summarizing
 
-The full source code for this example is available on [GitHub]({{ site.repository }}){:target="_blank"}. Combining the example source code show above results in the following source files:
+The full source code for this example is available on [GitHub](https://github.com/SolaceSamples/solace-samples-mqtt). Combining the example source code show above results in the following source files:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [QoS1Producer.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/QoS1Producer.java)
+* [QoS1Consumer.java](https://github.com/SolaceSamples/solace-samples-mqtt/blob/master/src/main/java/com/solace/samples/QoS1Consumer.java)
+
 
 ## Getting the Source
 
 Clone the GitHub repository containing the Solace samples.
 
 ~~~shell
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-mqtt
+cd solace-samples-mqtt
 ~~~
 
 ## Building
