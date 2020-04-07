@@ -34,8 +34,8 @@ The goal of this tutorial is to understand the following:
 *   How to send a persistent message to a Solace queue
 *   How to bind to this queue and receive a persistent message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Provisioning a Queue through the API
 

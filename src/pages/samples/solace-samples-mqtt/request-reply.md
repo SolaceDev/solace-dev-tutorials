@@ -73,8 +73,8 @@ In this tutorial the payload of both the request and reply messages are formatte
 </project>
 ```
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/mqttApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:mqttApi.md`
 
 ## Connecting a Session to Solace Messaging
 

@@ -29,7 +29,7 @@ The goal of this tutorial is to understand the following:
 
 *  How to properly handle guaranteed message acknowledgements on message send.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Overview
 
@@ -47,7 +47,7 @@ const correlationKey = {
 };
 ```
 
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceApi.md`
 
 ## Implementing Confirmed Delivery
 

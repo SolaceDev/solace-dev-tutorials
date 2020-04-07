@@ -45,7 +45,7 @@ The Java Message Service (JMS) API is a Java message-oriented middleware API for
 1.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
 2.  [Basic JMS API Concepts](https://docs.oracle.com/javaee/6/tutorial/doc/bncdx.html)
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Create Your Queue 
 In order for us to run our sender/receiver we need to first create the Queue that they will send/receive from. 

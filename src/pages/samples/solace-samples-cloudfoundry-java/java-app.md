@@ -11,7 +11,7 @@ This tutorial is part of a series of tutorials which aims to introduce users to 
 
 This tutorial will introduce you to Solace PubSub+ for Pivotal Cloud Foundry by creating a Java application which connects to a Solace PubSub+ service instance.
 
-![overview]({{ site.baseurl }}/assets/images/java-app-architecture.png){: .center-image}
+![Diagram: Spring App Architecture](../../../images/diagrams/java-app-architecture.png)
 
 ## Goals
 
@@ -53,7 +53,7 @@ compile("com.solacesystems:sol-jcsmp:{{ site.jcsmp_version }}")
 
 ### Get the API: Using the Solace Developer Portal
 
-The Java API library can be [downloaded here](https://dev.solace.com/downloads/). The Java API is distributed as a zip file containing the required jars, API documentation, and examples.
+The Java API library can be [downloaded here](https://www.solace.com/downloads/). The Java API is distributed as a zip file containing the required jars, API documentation, and examples.
 
 ## Code Walk Through
 
@@ -221,7 +221,7 @@ cons.start();
 
 ### Publishing, Subscribing and Receiving Messages
 
-The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscripion. For example: `{"subscription": "test"}`. Here is the method signature:
+The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscription. For example: `{"subscription": "test"}`. Here is the method signature:
 
 ```java
 @RequestMapping(value = "/subscription", method = RequestMethod.POST)
@@ -257,7 +257,7 @@ For more details on sending and receiving messages, you can checkout the [JCSMP 
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
 cd {{ site.baseurl | remove: '/'}}
 ./gradlew build
 ```

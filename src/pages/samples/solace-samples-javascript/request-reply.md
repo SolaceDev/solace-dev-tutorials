@@ -54,7 +54,7 @@ For request-reply messaging to be successful it must be possible for the request
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceApi.md`
 
 ## Implementing Request/Reply
 

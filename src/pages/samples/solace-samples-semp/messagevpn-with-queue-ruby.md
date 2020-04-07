@@ -41,7 +41,7 @@ This tutorial is available in [GitHub](https://github.com/SolaceSamples/solace-s
 
 At the end, this tutorial walks through downloading and running the sample from source.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## The SEMP object model of Solace message-VPNs and VPN resources
 

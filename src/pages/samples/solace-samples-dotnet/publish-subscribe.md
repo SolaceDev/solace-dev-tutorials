@@ -31,8 +31,8 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 1. How to build and send a message on a topic
 2. How to subscribe to a topic and receive a message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 For the purposes of this tutorial, you will connect to the default message VPN of a Solace VMR so the only required information to proceed is the Solace VMR host string which this tutorial accepts as an argument.
 
@@ -129,7 +129,7 @@ WaitEventWaitHandle.WaitOne();
 
 ## Sending a message
 
-![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
+![Diagram: Sending a Message](../../../images/diagrams/pub-sub-sending-message-300x134.png)
 
 Now it is time to send a message to the waiting consumer.
 

@@ -48,7 +48,7 @@ The [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Prot
 
 Because of the difference between publishing and subscribing, these topics are introduced as needed in the tutorial below.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Obtaining the Solace API
 

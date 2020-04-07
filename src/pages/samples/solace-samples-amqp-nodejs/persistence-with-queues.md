@@ -33,9 +33,8 @@ The goal of this tutorial is to demonstrate how to use the [**amqp10** AMQP 1.0 
 1.  How to send a persistent message to a durable queue with Solace messaging
 2.  How to bind to this queue and receive a persistent message
 
-
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/amqpApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:amqpApi.md`
 
 ## Connecting to the Solace Messaging
 

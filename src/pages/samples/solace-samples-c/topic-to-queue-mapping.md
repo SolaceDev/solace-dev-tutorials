@@ -40,9 +40,9 @@ The goal of this tutorial is to understand the following:
 *   How to delete a queue.
 
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
-{% include_relative assets/init.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
+`markdown:init.md`
 
 ## Review: Receiving message from a queue
 
@@ -117,7 +117,7 @@ The full source code for this example is available in [GitHub](https://github.co
 
 ### Building
 
-{% include_relative assets/building.md %}
+`markdown:building.md`
 
 ### Running the Samples
 

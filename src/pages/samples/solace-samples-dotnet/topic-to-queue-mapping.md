@@ -36,8 +36,8 @@ The goal of this tutorial is to understand the following:
 *   How to add topic subscriptions to a queue
 *   How to interrogate the Solace message router to confirm capabilities.
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Connection setup
 

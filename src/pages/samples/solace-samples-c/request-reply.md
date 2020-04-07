@@ -52,9 +52,9 @@ For request-reply messaging to be successful it must be possible for the request
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
-{% include_relative assets/init.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
+`markdown:init.md`
 
 ## Making a request
 
@@ -156,7 +156,7 @@ The full source code for this example is available in [GitHub](https://github.co
 
 ### Building
 
-{% include_relative assets/building.md %}
+`markdown:building.md`
 
 ### Running the Samples
 
