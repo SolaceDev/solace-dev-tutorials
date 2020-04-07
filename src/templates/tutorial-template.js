@@ -33,7 +33,7 @@ const tutorialTemplate = ({ data, pageContext }) => {
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
         </div>
         {/* sidebar */}
-        <div className="pl5 mt5 f4 min-w-30">
+        <div id="sidebar" className="pl5 mt5 f4 min-w-30">
           {tutorials.length !== 0 && <div>MESSAGING PATTERNS</div>}
           <Col className="f5">
             {tutorials.map(({ node }) => (
