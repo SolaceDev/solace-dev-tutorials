@@ -13,7 +13,7 @@ This tutorial is part of a series of tutorials which aims to introduce users to 
 
 This tutorial is similar to the [Spring Cloud Auto-Config Java](../spring-cloud-autoconf-java/) tutorial. Like the Spring Cloud Auto-Config Java tutorial, it will introduce you to Solace Messaging for Pivotal Cloud Foundry.  In contrast to the [Spring Cloud Auto-Config Java](../spring-cloud-autoconf-java/), this application uses the **Solace JMS API** and [solace-jms-spring-boot](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-starters/solace-jms-spring-boot-starter) which in turn is using the Spring Cloud Connectors library and Spring Auto Configuration can auto inject a standard [JMS ConnectionFactory](https://docs.solace.com/API-Developer-Online-Ref-Documentation/jms/javax/jms/ConnectionFactory.html) directly into your application.
 
-![overview]({{ site.baseurl }}/assets/images/spring-cloud-app-architecture.png){: .center-image}
+![Diagram: Spring Cloud App Architecture](../../../images/diagrams/spring-cloud-app-architecture.png)
 
 ## Goals
 
@@ -51,7 +51,7 @@ compile("com.solacesystems:sol-jms:${solaceJMSVersion}")
 <dependency>
   <groupId>com.solacesystems</groupId>
   <artifactId>sol-jms</artifactId>
-  <version>{{ site.jms_version }}</version>
+  <version>10.+</version>
 </dependency>
 ```
 
@@ -239,7 +239,7 @@ listenercontainer.start();
 
 ### Publishing, Subscribing and Receiving Messages
 
-The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscripion. For example: `{"subscription": "test"}`. Here is the method signature:
+The consumer created in the previous step will only receive messages matching topics that the Solace session subscribed to. It is thus necessary to create subscriptions in order to receive messages.  You can add a topic subscription by sending a `POST` to the `/subscription` REST endpoint.  The payload of the `POST` is a simple JSON structure containing the topic subscription. For example: `{"subscription": "test"}`. Here is the method signature:
 
 ```java
 @RequestMapping(value = "/subscription", method = RequestMethod.POST)
@@ -275,10 +275,15 @@ For more details on sending and receiving messages, you can checkout the [JCSMP 
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
-cd {{ site.baseurl | remove: '/'}}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
+
+
+git clone //github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd https:solace.comsamplessolace-samples-cloudfoundry-java
+./gradlew build
 
 ## Cloud Foundry Setup
 

@@ -1,9 +1,8 @@
 - title: SEMP Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use SEMP.
   buttons:
-    github: GHAITH BLAIN TODO
-    download: GHAITH BLAIN TODO
-
+    github: https://github.com/SolaceSamples/solace-samples-semp
+    download: https://github.com/SolaceSamples/solace-samples-semp/archive/master.zip
 
 # GHAITH TODO are there tutorials missing here that we can't fetch??
 

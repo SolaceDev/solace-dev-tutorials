@@ -75,14 +75,3 @@ flowOne.close(); // Active flow indication event for flowTwo fires now that flow
 
 * Related Source Code: [QueueProvisionAndRequestActiveFlowIndication.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndRequestActiveFlowIndication.java)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication)
-
-
-<ul>
-{% for item in page.links %}
-<li>Related Source Code: <a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-<li><a href="https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication" target="_blank">Solace Feature Documentation</a></li>
-</ul>
-
-
- 

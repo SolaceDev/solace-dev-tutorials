@@ -38,8 +38,8 @@ MQTT is a standard lightweight protocol for sending and receiving messages. As s
 1.  [http://mqtt.org/](http://mqtt.org/)
 2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/)
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/mqttApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:mqttApi.md`
 
 ## Connecting to the Solace Messaging
 
@@ -139,8 +139,8 @@ The full source code for this example is available on [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-mqtt
+cd solace-samples-mqtt
 ```
 
 ### Building

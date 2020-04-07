@@ -1,10 +1,6 @@
 @import "card.css";
 @import "footer.css";
 
-.navbar-brand img {
-    max-width: 300px;
-}
-
 h1, h2, h3, h4 {
     padding-left: 0;
 }

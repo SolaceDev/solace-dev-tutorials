@@ -45,8 +45,8 @@ The goal of this tutorial is to demonstrate the use of JNDI as a way to create J
 2. How to retrieve a JMS Connection Factory using JNDI so the client can connect to Solace messaging
 3. How to lookup a JMS Queue destination object using JNDI so the client can publish or subscribe to it
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Step 1: Configuring the JNDI service
 
@@ -132,19 +132,15 @@ jndi message-vpn "VPNNAME"
 
 To apply this configuration, simply log in to Solace messaging CLI as an admin user and paste the above script fragments into the CLI, replacing VPNNAME to match that of your Solace messaging solution.
 
-{% if jekyll.environment == 'solaceCloud' %}
 If connecting using Solace Cloud, obtain your management credentials by scrolling down to the Management section on the Connectivity tab
 
-![]({{ site.baseurl }}/assets/images/management-info.png)
+![Diagram: Using Jindi](../../../images/diagrams/management-info.png)
 
 ```
 ssh <management-username>@<HOST> -p 2222
 Solace - Virtual Message Router (VMR)
 Password:
 ```
-{% endif %}
-
-
 
 If using a VMR load, log in to the Solace message router CLI as an `admin` user with the default `admin` password.
 

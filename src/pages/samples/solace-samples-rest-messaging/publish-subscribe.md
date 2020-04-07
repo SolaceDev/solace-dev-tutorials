@@ -48,7 +48,7 @@ The [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Prot
 
 Because of the difference between publishing and subscribing, these topics are introduced as needed in the tutorial below.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Obtaining the Solace API
 
@@ -93,8 +93,6 @@ Server running at http://RC_HOST:RC_PORT/
 **Note:** The executable is `nodejs` on Ubuntu due to a naming conflict with other packages.
 
 Again in your environment, the RC_HOST and RC_PORT will be the host/IP and port that your server is listening on. For example http://192.168.1.110:9090/.
-
-
 
 **Note:** Even though this tutorial is illustrating how to publish with direct messages, for REST delivery points, the messages are always consumed from a queue. The incoming messages are promoted into the Solace queue as non-persistent messages and delivered to the REST consumer as non-persistent messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes](https://docs.solace.com/PubSub-Basics/Topic-Matching-and-Delivery-Modes.htm).
 
@@ -184,18 +182,15 @@ end
 
 To apply this configuration, simply log in to Solace messaging CLI as an admin user and paste the above script fragments into the CLI.
 
-{% if jekyll.environment == 'solaceCloud' %}
-
 If connecting using Solace Cloud, obtain your management credentials by scrolling down to the Management section on the Connectivity tab, and connect using port 2222.
 
-![]({{ site.baseurl }}/assets/images/management-info.png)
+![Diagram: Using Jindi](../../../images/diagrams/management-info.png)
 
 ```
 ssh <management-username>@<HOST> -p 2222
 Solace - Virtual Message Router (VMR)
 Password:
 ```
-{% endif %}
 
 If using a VMR load, log in to the Solace message router CLI using the management username and password for your Solace VMR.
 

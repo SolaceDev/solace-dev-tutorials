@@ -34,7 +34,7 @@ This tutorial assumes the following:
 * You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.
 * You are familiar with Using Solace Messaging [Service Instances](https://docs.pivotal.io/solace-messaging/service-instances.html) and [Service Keys](https://docs.pivotal.io/solace-messaging/service-keys.html).
-* Solace Messaging for PCF has been installed in your Pivotal Cloud Foundry environment having enabled [TCP Routes]({{ site.links-ext-pivotal-tcp-routes }}){:target="_blank"}{:target="_blank"} with 'MQTT / Plain-Text' set to "Enabled by default" or "Disabled by default"
+* Solace Messaging for PCF has been installed in your Pivotal Cloud Foundry environment having enabled [TCP Routes](https://docs.pivotal.io/solace-messaging/installing.html#optional_tcp_routes) with 'MQTT / Plain-Text' set to "Enabled by default" or "Disabled by default"
 
 ## Code Walk Through
 
@@ -284,8 +284,8 @@ For more details on sending and receiving messages, you can checkout the [MQTT P
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
-cd {{ site.baseurl | remove: '/'}}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
 

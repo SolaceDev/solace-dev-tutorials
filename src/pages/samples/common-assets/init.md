@@ -48,7 +48,7 @@ sessionEventCallback ( solClient_opaqueSession_pt opaqueSession_p,
 
 The messageReceiveCallback is invoked for each message received by the Session. In this sample, the message is printed to the screen.
 
-The eventCallback is invoked for various significant session events like connection, disconnection, and other SolClient session events. In this sample, simply prints the events. See the [SolClient API documentation]({{ site.docs-api-ref }}){:target="_top"} and samples for details on the session events.
+The eventCallback is invoked for various significant session events like connection, disconnection, and other SolClient session events. In this sample, simply prints the events. See the [SolClient API documentation](https://docs.solace.com/API-Developer-Online-Ref-Documentation/c/main.html) and samples for details on the session events.
 
 ### Context Creation
 

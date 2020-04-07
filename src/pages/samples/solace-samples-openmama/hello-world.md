@@ -39,7 +39,7 @@ Simplified installation instructions for OpenMAMA with Solace middleware bridge 
 
 For building OpenMAMA from source see [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki/Build-Instructions).
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Hello World
 

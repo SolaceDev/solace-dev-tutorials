@@ -34,9 +34,9 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 2.  How to subscribe to a topic and receive a message
 
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
-{% include_relative assets/init.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
+`markdown:init.md`
 
 ## Receiving a message
 
@@ -117,7 +117,7 @@ The OS source code simply provides platform abstraction. The subscriber sample m
 
 ## Building
 
-{% include_relative assets/building.md %}
+`markdown:building.md`
 
 ### Running the Samples
 

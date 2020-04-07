@@ -29,8 +29,8 @@ The goal of this tutorial is to understand the following:
 
 *  How to properly handle persistent message acknowledgements on message send.
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Message Acknowledgement Correlation
 

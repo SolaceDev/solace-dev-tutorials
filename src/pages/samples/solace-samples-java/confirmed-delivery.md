@@ -9,19 +9,19 @@ links:
 ---
 
 
-This tutorial builds on the basic concepts introduced in [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
+This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts]({{ site.docs-core-concepts }}){:target="_top"}.
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here]({{ site.links-solaceCloud-setup}}){:target="_top"}. You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -30,8 +30,8 @@ The goal of this tutorial is to understand the following:
 *  How to properly handle persistent message acknowledgements on message send.
 
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 
 ## Message Acknowledgement Correlation
@@ -82,7 +82,7 @@ session.connect();
 
 ## Adding Message Correlation on Send
 
-The [Persistence with Queues]({{ site.baseurl }}/persistence-with-queues) tutorial demonstrated how to send persistent messages using code very similar to the following. The only difference below is the message text and the loop.
+The [Persistence with Queues](../persistence-with-queues/) tutorial demonstrated how to send persistent messages using code very similar to the following. The only difference below is the message text and the loop.
 
 ```java
 for (int i = 1; i <= count; i++) {
@@ -152,21 +152,17 @@ class PubCallback implements JCSMPStreamingPublishCorrelatingEventHandler {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java). If you combine the example source code shown above results in the following source:
 
-<ul>
-{% for item in page.links %}
-<li><a href="{{ site.repository }}{{ item.link }}" target="_blank">{{ item.label }}</a></li>
-{% endfor %}
-</ul>
+* [ConfirmedPublish.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/ConfirmedPublish.java)
 
 ### Getting the Source
 
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-java
+cd solace-samples-java
 ```
 
 ### Building
@@ -190,5 +186,3 @@ $ ./build/staged/bin/confirmedPublish <host:port> <client-username>@<message-vpn
 ```
 
 You have now successfully sent persistent messages to a Solace router and confirmed its receipt by correlating the acknowledgement.
-
-If you have any issues sending and receiving a message, check the [Solace community]({{ site.links-community }}){:target="_top"} for answers to common issues.

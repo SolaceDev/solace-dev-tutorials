@@ -30,10 +30,10 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 1.  How to build and send a message on a topic
 2.  How to subscribe to a topic and receive a message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
-{% include_relative assets/loadAndInitSolaceApi.md %}
+`markdown:loadAndInitSolaceApi.md`
 
 ## Connecting to the Solace message router
 
@@ -250,7 +250,7 @@ Note: the code in the `master` branch of this repository depends on Solace Node.
 
 ### Installing the Node.js API
 
-For a local installation of the API package, run from the current `{{ site.baseurl | remove: '/'}}` directory:
+For a local installation of the API package, run from the current `solace-samples-nodejs` directory:
 
 ```
 npm install

@@ -1,5 +1,5 @@
 - title: Java Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications.
   buttons:
-    github: GHAITH BLAIN TODO
-    download: GHAITH BLAIN TODO
+    github: https://github.com/SolaceSamples/solace-samples-java
+    download: https://github.com/SolaceSamples/solace-samples-java/archive/master.zip

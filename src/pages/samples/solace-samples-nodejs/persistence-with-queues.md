@@ -30,8 +30,8 @@ The goal of this tutorial is to understand the following:
 1.  How to send a guaranteed message to a Solace queue
 2.  How to bind to this queue and receive a guaranteed message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Prerequisite: Creating a Durable Queue on the Solace message router
 
@@ -39,7 +39,7 @@ A difference with the publish/subscribe tutorial is that for guaranteed messagin
 
 You can use SolAdmin or SEMP to create a durable queue. This tutorial assumes that the queue named `tutorial/queue` has been created.  Ensure the queue is enabled for both Incoming and Outgoing messages and set the Permission to at least "Consume".
 
-{% include_relative assets/loadAndInitSolaceApi.md %}
+`markdown:loadAndInitSolaceApi.md`
 
 ## Implementing Guaranteed Messaging
 
@@ -146,7 +146,7 @@ The message is transferred to the Solace message router asynchronously, but if a
 
 Now it is time to receive the messages sent to your queue.
 
-![]({{ site.baseurl }}/assets/images/receiving-message-from-queue-300x160.png)
+![Diagram: Receiving Messages](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 Receiving guaranteed messages is different from the direct messaging case described in the the publish/subscribe tutorial.
 
@@ -239,7 +239,7 @@ Note: the code in the `master` branch of this repository depends on Solace Node.
 
 ### Installing the Node.js API
 
-For a local installation of the API package, run from the current `{{ site.baseurl | remove: '/'}}` directory:
+For a local installation of the API package, run from the current `solace-samples-nodejs` directory:
 
 ```
 npm install

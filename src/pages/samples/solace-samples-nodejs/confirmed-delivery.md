@@ -28,7 +28,7 @@ The goal of this tutorial is to understand the following:
 
 *  How to properly handle guaranteed message acknowledgements on message send.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 
 ## Overview
@@ -47,7 +47,7 @@ const correlationKey = {
 };
 ```
 
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceApi.md`
 
 ## Implementing Confirmed Delivery
 
@@ -184,7 +184,7 @@ Note: the code in the `master` branch of this repository depends on Solace Node.
 
 ### Installing the Node.js API
 
-For a local installation of the API package, run from the current `{{ site.baseurl | remove: '/'}}` directory:
+For a local installation of the API package, run from the current `https:solace.comsamplessolace-samples-nodejs` directory:
 
 ```
 npm install

@@ -34,8 +34,8 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 1.1 over 
 1. How to build and send a request message
 2. How to receive a request message and respond to it
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/jmsApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:jmsApi.md`
 
 ## Java Messaging Service (JMS) Introduction
 

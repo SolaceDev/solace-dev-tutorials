@@ -29,7 +29,7 @@ The goal of this tutorial is to understand the following:
 
 *  How to properly handle guaranteed message acknowledgements on message send.
 
-{% include_relative assets/solaceMessaging.md %}
+`markdown:solaceMessaging.md`
 
 ## Overview
 
@@ -47,7 +47,7 @@ const correlationKey = {
 };
 ```
 
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceApi.md`
 
 ## Implementing Confirmed Delivery
 
@@ -177,8 +177,8 @@ Combining the example source code shown above results in the following source co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-javascript
+cd solace-samples-javascript
 ```
 
 Note: the code in the `master` branch of this repository depends on Solace JavaScript API version 10 or later. If you want to work with an older version clone the branch that corresponds your version.

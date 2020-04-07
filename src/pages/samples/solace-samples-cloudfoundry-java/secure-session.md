@@ -113,8 +113,8 @@ Note that we only need to do this when we want the client to validate a self-sig
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
-cd {{ site.baseurl | remove: '/'}}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
 

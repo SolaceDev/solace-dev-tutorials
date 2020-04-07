@@ -1,5 +1,5 @@
 - title: JMS Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JMS applications.
   buttons:
-    github: GHAITH BLAIN TODO
-    download: GHAITH BLAIN TODO
+    github: https://github.com/SolaceSamples/solace-samples-jms
+    download: https://github.com/SolaceSamples/solace-samples-jms/archive/master.zip

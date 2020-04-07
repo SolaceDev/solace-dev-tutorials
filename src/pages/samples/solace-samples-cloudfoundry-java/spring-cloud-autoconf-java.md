@@ -42,7 +42,7 @@ This tutorial depends on you having the Solace PubSub+ API for Java (JCSMP). Her
 ### Get the API: Using Gradle
 
 ```
-compile("com.solacesystems:sol-jcsmp:{{ site.jcsmp_version }}")
+compile("com.solacesystems:sol-jcsmp:10.+")
 ```
 
 ### Get the API: Using Maven
@@ -51,7 +51,7 @@ compile("com.solacesystems:sol-jcsmp:{{ site.jcsmp_version }}")
 <dependency>
   <groupId>com.solacesystems</groupId>
   <artifactId>sol-jcsmp</artifactId>
-  <version>{{ site.jcsmp_version }}</version>
+  <version>10.+</version>
 </dependency>
 ```
 
@@ -248,8 +248,8 @@ For more details on sending and receiving messages, you can checkout the [JCSMP 
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
-cd {{ site.baseurl | remove: '/'}}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
 

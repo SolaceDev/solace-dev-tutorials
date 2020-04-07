@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Navbar.Brand href="https://solace.com/">
       <a target="_blank" rel="noopener noreferrer" href="https://solace.dev">
-        <img src={solaceDevLogo} alt="Solace Developers Logo" />
+        <img src={solaceDevLogo} alt="Solace Developers Logo" width="300px" />
       </a>
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

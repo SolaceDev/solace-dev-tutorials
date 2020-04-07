@@ -34,8 +34,8 @@ The goal of this tutorial is to demonstrate how to use a Apache Qpid JMS 1.1 ove
 1. How to build and send a message on a topic
 2. How to subscribe to a topic and receive a message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/jmsApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:jmsApi.md`
 
 ## Java Messaging Service (JMS) Introduction
 

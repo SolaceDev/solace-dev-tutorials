@@ -32,8 +32,8 @@ The goal of this tutorial is to understand the following:
 2.  How to send a persistent message to a Solace queue
 3.  How to bind to this queue and receive a persistent message
 
-{% include_relative assets/solaceMessaging.md %}
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceMessaging.md`
+`markdown:solaceApi.md`
 
 ## Provisioning a Queue through the API
 
@@ -195,7 +195,7 @@ try {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java). If you combine the example source code shown above results in the following source:
 
 * [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueProducer.java)
 * [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueConsumer.java)

@@ -54,7 +54,7 @@ For request-reply messaging to be successful it must be possible for the request
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
-{% include_relative assets/solaceApi.md %}
+`markdown:solaceApi.md`
 
 ## Implementing Request/Reply
 
@@ -170,8 +170,8 @@ Combining the example source code shown above results in the following source co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}/src/basic-samples
+git clone https://github.com/SolaceSamples/solace-samples-javascript
+cd solace-samples-javascript/src/basic-samples
 ```
 
 Note: the code in the `master` branch of this repository depends on Solace JavaScript API version 10 or later. If you want to work with an older version clone the branch that corresponds your version.
