@@ -6,7 +6,7 @@ Although, you can use any MQTT Client library of your choice to connect to Solac
 ### Get the API: Using Gradle
 
 ```
-    compile("org.eclipse.paho:org.eclipse.paho.client.mqttv3:{{ site.paho_version }}")
+    compile("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0")
 ```
 
 ### Get the API: Using Maven
@@ -15,6 +15,6 @@ Although, you can use any MQTT Client library of your choice to connect to Solac
 <dependency>
   <groupId>org.eclipse.paho</groupId>
   <artifactId>org.eclipse.paho.client.mqttv3</artifactId>
-  <version>{{ site.paho_version }}</version>
+  <version>1.1.0</version>
 </dependency>
 ```

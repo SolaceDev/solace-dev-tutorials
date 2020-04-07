@@ -182,8 +182,6 @@ end
 
 To apply this configuration, simply log in to Solace messaging CLI as an admin user and paste the above script fragments into the CLI.
 
-{% if jekyll.environment == 'solaceCloud' %}
-
 If connecting using Solace Cloud, obtain your management credentials by scrolling down to the Management section on the Connectivity tab, and connect using port 2222.
 
 ![Diagram: Using Jindi](../../../images/diagrams/management-info.png)
@@ -193,7 +191,6 @@ ssh <management-username>@<HOST> -p 2222
 Solace - Virtual Message Router (VMR)
 Password:
 ```
-{% endif %}
 
 If using a VMR load, log in to the Solace message router CLI using the management username and password for your Solace VMR.
 

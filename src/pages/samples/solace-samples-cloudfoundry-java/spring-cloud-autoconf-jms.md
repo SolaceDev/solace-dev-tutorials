@@ -51,7 +51,7 @@ compile("com.solacesystems:sol-jms:${solaceJMSVersion}")
 <dependency>
   <groupId>com.solacesystems</groupId>
   <artifactId>sol-jms</artifactId>
-  <version>{{ site.jms_version }}</version>
+  <version>10.+</version>
 </dependency>
 ```
 
@@ -275,8 +275,8 @@ For more details on sending and receiving messages, you can checkout the [JCSMP 
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-cloudfoundry-java). To build, just clone and use gradle. Here is an example:
 
 ```
-git clone {{ site.repository }}
-cd {{ site.baseurl | remove: '/'}}
+git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
 

@@ -139,8 +139,8 @@ The full source code for this example is available on [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last }}
+git clone https://github.com/SolaceSamples/solace-samples-mqtt
+cd solace-samples-mqtt
 ```
 
 ### Building

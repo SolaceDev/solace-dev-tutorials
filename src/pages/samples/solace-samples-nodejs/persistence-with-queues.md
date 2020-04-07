@@ -239,7 +239,7 @@ Note: the code in the `master` branch of this repository depends on Solace Node.
 
 ### Installing the Node.js API
 
-For a local installation of the API package, run from the current `{{ site.baseurl | remove: '/'}}` directory:
+For a local installation of the API package, run from the current `solace-samples-nodejs` directory:
 
 ```
 npm install

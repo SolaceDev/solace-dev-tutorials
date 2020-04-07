@@ -195,7 +195,7 @@ try {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub]({{ site.repository }}){:target="_blank"}. If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java). If you combine the example source code shown above results in the following source:
 
 * [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueProducer.java)
 * [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueConsumer.java)

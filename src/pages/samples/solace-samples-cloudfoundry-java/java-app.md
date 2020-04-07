@@ -38,7 +38,7 @@ This tutorial depends on you having the Solace PubSub+ API for Java (JCSMP). Her
 ### Get the API: Using Gradle
 
 ```
-compile("com.solacesystems:sol-jcsmp:{{ site.jcsmp_version }}")
+compile("com.solacesystems:sol-jcsmp:10.+")
 ```
 
 ### Get the API: Using Maven
@@ -47,7 +47,7 @@ compile("com.solacesystems:sol-jcsmp:{{ site.jcsmp_version }}")
 <dependency>
   <groupId>com.solacesystems</groupId>
   <artifactId>sol-jcsmp</artifactId>
-  <version>{{ site.jcsmp_version }}</version>
+  <version>10.+</version>
 </dependency>
 ```
 
@@ -258,7 +258,7 @@ The full source code for this example is available in [GitHub](https://github.co
 
 ```
 git clone https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
-cd {{ site.baseurl | remove: '/'}}
+cd solace-samples-cloudfoundry-java
 ./gradlew build
 ```
 

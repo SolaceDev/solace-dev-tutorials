@@ -161,8 +161,8 @@ The full source code for this example is available in [GitHub](https://github.co
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone {{ site.repository }}
-cd {{ site.repository | split: '/' | last}}
+git clone https://github.com/SolaceSamples/solace-samples-java
+cd solace-samples-java
 ```
 
 ### Building
