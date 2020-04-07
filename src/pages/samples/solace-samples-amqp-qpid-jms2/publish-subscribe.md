@@ -95,7 +95,7 @@ If you execute the `TopicPublisher.java` program, it will successfully publish a
 
 To receive a message from a topic a JMS *Consumer* needs to be created.
 
-![]({{ site.baseurl }}/assets/images/publish-subscribe-details-1.png)
+![Diagram: Receiving Messages](../../../images/diagrams/publish-subscribe-details-1.png)
 
 The JMS 2.0 API allows the use of *method chaining* to create the consumer, and receive messages published to the subscribed topic.
 

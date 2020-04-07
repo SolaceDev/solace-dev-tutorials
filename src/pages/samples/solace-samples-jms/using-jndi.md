@@ -132,19 +132,15 @@ jndi message-vpn "VPNNAME"
 
 To apply this configuration, simply log in to Solace messaging CLI as an admin user and paste the above script fragments into the CLI, replacing VPNNAME to match that of your Solace messaging solution.
 
-{% if jekyll.environment == 'solaceCloud' %}
 If connecting using Solace Cloud, obtain your management credentials by scrolling down to the Management section on the Connectivity tab
 
-![]({{ site.baseurl }}/assets/images/management-info.png)
+![Diagram: Using Jindi](../../../images/diagrams/management-info.png)
 
 ```
 ssh <management-username>@<HOST> -p 2222
 Solace - Virtual Message Router (VMR)
 Password:
 ```
-{% endif %}
-
-
 
 If using a VMR load, log in to the Solace message router CLI as an `admin` user with the default `admin` password.
 

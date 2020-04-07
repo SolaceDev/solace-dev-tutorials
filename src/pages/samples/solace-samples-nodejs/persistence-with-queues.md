@@ -146,7 +146,7 @@ The message is transferred to the Solace message router asynchronously, but if a
 
 Now it is time to receive the messages sent to your queue.
 
-![]({{ site.baseurl }}/assets/images/receiving-message-from-queue-300x160.png)
+![Diagram: Receiving Messages](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
 Receiving guaranteed messages is different from the direct messaging case described in the the publish/subscribe tutorial.
 

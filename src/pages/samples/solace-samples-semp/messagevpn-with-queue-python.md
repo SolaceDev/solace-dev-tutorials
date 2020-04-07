@@ -50,7 +50,7 @@ As described in the introduction, message-VPNs provide isolated messaging domain
 
 Solace Messaging management is divided into Router-global level and individual Message-VPN level management. A management user with *global/read-write* access scope is authorized for all router and all message-VPN level configurations, such as global configuration or administering a message-VPN. Conversely, *VPN/read-write* access scope only allows for management of objects that have an effect within the assigned VPN, such as configuring a queue. In this tutorial, we will use a management user with *global/read-write* access scope for all configurations. For more details, refer to the [Management User Authentication/Authorization](https://docs.solace.com/Configuring-and-Managing/TLS-SSL-Encryption.htm) documentation.
 
-![]({{ site.baseurl }}/assets/images/message-vpn-semp-objects.png)
+![Diagram: SEMP Object Model and Solace VPNs](../../../images/diagrams/message-vpn-semp-objects.png)
 
 Clients can connect to a message-VPN and use its resources after proper authentication and authorization, controlled by the properties of the following SEMP objects on the Solace Messaging:
 
