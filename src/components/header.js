@@ -7,9 +7,9 @@ const Header = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Navbar.Brand href="https://solace.com/">
       <a
+        href="https://www.solace.dev"
         target="_blank"
         rel="noopener noreferrer"
-        href="https://www.solace.dev"
       >
         <img src={solaceDevLogo} alt="Solace Developers Logo" />
       </a>
@@ -17,14 +17,48 @@ const Header = ({ siteTitle }) => (
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
       <Nav>
-        <Nav.Link href="https://solace.com/try-it-now/">
+        <Nav.Link
+          href="https://solace.com/try-it-now/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Getting Started
         </Nav.Link>
-        <Nav.Link href="https://solace.community/">Community</Nav.Link>
-        <Nav.Link href="https://docs.solace.com/">Docs</Nav.Link>
-        <Nav.Link href="https://solace.com/downloads/">Downloads</Nav.Link>
-        <Nav.Link href="https://solace.com/learn/">Learn</Nav.Link>
-        <Nav.Link href="https://console.solace.cloud/login">Log In</Nav.Link>
+        <Nav.Link
+          href="https://solace.community/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Community
+        </Nav.Link>
+        <Nav.Link
+          href="https://docs.solace.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Docs
+        </Nav.Link>
+        <Nav.Link
+          href="https://solace.com/downloads/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Downloads
+        </Nav.Link>
+        <Nav.Link
+          href="https://solace.com/learn/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn
+        </Nav.Link>
+        <Nav.Link
+          href="https://console.solace.cloud/login"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Log In
+        </Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
