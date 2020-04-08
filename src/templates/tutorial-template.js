@@ -29,7 +29,9 @@ const tutorialTemplate = ({ data, pageContext }) => {
       <Container className="flex-row">
         <div className="max-w-70">
           <h1 className="mt5">{node.frontmatter.title}</h1>
-          <h5 className="mb4">(Length: {node.timeToRead} minutes)</h5>
+          <h5 id="minutes" className="mb3 pt2">
+            {node.timeToRead} Minute Read
+          </h5>
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
         </div>
         {/* sidebar */}
