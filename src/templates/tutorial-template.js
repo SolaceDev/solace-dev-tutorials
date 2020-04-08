@@ -28,7 +28,7 @@ const tutorialTemplate = ({ data, pageContext }) => {
       </section>
       <Container className="flex-row">
         <div className="max-w-70">
-          <h1 className="mt5">{node.frontmatter.title}</h1>
+          <h1 className="mt4">{node.frontmatter.title}</h1>
           <h5 id="minutes" className="mb3 pt2">
             {node.timeToRead} Minute Read
           </h5>
