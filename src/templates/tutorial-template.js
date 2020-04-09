@@ -28,12 +28,14 @@ const tutorialTemplate = ({ data, pageContext }) => {
       </section>
       <Container className="flex-row">
         <div className="max-w-70">
-          <h1 className="mt5">{node.frontmatter.title}</h1>
-          <h5 className="mb4">(Length: {node.timeToRead} minutes)</h5>
+          <h1 className="mt4">{node.frontmatter.title}</h1>
+          <h5 id="minutes" className="mb3 pt2">
+            {node.timeToRead} Minute Read
+          </h5>
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
         </div>
         {/* sidebar */}
-        <div className="pl5 mt5 f4 min-w-30">
+        <div id="sidebar" className="pl5 mt6 f4 min-w-30">
           {tutorials.length !== 0 && <div>MESSAGING PATTERNS</div>}
           <Col className="f5">
             {tutorials.map(({ node }) => (
