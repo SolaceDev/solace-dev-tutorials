@@ -16,7 +16,7 @@ h1, h2, h3, h4 {
 #sidebar {
     position: -webkit-sticky;
     position: sticky;
-    top: 40px;
+    top: 20px;
     height: 25vh;
 }
 
