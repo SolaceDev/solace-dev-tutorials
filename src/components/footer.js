@@ -56,6 +56,33 @@ const Footer = () => (
                 </li>
                 <li>
                   <a
+                    href="https://solace.com/products/event-broker/software/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PubSub+ Event Broker: Software
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://solace.com/products/event-broker/appliance/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PubSub+ Event Broker: Appliance
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://solace.com/products/event-broker/cloud/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PubSub+ Event Broker: Cloud
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://solace.com/products/portal/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -266,38 +293,13 @@ const Footer = () => (
     </Container>
     <Container>
       <Row className="footer-bottom">
-        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt3 pb3">
-          &copy; {new Date().getFullYear()}{" "}
-          <a
-            href="https://solace.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Solace Corporation
-          </a>{" "}
-          |
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt4 pb3">
           <a
             href="https://solace.com/legal/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Terms
-          </a>{" "}
-          |{" "}
-          <a
-            href="https://solace.com/legal/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Privacy
-          </a>{" "}
-          |
-          <a
-            href="https://solace.com/legal/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Legal
+            &copy; {new Date().getFullYear()} Solace Corporation
           </a>
         </Col>
         <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tr pt2 pb2">
