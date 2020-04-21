@@ -293,7 +293,7 @@ const Footer = () => (
     </Container>
     <Container>
       <Row className="footer-bottom">
-        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt4 pb3">
+        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt3 pb3">
           <a
             href="https://solace.com/legal/"
             target="_blank"
