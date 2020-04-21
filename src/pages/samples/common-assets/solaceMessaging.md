@@ -48,7 +48,7 @@ There are several ways you can get access to PubSub+ Messaging and find these re
 
 * Follow [these instructions](https://docs.solace.com/Solace-VMR-Set-Up/Setting-Up-VMRs.htm) to start the PubSub+ Software in leading Clouds, Container Platforms or Hypervisors. The tutorials outline where to download and how to install the PubSub+ Software.
 * The messaging connectivity information are the following:
-    * Host: \<public_ip> (IP address assigned to the VMR in tutorial instructions)
+    * Host: <public_ip> (IP address assigned to the VMR in tutorial instructions)
     * Message VPN: default
     * Client Username: sampleUser (can be any value)
     * Client Password: samplePassword (can be any value)

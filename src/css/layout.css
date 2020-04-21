@@ -24,18 +24,22 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
     font-size: 12px;
     color: #4e555b;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
 }
 
 .btn {
     background: #20262a;
+    text-transform: uppercase;
     border-radius: 40px;
     padding: 8px 25px;
     color: #00c895;
     border: none;
-
+    font-size: 14px;
+    font-weight: 400;
 }
 
 th {
-    background: #202326;
+
 }
+
+
