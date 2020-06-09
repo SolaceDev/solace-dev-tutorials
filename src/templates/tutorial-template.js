@@ -35,41 +35,44 @@ const tutorialTemplate = ({ data, pageContext }) => {
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
         </div>
         {/* sidebar */}
-        <div id="sidebar" className="pl5 mt6 f4 min-w-30">
-          {tutorials.length !== 0 && <div>MESSAGING PATTERNS</div>}
-          <Col className="f5">
-            {tutorials.map(({ node }) => (
-              <div key={node.id}>
-                <a
-                  className={
-                    pageContext.slug === node.fields.slug
-                      ? "c-grey6"
-                      : "c-grey4 o-70"
-                  }
-                  href={node.fields.slug}
-                >
-                  {node.frontmatter.title}
-                </a>
-              </div>
-            ))}
-          </Col>
-          {features.length !== 0 && <div className="mt3">API FEATURES</div>}
-          <Col className="f5">
-            {features.map(({ node }) => (
-              <div key={node.id}>
-                <a
-                  className={
-                    pageContext.slug === node.fields.slug
-                      ? "c-grey6"
-                      : "c-grey4 o-70"
-                  }
-                  href={node.fields.slug}
-                >
-                  {node.frontmatter.title}
-                </a>
-              </div>
-            ))}
-          </Col>
+        <div className="flex-column">
+          <div id="sidebar" className="pl5 mt6 f4 min-w-30">
+            {tutorials.length !== 0 && <div>MESSAGING PATTERNS</div>}
+            <Col className="f5">
+              {tutorials.map(({ node }) => (
+                <div key={node.id}>
+                  <a
+                    className={
+                      pageContext.slug === node.fields.slug
+                        ? "c-grey6"
+                        : "c-grey4 o-70"
+                    }
+                    href={node.fields.slug}
+                  >
+                    {node.frontmatter.title}
+                  </a>
+                </div>
+              ))}
+            </Col>
+            {features.length !== 0 && <div className="mt3">API FEATURES</div>}
+            <Col className="f5">
+              {features.map(({ node }) => (
+                <div key={node.id}>
+                  <a
+                    className={
+                      pageContext.slug === node.fields.slug
+                        ? "c-grey6"
+                        : "c-grey4 o-70"
+                    }
+                    href={node.fields.slug}
+                  >
+                    {node.frontmatter.title}
+                  </a>
+                </div>
+              ))}
+            </Col>
+          </div>
+          <div>Blaine</div>
         </div>
       </Container>
     </Layout>
