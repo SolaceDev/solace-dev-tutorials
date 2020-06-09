@@ -2,9 +2,9 @@
 layout: tutorials
 title: Confirmed Delivery
 summary: Learn how to confirm that your messages are received by Solace messaging.
-icon: ../../../images/icons/I_dev_confirm.png
+icon: I_dev_confirm.png
 links:
-    label: ConfirmedPublish.html
+    - label: ConfirmedPublish.html
       link: /blob/master/src/basic-samples/ConfirmedPublish/ConfirmedPublish.html
     - label: ConfirmedPublish.js
       link: /blob/master/src/basic-samples/ConfirmedPublish/ConfirmedPublish.js
