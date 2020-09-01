@@ -1,7 +1,9 @@
 #subfooter {
     margin-bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.6)),
-    url("../images/bg/mountains-bg.jpg") no-repeat top center;
+background: linear-gradient(
+rgba(0,0,0, 0.7),
+rgba(0,0,0, 0.9)
+),url(../images/bg/mountains-bg.jpg);
     background-size: cover;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;

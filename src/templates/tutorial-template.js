@@ -10,15 +10,15 @@ const tutorialTemplate = ({ data, pageContext }) => {
   } = pageContext
   const node = data.tutorialBody.edges[0].node
   const tutorials = data.tableOfContent.edges.filter(
-    edge => edge.node.frontmatter.layout === "tutorials"
+    (edge) => edge.node.frontmatter.layout === "tutorials"
   )
   const features = data.tableOfContent.edges.filter(
-    edge => edge.node.frontmatter.layout === "features"
+    (edge) => edge.node.frontmatter.layout === "features"
   )
   return (
     <Layout>
       <section id="breadcrumbs">
-        <Container className="pt3">
+        <Container>
           <Breadcrumb
             crumbs={crumbs}
             crumbLabel={node.frontmatter.title}
@@ -72,7 +72,6 @@ const tutorialTemplate = ({ data, pageContext }) => {
               ))}
             </Col>
           </div>
-          <div>Blaine</div>
         </div>
       </Container>
     </Layout>

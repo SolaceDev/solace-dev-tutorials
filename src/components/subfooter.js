@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 
-const SubFooter = props => {
+const SubFooter = (props) => {
   return (
-    <section id="subfooter" className="pt5 pb5">
+    <section id="subfooter" className="pa5">
       <Container>
         <Row>
           <Col

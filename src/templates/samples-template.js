@@ -11,10 +11,10 @@ const samplesTemplate = ({ data, pageContext }) => {
   } = pageContext
   const meta = data.allTutorialsYaml.edges
   const tutorials = data.allMarkdownRemark.edges.filter(
-    edge => edge.node.frontmatter.layout === "tutorials"
+    (edge) => edge.node.frontmatter.layout === "tutorials"
   )
   const features = data.allMarkdownRemark.edges.filter(
-    edge => edge.node.frontmatter.layout === "features"
+    (edge) => edge.node.frontmatter.layout === "features"
   )
 
   return (
