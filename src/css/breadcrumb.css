@@ -4,6 +4,7 @@
 
 .breadcrumb {
   background-color: unset;
+  margin: 0;
   padding: 0;
 }
 
@@ -38,7 +39,7 @@
 }
 
 .breadcrumb__separator {
-  font-size: 16px;
+  font-size: 12px;
   padding: 0 9px;
   color: rgba(255, 255, 255, 1);
 }

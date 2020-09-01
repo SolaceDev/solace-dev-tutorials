@@ -20,9 +20,9 @@
 .card-title {
   border-radius: 3px 3px 0 0;
   background: linear-gradient(
-          #00c895,
-          #00ad93);
-  color: #ffffff;
+          #20262A,
+          #37404A) !important;
+  color: #fff;
   font-size: 18px;
   text-align: center;
 }
@@ -45,6 +45,7 @@
 .card-footer {
   font-size: 12px;
   text-transform: uppercase;
+  text-align: right;
   color: #00ad93;
 }
 

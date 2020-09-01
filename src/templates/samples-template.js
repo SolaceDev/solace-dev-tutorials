@@ -20,7 +20,7 @@ const samplesTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <section id="breadcrumbs">
-        <Container className="pt3">
+        <Container>
           <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
         </Container>
       </section>
@@ -33,7 +33,7 @@ const samplesTemplate = ({ data, pageContext }) => {
           download={node.buttons.download}
         ></Intro>
       ))}
-      <Container className="mt4">
+      <Container>
         {tutorials.length !== 0 && <h2>Key Message Exchange Patterns</h2>}
         <Row>
           {tutorials.map(({ node }) => (
@@ -55,7 +55,7 @@ const samplesTemplate = ({ data, pageContext }) => {
           ))}
         </Row>
       </Container>
-      <Container className="mt4">
+      <Container>
         {features.length !== 0 && <h2>API Features Introductions</h2>}
         <Row>
           {features.map(({ node }) => (
@@ -69,7 +69,7 @@ const samplesTemplate = ({ data, pageContext }) => {
                     <Card.Text className="pl3 pr3 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Start Tutorial </Card.Footer>
+                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
                   </Card.Body>
                 </a>
               </Card>
