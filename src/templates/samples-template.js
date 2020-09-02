@@ -33,7 +33,7 @@ const samplesTemplate = ({ data, pageContext }) => {
           download={node.buttons.download}
         ></Intro>
       ))}
-      <Container>
+      <Container className="pt5 pb5">
         {tutorials.length !== 0 && <h2>Key Message Exchange Patterns</h2>}
         <Row>
           {tutorials.map(({ node }) => (
@@ -54,8 +54,6 @@ const samplesTemplate = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
-      </Container>
-      <Container>
         {features.length !== 0 && <h2>API Features Introductions</h2>}
         <Row>
           {features.map(({ node }) => (
