@@ -7,14 +7,13 @@ h1, h2, h3, h4 {
 
 #intro {
     background: linear-gradient(
-            rgba(0,0,0, 0.7),
-            rgba(0,0,0, 0.8)
+            rgba(0,0,0, 0.8),
+            rgba(0,0,0, 0.9)
     ),url(../images/bg/mountains-bg.jpg);
     background-size: cover;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
-    border-top: 1px solid #000;
     text-align: center;
     color: #fff !important;
 }

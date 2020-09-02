@@ -14,7 +14,7 @@ const SubFooter = (props) => {
             lg={{ span: 8, offset: 2 }}
             xl={{ span: 8, offset: 2 }}
           >
-            <img src={sollyAvatar} alt="Solly" width="100px" />
+            <img src={sollyAvatar} alt="Solly" width="80px" />
             <h2>Have Questions?</h2>
             <p className="fw1 f4">
               If you have any issues or questions check the Solace Community for
@@ -34,7 +34,7 @@ const SubFooter = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Try PubSub+ Cloud
+              Try PubSub+ Cloud for Free
             </Button>
           </Col>
         </Row>

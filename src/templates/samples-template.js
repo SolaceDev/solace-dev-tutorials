@@ -61,7 +61,7 @@ const samplesTemplate = ({ data, pageContext }) => {
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <Card.Body>
-                    <Card.Title className="feature pa3 fw4">
+                    <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
                     </Card.Title>
                     <Card.Text className="pl3 pr3 fw1">
