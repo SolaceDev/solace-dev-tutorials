@@ -1,10 +1,10 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 
-const Intro = props => {
+const Intro = (props) => {
   return (
     <section id="intro">
-      <Container className="tc pb4">
+      <Container className="tc pt3 pb5">
         <Row>
           <Col
             xs={12}

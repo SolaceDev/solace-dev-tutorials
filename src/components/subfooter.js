@@ -1,5 +1,6 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
+import sollyAvatar from "../images/solace-community-solly-transp.png"
 
 const SubFooter = (props) => {
   return (
@@ -13,6 +14,7 @@ const SubFooter = (props) => {
             lg={{ span: 8, offset: 2 }}
             xl={{ span: 8, offset: 2 }}
           >
+            <img src={sollyAvatar} alt="Solly" width="100px" />
             <h2>Have Questions?</h2>
             <p className="fw1 f4">
               If you have any issues or questions check the Solace Community for

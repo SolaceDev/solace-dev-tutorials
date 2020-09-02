@@ -8,7 +8,7 @@ h1, h2, h3, h4 {
 #intro {
     background: linear-gradient(
             rgba(0,0,0, 0.7),
-            rgba(0,0,0, 0.9)
+            rgba(0,0,0, 0.8)
     ),url(../images/bg/mountains-bg.jpg);
     background-size: cover;
     -webkit-border-radius: 0;
@@ -17,6 +17,12 @@ h1, h2, h3, h4 {
     border-top: 1px solid #000;
     text-align: center;
     color: #fff !important;
+}
+
+#intro p {
+    color: #fff !important;
+    font-size: 18px;
+    line-height: 2rem;
 }
 
 #sidebar {
@@ -91,3 +97,10 @@ a:hover {
     color: #20262a;
 }
 
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-size: 14px;
+}
