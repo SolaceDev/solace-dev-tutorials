@@ -22,7 +22,7 @@ const SubFooter = (props) => {
             </p>
             <Button
               className="ma4"
-              href={props.download}
+              href="https://solace.community/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -30,7 +30,7 @@ const SubFooter = (props) => {
             </Button>
             <Button
               className="ma4"
-              href={props.download}
+              href="https://solace.com/try-it-now/"
               target="_blank"
               rel="noopener noreferrer"
             >
