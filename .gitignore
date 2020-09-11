@@ -67,3 +67,11 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+### WebStorm ###
+# Covers JetBrains WebStorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+# Source: https://www.toptal.com/developers/gitignore/api/webstorm
+
+# User-specific stuff
+.idea

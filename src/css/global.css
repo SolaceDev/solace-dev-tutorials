@@ -334,6 +334,7 @@
 html {
   font-size: 16px;
   color: rgba(0, 0, 0, 1);
+
   font-family: 'Open Sans', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
@@ -343,8 +344,13 @@ body {
   font-weight: 100;
 }
 
+.bg-dark {
+  background: #000000 !important;
+}
+
 main {
-  min-height: 75vh
+  min-height: 75vh;
+  background: #e6eaec !important;
 }
 
 h1 {

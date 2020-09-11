@@ -8,11 +8,11 @@ const SamplesIndex = ({ data }) => {
 
   return (
     <Layout>
-      <Container>
+      <Container className="pt5 pb5">
         <Row className="tc">
           <Col>
-            <h1 className="mt4">Solace Samples</h1>
-            <p className="mb3">
+            <h1 className="fw">Solace Samples</h1>
+            <p className="pt3 pb3 f4">
               Below are samples that will help you integrate your applications
               with Solace technologies.
             </p>
@@ -28,7 +28,9 @@ const SamplesIndex = ({ data }) => {
                     <Card.Text className="pl3 pr3 fw1">
                       {node.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Go To Tutorials</Card.Footer>
+                    <Card.Footer className="fw4">
+                      Go To Tutorials <span className="icon">&#187;</span>
+                    </Card.Footer>
                   </Card.Body>
                 </a>
               </Card>

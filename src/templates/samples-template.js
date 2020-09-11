@@ -11,16 +11,16 @@ const samplesTemplate = ({ data, pageContext }) => {
   } = pageContext
   const meta = data.allTutorialsYaml.edges
   const tutorials = data.allMarkdownRemark.edges.filter(
-    edge => edge.node.frontmatter.layout === "tutorials"
+    (edge) => edge.node.frontmatter.layout === "tutorials"
   )
   const features = data.allMarkdownRemark.edges.filter(
-    edge => edge.node.frontmatter.layout === "features"
+    (edge) => edge.node.frontmatter.layout === "features"
   )
 
   return (
     <Layout>
       <section id="breadcrumbs">
-        <Container className="pt3">
+        <Container>
           <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
         </Container>
       </section>
@@ -33,7 +33,7 @@ const samplesTemplate = ({ data, pageContext }) => {
           download={node.buttons.download}
         ></Intro>
       ))}
-      <Container className="mt4">
+      <Container className="pt5 pb5">
         {tutorials.length !== 0 && <h2>Key Message Exchange Patterns</h2>}
         <Row>
           {tutorials.map(({ node }) => (
@@ -54,8 +54,6 @@ const samplesTemplate = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
-      </Container>
-      <Container className="mt4">
         {features.length !== 0 && <h2>API Features Introductions</h2>}
         <Row>
           {features.map(({ node }) => (
@@ -63,13 +61,13 @@ const samplesTemplate = ({ data, pageContext }) => {
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <Card.Body>
-                    <Card.Title className="feature pa3 fw4">
+                    <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
                     </Card.Title>
                     <Card.Text className="pl3 pr3 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Start Tutorial </Card.Footer>
+                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
                   </Card.Body>
                 </a>
               </Card>

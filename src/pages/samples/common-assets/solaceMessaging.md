@@ -4,11 +4,11 @@
 This tutorial requires access Solace PubSub+ messaging and requires that you know several connectivity properties about your Solace messaging. Specifically you need to know the following:
 
 <table>
-  <tr>
-    <th>Resource</th>
+  <thead>
+    <th>Resources</th>
     <th>Value</th>
     <th>Description</th>
-  </tr>
+  </thead>
   <tr>
     <td>Host</td>
     <td>String</td>

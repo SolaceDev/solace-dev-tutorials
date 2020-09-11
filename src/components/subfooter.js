@@ -1,9 +1,10 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
+import sollyAvatar from "../images/solace-community-solly-transp.png"
 
-const SubFooter = props => {
+const SubFooter = (props) => {
   return (
-    <section id="subfooter" className="pt5 pb5">
+    <section id="subfooter" className="pa5">
       <Container>
         <Row>
           <Col
@@ -13,6 +14,7 @@ const SubFooter = props => {
             lg={{ span: 8, offset: 2 }}
             xl={{ span: 8, offset: 2 }}
           >
+            <img src={sollyAvatar} alt="Solly" width="80px" />
             <h2>Have Questions?</h2>
             <p className="fw1 f4">
               If you have any issues or questions check the Solace Community for
@@ -20,7 +22,7 @@ const SubFooter = props => {
             </p>
             <Button
               className="ma4"
-              href={props.download}
+              href="https://solace.community/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -28,11 +30,11 @@ const SubFooter = props => {
             </Button>
             <Button
               className="ma4"
-              href={props.download}
+              href="https://solace.com/try-it-now/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Try PubSub+ Cloud
+              Try PubSub+ Cloud for Free
             </Button>
           </Col>
         </Row>
