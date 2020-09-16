@@ -114,7 +114,6 @@ export const query = graphql`
             title
             layout
             summary
-            icon
           }
           fields {
             slug
