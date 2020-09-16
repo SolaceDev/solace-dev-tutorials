@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
+import Sidebar from "../components/sidebar"
 import { Container, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
@@ -27,8 +28,8 @@ const tutorialTemplate = ({ data, pageContext }) => {
         </Container>
       </section>
       <Container className="flex-row">
-        <div className="max-w-70">
-          <h1 className="mt4">{node.frontmatter.title}</h1>
+        <div className="max-w-70 mt4 mb4">
+          <h1>{node.frontmatter.title}</h1>
           <h5 id="minutes" className="mb3 pt2">
             {node.timeToRead} Minute Read
           </h5>
@@ -36,16 +37,18 @@ const tutorialTemplate = ({ data, pageContext }) => {
         </div>
         {/* sidebar */}
         <div className="flex-column">
-          <div id="sidebar" className="pl5 mt6 f4 min-w-30">
-            {tutorials.length !== 0 && <div>MESSAGING PATTERNS</div>}
+          <div id="sidebar" className="pl5 mt6 min-w-30">
+            {tutorials.length !== 0 && (
+              <div className="f4 fw4">MESSAGING PATTERNS</div>
+            )}
             <Col className="f5">
               {tutorials.map(({ node }) => (
-                <div key={node.id}>
+                <div key={node.id} className="pl0">
                   <a
                     className={
                       pageContext.slug === node.fields.slug
-                        ? "c-grey6"
-                        : "c-grey4 o-70"
+                        ? "c-grey"
+                        : "c-grey4 o-90"
                     }
                     href={node.fields.slug}
                   >
@@ -71,6 +74,7 @@ const tutorialTemplate = ({ data, pageContext }) => {
                 </div>
               ))}
             </Col>
+            <Sidebar />
           </div>
         </div>
       </Container>

@@ -1,4 +1,4 @@
-- title: Spring
+- title: Spring Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Spring.
   buttons:
     github: https://github.com/SolaceSamples/solace-samples-spring

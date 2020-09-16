@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const samplesTemplate = ({ data, pageContext }) => {
@@ -16,6 +16,9 @@ const samplesTemplate = ({ data, pageContext }) => {
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
+  //const SampleIcon = data.allMarkdownRemark.edges.filter(
+  //  (edge) => edge.node.frontmatter.icon.childImageSharp.fluid === "icon"
+  //)
 
   return (
     <Layout>
@@ -40,11 +43,12 @@ const samplesTemplate = ({ data, pageContext }) => {
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
+                  <CardImg src={node.frontmatter.icon} />
                   <Card.Body>
                     <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
                     </Card.Title>
-                    <Card.Text className="pl3 pr3 fw1">
+                    <Card.Text className="pl3 pr3 pb2 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
                     <Card.Footer className="fw4">Start Tutorial</Card.Footer>
@@ -110,6 +114,7 @@ export const query = graphql`
             title
             layout
             summary
+            icon
           }
           fields {
             slug

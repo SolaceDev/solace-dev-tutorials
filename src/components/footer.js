@@ -25,7 +25,7 @@ const Footer = () => (
         </Col>
       </Row>
       <Row className="pt4 pb4">
-        <Col xs={12} sm={12} md={6} lg={3} xl={3}>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
           <ul className="menu">
             <li>
               <a
@@ -94,7 +94,7 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={3} xl={3}>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
           <ul className="menu">
             <li>
               <a
@@ -163,7 +163,7 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={3} xl={3}>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
           <ul className="menu">
             <li>
               <a href="https://solace.com/developers/">Developers</a>
@@ -226,7 +226,7 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={3} xl={3}>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
           <ul className="menu">
             <li>
               <a href="https://solace.com/developers/">Developers</a>
@@ -293,7 +293,7 @@ const Footer = () => (
     </Container>
     <Container>
       <Row className="footer-bottom">
-        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tl pt3 pb3">
+        <Col xs={6} sm={6} md={6} lg={6} xl={6} className="tl pt3 pb3">
           <a
             href="https://solace.com/legal/"
             target="_blank"
@@ -302,7 +302,7 @@ const Footer = () => (
             &copy; {new Date().getFullYear()} Solace Corporation
           </a>
         </Col>
-        <Col xs={12} sm={12} md={6} lg={6} xl={6} className="tr pt2 pb2">
+        <Col xs={6} sm={6} md={6} lg={6} xl={6} className="tr pt2 pb2">
           <a
             href="https://dev.to/solacedevs"
             target="_blank"
