@@ -8,16 +8,20 @@ const SamplesIndex = ({ data }) => {
 
   return (
     <Layout>
-      <Container className="pt5 pb5">
-        <Row className="tc">
-          <Col>
-            <h1 className="fw">Solace Samples</h1>
-            <p className="pt3 pb3 f4">
-              Below are samples that will help you integrate your applications
-              with Solace technologies.
-            </p>
-          </Col>
-        </Row>
+      <section id="intro">
+        <Container className="pt5 pb5">
+          <Row className="tc">
+            <Col>
+              <h1>Solace Samples</h1>
+              <p className="pt3 pb3 f4">
+                Below are samples that will help you integrate your applications
+                with Solace technologies.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <Container className="pb5">
         <Row>
           {samples.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -25,7 +29,7 @@ const SamplesIndex = ({ data }) => {
                 <a href={node.fields.slug}>
                   <Card.Body>
                     <Card.Title className="pa3 fw4">{node.title}</Card.Title>
-                    <Card.Text className="pl3 pr3 fw1">
+                    <Card.Text className="pl3 pr3 pb2 fw1">
                       {node.summary}
                     </Card.Text>
                     <Card.Footer className="fw4">

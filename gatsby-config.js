@@ -6,34 +6,12 @@ module.exports = {
     author: `@solacedotcom`,
   },
   plugins: [
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-KDMNNWW",
-
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        // Defaults to null
-        defaultDataLayer: { platform: "gatsby" },
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages/samples/`,
-      },
-    },
-    `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     // This configuration assumes images are all stored in the "images" directory
     // in your project root. Configure gatsby-source-filesystem multiple times if
     // you have images in many places.
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,6 +19,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/samples/`,
+      },
+    },
+    `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
+
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -244,6 +230,21 @@ module.exports = {
         ],
         // optional: switch to className styling (styling is under breadcrumb.css)
         useClassNames: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-KDMNNWW",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
       },
     },
   ],

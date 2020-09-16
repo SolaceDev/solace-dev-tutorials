@@ -1,7 +1,11 @@
 import React from "react"
 
-const Sidebar = props => {
-  return <h5>Sidebar Test</h5>
+const Sidebar = () => {
+  return (
+    <div className="mt4">
+      <div className="f4 fw4">GITHUB LINKS HERE</div>
+    </div>
+  )
 }
 
 export default Sidebar

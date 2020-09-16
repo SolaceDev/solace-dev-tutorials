@@ -10,15 +10,16 @@ const SubFooter = (props) => {
           <Col
             xs={12}
             sm={12}
-            md={6}
+            md={12}
             lg={{ span: 8, offset: 2 }}
             xl={{ span: 8, offset: 2 }}
           >
             <img src={sollyAvatar} alt="Solly" width="80px" />
-            <h2>Have Questions?</h2>
+            <h2>Solly is here to help</h2>
             <p className="fw1 f4">
-              If you have any issues or questions check the Solace Community for
-              answers and discussions.
+              Head over to the Solace Community for answers and discussions.
+              <br />
+              Or jump right in and try PubSub+ Cloud for free.
             </p>
             <Button
               className="ma4"
@@ -34,7 +35,7 @@ const SubFooter = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Try PubSub+ Cloud for Free
+              Try PubSub+ Cloud
             </Button>
           </Col>
         </Row>

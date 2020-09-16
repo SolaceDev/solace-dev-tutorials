@@ -1,7 +1,7 @@
 .card {
   border: 0;
   border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(27,31,35,.15);
+  box-shadow: 0 2px 4px rgba(27, 31, 35, 0.15);
 }
 
 .card a {
@@ -10,19 +10,20 @@
 
 .card a:hover {
   color: #474747;
-  box-shadow: 0 4px 6px rgba(49,54,68,.05),0 5px 20px rgba(49,54,68,.08);
+  box-shadow: 0 4px 6px rgba(49, 54, 68, 0.05),
+    0 5px 20px rgba(49, 54, 68, 0.08);
   cursor: pointer;
   transform: translatey(-2px);
   text-decoration: none;
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 
+.card-img {
+  height: 150px;
+}
 
 .card-title {
-  border-radius: 3px 3px 0 0;
-  background: linear-gradient(
-          #20262A,
-          #37404A) !important;
+  background: linear-gradient(#20262a, #37404a) !important;
   color: #fff;
   font-size: 18px;
   text-align: center;
@@ -43,4 +44,3 @@
   text-align: right;
   color: #00ad93;
 }
-

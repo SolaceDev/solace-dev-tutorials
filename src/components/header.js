@@ -6,14 +6,12 @@ import solaceDevLogo from "../images/solace-developers-logo-white-lrg.png"
 const Header = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
-      <Navbar.Brand href="https://solace.com/">
-        <a
-          href="https://www.solace.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src={solaceDevLogo} alt="Solace Developers Logo" width="250px" />
-        </a>
+      <Navbar.Brand
+        href="https://solace.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={solaceDevLogo} alt="Solace Developers Logo" width="250px" />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
@@ -28,7 +26,9 @@ const Header = ({ siteTitle }) => (
           >
             Getting Started
           </Nav.Link>
-          <Nav.Link href="/samples/">Samples</Nav.Link>
+          <Nav.Link href="/samples/" className="active">
+            Samples
+          </Nav.Link>
           <Nav.Link
             href="https://solace.community/"
             target="_blank"
