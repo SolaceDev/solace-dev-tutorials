@@ -8,10 +8,10 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
     // This configuration assumes images are all stored in the "images" directory
     // in your project root. Configure gatsby-source-filesystem multiple times if
     // you have images in many places.
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
