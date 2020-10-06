@@ -35,7 +35,7 @@ The goal of this tutorial is to understand the following:
 2.  How to bind to this queue and receive a guaranteed message
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-web.png)
 `markdown:solaceMessaging-part2.md`
 
 `markdown:solaceApi.md`

@@ -25,7 +25,7 @@ The examples below make a few assumptions for simplicity:
 * The Solace message-VPN is `default`
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-semp.png)
 `markdown:solaceMessaging-part2.md`
 
 ## The Basics

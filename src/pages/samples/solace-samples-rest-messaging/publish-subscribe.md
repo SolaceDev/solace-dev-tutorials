@@ -49,7 +49,7 @@ The [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Prot
 Because of the difference between publishing and subscribing, these topics are introduced as needed in the tutorial below.
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-rest-messaging.png)
 `markdown:solaceMessaging-part2.md`
 
 ## Obtaining the Solace API

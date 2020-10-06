@@ -37,7 +37,7 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 1.1 over 
 2.  How to bind to this queue and receive a persistent message
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-amqp.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:jmsApi.md`
 
