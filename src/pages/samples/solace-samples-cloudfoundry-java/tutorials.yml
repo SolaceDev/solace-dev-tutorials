@@ -1,5 +1,5 @@
 - title: CloudFoundry Java Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications for Pivotal Cloud Foundry.
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
-    download: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java/archive/master.zip
+    github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/samples
+    download: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java/
