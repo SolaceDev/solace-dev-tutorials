@@ -42,7 +42,9 @@ JMS is a standard API for sending and receiving messages. As such, in addition t
 
 The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
-`markdown:solaceMessaging.md` 
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md` 
 `markdown:solaceApi.md`
 
 ## JMS administered objects

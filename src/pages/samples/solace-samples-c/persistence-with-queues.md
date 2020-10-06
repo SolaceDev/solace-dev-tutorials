@@ -33,7 +33,9 @@ The goal of this tutorial is to understand the following:
 *   How to send a persistent message to a Solace queue
 *   How to bind to this queue and receive a persistent message
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 `markdown:init.md`
 

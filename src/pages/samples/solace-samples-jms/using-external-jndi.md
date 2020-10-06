@@ -37,7 +37,9 @@ The goal of this tutorial is to provide guidance and sample code to:
 1. Populate Solace JMS objects into a non-Solace external JNDI store
 2. Use the external JNDI service for Solace JNDI messaging
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
 ## Overview

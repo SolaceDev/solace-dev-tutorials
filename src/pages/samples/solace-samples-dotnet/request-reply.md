@@ -51,7 +51,9 @@ For request-reply messaging to be successful it must be possible for the request
 
 For direct messages however, this is simplified through the use of the `Requestor` object as shown in this sample.
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
 ## Making a request

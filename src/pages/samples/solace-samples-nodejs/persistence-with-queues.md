@@ -30,7 +30,9 @@ The goal of this tutorial is to understand the following:
 1.  How to send a guaranteed message to a Solace queue
 2.  How to bind to this queue and receive a guaranteed message
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
 ## Prerequisite: Creating a Durable Queue on the Solace message router

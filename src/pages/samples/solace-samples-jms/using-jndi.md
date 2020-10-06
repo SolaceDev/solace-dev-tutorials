@@ -45,7 +45,9 @@ The goal of this tutorial is to demonstrate the use of JNDI as a way to create J
 2. How to retrieve a JMS Connection Factory using JNDI so the client can connect to Solace messaging
 3. How to lookup a JMS Queue destination object using JNDI so the client can publish or subscribe to it
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
 ## Step 1: Configuring the JNDI service

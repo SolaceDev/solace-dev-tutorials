@@ -35,7 +35,9 @@ The goals of this tutorial are to understand the following:
     1.  How to detect a request expecting a reply
     2.  How to generate a reply message
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 
 ## Overview
 

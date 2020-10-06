@@ -28,7 +28,9 @@ The goal of this tutorial is to understand the following:
 
 *  How to properly handle guaranteed message acknowledgements on message send.
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 
 
 ## Overview

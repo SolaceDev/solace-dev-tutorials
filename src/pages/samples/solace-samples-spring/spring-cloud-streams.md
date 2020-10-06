@@ -44,7 +44,9 @@ Solace PubSub+ is a partner maintained binder implementation for Spring Cloud St
 2. The Reference Guide for that current version is available [here](https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle)
 3. PubSub+ Binder [https://github.com/SolaceProducts/spring-cloud-stream-binder-solace](https://github.com/SolaceProducts/spring-cloud-stream-binder-solace)
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 
 ## Getting the Source
 Clone the GitHub repository containing the Solace samples.

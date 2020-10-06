@@ -35,7 +35,9 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 2.0 API o
 1.  How to send a persistent message to a durable queue using Solace messaging
 2.  How to bind to this queue and receive a persistent message
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 `markdown:jmsApi.md`
 
 ## Java Messaging Service (JMS) Introduction

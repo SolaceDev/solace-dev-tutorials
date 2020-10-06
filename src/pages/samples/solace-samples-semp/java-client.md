@@ -24,7 +24,9 @@ The examples below make a few assumptions for simplicity:
 * The Solace Messaging host and port are `solacevmr:8080`
 * The Solace message-VPN is `default`
 
-`markdown:solaceMessaging.md`
+`markdown:solaceMessaging-part1.md`
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+`markdown:solaceMessaging-part2.md`
 
 ## Generating the SEMP Client Library
 
