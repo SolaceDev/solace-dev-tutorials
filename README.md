@@ -12,6 +12,16 @@ This was created from the [Gatsby Default Starter](https://www.gatsbyjs.org/star
 ### Tutorials 
 - Found on github.com/SolaceDev/solace-dev-samples
 - Text based step by step tutorial on how to use the API/Protocol with references to Sample Code
+- Categories: 
+  1. Key MEP    
+  2. API Features     
+  Note: To be revised 
+
+#### Key MEP
+AMQP NodeJS, CF Java, C, Qpid JMS 1.1, Qpid JMS 1.2, C#, Java, Java RTO, JavaScript, MQTT, JMS, NodeJS, REST, OpenMAMA, SEMP, Spring
+
+#### API Features
+C, Java, JavaScript
 
 ### Sample code
 - Found on github.com/SolaceSamples/solace-samples-{API-name}
