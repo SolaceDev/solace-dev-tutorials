@@ -12,9 +12,9 @@ const SamplesIndex = ({ data }) => {
         <Container className="pt5 pb5">
           <Row className="tc">
             <Col>
-              <h1>Solace Samples</h1>
+              <h1>Solace API Tutorials</h1>
               <p className="pt3 pb3 f4">
-                Below are samples that will help you integrate your applications
+                Below are API tutorials that will help you integrate your applications
                 with Solace technologies.
               </p>
             </Col>

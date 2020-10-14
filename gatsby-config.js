@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Solace Samples`,
+    title: `Solace API Tutorials`,
     siteUrl: "http://localhost:8000", // TODO change to prod URL
     description: `These tutorials get you up to speed sending and receiving messages with Solace technology.`,
     author: `@solacedotcom`,
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/samples/`,
+        path: `${__dirname}/src/pages/tutorials/`,
       },
     },
     `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
@@ -69,7 +69,7 @@ module.exports = {
             options: {
               // Example code links are relative to this dir.
               // eg examples/path/to/file.js
-              directory: `${__dirname}/src/pages/samples/common-assets`,
+              directory: `${__dirname}/src/pages/tutorials/common-assets`,
             },
           },
           {
@@ -153,7 +153,7 @@ module.exports = {
         // useAutoGen: required 'true' to use autogen
         useAutoGen: true,
         // autoGenHomeLabel: optional 'Home' is default
-        autoGenHomeLabel: `Solace Samples`,
+        autoGenHomeLabel: `Solace API Tutorials`,
         // exlude: optional, include to overwrite these default excluded pages
         exclude: [
           `/dev-404-page`,
@@ -162,70 +162,70 @@ module.exports = {
           `/offline-plugin-app-shell-fallback`,
         ],
         // crumbLabelUpdates: optional, update specific crumbLabels in the path
-        // unfortunately we have to update the crumb labels manually whenever we add a new sample
+        // unfortunately we have to update the crumb labels manually whenever we add a new tutorial
         crumbLabelUpdates: [
           {
-            pathname: "/solace-samples-spring",
+            pathname: "/spring",
             crumbLabel: "Spring",
           },
           {
-            pathname: "/solace-samples-rest-messaging",
+            pathname: "/rest-messaging",
             crumbLabel: "REST",
           },
           {
-            pathname: "/solace-samples-semp",
+            pathname: "/semp",
             crumbLabel: "SEMP",
           },
           {
-            pathname: "/solace-samples-nodejs",
+            pathname: "/nodejs",
             crumbLabel: "Node.js",
           },
           {
-            pathname: "/solace-samples-openmama",
+            pathname: "/openmama",
             crumbLabel: "OpenMAMA",
           },
           {
-            pathname: "/solace-samples-javascript",
+            pathname: "/javascript",
             crumbLabel: "JavaScript",
           },
           {
-            pathname: "/solace-samples-jms",
+            pathname: "/jms",
             crumbLabel: "JMS",
           },
           {
-            pathname: "/solace-samples-mqtt",
+            pathname: "/java-mqtt-paho",
             crumbLabel: "MQTT",
           },
           {
-            pathname: "/solace-samples-javarto",
+            pathname: "/javarto",
             crumbLabel: "JavaRTO",
           },
           {
-            pathname: "/solace-samples-dotnet",
+            pathname: "/dotnet",
             crumbLabel: "C#/.NET",
           },
           {
-            pathname: "/solace-samples-java",
+            pathname: "/jcsmp",
             crumbLabel: "Java",
           },
           {
-            pathname: "/solace-samples-cloudfoundry-java",
+            pathname: "/cloudfoundry-java",
             crumbLabel: "CloudFoundry Java",
           },
           {
-            pathname: "/solace-samples-c",
+            pathname: "/c",
             crumbLabel: "C",
           },
           {
-            pathname: "/solace-samples-amqp-qpid-jms1",
+            pathname: "/java-amqp-qpid-jms1",
             crumbLabel: "Apache Qpid JMS 1.1 AMQP",
           },
           {
-            pathname: "/solace-samples-amqp-nodejs",
+            pathname: "/java-amqp-nodejs",
             crumbLabel: "AMQP Node.js",
           },
           {
-            pathname: "/solace-samples-amqp-qpid-jms2",
+            pathname: "/java-amqp-qpid-jms2",
             crumbLabel: "Apache Qpid JMS 2.0 AMQP",
           },
         ],
