@@ -21,7 +21,7 @@ const Intro = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View on GitHub
+              Improve this page
             </Button>
             <Button
               className="ml2"
@@ -29,7 +29,7 @@ const Intro = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download Source
+              Download Source Code
             </Button>
           </Col>
         </Row>
