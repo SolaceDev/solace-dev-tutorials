@@ -57,7 +57,9 @@ const tutorial = ({ data, pageContext }) => {
                 </div>
               ))}
             </Col>
-            {features.length !== 0 && <div className="mt3">API FEATURES</div>}
+            {features.length !== 0 && (
+              <div className="mt3 f4 fw4">API FEATURES</div>
+            )}
             <Col className="f5">
               {features.map(({ node }) => (
                 <div key={node.id}>
