@@ -221,8 +221,8 @@ module.exports = {
             crumbLabel: "Apache Qpid JMS 1.1 AMQP",
           },
           {
-            pathname: "/java-amqp-nodejs",
-            crumbLabel: "AMQP Node.js",
+            pathname: "/nodejs-amqp",
+            crumbLabel: "Node.js AMQP",
           },
           {
             pathname: "/java-amqp-qpid-jms2",
