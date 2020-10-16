@@ -5,7 +5,7 @@ import Sidebar from "../components/sidebar"
 import { Container, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const tutorialTemplate = ({ data, pageContext }) => {
+const tutorial = ({ data, pageContext }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -131,4 +131,4 @@ export const query = graphql`
   }
 `
 
-export default tutorialTemplate
+export default tutorial

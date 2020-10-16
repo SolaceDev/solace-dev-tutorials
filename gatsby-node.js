@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
   resultTutorial.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/tutorial-template.js`),
+      component: path.resolve(`./src/templates/tutorial.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
@@ -97,7 +97,7 @@ exports.createPages = async ({ graphql, actions }) => {
   resultSamples.data.allTutorialsYaml.edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/samples-template.js`),
+      component: path.resolve(`./src/templates/tutorials.js`),
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

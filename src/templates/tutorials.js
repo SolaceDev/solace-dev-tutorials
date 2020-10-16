@@ -5,7 +5,7 @@ import Intro from "../components/intro"
 import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
-const samplesTemplate = ({ data, pageContext }) => {
+const tutorials = ({ data, pageContext }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -127,4 +127,4 @@ export const query = graphql`
   }
 `
 
-export default samplesTemplate
+export default tutorials
