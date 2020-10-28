@@ -27,7 +27,7 @@ const tutorial = ({ data, pageContext }) => {
           <Breadcrumb
             crumbs={crumbs}
             crumbLabel={node.frontmatter.title}
-            crumbSeparator=" > "
+            crumbSeparator=" 👉 "
           />
         </Container>
       </section>

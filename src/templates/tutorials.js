@@ -24,7 +24,7 @@ const tutorials = ({ data, pageContext }) => {
     <Layout>
       <section id="breadcrumbs">
         <Container>
-          <Breadcrumb crumbs={crumbs} crumbSeparator=" > " />
+          <Breadcrumb crumbs={crumbs} crumbSeparator=" 👉 " />
         </Container>
       </section>
       {meta.map(({ node }) => (
