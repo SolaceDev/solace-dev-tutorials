@@ -6,6 +6,8 @@ icon: I_dev_topic2q.svg
 links:
     - label: TopicToQueueMapping.java
       link: /blob/master/src/main/java/com/solace/samples/TopicToQueueMapping.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/topic-to-queue-mapping.md
 ---
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”

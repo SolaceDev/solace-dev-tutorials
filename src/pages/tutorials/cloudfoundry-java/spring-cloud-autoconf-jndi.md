@@ -5,6 +5,9 @@ summary: Consume Solace Messaging as a Service provided by Solace Spring JMS Aut
 icon: I_spring_JNDI_w220.svg
 icon-height: 90px
 icon-width: 180px
+links:
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/spring-cloud-autoconf-jndi.md
 ---
 
 ## Overview

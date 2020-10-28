@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
     - label: TopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-mqtt-paho/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of connecting an MQTT client to Solace messaging by illustrating how to add a topic subscription and send a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.

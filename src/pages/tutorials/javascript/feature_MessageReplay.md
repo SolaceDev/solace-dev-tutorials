@@ -7,6 +7,8 @@ links:
       link: /blob/master/src/features/MessageReplay/MessageReplay.html
     - label: MessageReplay.js
       link: /blob/master/src/features/MessageReplay/MessageReplay.js
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/javascript/feature_MessageReplay.md
 ---
 
 In this introduction we show you how a client can initiate and process the replay of previously published messages, as well as deal with an externally initiated replay.

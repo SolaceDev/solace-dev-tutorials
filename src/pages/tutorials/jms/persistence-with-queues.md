@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java
     - label: QueueConsumer.java
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumer.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jms/persistence-with-queues.md
 ---
 
 This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a Solace messaging queue in a point to point fashion.

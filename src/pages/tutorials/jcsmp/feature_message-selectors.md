@@ -5,6 +5,8 @@ summary: Learn to use selectors to filter which messages are received.
 links:
     - label: MessageSelectorsOnQueue.java
       link: /blob/master/src/main/java/com/solace/samples/features/MessageSelectorsOnQueue.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/feature_message-selectors.md
 ---
 
 This feature introduction shows how a client can bind to a queue and select which messages to receive based on custom properties of the messages.  This is useful when the logic to select which messages to receive is not possible with a simple topic subscription.

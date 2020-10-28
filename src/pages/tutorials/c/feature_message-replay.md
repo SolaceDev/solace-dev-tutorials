@@ -5,6 +5,8 @@ summary: Learn how to make use of Message Replay via the Solace C client library
 links:
     - label: MessageReplay.c
       link: /blob/master/src/intro/MessageReplay.c
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/c/feature_message-replay.md
 ---
 
 In this introduction we show you how a client can initiate and process the replay of previously published messages, as well as deal with an externally initiated replay.

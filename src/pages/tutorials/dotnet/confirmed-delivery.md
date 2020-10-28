@@ -6,6 +6,8 @@ icon: I_dev_confirm.svg
 links:
     - label: ConfirmedPublish.cs
       link: /blob/master/src/ConfirmedDelivery/ConfirmedPublish.cs
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/dotnet/confirmed-delivery.md
 ---
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.

@@ -12,6 +12,8 @@ links:
       link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.html
     - label: QueueConsumer.js
       link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/javascript/persistence-with-queues.md
 ---
 
 This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive Persistent (Guaranteed) Messages from a Solace message router queue in a point to point fashion.

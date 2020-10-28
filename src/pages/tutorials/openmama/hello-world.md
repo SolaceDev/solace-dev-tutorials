@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/helloworld/mama.properties
     - label: topicPublishOne.c
       link: /blob/master/src/helloworld/topicPublishOne.c
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/openmama/hello-world.md
 ---
 
 ## Assumptions

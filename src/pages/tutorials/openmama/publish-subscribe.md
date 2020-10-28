@@ -10,6 +10,8 @@ links:
       link: blob/master/src/pubsub/topicSubscriber.c
     - label: topicPublisher.c
       link: /blob/master/src/pubsub/topicPublisher.c
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/openmama/publish-subscribe.md
 ---
 
 ## Assumptions

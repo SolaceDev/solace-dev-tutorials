@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
     - label: TopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the Solace API by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.

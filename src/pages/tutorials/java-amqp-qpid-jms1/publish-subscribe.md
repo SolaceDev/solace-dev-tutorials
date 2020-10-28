@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
     - label: TopicSubscriber.java
       link: //blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-amqp-qpid-1/publish-subscribe.md
 ---
 
 This tutorial will show you to how to connect a Apache Qpid JMS 1.1 client to a Solace Message Router using AMQP, add a topic subscription and publish a message matching this topic subscription. This is the publish/subscribe message exchange pattern as illustrated here:

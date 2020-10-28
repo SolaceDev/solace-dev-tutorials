@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/ExtJndiImport.java
     - label: ExtJndiTest.java
       link: /blob/master/src/main/java/com/solace/samples/ExtJndiTest.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jms/using-external-jndi.md
 ---
 
 This tutorial shows how to provision and look up Solace JMS objects from an external [Java Naming and Directory Interface (JNDI)](https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface) service, hosted outside the Solace message broker.

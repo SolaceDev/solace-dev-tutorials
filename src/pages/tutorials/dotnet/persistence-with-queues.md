@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/QueueProducer/QueueProducer.cs
     - label: QueueConsumer.cs
       link: /blob/master/src/QueueConsumer/QueueConsumer.cs
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/dotnet/persistence-with-queues.md
 
 ---
 

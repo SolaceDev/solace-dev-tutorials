@@ -5,6 +5,8 @@ summary: Learn how to send messsages with an expiration and manage expired messa
 links:
     - label: MessageTTLAndDeadMessageQueue.java
       link: /blob/master/src/main/java/com/solace/samples/features/MessageTTLAndDeadMessageQueue.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/feature_ttl-and-dmq.md
 ---
 
 This sample demonstrates how to send a message with Time to Live (TTL) enabled and how to allow an expired message to be collected by the Dead Message Queue (DMQ).

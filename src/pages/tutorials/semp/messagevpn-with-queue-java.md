@@ -5,6 +5,9 @@ summary: Sample integration into a Java-based management tool using the SEMP Jav
 icon: management-integration-java.svg
 icon-height: 90px
 icon-width: 104px
+links:
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/messagevpn-with-queue-java.md
 ---
 This tutorial will guide you through the steps of creating a sample Java-based tool to administer basic message-VPNs and queues.
 

@@ -5,6 +5,9 @@ summary: Consume Solace PubSub+ as a Service provided by Solace Spring Java Auto
 icon: I_spring_Java_w220.svg
 icon-height: 90px
 icon-width: 180px
+links:
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/spring-cloud-autoconf-java.md
 ---
 
 ## Overview

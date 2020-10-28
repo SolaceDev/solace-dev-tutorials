@@ -5,6 +5,9 @@ summary: Generate a SEMP management client library for any of the supported prog
 icon: generate-semp-client-lib.svg
 icon-height: 70px
 icon-width: 228px
+links:
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/generate-semp-client-lib.md
 ---
 
 Programmatic management of the Solace Messaging through the SEMP API can be done directly through accessing the system's HTTP REST protocol API (see the related [Basic Operations - curl tutorial](../curl/)) or more conveniently, using a local SEMP client library which is:

@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java
     - label: QueueConsumber.java
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumer.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-amqp-qpid-jms2/persistence-with-queues.md
 ---
 
 This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages with Apache Qpid JMS 2.0 API client using AMQP and Solace messaging.

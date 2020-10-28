@@ -5,6 +5,8 @@ summary: Learn how to group messaging operations into an atomic transaction.
 links:
     - label: Transactions.java
       link: /blob/master/src/main/java/com/solace/samples/features/Transactions.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/feature_transactions.md
 ---
 
 This sample demonstrates how to acknowledge the receipt of a message and send a new message in a single atomic transaction.

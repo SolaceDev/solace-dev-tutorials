@@ -5,6 +5,8 @@ summary: Learn how to look at the contents of a Queue without consuming any mess
 links:
     - label: QueueProvisionAndBrowse.java
       link: /blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndBrowse.java
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/feature_browsing-queues.md
 ---
 
 This sample shows how to use a Browser to look at the Queue's contents.

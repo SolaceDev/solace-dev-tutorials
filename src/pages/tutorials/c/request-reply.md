@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/intro/BasicRequestor.c
     - label: BasicReplier.c
       link: /blob/master/src/intro/BasicReplier.c
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/c/request-reply.md
 ---
 
 

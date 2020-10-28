@@ -8,6 +8,8 @@ links:
       link: /blob/master/src/TopicPublisher/TopicPublisher.cs
     - label: TopicSubscriber.cs
       link: /blob/master/src/TopicSubscriber/TopicSubscriber.cs
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/dotnet/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the Solace API by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange illustrated here:

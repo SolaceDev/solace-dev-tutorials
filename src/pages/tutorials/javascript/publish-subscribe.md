@@ -12,6 +12,8 @@ links:
       link: /blob/master/src/basic-samples/TopicSubscriber/TopicSubscriber.html
     - label: TopicSubscriber.js
       link: /blob/master/src/basic-samples/TopicSubscriber/TopicSubscriber.js
+    - label: feedback
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/javascript/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the Solace Web Messaging API for JavaScript version 10 or later by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.  
