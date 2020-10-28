@@ -16,6 +16,10 @@ const tutorial = ({ data, pageContext }) => {
   const features = data.tableOfContent.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
+  // const feedback = node.frontmatter.links.filter(
+  //   (link) => link.label === "feedback"
+  // )
+  // console.log(feedback[0].link)
   return (
     <Layout>
       <section id="breadcrumbs">

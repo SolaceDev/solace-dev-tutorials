@@ -1,11 +1,32 @@
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
-const Sidebar = () => {
+export default function Sidebar() {
   return (
-    <div className="mt4">
-      <div className="f4 fw4">GITHUB LINKS HERE</div>
-    </div>
+    <StaticQuery
+      query={
+        graphql`
+          query sidebarQuery {
+            sidebar: allMarkdownRemark {
+              edges {
+                node {
+                  frontmatter {
+                    links {
+                      link
+                    }
+                  }
+                }
+              }
+            }
+          }
+        `
+      }
+      render={data => (
+        <div className="mt4">
+          <div className="f4 fw4"> <a href = {data.sidebar.edges[0].node.frontmatter.links.filter( (link) => link.label === "feedback" )}> Improve this page</a>
+          </div>
+        </div>
+      )}
+    />
   )
 }
-
-export default Sidebar
