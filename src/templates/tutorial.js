@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import Sidebar from "../components/sidebar"
+// import Sidebar from "../components/sidebar"
 import { Container, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
@@ -16,10 +16,10 @@ const tutorial = ({ data, pageContext }) => {
   const features = data.tableOfContent.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
-  // const feedback = node.frontmatter.links.filter(
-  //   (link) => link.label === "feedback"
-  // )
-  // console.log(feedback[0].link)
+  const feedback = node.frontmatter.links.filter(
+    (link) => link.label === "feedback"
+  )
+  console.log(feedback[0].link)
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -80,9 +80,12 @@ const tutorial = ({ data, pageContext }) => {
                 </div>
               ))}
             </Col>
-            <Sidebar />
+            <div className="f5">
+              <div className="mt3 f4 fw4"><a href = {feedback[0].link} target="_blank" > Improve this page </a></div>
+            </div>
           </div>
         </div>
+        {/* <Sidebar node = {this.node} tutorials = {this.tutorials} features = {this.features} feedback = {this.feedback} /> */}
       </Container>
     </Layout>
   )
