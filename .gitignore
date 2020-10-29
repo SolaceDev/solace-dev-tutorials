@@ -75,3 +75,5 @@ yarn-error.log
 
 # User-specific stuff
 .idea
+# Local Netlify folder
+.netlify

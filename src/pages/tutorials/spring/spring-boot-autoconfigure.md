@@ -8,8 +8,6 @@ links:
       link: /blob/master/spring-boot-autoconfig-sender/src/main/java/com/solace/samples/spring/boot/SpringBootSender.java
     - label: SpringBootReceiver
 	  link: /blob/master/spring-boot-autoconfig-receiver/src/main/java/com/solace/samples/spring/boot/SpringBootReceiver.java
-	- label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/spring/spring-boot-autoconfigure.md
 ---
 
 This tutorial will introduce you to the fundamentals of connecting an JMS client to Solace Messaging using Spring Boot with Autoconfigure. Spring Boot auto-configuration attempts to automatically configure your Spring application based on the jar dependencies that you have added.
