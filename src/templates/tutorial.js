@@ -19,7 +19,6 @@ const tutorial = ({ data, pageContext }) => {
   const feedback = node.frontmatter.links.filter(
     (link) => link.label === "feedback"
   )
-  console.log(feedback[0].link)
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -81,7 +80,7 @@ const tutorial = ({ data, pageContext }) => {
               ))}
             </Col>
             <div className="f5">
-              <div className="mt3 f4 fw4"><a href = {feedback[0].link} target="_blank" > Improve this page </a></div>
+              <div className="mt3 f4 fw4"><a href = {feedback[0].link} target="_blank" rel="noreferrer" > Improve this page </a></div>
             </div>
           </div>
         </div>
