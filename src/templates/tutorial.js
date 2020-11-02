@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-// import Sidebar from "../components/sidebar"
-import { Container, Col } from "react-bootstrap"
+import Sidebar from "../components/sidebar"
+import { Container } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const tutorial = ({ data, pageContext }) => {
@@ -21,6 +21,7 @@ const tutorial = ({ data, pageContext }) => {
   )
   const feedback_link = feedback[0].link || ""
   const section_title = data.allTutorialsYaml.edges[0].node.section1
+  
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -40,53 +41,13 @@ const tutorial = ({ data, pageContext }) => {
           </h5>
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
         </div>
-        {/* sidebar */}
-        <div className="flex-column">
-          <div id="sidebar" className="pl5 mt6 min-w-30">
-            {tutorials.length !== 0 && (
-              <div className="f4 fw4">{section_title || "Fundamentals"}</div>
-            )}
-            <Col className="f5">
-              {tutorials.map(({ node }) => (
-                <div key={node.id} className="pl0">
-                  <a
-                    className={
-                      pageContext.slug === node.fields.slug
-                        ? "c-grey"
-                        : "c-grey4 o-90"
-                    }
-                    href={node.fields.slug}
-                  >
-                    {node.frontmatter.title}
-                  </a>
-                </div>
-              ))}
-            </Col>
-            {features.length !== 0 && (
-              <div className="mt3 f4 fw4">Features</div>
-            )}
-            <Col className="f5">
-              {features.map(({ node }) => (
-                <div key={node.id}>
-                  <a
-                    className={
-                      pageContext.slug === node.fields.slug
-                        ? "c-grey6"
-                        : "c-grey4 o-70"
-                    }
-                    href={node.fields.slug}
-                  >
-                    {node.frontmatter.title}
-                  </a>
-                </div>
-              ))}
-            </Col>
-            <div className="f5">
-              <div className="mt3 f4 fw4"><a href = {feedback_link} target="_blank" rel="noreferrer" > Improve this page </a></div>
-            </div>
-          </div>
-        </div>
-        {/* <Sidebar node = {this.node} tutorials = {this.tutorials} features = {this.features} feedback = {this.feedback} /> */}
+        <Sidebar
+          features = {features} 
+          tutorials = {tutorials} 
+          feedback_link = {feedback_link} 
+          section_title = {section_title} 
+          pageContext = {pageContext} 
+        ></Sidebar>
       </Container>
     </Layout>
   )
