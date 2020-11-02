@@ -20,6 +20,7 @@ const tutorial = ({ data, pageContext }) => {
     (link) => link.label === "feedback"
   )
   const feedback_link = feedback[0].link || ""
+  const section_title = data.allTutorialsYaml.edges[0].node.section1
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -43,7 +44,7 @@ const tutorial = ({ data, pageContext }) => {
         <div className="flex-column">
           <div id="sidebar" className="pl5 mt6 min-w-30">
             {tutorials.length !== 0 && (
-              <div className="f4 fw4">MESSAGING PATTERNS</div>
+              <div className="f4 fw4">{section_title || "Fundamentals"}</div>
             )}
             <Col className="f5">
               {tutorials.map(({ node }) => (
@@ -62,7 +63,7 @@ const tutorial = ({ data, pageContext }) => {
               ))}
             </Col>
             {features.length !== 0 && (
-              <div className="mt3 f4 fw4">API FEATURES</div>
+              <div className="mt3 f4 fw4">Features</div>
             )}
             <Col className="f5">
               {features.map(({ node }) => (
@@ -113,6 +114,13 @@ export const query = graphql`
               link
             }
           }
+        }
+      }
+    }
+    allTutorialsYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {
+      edges {
+        node {
+          section1
         }
       }
     }

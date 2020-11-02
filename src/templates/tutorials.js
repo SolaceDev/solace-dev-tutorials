@@ -37,7 +37,7 @@ const tutorials = ({ data, pageContext }) => {
         ></Intro>
       ))}
       <Container className="pt5 pb5">
-        {tutorials.length !== 0 && <h2>Key Message Exchange Patterns</h2>}
+        {tutorials.length !== 0 && <h2>{meta[0].node.section1 || "Fundamentals"}</h2>}
         <Row>
           {tutorials.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -58,7 +58,7 @@ const tutorials = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
-        {features.length !== 0 && <h2>API Features Introductions</h2>}
+        {features.length !== 0 && <h2>{meta[0].node.section2 || "API & Broker Features"}</h2>}
         <Row>
           {features.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -99,6 +99,7 @@ export const query = graphql`
             download
             github
           }
+          section1
         }
       }
     }
