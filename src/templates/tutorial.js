@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
-import { Container } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const tutorial = ({ data, pageContext }) => {
@@ -21,7 +21,7 @@ const tutorial = ({ data, pageContext }) => {
   )
   const feedback_link = feedback[0].link || ""
   const section_title = data.allTutorialsYaml.edges[0].node.section1
-  
+
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -33,21 +33,25 @@ const tutorial = ({ data, pageContext }) => {
           />
         </Container>
       </section>
-      <Container className="flex-row">
-        <div className="max-w-70 mt4 mb4">
-          <h1>{node.frontmatter.title}</h1>
-          <h5 id="minutes" className="mb3 pt2">
-            {node.timeToRead} Minute Read
-          </h5>
-          <div dangerouslySetInnerHTML={{ __html: node.html }} />
-        </div>
-        <Sidebar
-          features = {features} 
-          tutorials = {tutorials} 
-          feedback_link = {feedback_link} 
-          section_title = {section_title} 
-          pageContext = {pageContext} 
-        ></Sidebar>
+      <Container className="mt4 pb4">
+        <Row>
+          <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+            <h1>{node.frontmatter.title}</h1>
+            <h5 id="minutes" className="mb3 pt2">
+              {node.timeToRead} Minute Read
+            </h5>
+            <div dangerouslySetInnerHTML={{ __html: node.html }} />
+          </Col>
+          <Col xs={12} sm={12} md={4} lg={4} xl={4}>
+            <Sidebar
+              features={features}
+              tutorials={tutorials}
+              feedback_link={feedback_link}
+              section_title={section_title}
+              pageContext={pageContext}
+            ></Sidebar>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )
