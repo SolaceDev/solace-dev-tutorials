@@ -16,10 +16,6 @@ const tutorials = ({ data, pageContext }) => {
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
-  //const SampleIcon = data.allMarkdownRemark.edges.filter(
-  //  (edge) => edge.node.frontmatter.icon.childImageSharp.fluid === "icon"
-  //)
-
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -86,7 +82,11 @@ const tutorials = ({ data, pageContext }) => {
 // query to get all markdowns that are not assets
 export const query = graphql`
   query mySamplesQuery($slugRoot: String) {
-    allTutorialsYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {
+    allTutorialsYaml(
+      filter: { 
+        fields: { slugRoot: { eq: $slugRoot } } 
+      }
+    ){
       edges {
         node {
           fields {
@@ -115,6 +115,7 @@ export const query = graphql`
             title
             layout
             summary
+            icon
           }
           fields {
             slug
