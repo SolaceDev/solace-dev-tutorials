@@ -26,8 +26,8 @@ const Header = ({ siteTitle }) => (
           >
             Getting Started
           </Nav.Link>
-          <Nav.Link href="/samples/" className="active">
-            Samples
+          <Nav.Link href="/" className="active">
+            Tutorials
           </Nav.Link>
           <Nav.Link
             href="https://solace.community/"
