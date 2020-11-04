@@ -226,69 +226,7 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
-          <ul className="menu">
-            <li>
-              <a href="https://solace.com/developers/">Developers</a>
-              <ul className="sub-menu">
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://docs.solace.com/"
-                  >
-                    Docs
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://solace.com/blog/category/developers/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Blog
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://solace.community"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Community
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://solace.com/support/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Support
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://solace.com/contact/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://console.solace.cloud/login"
-                  >
-                    Log In
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </Col>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}></Col>
       </Row>
     </Container>
     <Container>

@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <Navbar.Brand
-        href="https://solace.com/"
+        href="https://solace.dev/"
         target="_blank"
         rel="noopener noreferrer"
       >
