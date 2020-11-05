@@ -39,7 +39,9 @@ const tutorials = ({ data, pageContext }) => {
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
-                  <CardImg src={node.frontmatter.icon.childImageSharp.fluid.src} />
+                  <CardImg src={ node.frontmatter.icon &&
+                        node.frontmatter.icon.childImageSharp.fluid.src || " "
+                    } />
                   <Card.Body>
                     <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
