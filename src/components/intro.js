@@ -1,5 +1,7 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const Intro = (props) => {
   return (
@@ -21,7 +23,7 @@ const Intro = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Improve this page
+              <FontAwesomeIcon icon={faGithub} size="1x" /> Improve this page
             </Button>
             <Button
               className="ml2"

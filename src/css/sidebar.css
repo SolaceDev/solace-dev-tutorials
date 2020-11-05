@@ -11,12 +11,18 @@
 }
 
 #sidebar .heading {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     background: linear-gradient(#20262a, #37404a) !important;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
     text-align: center;
     padding: 10px;
+}
+
+#sidebar .heading:not(:first-child) {
+    border-radius: 0;
 }
 
 #sidebar .button {

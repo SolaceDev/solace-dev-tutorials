@@ -17,7 +17,7 @@ const Sidebar = (props) => {
       )}
       <Col>
         {tutorials.map(({ node }) => (
-          <div key={node.id} className="pt1 pb1 border-bottom">
+          <div key={node.id} className="pt2 pb2 border-bottom">
             <a
               className={
                 pageContext.slug === node.fields.slug
@@ -34,7 +34,7 @@ const Sidebar = (props) => {
       {features.length !== 0 && <div className="heading">Features</div>}
       <Col>
         {features.map(({ node }) => (
-          <div key={node.id} className="pt1 pb1 border-bottom">
+          <div key={node.id} className="pt2 pb2 border-bottom">
             <a
               className={
                 pageContext.slug === node.fields.slug
