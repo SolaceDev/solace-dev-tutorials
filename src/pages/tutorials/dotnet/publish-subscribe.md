@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn the basis for any publish / subscribe message exchange
-icon: I_dev_P+S.svg
+icon: ../../../images/icons/I_dev_P+S.png
 links:
     - label: TopicPublisher.cs
       link: /blob/master/src/TopicPublisher/TopicPublisher.cs

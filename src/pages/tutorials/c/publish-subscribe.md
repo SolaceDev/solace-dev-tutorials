@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn how to publish and subscribe to messages.
-icon: I_dev_P+S.svg
+icon: ../../../images/icons/I_dev_P+S.png
 links:
     - label: TopicPublisher.c
       link: /blob/master/src/intro/TopicPublisher.c

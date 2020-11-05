@@ -2,7 +2,7 @@
 layout: tutorials
 title: Obtaining JMS objects using external JNDI service
 summary: Learn how to provision and lookup Solace JMS objects when using an external JNDI service.
-icon: I_dev_JNDI.svg
+icon: ../../../images/icons/I_dev_JNDI.png
 links:
     - label: ExtJndiImport.java
       link: /blob/master/src/main/java/com/solace/samples/ExtJndiImport.java

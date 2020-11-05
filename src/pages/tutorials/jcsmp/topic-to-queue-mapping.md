@@ -2,7 +2,7 @@
 layout: tutorials
 title: Topic to Queue Mapping
 summary: Learn how to map topics to Solace queues.
-icon: I_dev_topic2q.svg
+icon: ../../../images/icons/I_dev_topic2q.png
 links:
     - label: TopicToQueueMapping.java
       link: /blob/master/src/main/java/com/solace/samples/TopicToQueueMapping.java

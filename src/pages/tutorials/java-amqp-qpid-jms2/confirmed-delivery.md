@@ -2,7 +2,7 @@
 layout: tutorials
 title: Confirmed Delivery
 summary: Learn how to confirm your messages are delivered to Solace messaging.
-icon: I_dev_confirm.svg
+icon: ../../../images/icons/I_dev_confirm.png
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-amqp-qpid-2/confirmed-delivery.md

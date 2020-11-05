@@ -2,7 +2,7 @@
 layout: tutorials
 title: Request/Reply
 summary: Learn how to set up request/reply messaging.
-icon: I_dev_R+R.svg
+icon: ../../../images/icons/I_dev_R+R.png
 links:
     - label: BasicRequestor.js
       link: /blob/master/src/basic-samples/BasicRequestor.js

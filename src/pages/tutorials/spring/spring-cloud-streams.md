@@ -2,7 +2,7 @@
 layout: tutorials
 title: Spring Cloud Streams
 summary: Learn how to use Spring Cloud Streams w/ the PubSub+ Binder
-icon: spring-cloud.svg
+icon: ../../../images/icons/spring-cloud.png
 links:
     - label: Source Example
       link: /blob/master/cloud-streams-source/src/main/java/com/solace/samples/spring/scs/FahrenheitTempSource.java

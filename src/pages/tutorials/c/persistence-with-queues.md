@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Learn how to send persistent messages to a Queue.
-icon: I_dev_Persistent.svg
+icon: ../../../images/icons/I_dev_Persistent.png
 links:
     - label: QueuePublisher.c
       link: /blob/master/src/intro/QueuePublisher.c

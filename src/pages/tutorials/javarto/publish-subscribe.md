@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn to publish and subscribe to messages.
-icon: I_dev_P+S.svg
+icon: ../../../images/icons/I_dev_P+S.png
 links:
     - label: TopicPublisher.java
       link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
@@ -13,7 +13,7 @@ links:
 
 ---
 
-This tutorial will introduce you to the fundamentals of the Solace API by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.
+`markdown:pubSubIntro.md`
 
 ## Assumptions
 
@@ -26,12 +26,7 @@ This tutorial assumes the following:
 
 One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
-## Goals
-
-The goal of this tutorial is to demonstrate the most basic messaging interaction using Solace. This tutorial will show you:
-
-1.  How to build and send a message on a topic
-2.  How to subscribe to a topic and receive a message
+`markdown:pubSubGoal.md`
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)

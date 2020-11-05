@@ -4,12 +4,8 @@ title: Publish/Subscribe
 summary: Learn to publish and subscribe to messages.
 icon: ../../../images/icons/I_dev_P+S.png
 links:
-    - label: TopicPublisher.java
-      link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
-    - label: TopicSubscriber.java
-      link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/python/publish-subscribe.md
 ---
 
 `markdown:pubSubIntro.md`
@@ -27,7 +23,11 @@ links:
 
 In order to send or receive messages, an application must connect a Solace session. The Solace session is the basis for all client communication with the Solace message router.
 
-In the Solace messaging API for Java (JCSMP), Solace sessions are created from the JCSMP factory using a set of properties.
+## Connecting to the Solace message router
+
+In order to send or receive messages, an application must connect a Solace session. The Solace session is the basis for all client communication with the Solace message router.
+
+In the Solace messaging API for Python, Solace sessions are created from the Message Service Builder
 
 ```java
 final JCSMPProperties properties = new JCSMPProperties();

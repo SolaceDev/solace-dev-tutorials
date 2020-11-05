@@ -2,7 +2,7 @@
 layout: tutorials
 title: Installation on Linux
 summary: This tutorial shows you how to get the Solace OpenMAMA bridge installed on Linux
-icon: I_linux.svg
+icon: ../../../images/icons/I_linux.png
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/openmama/installation-linux.md

@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn how to set up pub/sub messaging on a Solace VMR.
-icon: I_dev_P+S.svg
+icon: ../../../images/icons/I_dev_P+S.png
 links:
     - label: TopicPublisher.js
       link: /blob/master/src/basic-samples/TopicPublisher.js
@@ -14,16 +14,7 @@ links:
 
 This tutorial will introduce you to the fundamentals of the Solace Node.js API version 10 or later by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.
 
-## Assumptions
-
-This tutorial assumes the following:
-
-*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to Solace messaging with the following configuration details:
-    *   Connectivity information for a Solace message-VPN
-    *   Enabled client username and password
-
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+`markdown:assumption.md`
 
 ## Goals
 

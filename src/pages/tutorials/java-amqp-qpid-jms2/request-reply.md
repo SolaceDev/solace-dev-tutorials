@@ -2,7 +2,7 @@
 layout: tutorials
 title: Request/Reply
 summary: Demonstrates the request/reply message exchange pattern
-icon: I_dev_R+R.svg
+icon: ../../../images/icons/I_dev_R+R.png
 links:
     - label: BasicRequestor.java
       link: /blob/master/src/main/java/com/solace/samples/BasicRequestor.java

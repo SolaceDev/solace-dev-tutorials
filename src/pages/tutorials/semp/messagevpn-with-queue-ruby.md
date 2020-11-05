@@ -2,7 +2,7 @@
 layout: tutorials
 title: Message VPN with Queue – Ruby
 summary: Sample integration into a Ruby-based management tool using the SEMP Ruby Client Library
-icon: management-integration-ruby.svg
+icon: ../../../images/icons/management-integration-ruby.png
 icon-height: 90px
 icon-width: 104px
 links:

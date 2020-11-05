@@ -2,7 +2,7 @@
 layout: tutorials
 title: Confirmed Delivery
 summary: Learn how to confirm that your messages are received by Solace messaging.
-icon: I_dev_confirm.png
+icon: ../../../images/icons/I_dev_confirm.png
 links:
     - label: ConfirmedPublish.html
       link: /blob/master/src/basic-samples/ConfirmedPublish/ConfirmedPublish.html
@@ -14,16 +14,7 @@ links:
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
 
-## Assumptions
-
-This tutorial assumes the following:
-
-*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to Solace messaging with the following configuration details:
-    *   Connectivity information for a Solace message-VPN
-    *   Enabled client username and password
-
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+`markdown:assumption.md`
 
 ## Goals
 

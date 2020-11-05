@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Learn how to send and receive messages in a point-to-point fashion.
-icon: I_dev_Persistent.svg
+icon: ../../../images/icons/I_dev_Persistent.png
 links:
     - label: QueueProducer.cs
       link: /blob/master/src/QueueProducer/QueueProducer.cs

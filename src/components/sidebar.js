@@ -3,8 +3,7 @@ import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Sidebar = (props) => {
-  console.log(props)
+const Sidebar = (props) => {  
   let features = props.features
   let tutorials = props.tutorials
   let feedback_link = props.feedback_link

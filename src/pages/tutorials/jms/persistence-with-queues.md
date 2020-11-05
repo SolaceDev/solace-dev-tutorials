@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Learn how to set up persistence for guaranteed delivery.
-icon: I_dev_Persistent.svg
+icon: ../../../images/icons/I_dev_Persistent.png
 links:
     - label: QueueProducer.java
       link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java

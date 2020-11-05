@@ -2,7 +2,7 @@
 layout: tutorials
 title: Request/Reply
 summary: Learn how to set up request/reply messaging.
-icon: I_dev_R+R.svg
+icon: ../../../images/icons/I_dev_R+R.png
 links:
     - label: BasicRequestor.cs
       link: /blob/master/src/BasicRequestor/BasicRequestor.cs
@@ -14,16 +14,7 @@ links:
 
 This tutorial outlines both roles in the request-response message exchange pattern. It will show you how to act as the client by creating a request, sending it and waiting for the response. It will also show you how to act as the server by receiving incoming requests, creating a reply and sending it back to the client. It builds on the basic concepts introduced in [publish/subscribe tutorial](../publish-subscribe/).
 
-## Assumptions
-
-This tutorial assumes the following:
-
-*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to Solace messaging with the following configuration details:
-    *   Connectivity information for a Solace message-VPN
-    *   Enabled client username and password
-
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+`markdown:assumption.md`
 
 The build instructions in this tutorial assume you are using a Linux shell. If your environment differs, adapt the instructions.
 

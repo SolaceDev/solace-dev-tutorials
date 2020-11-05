@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Learn how send persistent messages to a Queue.
-icon: I_dev_Persistent.svg
+icon: ../../../images/icons/I_dev_Persistent.png
 links:
     - label: QueueProducer.java
       link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java

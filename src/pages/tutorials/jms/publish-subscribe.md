@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn how to set up pub/sub messaging on a Solace VMR.
-icon: I_dev_P+S.svg
+icon: ../../../images/icons/I_dev_P+S.png
 links:
     - label: TopicPublisher.java
       link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
@@ -14,23 +14,9 @@ links:
 
 This tutorial will introduce you to the fundamentals of the JMS 1.1 API as implemented by Solace. The tutorial will exemplify connecting a client, subscribing to a topic and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.
 
-## Assumptions
+`markdown:assumption.md`
 
-This tutorial assumes the following:
-
-*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to Solace messaging with the following configuration details:
-    *   Connectivity information for a Solace message-VPN
-    *   Enabled client username and password
-
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
-
-## Goals
-
-The goal of this tutorial is to demonstrate the most basic messaging interaction using Solace. This tutorial will show you:
-
-1.  How to build and send a message on a topic
-2.  How to subscribe to a topic and receive a message
+`markdown:pubSubGoal.md`
 
 ## Java Messaging Service (JMS) Introduction
 
