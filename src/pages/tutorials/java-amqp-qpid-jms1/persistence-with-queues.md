@@ -177,13 +177,13 @@ cd solace-samples-amqp-qpid-jms1
 
 You can build and run both example files directly from Eclipse or with Gradle.
 
-```sh
+```shell-session
 ./gradlew assemble
 ```
 
 The examples can be run as:
 
-```sh
+```shell-session
 cd build/staged/bin
 ./queueConsumer amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 ./queueProducer amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
@@ -193,7 +193,7 @@ cd build/staged/bin
 
 First start the `QueueConsumer` so that it is up and waiting for messages.
 
-```sh
+```shell-session
 $ queueConsumer amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 QueueConsumer is connecting to Solace messaging at amqp://<HOST:AMQP_PORT>...
 Awaiting message...
@@ -201,7 +201,7 @@ Awaiting message...
 
 Then you can start the `QueueProducer` to send the message.
 
-```sh
+```shell-session
 $ queueProducer amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 QueueProducer is connecting to Solace messaging at amqp://<HOST:AMQP_PORT>...
 Connected with username 'clientUsername'.
@@ -211,7 +211,7 @@ Sent successfully. Exiting...
 
 Notice how the message is received by the `QueueConsumer`.
 
-```sh
+```shell-session
 Awaiting message...
 TextMessage received: 'Hello world Queues!'
 Message Content:

@@ -3,7 +3,7 @@ import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const Sidebar = (props) => {  
+const Sidebar = (props) => {
   let features = props.features
   let tutorials = props.tutorials
   let feedback_link = props.feedback_link
@@ -51,7 +51,6 @@ const Sidebar = (props) => {
         <Button
           className="mt3 mb3 w-100"
           href={feedback_link}
-          size="2x"
           target="_blank"
           rel="noreferrer"
           variant="primary"

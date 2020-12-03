@@ -2,6 +2,7 @@
   border: 0;
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(27, 31, 35, 0.15);
+  text-align: center;
 }
 
 .card a {
@@ -19,23 +20,27 @@
 }
 
 .card-img {
-  height: 150px;
+  background: linear-gradient(#20262a, #37404a) !important;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 50%;
 }
 
 .card-title {
   background: linear-gradient(#20262a, #37404a) !important;
   color: #fff;
   font-size: 18px;
-  text-align: center;
 }
 
 .card-text {
   font-size: 14px;
   line-height: normal;
+  text-align: left;
 }
 
 .card-body {
   padding: 0;
+  background: #fff;
 }
 
 .card-footer {

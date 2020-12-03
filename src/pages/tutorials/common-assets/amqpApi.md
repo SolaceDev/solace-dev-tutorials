@@ -9,6 +9,6 @@ This tutorial depends on you having the [**amqp10** AMQP 1.0 compliant client](h
 
 The easiest way to do it through `npm`:
 
-```sh
+```shell-session
 $ npm install amqp10 -save
 ```

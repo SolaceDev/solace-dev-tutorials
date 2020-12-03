@@ -128,7 +128,7 @@ cd solace-samples-amqp-nodejs
 
 The examples can be executed as:
 
-```sh
+```shell-session
 node src/QueueConsumer.js amqp://<username>:<password>@<host:port>
 node src.QueueProducer.js amqp://<username>:<password>@<host:port>
 ```
@@ -137,7 +137,7 @@ node src.QueueProducer.js amqp://<username>:<password>@<host:port>
 
 Start the `QueueConsumer` so that it is up and waiting for messages.
 
-```sh
+```shell-session
 $ node src/QueueConsumer.js amqp://<username>:<password>@<host:port>
 [17:13:14] Connecting to amqp://<username>:<password>@<host:port>
 [17:13:14] Waiting for messages...
@@ -145,7 +145,7 @@ $ node src/QueueConsumer.js amqp://<username>:<password>@<host:port>
 
 Then run the `QueueProducer` to send the message.
 
-```sh
+```shell-session
 $ node src/QueueProducer.js
 [17:13:53] Connecting to amqp://<username>:<password>@<host:port>
 [17:13:53] Sending message 'Hello world Queues!'...
@@ -155,7 +155,7 @@ $ node src/QueueProducer.js
 
 Notice how the message is received by the `QueueConsumer`.
 
-```sh
+```shell-session
 ...
 [17:13:14] Waiting for messages...
 [17:13:53] Received message: 'Hello world Queues!'.

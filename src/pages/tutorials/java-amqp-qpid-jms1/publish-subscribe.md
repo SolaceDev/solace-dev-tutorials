@@ -160,13 +160,13 @@ cd solace-samples-amqp-qpid-jms1
 
 You can build and run both example files directly from Eclipse or with Gradle.
 
-```sh
+```shell-session
 ./gradlew assemble
 ```
 
 The examples can be run as:
 
-```sh
+```shell-session
 cd build/staged/bin
 ./topicSubscriber amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 ./topicPublisher amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
@@ -176,7 +176,7 @@ cd build/staged/bin
 
 First start the `TopicSubscriber` so that it is up and waiting for published messages. You can start multiple instances of this application, and all of them will receive published messages.
 
-```sh
+```shell-session
 $ topicSubscriber amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 TopicSubscriber is connecting to Solace messaging at amqp://<HOST:AMQP_PORT>...
 Connected to the Solace messaging.
@@ -184,7 +184,7 @@ Awaiting message...
 ```
 
 Then you can start the `TopicPublisher` to publish a message.
-```sh
+```shell-session
 $ topicPublisher amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 TopicPublisher is connecting to Solace messaging amqp://<HOST:AMQP_PORT>...
 Connected to the Solace messaging.
@@ -194,7 +194,7 @@ Sent successfully. Exiting...
 
 Notice how the published message is received by the `TopicSubscriber`.
 
-```sh
+```shell-session
 Awaiting message...
 TextMessage received: 'Hello world!'
 Message Content:

@@ -33,15 +33,22 @@ const tutorials = ({ data, pageContext }) => {
         ></Intro>
       ))}
       <Container className="pt5 pb5">
-        {tutorials.length !== 0 && <h2>{meta[0].node.section1 || "Fundamentals"}</h2>}
+        {tutorials.length !== 0 && (
+          <h2>{meta[0].node.section1 || "Fundamentals"}</h2>
+        )}
         <Row>
           {tutorials.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
-                  <CardImg src={ node.frontmatter.icon &&
-                        node.frontmatter.icon.childImageSharp.fluid.src || " "
-                    } />
+                  <CardImg
+                    src={
+                      (node.frontmatter.icon &&
+                        node.frontmatter.icon.childImageSharp.fixed.src) ||
+                      " "
+                    }
+                    alt={node.frontmatter.title}
+                  />
                   <Card.Body>
                     <Card.Title className="pa3 fw4">
                       {node.frontmatter.title}
@@ -56,7 +63,9 @@ const tutorials = ({ data, pageContext }) => {
             </Col>
           ))}
         </Row>
-        {features.length !== 0 && <h2>{meta[0].node.section2 || "API & Broker Features"}</h2>}
+        {features.length !== 0 && (
+          <h2>{meta[0].node.section2 || "API & Broker Features"}</h2>
+        )}
         <Row>
           {features.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
@@ -84,11 +93,7 @@ const tutorials = ({ data, pageContext }) => {
 // query to get all markdowns that are not assets
 export const query = graphql`
   query mySamplesQuery($slugRoot: String) {
-    allTutorialsYaml(
-      filter: { 
-        fields: { slugRoot: { eq: $slugRoot } } 
-      }
-    ){
+    allTutorialsYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {
       edges {
         node {
           fields {
@@ -119,8 +124,8 @@ export const query = graphql`
             summary
             icon {
               childImageSharp {
-                fluid(maxWidth: 800) {
-                  ...GatsbyImageSharpFluid
+                fixed(width: 417, height: 417, fit: INSIDE) {
+                  ...GatsbyImageSharpFixed
                 }
               }
             }

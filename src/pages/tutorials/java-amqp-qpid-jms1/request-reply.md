@@ -204,13 +204,13 @@ cd solace-samples-amqp-qpid-jms1
 
 You can build and run both example files directly from Eclipse or with Gradle.
 
-```sh
+```shell-session
 ./gradlew assemble
 ```
 
 The examples can be run as:
 
-```sh
+```shell-session
 cd build/staged/bin
 ./basicReplier amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 ./basicRequestor amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
@@ -221,7 +221,7 @@ cd build/staged/bin
 
 First start the `BasicReplier` so that it is up and waiting for requests.
 
-```sh
+```shell-session
 $ basicReplier amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 BasicReplier is connecting to Solace messaging at amqp://<HOST:AMQP_PORT>...
 Connected to the Solace messaging with client username 'clientUsername'.
@@ -229,7 +229,7 @@ Awaiting request...
 ```
 
 Then you can start the `BasicRequestor` to send the request and receive the reply.
-```sh
+```shell-session
 $ basicRequestor amqp://<HOST:AMQP_PORT> <USERNAME> <PASSWORD>
 BasicRequestor is connecting to Solace messaging at amqp://<HOST:AMQP_PORT>...
 Connected to the Solace messaging with client username 'clientUsername'.
@@ -242,7 +242,7 @@ JmsTextMessage { org.apache.qpid.jms.provider.amqp.message.AmqpJmsTextMessageFac
 
 Notice how the request is received by the `BasicReplier` and replied to.
 
-```sh
+```shell-session
 Awaiting request...
 Received request, responding...
 Responded successfully. Exiting...

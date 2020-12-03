@@ -217,7 +217,7 @@ cd https://github.com/SolaceSamples/solace-samples-jms
 
 Building these examples is simple; you can use Gradle.
 
-```sh
+```shell-session
 ./gradlew assemble
 ```
 
@@ -244,7 +244,7 @@ Using the "ExtJndiImport" sample, export the JNDI configuration to the external 
 * The JMS object reference name in Solace JNDI (-cf for ConnectionFactory, -queue or -topic)
 * The JMS object reference name to be created in External JNDI (-name)
 
-```sh
+```shell-session
 # Export first the connection factory
 $ ./build/staged/bin/extJndiImport -solaceUrl tcps://vmr-mr8v6yiwicdj.messaging.solace.cloud:20258 \
                                    -solaceUsername solace-cloud-client@msgvpn-3e5sq7dbsw9 \
@@ -271,7 +271,7 @@ Observe the contents of the ".bindings" file using a text editor - it contains t
 
 Then use the "ExtJndiTest" sample to test messaging with external JNDI lookup. The parameters here all refer to settings and provisioned names in the external JNDI store. The "destination" parameter can be a queue or topic.
 
-```sh
+```shell-session
 $ ./build/staged/bin/extJndiTest -jndiUrl file:///tmp/ \
                                  -jndiUsername default \
                                  -jndiPassword password \
