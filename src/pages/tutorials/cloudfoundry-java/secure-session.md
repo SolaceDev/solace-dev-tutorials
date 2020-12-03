@@ -2,7 +2,7 @@
 layout: tutorials
 title: Secure Session
 summary: A sample showing how to connect with the Solace Messaging service using Transport Level Security (TLS).
-icon: ../../../images/icons/I_secure_session.png
+icon: I_secure_session.svg
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/secure-session.md

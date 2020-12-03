@@ -2,7 +2,7 @@
 layout: tutorials
 title: Java Application
 summary: A Java Application showing how to consume the VCAP_SERVICES environment variable.
-icon: ../../../images/icons/I_java.png
+icon: I_java.svg
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/java-app.md

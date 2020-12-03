@@ -12,13 +12,13 @@ module.exports = {
     // This configuration assumes images are all stored in the "images" directory
     // in your project root. Configure gatsby-source-filesystem multiple times if
     // you have images in many places.
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

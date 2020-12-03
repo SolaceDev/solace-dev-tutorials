@@ -2,7 +2,7 @@
 layout: tutorials
 title: Solace Hello World
 summary: This tutorial demonstrates basic publishing using OpenMAMA with Solace messaging
-icon: ../../../images/icons/I_Solace.png
+icon: I_Solace.svg
 links:
     - label: mama.properties
       link: /blob/master/src/helloworld/mama.properties

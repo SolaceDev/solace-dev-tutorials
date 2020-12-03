@@ -2,7 +2,7 @@
 layout: tutorials
 title: Confirmed Delivery
 summary: Learn how to confirm that your messages are received by Solace Messaging.
-icon: ../../../images/icons/I_dev_confirm.png
+icon: I_dev_confirm.svg
 links:
     - label: ConfirmedDeliveryProducer.java
       link: /blob/master/src/main/java/com/solace/samples/ConfirmedDeliveryProducer.java

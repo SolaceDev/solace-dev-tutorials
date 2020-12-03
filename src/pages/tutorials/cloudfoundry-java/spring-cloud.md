@@ -2,7 +2,7 @@
 layout: tutorials
 title: Spring Cloud
 summary: A Simple Application showing how to consume the VCAP_SERVICES using Spring Cloud Connectors.
-icon: ../../../images/icons/I_spring_cloud.png
+icon: I_spring_cloud.svg
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/spring-cloud.md

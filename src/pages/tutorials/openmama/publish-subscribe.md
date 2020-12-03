@@ -2,7 +2,7 @@
 layout: tutorials
 title: Publish/Subscribe
 summary: Learn how to pub/sub using OpenMAMA with the Solace middleware bridge.
-icon: ../../../images/icons/I_dev_P+S.png
+icon: I_dev_P+S.svg
 links:
     - label: mama.properties
       link: /blob/master/src/pubsub/mama.properties

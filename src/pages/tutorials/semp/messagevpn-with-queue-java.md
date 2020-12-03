@@ -2,7 +2,7 @@
 layout: tutorials
 title: Message VPN with Queue – Java
 summary: Sample integration into a Java-based management tool using the SEMP Java Client Library
-icon: ../../../images/icons/management-integration-java.png
+icon: management-integration-java.svg
 icon-height: 90px
 icon-width: 104px
 links:

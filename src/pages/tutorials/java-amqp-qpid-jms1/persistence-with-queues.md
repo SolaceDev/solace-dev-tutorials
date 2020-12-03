@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Demonstrates persistent messages for guaranteed delivery.
-icon: ../../../images/icons/I_dev_Persistent.png
+icon: I_dev_Persistent.svg
 links:
     - label: QueueProducer.java
       link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java

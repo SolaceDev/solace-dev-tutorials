@@ -2,7 +2,7 @@
 layout: tutorials
 title: TCP Routes for IoT - MQTT Java Application
 summary: A Simple Application showing how to consume a SERVICE KEY for Solace Messaging when using TCP Routes.
-icon: ../../../images/icons/I_mqtt_iot.png
+icon: I_mqtt_iot.svg
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/tcp-routes-mqtt.md

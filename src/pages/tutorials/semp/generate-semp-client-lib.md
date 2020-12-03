@@ -2,7 +2,7 @@
 layout: tutorials
 title: Generating the SEMP Client Library
 summary: Generate a SEMP management client library for any of the supported programming languages
-icon: ../../../images/icons/generate-semp-client-lib.png
+icon: generate-semp-client-lib.svg
 icon-height: 70px
 icon-width: 228px
 links:

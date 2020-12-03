@@ -2,7 +2,7 @@
 layout: tutorials
 title: Message VPN with Queue – Python
 summary: Sample integration into a Python-based management tool using the SEMP Python Client Library
-icon: ../../../images/icons/management-integration-python.png
+icon: management-integration-python.svg
 icon-height: 90px
 icon-width: 104px
 links:

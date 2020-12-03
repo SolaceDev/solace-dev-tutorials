@@ -2,7 +2,7 @@
 layout: tutorials
 title: Topic to Queue Mapping
 summary: Learn how to map topics to PubSub+ queues.
-icon: ../../../images/icons/I_dev_topic2q.png
+icon: I_dev_topic2q.svg
 links:
     - label: TopicToQueueMapping.c
       link: /blob/master/src/intro/TopicToQueueMapping.c

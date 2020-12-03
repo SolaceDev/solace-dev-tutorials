@@ -2,7 +2,7 @@
 layout: tutorials
 title: Basic Operations - Java
 summary: The basics of how to create, read, update, and delete a SEMP object using a Java client library
-icon: ../../../images/icons/java-logo.png
+icon: java-logo.svg
 icon-height: 90px
 icon-width: 72px
 links:

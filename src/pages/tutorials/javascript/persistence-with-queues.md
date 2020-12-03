@@ -2,7 +2,7 @@
 layout: tutorials
 title: Persistence with Queues
 summary: Learn how to set up persistence for guaranteed delivery.
-icon: ../../../images/icons/I_dev_Persistent.png
+icon: I_dev_Persistent.svg
 links:
     - label: QueueProducer.html
       link: /blob/master/src/basic-samples/QueueProducer/QueueProducer.html

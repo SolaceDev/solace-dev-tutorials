@@ -2,7 +2,7 @@
 layout: tutorials
 title: Obtaining JMS objects using JNDI
 summary: Learn how to use JNDI as a way to create JMS objects.
-icon: ../../../images/icons/I_dev_JNDI.png
+icon: I_dev_JNDI.svg
 links:
     - label: QueueProducerJNDI.java
       link: /blob/master/src/main/java/com/solace/samples/QueueProducerJNDI.java

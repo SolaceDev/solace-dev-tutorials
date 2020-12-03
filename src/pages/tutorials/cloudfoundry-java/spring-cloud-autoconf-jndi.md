@@ -2,7 +2,7 @@
 layout: tutorials
 title: Spring Cloud Auto-Config JNDI
 summary: Consume Solace Messaging as a Service provided by Solace Spring JMS Auto-Configuration using JNDI.
-icon: ../../../images/icons/I_spring_JNDI_w220.png
+icon: I_spring_JNDI_w220.svg
 icon-height: 90px
 icon-width: 180px
 links:
