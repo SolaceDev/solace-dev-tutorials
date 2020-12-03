@@ -16,8 +16,6 @@ const tutorials = ({ data, pageContext }) => {
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
-  const name = "I_dev_confirm.svg"
-  console.log(tutorials)
   return (
     <Layout>
       <section id="breadcrumbs">
@@ -44,12 +42,6 @@ const tutorials = ({ data, pageContext }) => {
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <CardImg
-                    // src={
-                    //   (node.frontmatter.icon &&
-                    //     node.frontmatter.icon.childImageSharp.fixed.src) ||
-                    //   " "
-                    // }
-                    // src= {name? require(`../images/icons/svg/${name}`) : " "}
                     src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
                     alt={node.frontmatter.title}
                   />
