@@ -26,17 +26,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-yaml`, // Transformer Plugin - Convert YAML --> Nodes
-
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Open Sans`,
-            variants: [`300`, `400`, `600`],
-          },
+          `Open Sans\:300,400,600` // you can also specify font weights and styles
         ],
-      },
+        display: 'swap'
+      }
     },
     {
       resolve: `gatsby-transformer-remark`, // Transformer Plugin - Convert Markdown --> HTML
