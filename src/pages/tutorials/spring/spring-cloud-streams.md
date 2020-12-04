@@ -178,7 +178,7 @@ spring:
 Now it's time to run the app.
 Run from the command line using maven like seen below
 
-```
+```sh
 mvn spring-boot:run
 ```
 
@@ -263,7 +263,7 @@ spring:
 Now it's time to run the app.
 Run from the command line using maven like seen below
 
-```
+```sh
 mvn spring-boot:run
 ```
 
@@ -361,7 +361,7 @@ spring:
 Now it's time to run the app.
 Run from the command line using maven like seen below
 
-```
+```sh
 mvn spring-boot:run
 ```
 

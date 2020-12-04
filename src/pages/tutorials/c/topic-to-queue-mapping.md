@@ -128,7 +128,7 @@ The full source code for this example is available in [GitHub](https://github.co
 * Start two `TopicSubscriber` sample in 2 separate terminals subscribing to topic `my/sample/topic/1` and `my/sample/topic/2` respectively.
 * Start `QueueSubscriber` in another terminal subscribing to queue `my_sample_queue`.
 * Start `TopicToQueueMapping` in another terminal:
-```
+```sh
 bin$ . ./setenv.sh
 bin$ ./TopicToQueueMapping -u <client-username>@<message-vpn> -c <protocol>://<msg_backbone_ip>:<port> -p <password>
 ```

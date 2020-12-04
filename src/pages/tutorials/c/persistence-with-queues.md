@@ -228,7 +228,7 @@ Combining the example source code shown above results in the following source co
 ### Running the Samples
 
 If you start the `QueuePublisher` with the required arguments of your PubSub+ messaging, if will publish the message to the specified queue. In the example below, a message is published to a queue `q1`
-```
+```sh
 bin$ . /setenv.sh
 bin$ ./QueuePublisher <msg_backbone_ip:port> <message-vpn> <client-username> <password> <queue>
 QueuePublisher initializing...
@@ -241,7 +241,7 @@ Exiting.
 
 You can next start the `QueueSubscriber` with the same queue `q1` and if the message has been successfully delivered and queued, the queued message will be consumed and printed out.
 
-```
+```sh
 bin$ ./QueueSubscriber <msg_backbone_ip:port> <message-vpn> <client-username> <password> <queue>
 Connected.
 Waiting for messages......

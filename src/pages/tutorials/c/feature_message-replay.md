@@ -217,7 +217,7 @@ Follow the instructions to [check out and build the samples](https://github.com/
 Before running this sample, be sure that Message Replay is enabled in the Message VPN. Also, messages must have been published to the replay log for the queue that is used. The "QueueProducer" sample can be used to create and publish messages to the queue. The "QueueConsumer" sample can be used to drain the queue so that replay is performed on an empty queue and observed by this sample. Both samples are from the [Persistence with Queues](../persistence-with-queues/) tutorial.
 
 From the "bin" directory:
-```
+```sh
 $ ./QueuePublisher  <msg_backbone_ip:port> <vpn> <client-username> <password> Q/tutorial
 $ ./QueueSubscriber <msg_backbone_ip:port> <vpn> <client-username> <password> Q/tutorial
 ```
@@ -227,11 +227,11 @@ At this point the replay log has one message.
 You can now run this sample and observe the following, particularly the "messageId"s listed:
 
 1. First, a client initiated replay is started when the flow connects. All messages are requested and replayed from the replay log.
-```
+```sh
 $ ./MessageReplay <msg_backbone_ip:port> <vpn> <client-username> <password> Q/tutorial
 ```
 2. After replay the application is able to receive live messages. Try it by publishing a new message using the "QueueProducer" sample from another terminal. Note that this message will also be added to the replay log.
-```
+```sh
 $ ./QueuePublisher  <msg_backbone_ip:port> <vpn> <client-username> <password> Q/tutorial
 ```
 3. Now start a replay from the message broker. The flow event callback monitors for a replay start event. When the message broker initiates a replay, the flow will see a `SOLCLIENT_FLOW_EVENT_DOWN_ERROR` event with SubCode `SOLCLIENT_SUBCODE_REPLAY_STARTED`. This means an administrator has initiated a replay, and the application must destroy and re-create the flow to receive the replayed messages.

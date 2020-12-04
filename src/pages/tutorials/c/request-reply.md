@@ -166,7 +166,7 @@ The full source code for this example is available in [GitHub](https://github.co
 
 First start the `BasicReplier` so that it is up and listening for requests. Then you can use the `BasicRequestor` sample to send requests and receive replies. Pass your PubSub+ messaging router connection properties as parameters.
 
-```
+```sh
 bin$ . ./setenv.sh
 bin$ ./BasicReplier -u <client-username>@<message-vpn> -c <protocol>://<msg_backbone_ip>:<port> -p <password> -t <topic>
 Sending request for 9 PLUS 5
@@ -179,7 +179,7 @@ Sending request for 9 DIVIDED_BY 5
 Received reply message, result = 1.800000
 ```
 
-```
+```sh
 bin$ ./BasicRequestor -u <client-username>@<message-vpn> -c <protocol>://<msg_backbone_ip>:<port> -p <password> -t <topic>
 Sending request for 9 PLUS 5
 Received reply message, result = 14.000000

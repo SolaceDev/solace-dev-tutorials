@@ -127,7 +127,7 @@ The OS source code simply provides platform abstraction. The subscriber sample m
 
 If you start the `TopicSubscriber` with the required arguments of your PubSub+ messaging, it will connect and wait for a message.
 
-```
+```sh
 bin$ . ./setenv.sh 
 bin$ ./TopicSubscriber <msg_backbone_ip:port> <message-vpn> <client-username> <password> <topic>
 TopicSubscriber initializing...
@@ -137,7 +137,7 @@ Waiting for message......
 
 Then you can send a message using the `TopicPublisher` with the same arguments. If successful, the output for the producer will look like the following:
 
-```
+```sh
 bin$ ./TopicPublisher <msg_backbone_ip:port> <message-vpn> <client-username> <password> <topic>
 TopicSubscriber initializing...
 Connected. 
@@ -147,7 +147,7 @@ Message sent. Exiting.
 
 With the message delivered the subscriber output will look like the following:
 
-```
+```sh
 Received message:
 Destination:         Topic 'topic/topic1'
 Class Of Service:    COS_1

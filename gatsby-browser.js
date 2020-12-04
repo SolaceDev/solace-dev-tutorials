@@ -6,10 +6,9 @@
 
 // module styles
 import "./node_modules/bootstrap/dist/css/bootstrap.css";
-import "prismjs/themes/prism.css";
+import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 
 // user styles
 import "./src/css/global.css";
-import "./src/css/prismjs.css";
 import "./src/css/breadcrumb.css"

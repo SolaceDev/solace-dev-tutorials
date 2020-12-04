@@ -60,7 +60,8 @@ We will be creating a queue named "SpringTestQueue".
 * If using an appliance, ask your administrator to create the queue for you.
 
 * You can also create a queue from the CLI. [Learn how to login to the cli here](https://docs.solace.com/Solace-CLI/Using-Solace-CLI.htm) 
-```
+
+```sh
 solace(configure)# message-spool message-vpn <vpn-name>
 solace(configure/message-spool)# create queue SpringTestQueue
 ```
@@ -68,7 +69,7 @@ solace(configure/message-spool)# create queue SpringTestQueue
 ## Getting the Source
 Clone the GitHub repository containing the Solace samples.
 
-```
+```sh
 git clone https://github.com/SolaceSamples/solace-samples-spring
 cd solace-samples-spring
 ```
@@ -84,7 +85,7 @@ The following sections will run the apps from the command line, but if you prefe
 ## Analyze the Maven Dependencies
 Using your favorite text editor open the spring-boot-autoconfig-sender/pom.xml file
 
-```
+```sh
 cd spring-boot-autoconfig-sender
 vim pom.xml
 ```
@@ -92,22 +93,22 @@ vim pom.xml
 This file defines the dependencies needed for our sender app to build & run, but they are also the same for our receiver app.
 Note that the app is using the spring-boot-starter-parent. This starts the app off by including common Spring Boot dependencies. 
 ``` xml
-    <parent>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-parent</artifactId>
-            <version>2.1.4.RELEASE</version>
-            <relativePath /> 
-    </parent>
+<parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId>
+	<version>2.1.4.RELEASE</version>
+	<relativePath /> 
+</parent>
 ```
 
 Also note that the dependency below is what enables us to use Solace PubSub+ as our JMS provider. It also includes the dependency to enable autoconfiguration based on properties in our Spring Boot Config file.
 
 ``` xml
-    <dependency>
-            <groupId>com.solace.spring.boot</groupId>
-            <artifactId>solace-jms-spring-boot-starter</artifactId>
-            <version>1.0.0</version>
-    </dependency>
+<dependency>
+	<groupId>com.solace.spring.boot</groupId>
+	<artifactId>solace-jms-spring-boot-starter</artifactId>
+	<version>1.0.0</version>
+</dependency>
 ```
 
 ## Learn about the Receiver
@@ -168,7 +169,7 @@ solace.jms.clientPassword=default
 Now it's time to run the app.
 Run from the command line using maven like seen below
 
-```
+```sh
 mvn spring-boot:run
 ```
 
@@ -242,7 +243,7 @@ solace.jms.clientPassword=default
 Now it's time to run the app.
 Run from the command line using maven like seen below
 
-```
+```sh
 mvn spring-boot:run
 ```
 
