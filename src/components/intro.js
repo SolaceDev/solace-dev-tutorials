@@ -24,7 +24,7 @@ const Intro = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faGithub} size="1x" /> Improve this page
+              <FontAwesomeIcon icon={faGithub} size="1x" /> Improve Page
             </Button>
             <Button
               className="ml2"
