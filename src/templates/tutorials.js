@@ -38,7 +38,15 @@ const tutorials = ({ data, pageContext }) => {
         )}
         <Row>
           {tutorials.map(({ node }) => (
-            <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
+            <Col
+              key={node.id}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={4}
+              className="mt4 mb3"
+            >
               <Card key={node.id} className="mt2 mb3">
                 <a href={node.fields.slug}>
                   <CardImg

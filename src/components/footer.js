@@ -9,6 +9,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
+import sollyAvatar from "../images/solace-community-solly-transp.png"
 
 const Footer = () => (
   <footer>
@@ -226,7 +227,9 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={6} sm={6} md={6} lg={3} xl={3}></Col>
+        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
+          <img src={sollyAvatar} alt="Solly" width="80px" />
+        </Col>
       </Row>
     </Container>
     <Container>
