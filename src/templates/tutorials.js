@@ -62,7 +62,7 @@ const tutorials = ({ data, pageContext }) => {
                     <Card.Text className="pl3 pr3 pb2 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">
+                    <Card.Footer>
                       Start Tutorial{" "}
                       <FontAwesomeIcon icon={faArrowRight} size="1x" />
                     </Card.Footer>
@@ -87,7 +87,7 @@ const tutorials = ({ data, pageContext }) => {
                     <Card.Text className="pl3 pr3 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
+                    <Card.Footer>Start Tutorial</Card.Footer>
                   </Card.Body>
                 </a>
               </Card>
