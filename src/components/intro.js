@@ -2,7 +2,7 @@ import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faDownload } from "@fortawesome/free-brands-svg-icons"
+import { faDownload } from "@fortawesome/free-solid-svg-icons"
 
 const Intro = (props) => {
   return (
@@ -32,8 +32,7 @@ const Intro = (props) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faDownload} size="1x" />
-              Source Code
+              <FontAwesomeIcon icon={faDownload} size="1x" /> Source Code
             </Button>
           </Col>
         </Row>

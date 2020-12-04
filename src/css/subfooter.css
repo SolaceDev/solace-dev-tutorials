@@ -1,10 +1,44 @@
 #subfooter {
   margin-bottom: 0;
-  background-color: #000000;
+  background: linear-gradient(#20262a, #000) !important;
   text-align: center;
 }
 
-#subfooter h2,
-#subfooter p {
+#subfooter h2{
   color: #ffffff;
+}
+
+#subfooter .card {
+  background: linear-gradient(#20262a, #37404a) !important;
+  border-radius: 8px !important;
+  text-align: center;
+  color: #000000 !important;
+
+}
+
+#subfooter .card a:hover {
+  color: #474747;
+
+  box-shadow: 0 4px 6px rgba(49, 54, 68, 0.05),
+  0 5px 20px rgba(49, 54, 68, 0.08);
+  cursor: pointer;
+  transform: translatey(-2px);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+#subfooter .card-title {
+  font-size: 16px;
+}
+
+#subfooter .card-text {
+  font-size: 14px;
+  line-height: normal;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+#subfooter .card-body {
+  padding: 0;
+  background: #fff;
 }

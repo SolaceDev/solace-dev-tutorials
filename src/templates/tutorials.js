@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import Intro from "../components/intro"
 import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const tutorials = ({ data, pageContext }) => {
   const {
@@ -60,7 +62,10 @@ const tutorials = ({ data, pageContext }) => {
                     <Card.Text className="pl3 pr3 pb2 fw1">
                       {node.frontmatter.summary}
                     </Card.Text>
-                    <Card.Footer className="fw4">Start Tutorial</Card.Footer>
+                    <Card.Footer className="fw4">
+                      Start Tutorial{" "}
+                      <FontAwesomeIcon icon={faArrowRight} size="1x" />
+                    </Card.Footer>
                   </Card.Body>
                 </a>
               </Card>
