@@ -9,7 +9,7 @@ const SamplesIndex = ({ data }) => {
   return (
     <Layout>
       <section id="intro">
-        <Container className="pt5 pb5">
+        <Container className="pt6 pb5">
           <Row className="tc">
             <Col>
               <h1>Solace API Tutorials</h1>

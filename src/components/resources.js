@@ -1,9 +1,9 @@
 import React from "react"
 import { Container, Row, Col, Card } from "react-bootstrap"
 
-const SubFooter = (props) => {
+const Resources = (props) => {
   return (
-    <section id="subfooter" className="pa5">
+    <section id="resources" className="pa5">
       <Container>
         <Row>
           <Col
@@ -177,4 +177,4 @@ const SubFooter = (props) => {
   )
 }
 
-export default SubFooter
+export default Resources
