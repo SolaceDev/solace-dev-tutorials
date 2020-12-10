@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allTutorialsYaml.edges
@@ -28,6 +28,10 @@ const SamplesIndex = ({ data }) => {
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
               <Card key={node.id} className="mt4">
                 <a href={node.fields.slug}>
+                {/* <CardImg
+                    src={require(`../images/icons/svg/lang/${node.icon}`)}
+                    alt={node.title}
+                  /> */}
                   <Card.Body>
                     <Card.Title className="pa3 fw4">{node.title}</Card.Title>
                     <Card.Text className="pl3 pr3 pb2 fw1">
@@ -57,6 +61,7 @@ export const query = graphql`
           id
           summary
           title
+          icon
           fields {
             slug
           }

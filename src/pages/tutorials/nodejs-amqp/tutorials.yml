@@ -1,5 +1,6 @@
 - title: Node.js AMQP Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Node.js with AMQP.
+  icon: nodejs.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     download: https://github.com/SolaceSamples/solace-samples-amqp-nodejs/
