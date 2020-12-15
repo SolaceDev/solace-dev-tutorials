@@ -3,6 +3,7 @@
   url(../images/bg/jeremy-bishop-G9i_plbfDgk-unsplash.jpg);
   background-size: cover;
   background-position: center 30%;
+  border-top: 1px solid #000;
 }
 
 #resources h2{

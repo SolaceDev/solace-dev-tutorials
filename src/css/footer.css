@@ -19,6 +19,10 @@ footer .menu a{
     padding-bottom: 20px !important;
 }
 
+footer .menu a:hover{
+    color: #00c895;
+}
+
 footer .sub-menu a {
     color: rgba(255,255,255,.6);
     font-size: 12px;
@@ -26,6 +30,10 @@ footer .sub-menu a {
     text-transform: none;
     border-bottom: none;
 
+}
+
+footer .sub-menu a:hover {
+    color: #fff;
 }
 
 footer img {
@@ -42,6 +50,10 @@ footer img {
 .footer-bottom a {
     color: rgba(255,255,255,.3);
 }
+.footer-bottom a:hover {
+    color: #ffffff;
+}
+
 
 a:hover .svg-inline--fa{
     color: rgba(255,255,255,.8);
