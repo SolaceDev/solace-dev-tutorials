@@ -112,4 +112,6 @@
   float: right;
   padding: 0 !important;
   object-fit: contain;
+  height: 100px;
+  width: 100px;
 }
