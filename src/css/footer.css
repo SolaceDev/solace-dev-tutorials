@@ -16,6 +16,7 @@ footer .menu a{
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 400;
+    padding-bottom: 20px !important;
 }
 
 footer .sub-menu a {

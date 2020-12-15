@@ -2,7 +2,7 @@
 layout: tutorials
 title: Spring Cloud Auto-Config JMS
 summary: Consume Solace Messaging as a Service provided by Solace Spring JMS Auto-Configuration.
-icon: I_spring_Jms_w220.svg
+icon: I_spring_cloud.svg
 icon-height: 90px
 icon-width: 180px
 links:

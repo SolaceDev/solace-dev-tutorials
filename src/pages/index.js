@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
-import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allTutorialsYaml.edges
@@ -23,26 +23,30 @@ const SamplesIndex = ({ data }) => {
         </Container>
       </section>
       <Container className="pb5">
-        <Row>
+        <Row className="mt3">
           {samples.map(({ node }) => (
-            <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
-              <Card key={node.id} className="mt4">
-                <a href={node.fields.slug}>
-                {/* <CardImg
-                    src={require(`../images/icons/svg/lang/${node.icon}`)}
-                    alt={node.title}
-                  /> */}
-                  <Card.Body>
-                    <Card.Title className="pa3 fw4">{node.title}</Card.Title>
-                    <Card.Text className="pl3 pr3 pb2 fw1">
-                      {node.summary}
-                    </Card.Text>
-                    <Card.Footer className="fw4">
-                      Go To Tutorials <span className="icon">&#187;</span>
-                    </Card.Footer>
-                  </Card.Body>
-                </a>
-              </Card>
+            <Col
+              key={node.id}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={4}
+              className="mt3 mb3"
+            >
+              <a href={node.fields.slug}>
+                <div key={node.id} className="custom-card">
+                  <div className="icon">
+                    <img
+                      src={require(`../images/icons/svg/lang/${node.icon}`)}
+                      alt={node.title}
+                    />
+                  </div>
+                  <div className="title">{node.title}</div>
+                  <div className="desc">{node.summary}</div>
+                  <div className="link">Go To Tutorials >></div>
+                </div>
+              </a>
             </Col>
           ))}
         </Row>

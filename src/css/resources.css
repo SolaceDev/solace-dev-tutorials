@@ -1,24 +1,23 @@
-#subfooter {
-  margin-bottom: 0;
-  background: linear-gradient(#20262a, #000) !important;
-  text-align: center;
+#resources {
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
+  url(../images/bg/jeremy-bishop-G9i_plbfDgk-unsplash.jpg);
+  background-size: cover;
+  background-position: center 30%;
 }
 
-#subfooter h2{
-  color: #ffffff;
+#resources h2{
+  color: #fff;
 }
 
-#subfooter .card {
-  background: linear-gradient(#20262a, #37404a) !important;
-  border-radius: 8px !important;
-  text-align: center;
-  color: #000000 !important;
-
+#resources .card {
+  border: none;
+  border-radius: 0;
+  color: #fff !important;
+height: 100%;
+  margin: 10px 0;
 }
 
-#subfooter .card a:hover {
-  color: #474747;
-
+#resources .card a:hover {
   box-shadow: 0 4px 6px rgba(49, 54, 68, 0.05),
   0 5px 20px rgba(49, 54, 68, 0.08);
   cursor: pointer;
@@ -27,18 +26,21 @@
   transition: all 0.4s ease;
 }
 
-#subfooter .card-title {
-  font-size: 16px;
+#resources .card-title {
+  font-size: 14px;
+  background: #20262a !important;
+  text-align: left;
 }
 
-#subfooter .card-text {
-  font-size: 14px;
+#resources .card-text {
+  color: #fff !important;
+  font-size: 12px;
   line-height: normal;
   text-align: left;
   padding-bottom: 20px;
 }
 
-#subfooter .card-body {
+#resources .card-body {
   padding: 0;
-  background: #fff;
+  background: #20262a;
 }

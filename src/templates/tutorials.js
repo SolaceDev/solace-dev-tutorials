@@ -2,10 +2,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
-import { Container, Row, Col, Card, CardImg } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const tutorials = ({ data, pageContext }) => {
   const {
@@ -49,26 +47,20 @@ const tutorials = ({ data, pageContext }) => {
               xl={4}
               className="mt4 mb3"
             >
-              <Card key={node.id} className="mt2 mb3">
-                <a href={node.fields.slug}>
-                  <CardImg
-                    src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
-                    alt={node.frontmatter.title}
-                  />
-                  <Card.Body>
-                    <Card.Title className="pa3 fw4">
-                      {node.frontmatter.title}
-                    </Card.Title>
-                    <Card.Text className="pl3 pr3 pb2 fw1">
-                      {node.frontmatter.summary}
-                    </Card.Text>
-                    <Card.Footer>
-                      Start Tutorial{" "}
-                      <FontAwesomeIcon icon={faArrowRight} size="1x" />
-                    </Card.Footer>
-                  </Card.Body>
-                </a>
-              </Card>
+              <a href={node.fields.slug}>
+                <div key={node.id} className="custom-card">
+                  <div className="icon">
+                    <img
+                      src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
+                      alt={node.frontmatter.title}
+                    />
+                  </div>
+                  <div className="category">Fundamentals</div>
+                  <div className="title">{node.frontmatter.title}</div>
+                  <div className="desc">{node.frontmatter.summary}</div>
+                  <div className="link">Learn More >></div>
+                </div>
+              </a>
             </Col>
           ))}
         </Row>
@@ -78,19 +70,14 @@ const tutorials = ({ data, pageContext }) => {
         <Row>
           {features.map(({ node }) => (
             <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
-              <Card key={node.id} className="mt2 mb3">
-                <a href={node.fields.slug}>
-                  <Card.Body>
-                    <Card.Title className="pa3 fw4">
-                      {node.frontmatter.title}
-                    </Card.Title>
-                    <Card.Text className="pl3 pr3 fw1">
-                      {node.frontmatter.summary}
-                    </Card.Text>
-                    <Card.Footer>Start Tutorial</Card.Footer>
-                  </Card.Body>
-                </a>
-              </Card>
+              <a href={node.fields.slug}>
+                <div key={node.id} className="custom-card">
+                  <div className="category">API & Broker Features</div>
+                  <div className="title">{node.frontmatter.title}</div>
+                  <div className="desc">{node.frontmatter.summary}</div>
+                  <div className="link">Learn More >></div>
+                </div>
+              </a>
             </Col>
           ))}
         </Row>

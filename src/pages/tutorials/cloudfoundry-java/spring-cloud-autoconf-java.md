@@ -2,7 +2,7 @@
 layout: tutorials
 title: Spring Cloud Auto-Config Java
 summary: Consume Solace PubSub+ as a Service provided by Solace Spring Java Auto-Configuration.
-icon: I_spring_Java_w220.svg
+icon: I_spring_cloud.svg
 icon-height: 90px
 icon-width: 180px
 links:
