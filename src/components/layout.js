@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
-
-import Header from "./header"
-import Resources from "./resources"
-import Footer from "./footer"
-
 import "../css/layout.css"
+import Resources from "./resources"
+import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (

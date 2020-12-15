@@ -1,6 +1,4 @@
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import solaceLogo from "../images/solace-logo-white.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faDev,
@@ -9,30 +7,21 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
-import sollyAvatar from "../images/solace-community-solly-transp.png"
+import { Container, Row, Col } from "react-bootstrap"
+import solaceLogo from "../images/solace-logo-white.png"
 
 const Footer = () => (
   <footer>
     <Container>
-      <Row className="pt5">
-        <Col xs={12} sm={12} md={12} lg={2} xl={2}>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://solace.com"
-          >
-            <img src={solaceLogo} alt="Solace Logo" />
-          </a>
-        </Col>
-      </Row>
-      <Row className="pt4 pb4">
-        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
+      <Row className="pt5 pb4">
+        <Col xs={6} sm={6} md={6} lg={4} xl={4}>
           <ul className="menu">
             <li>
               <a
                 href="https://solace.com/products/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="mb6"
               >
                 Products
               </a>
@@ -227,8 +216,49 @@ const Footer = () => (
             </li>
           </ul>
         </Col>
-        <Col xs={6} sm={6} md={6} lg={3} xl={3}>
-          <img src={sollyAvatar} alt="Solly" width="80px" />
+        <Col xs={6} sm={6} md={6} lg={2} xl={2}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://solace.com"
+          >
+            <img src={solaceLogo} alt="Solace Logo" className="mb2" />
+          </a>
+          <a
+            href="https://dev.to/solacedevs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faDev} size="1x" className="ma2" />
+          </a>
+          <a
+            href="https://github.com/solacedev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faGithub} size="1x" className="ma2" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/solacedotcom/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faLinkedin} size="1x" className="ma2" />
+          </a>
+          <a
+            href="https://twitter.com/solacedotcom"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faTwitter} size="1x" className="ma2" />
+          </a>
+          <a
+            href="https://www.youtube.com/SolaceSystems"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faYoutube} size="1x" className="ma2" />
+          </a>
         </Col>
       </Row>
     </Container>
@@ -236,7 +266,7 @@ const Footer = () => (
       <Row className="footer-bottom">
         <Col xs={6} sm={6} md={6} lg={6} xl={6} className="tl pt3 pb3">
           <a
-            href="https://solace.com/legal/"
+            href="https://solace.com"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -245,39 +275,11 @@ const Footer = () => (
         </Col>
         <Col xs={6} sm={6} md={6} lg={6} xl={6} className="tr pt2 pb2">
           <a
-            href="https://dev.to/solacedevs"
+            href="https://solace.com/legal/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon icon={faDev} size="2x" className="ma2" />
-          </a>
-          <a
-            href="https://github.com/solacedev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faGithub} size="2x" className="ma2" />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/solacedotcom/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faLinkedin} size="2x" className="ma2" />
-          </a>
-          <a
-            href="https://twitter.com/solacedotcom"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faTwitter} size="2x" className="ma2" />
-          </a>
-          <a
-            href="https://www.youtube.com/SolaceSystems"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon icon={faYoutube} size="2x" className="ma2" />
+            Legal
           </a>
         </Col>
       </Row>
