@@ -19,9 +19,7 @@ const Sidebar = (props) => {
           <div key={node.id} className="pt2 pb2 border-bottom">
             <a
               className={
-                pageContext.slug === node.fields.slug
-                  ? "c-grey"
-                  : "c-grey4 o-90"
+                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
               }
               href={node.fields.slug}
             >

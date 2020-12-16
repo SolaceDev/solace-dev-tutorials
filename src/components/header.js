@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         id="responsive-navbar-nav"
         className="justify-content-end"
       >
-        <Nav>
+        <Nav className="mr-auto">
           <Nav.Link
             href="https://solace.com/try-it-now/"
             target="_blank"
@@ -57,14 +57,15 @@ const Header = ({ siteTitle }) => (
           >
             Learn
           </Nav.Link>
-          <Nav.Link
-            href="https://console.solace.cloud/login"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Log In
-          </Nav.Link>
         </Nav>
+        <a
+          href="https://console.solace.cloud/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btnSmall"
+        >
+          Log In
+        </a>
       </Navbar.Collapse>
     </Container>
   </Navbar>

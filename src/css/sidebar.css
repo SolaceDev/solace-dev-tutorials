@@ -7,6 +7,7 @@
     box-shadow: 0 2px 4px rgba(27, 31, 35, 0.15);
     background: #fff;
     font-size: 14px;
+    font-weight: 300;
 
 }
 
@@ -16,7 +17,7 @@
     background: linear-gradient(#20262a, #37404a) !important;
     color: #fff;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     padding: 10px;
 }
