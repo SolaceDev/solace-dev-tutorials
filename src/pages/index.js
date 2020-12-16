@@ -43,7 +43,6 @@ const SamplesIndex = ({ data }) => {
                     />
                   </div>
                   <div className="title">{node.title}</div>
-                  <div className="desc">{node.summary}</div>
                   <div className="link">Go To Tutorials >></div>
                 </div>
               </a>
@@ -63,7 +62,6 @@ export const query = graphql`
       edges {
         node {
           id
-          summary
           title
           icon
           fields {
