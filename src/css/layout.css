@@ -48,7 +48,7 @@ h4 {
 }
 
 .btn {
-  background: #20262a;
+  background: #20262a !important;
   text-transform: uppercase;
   border-radius: 40px;
   padding: 8px 25px;
@@ -62,6 +62,10 @@ h4 {
 
 .btn:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.btn:focus {
+  color: #fff;
 }
 
 .btnSmall {

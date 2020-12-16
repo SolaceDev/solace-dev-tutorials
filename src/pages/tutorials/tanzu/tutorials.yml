@@ -1,5 +1,5 @@
 - title: Tazu Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications for Pivotal Cloud Foundry.
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications for Tanzu.
   icon: java.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
