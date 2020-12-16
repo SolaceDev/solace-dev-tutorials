@@ -9,6 +9,11 @@ const tutorial = ({ data, pageContext }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
+  const solaceDevCrumb = {
+    pathname: "https://solace.dev/",
+    crumbLabel: "Solace Developer Portal"
+  }
+  crumbs.unshift(solaceDevCrumb)
   const node = data.tutorialBody.edges[0].node
   const tutorials = data.tableOfContent.edges.filter(
     (edge) => edge.node.frontmatter.layout === "tutorials"

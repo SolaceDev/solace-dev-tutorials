@@ -202,6 +202,10 @@ module.exports = {
             crumbLabel: "C#/.NET",
           },
           {
+            pathname: "/python",
+            crumbLabel: "Python",
+          },
+          {
             pathname: "/jcsmp",
             crumbLabel: "Java",
           },
