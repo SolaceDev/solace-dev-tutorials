@@ -85,6 +85,10 @@
   color: #ffffff;
 }
 
+.custom-card:hover .link {
+  padding-left: 10px;
+}
+
 .custom-card .category {
   color:rgba(255,255,255,0.4);
   text-transform: uppercase;
@@ -103,8 +107,8 @@
   color:rgba(255,255,255,0.6);
   font-weight: 100;
   font-size: 13px;
-  padding-bottom: 10px;
-  transition: all 0.4s;
+  padding-bottom: 20px;
+  transition: all 0.3s;
 }
 
 .custom-card .link {
@@ -114,6 +118,7 @@
   font-weight: 600;
   position: absolute;
   bottom: 10px;
+  transition: all 0.4s;
 }
 
 .custom-card .icon {
