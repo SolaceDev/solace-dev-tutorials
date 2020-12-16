@@ -81,6 +81,10 @@
   cursor: pointer;
 }
 
+.custom-card:hover .desc {
+  color: #ffffff;
+}
+
 .custom-card .category {
   color:rgba(255,255,255,0.4);
   text-transform: uppercase;
@@ -100,6 +104,7 @@
   font-weight: 100;
   font-size: 13px;
   padding-bottom: 10px;
+  transition: all 0.4s;
 }
 
 .custom-card .link {
