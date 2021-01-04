@@ -11,7 +11,7 @@ const tutorials = ({ data, pageContext }) => {
   } = pageContext
   const solaceDevCrumb = {
     pathname: "https://solace.dev/",
-    crumbLabel: "Solace Developer Portal"
+    crumbLabel: "Developer Hub"
   }
   crumbs.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
