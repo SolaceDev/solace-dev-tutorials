@@ -2,12 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
+import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allTutorialsYaml.edges
+  const crumbs = [{pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub"}]
 
   return (
     <Layout>
+      <section id="breadcrumbs">
+        <Container>
+          <Breadcrumb crumbs={crumbs}/>
+        </Container>
+      </section>
       <section id="intro">
         <Container className="pt6 pb5">
           <Row className="tc">
