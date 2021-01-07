@@ -190,6 +190,10 @@ module.exports = {
             crumbLabel: "JMS",
           },
           {
+            pathname: "/tanzu",
+            crumbLabel: "Tanzu",
+          },
+          {
             pathname: "/java-mqtt-paho",
             crumbLabel: "MQTT",
           },
@@ -208,10 +212,6 @@ module.exports = {
           {
             pathname: "/jcsmp",
             crumbLabel: "Java",
-          },
-          {
-            pathname: "/cloudfoundry-java",
-            crumbLabel: "CloudFoundry Java",
           },
           {
             pathname: "/c",
