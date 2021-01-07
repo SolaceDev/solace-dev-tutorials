@@ -18,7 +18,7 @@ In addition to spooling messages published directly to the queue, it is possible
 
 The following diagram illustrates this feature.
 
-![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
+![Diagram: C Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
 
 If you have a durable queue named `Q`, it will receive messages published directly to the queue destination named `Q`. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics `A` and `B`. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations `A` and `B`. When you combine this with the wildcard support provided by PubSub+ topics this opens up a number of interesting use cases.
 

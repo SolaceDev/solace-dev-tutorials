@@ -16,7 +16,7 @@ In addition to persistent messages published directly to a durable queue, it is 
 
 The following diagram illustrates this feature.
 
-![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-details.png)
+![Diagram: NodeJS Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-details.png)
 
 If you have a durable queue named “Q”, it will receive messages published directly to the queue destination named “Q”. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics “A” and “B”. Once these subscriptions are added, the queue will start receiving messages published to topic destinations “A” and “B”. When you combine this with wildcard support provided by Solace topics, this opens up a number of interesting use cases.
 
