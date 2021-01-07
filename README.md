@@ -1,6 +1,6 @@
 # Solace Samples
 
-This repo will manage the Solace Tutorials, which helps developers get you up to speed sending and receiving messages with Solace technology.
+This repo will manage the Solace Tutorials, which helps developers get up to speed sending and receiving messages with Solace technology.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c87209db-e4d8-4b44-847a-d19294b01869/deploy-status)](https://app.netlify.com/sites/solace-dev-samples/deploys)
 
