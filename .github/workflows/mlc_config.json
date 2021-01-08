@@ -1,7 +1,0 @@
-{
-  "ignorePatterns": [
-    {
-      "pattern": "SolaceDev\/solace-dev-samples"
-    }
-  ]
-}
