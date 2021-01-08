@@ -3,6 +3,7 @@
 This repo will manage the Solace Tutorials, which helps developers get up to speed sending and receiving messages with Solace technology.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c87209db-e4d8-4b44-847a-d19294b01869/deploy-status)](https://app.netlify.com/sites/solace-dev-samples/deploys)
+![Broken Links Checker](https://github.com/SolaceDev/solace-dev-samples/workflows/Broken%20Links%20Checker/badge.svg)
 
 This was created from the [Gatsby Default Starter](https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-default/).
 
