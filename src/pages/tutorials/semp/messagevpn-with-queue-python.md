@@ -39,7 +39,7 @@ We also assume that Python 2.7 is used.
 
 ### Trying it yourself
 
-This tutorial is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp) along with the other [Solace SEMP Getting Started Examples](https://solacesamples.github.io/solace-samples-semp/).
+This tutorial is available in [GitHub](https://github.com/SolaceSamples/solace-samples-semp) along with the other [Solace SEMP Getting Started Examples](https://github.com/SolaceSamples/solace-samples-semp).
 
 At the end, this tutorial walks through downloading and running the sample from source.
 
@@ -62,7 +62,7 @@ Clients can connect to a message-VPN and use its resources after proper authenti
 * The [Message-VPN](https://docs.solace.com/Configuring-and-Managing/Configuring-VPNs.htm) object defines the type and details of client authentication applied and restrictions to the combined resource usage of all VPN clients.
 * A [Client Profile](https://docs.solace.com/Configuring-and-Managing/Client-Authorization.htm) object within a message-VPN defines resource usage restrictions applied to individual clients.
 * An [ACL (Access Control List) Profile](https://docs.solace.com/Configuring-and-Managing/Managing-Access-Control-Lists.htm) object within a message-VPN defines access restrictions by listing allowance or denial of which clients can connect and to which topics and queues.
-* A [Client Username](https://docs.solace.com/Configuring-and-Managing/Managing-Client-Authentic-and-Authoriz.htm) object within a message-VPN has an associated Client Profile and an ACL Profile. The username provided by the connecting client will be the Client Username applied to that connection or if it is not found then the default Client Username will be applied. The password property will be used if internal client authentication type has been specified for the message-VPN.
+* A [Client Username](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Authentication.htm) object within a message-VPN has an associated Client Profile and an ACL Profile. The username provided by the connecting client will be the Client Username applied to that connection or if it is not found then the default Client Username will be applied. The password property will be used if internal client authentication type has been specified for the message-VPN.
 
 Once connected, clients can send messages to message-VPN endpoints, represented as [Queue](https://docs.solace.com/Configuring-and-Managing/Configuring-Queues.htm) or [Topic Endpoint](https://docs.solace.com/Configuring-and-Managing/Configuring-DTEs.htm) SEMP objects within a message-VPN.
 

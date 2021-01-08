@@ -12,7 +12,7 @@ The goal of this tutorial is to show you how to make use of one of Solace’s ad
 
 
 
-In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here](https://docs.solace.com/Features/Core-Concepts.htm#topic-queue-mapping).
+In addition to spooling messages published directly to the queue, it is possible to add one or more topic subscriptions to a durable queue so that messages published to those topics are also delivered to and spooled by the queue. This is a powerful feature that enables queues to participate equally in point to point and publish / subscribe messaging models. More details about the [“Topic to Queue Mapping” feature here](https://docs.solace.com/PubSub-Basics/Core-Concepts-Endpoints-Queues.htm).
 
 The following diagram illustrates this feature.  
 ![Diagram: Topic to Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-details.png)

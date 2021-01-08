@@ -157,7 +157,7 @@ Password:
 
 See the [Solace Documentation - Solace Router CLI](https://docs.solace.com/Solace-CLI/Using-Solace-CLI.htm) for more details.
 
-To learn how to use the SEMP API, refer to the [Solace Element Management Protocol (SEMP) tutorials](https://docs.solace.com/SEMP/SEMP-Get-Started.htm). To learn about the SolAdmin management application, refer to the [Solace Documentation - SolAdmin Overview](https://docs.solace.com/SolAdmin/SolAdmin-Overview.htm?Highlight=SolAdmin) and the application's online Help. The application can be [downloaded here](https://www.solace.com/downloads/).
+To learn how to use the SEMP API, refer to the [Solace Element Management Protocol (SEMP) tutorials](https://docs.solace.com/SEMP/Using-SEMP.htm). To learn about the SolAdmin management application, refer to the [Solace Documentation - SolAdmin Overview](https://docs.solace.com/SolAdmin/SolAdmin-Overview.htm?Highlight=SolAdmin) and the application's online Help. The application can be [downloaded here](https://www.solace.com/downloads/).
 
 ## Step 2: Obtaining a JMS ConnectionFactory object using JNDI
 

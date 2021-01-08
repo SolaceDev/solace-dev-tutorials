@@ -60,7 +60,7 @@ We recommend using [Swagger Codegen](https://swagger.io/swagger-codegen/) out of
 
 Swagger Codegen is an easy-to-use Java based command-line tool. It takes the API specification, target programming language and customization parameters as input and generates the native API client library for that language, API reference documentation and getting started documentation. It supports building an API client library for most popular programming languages. For full documentation including the list of available client programming languages, check the [Swagger Codegen GitHub project site](https://github.com/swagger-api/swagger-codegen#overview).
 
-The tool itself can be downloaded from Maven Central as [swagger-codegen-cli-2.2.2.jar](https://central.maven.org/maven2/io/swagger/swagger-codegen-cli/2.2.2/swagger-codegen-cli-2.2.2.jar) or obtained other ways, as described at the above project site. Ensure you also have a Java JRE installed.
+The tool itself can be downloaded from Maven Central as [swagger-codegen-cli-2.2.2.jar](https://mvnrepository.com/artifact/io.swagger/swagger-codegen-maven-plugin) or obtained other ways, as described at the above project site. Ensure you also have a Java JRE installed.
 
 ## Step 3: Customization
 

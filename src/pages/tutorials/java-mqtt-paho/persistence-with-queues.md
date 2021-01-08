@@ -20,7 +20,7 @@ and receive QoS 1 messages using Solace messaging.
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
@@ -52,7 +52,7 @@ MQTT is a standard lightweight protocol for sending and receiving messages. As s
 
 The simplest way to connect to a Solace messaging in MQTT is to use an 'MqttClient', as done with other tutorials. So connect the 'MqttClient' as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
-NOTE: If you use the default 'MqttConnectOptions', or set 'MqttConnectOptions.cleanSession' to 'true', as done in the publish/subscribe tutorial, then a Non-Durable (a.k.a. Temporary Endpoint) queue will automatically be created on Solace messaging when the client adds a QoS 1 subscription. Queues are used to store QoS 1 messages providing persistence for the 'MqttClient'. A Non-Durable queue is removed when the 'MqttClient' disconnects, which mean Solace messaging will not retain any messages for the client after it disconnects. Setting the 'MqttConnectOptions.cleanSession' to 'false' will create a Durable queue which will retain messages even after the client disconnects. You can learn more about Solace queue durability from the Endpoint Durability section of [Solace Features – Working with Guaranteed Messages](https://docs.solace.com/Features/Working-With-Guaranteed-Messages.htm).
+NOTE: If you use the default 'MqttConnectOptions', or set 'MqttConnectOptions.cleanSession' to 'true', as done in the publish/subscribe tutorial, then a Non-Durable (a.k.a. Temporary Endpoint) queue will automatically be created on Solace messaging when the client adds a QoS 1 subscription. Queues are used to store QoS 1 messages providing persistence for the 'MqttClient'. A Non-Durable queue is removed when the 'MqttClient' disconnects, which mean Solace messaging will not retain any messages for the client after it disconnects. Setting the 'MqttConnectOptions.cleanSession' to 'false' will create a Durable queue which will retain messages even after the client disconnects. You can learn more about Solace queue durability from the Endpoint Durability section of [Solace Features – Working with Guaranteed Messages](https://docs.solace.com/Configuring-and-Managing/Managing-Guaranteed-Messaging.htm).
 
 For the purpose of this tutorial and to clean up resources and state 'MqttConnectOptions.cleanSession' is set to 'true'.
 

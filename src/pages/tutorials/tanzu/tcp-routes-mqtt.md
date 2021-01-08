@@ -32,7 +32,7 @@ This tutorial will show you:
 
 This tutorial assumes the following:
 
-* You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+* You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 * You are familiar with [Spring RESTful Web Services](https://spring.io/guides/gs/rest-service).
 * You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.

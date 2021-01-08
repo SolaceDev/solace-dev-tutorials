@@ -17,7 +17,7 @@ links:
 This tutorial assumes the following:
 
 *   You are familiar with OpenMAMA [core concepts](https://docs.solace.com/Solace-OpenMama/Solace-OpenMAMA-Overview.htm).
-    *   If not, see [this guide](https://www.openmama.org/content/quick-start-guide).
+    *   If not, see [this guide](https://openmama.finos.org/quickstart).
 *   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases).
     *   Solace middleware bridge with its dependencies is also installed
@@ -29,13 +29,13 @@ One simple way to get access to Solace messaging quickly is to create a messagin
 
 ## Goals
 
-The goal of this tutorial is to demonstrate the most basic messaging interaction using OpenMAMA with the **Solace middleware bridge**. This tutorial is similar to the [OpenMAMA Quick Start Guide](https://www.openmama.org/content/quick-start-guide) and the [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through), but with a distinct focus on configuring OpenMAMA with **Solace messaging**. See the [Resources](#resources) section below for some further links to other OpenMAMA tutorials and examples.
+The goal of this tutorial is to demonstrate the most basic messaging interaction using OpenMAMA with the **Solace middleware bridge**. This tutorial is similar to the [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart) and the [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through), but with a distinct focus on configuring OpenMAMA with **Solace messaging**. See the [Resources](#resources) section below for some further links to other OpenMAMA tutorials and examples.
 
 This tutorial will show you how to publish a message with one string field to a specific topic with Solace messaging using OpenMAMA C API.
 
 ## Installation
 
-Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](https://www.openmama.org/content/quick-start-guide#main).
+Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](https://openmama.finos.org/quickstart#main).
 
 Simplified installation instructions for OpenMAMA with Solace middleware bridge [are available here](../installation-linux/).
 
@@ -461,10 +461,10 @@ For more information about Solace technology:
 
 Other tutorials and related links:
 
-*   [OpenMAMA Quick Start Guide](https://www.openmama.org/content/quick-start-guide)
+*   [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart)
 *   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
 *   [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through)
 *   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
 *   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
-*   [OpenMAMA Documentation and Developers Guides](https://www.openmama.org/documentation)
+*   [OpenMAMA Documentation and Developers Guides](https://openmama.finos.org/documentation.html)
 *   [Solace’s Solution for OpenMAMA](https://solace.com/products/tech/)

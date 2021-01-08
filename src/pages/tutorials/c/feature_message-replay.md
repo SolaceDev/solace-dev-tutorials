@@ -15,7 +15,7 @@ In this introduction we show you how a client can initiate and process the repla
 
 During normal publishing, guaranteed messages will be removed from the message broker's [queue or topic endpoint](https://docs.solace.com/PubSub-Basics/Endpoints.htm) once the consumer acknowledges their receipt or successful processing. When Message Replay is initiated for an endpoint, the message broker will re-publish a requested subset of previously published and logged messages, which enables the client to process these messages again.
 
-Message Replay can be used if a client needs to catch up with missed messages as well as for several other [use cases](https://docs.solace.com/Configuring-and-Managing/Message-Replay.htm).
+Message Replay can be used if a client needs to catch up with missed messages as well as for several other [use cases](https://docs.solace.com/Overviews/Message-Replay-Overview.htm).
 
 Message Replay for an endpoint can be initiated programmatically from an API client connected to an exclusive endpoint, or administratively from the message broker. After the replay is done, the connected client will keep getting live messages delivered.
 
@@ -242,4 +242,4 @@ This will replay all logged messages including the live one published in step 2.
 ## Learn More
 
 * Related Source Code: [MessageReplay.c](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/MessageReplay.c)
-* [Solace Feature Documentation](https://docs.solace.com/Configuring-and-Managing/Message-Replay.htm)
+* [Solace Feature Documentation](https://docs.solace.com/Overviews/Message-Replay-Overview.htm)

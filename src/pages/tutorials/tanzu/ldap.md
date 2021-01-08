@@ -34,7 +34,7 @@ The goal of this tutorial is to demonstrate extracting the information from the 
 
 This tutorial assumes the following:
 
-* You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+* You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 * You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.
 * Solace Messaging for PCF has been installed in your Pivotal Cloud Foundry environment.
@@ -163,7 +163,7 @@ Assuming you are using VPN `v001`, use these commands on the CLI:
 
 This will give all users in the `finance` group (ie `hank`) application access to that VPN.
 
-You can read more about setting up authorization groups, including changing ACL profiles and client profiles in the [Solace Configuring Client LDAP Authorization Documentation](https://docs.solace.com/Configuring-and-Managing-Routers/Configuring-LDAP-Groups.htm).
+You can read more about setting up authorization groups, including changing ACL profiles and client profiles in the [Solace Configuring Client LDAP Authorization Documentation](https://docs.solace.com/Configuring-and-Managing/Configuring-LDAP-Authentication.htm).
 
 By default, all newly created authorization-groups will use the default ACL profile and default client profile.
 

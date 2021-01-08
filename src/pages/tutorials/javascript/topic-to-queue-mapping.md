@@ -12,7 +12,7 @@ This tutorial builds on the basic concepts introduced in the [Persistence with Q
 
 ## Overview
 
-In addition to persistent messages published directly to a durable queue, it is possible to add one or more topic subscriptions to the queue so that messages published to those topics are also delivered to and persisted by the queue. This is a powerful feature that enables queues to participate equally in point-to-point and publish/subscribe messaging models. More details about the "Topic to Queue Mapping" feature can be found [here](https://docs.solace.com/Features/Core-Concepts.htm#topic-queue-mapping).
+In addition to persistent messages published directly to a durable queue, it is possible to add one or more topic subscriptions to the queue so that messages published to those topics are also delivered to and persisted by the queue. This is a powerful feature that enables queues to participate equally in point-to-point and publish/subscribe messaging models. More details about the "Topic to Queue Mapping" feature can be found [here](https://docs.solace.com/PubSub-Basics/Core-Concepts-Endpoints-Queues.htm).
 
 The following diagram illustrates this feature.
 

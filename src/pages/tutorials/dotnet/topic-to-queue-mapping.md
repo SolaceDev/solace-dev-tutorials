@@ -78,7 +78,7 @@ The only difference in the above is the duplicate subscription processing proper
 
 One aspect to consider when adding subscriptions is how your application wishes the Solace API to behave in the face of pre-existing duplicate subscriptions. The default behavior is to throw an exception if an application tries to add a subscription that already exists. In this tutorial, we’ll relax that behavior and change our session so that it will tolerate the subscription already existing.
 
-For more details on this session flag, refer to [the product documentation](https://docs.solace.com/Solace-Messaging-APIs/net-api-home.htm).
+For more details on this session flag, refer to [the product documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/dotNet-API/net-api-home.htm).
 
 ## Review: Receiving message from a queue
 
@@ -105,7 +105,7 @@ else
 }
 ```
 
-In this case the tutorial requires permission to send and receive guaranteed messages, configure endpoints and manage queue subscriptions. If these capabilities are not available on the message router the tutorial will not proceed. If these capabilities are missing, you update the client-profile used by the client-username to enable them. See the [Solace documentation](https://docs.solace.com/Features/Core-Concepts.htm#client-profile) for details.
+In this case the tutorial requires permission to send and receive guaranteed messages, configure endpoints and manage queue subscriptions. If these capabilities are not available on the message router the tutorial will not proceed. If these capabilities are missing, you update the client-profile used by the client-username to enable them. See the [Solace documentation](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm#client-profile) for details.
 
 ## Adding a Subscription to a Queue
 

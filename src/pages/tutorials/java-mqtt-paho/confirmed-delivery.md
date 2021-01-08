@@ -16,7 +16,7 @@ This tutorial builds on the basic concepts introduced in [Persistence with MQTT]
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password

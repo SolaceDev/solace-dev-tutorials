@@ -62,7 +62,7 @@ As described in the [publish/subscribe tutorial](../publish-subscribe/) we will 
 
 A difference to the publish/subscribe tutorial is that here a physical endpoint resource – a durable queue, associated with the Queue Destination – needs to be created on Solace messaging, which will persist the messages until consumed.
 
-We will use the Dynamic Durables feature, which enables the physical endpoint resource to be dynamically created without any additional steps, when the JMS Queue Destination is created programmatically. It is also possible to create resources administratively on the router using the Solace message router [Management Tools](https://docs.solace.com/Management-Tools.htm).
+We will use the Dynamic Durables feature, which enables the physical endpoint resource to be dynamically created without any additional steps, when the JMS Queue Destination is created programmatically. It is also possible to create resources administratively on the router using the Solace message router [Management Tools](https://docs.solace.com/#Management).
 
 To use Dynamic Durables, you need to connect the JMS Connection as outlined in the [publish/subscribe tutorial](../publish-subscribe/) with one additional property:
 

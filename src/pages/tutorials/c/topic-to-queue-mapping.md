@@ -50,7 +50,7 @@ The goal of this tutorial is to understand the following:
 
 ## Review: Receiving message from a queue
 
-The [Persistence with Queues tutorial](../persistence-with-queues/) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/TopicToQueueMapping/TopicToQueueMapping.cs).
+The [Persistence with Queues tutorial](../persistence-with-queues/) demonstrated how to publish and receive messages from a queue. This sample will do so in the same way. This sample will also depend on the endpoint being provisioned by through the API as was done in the previous tutorial. For clarity, this code is not repeated in the discussion but is included in the [full source available in GitHub](https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/TopicToQueueMapping.c).
 
 ## Adding a Subscription to a Queue
 

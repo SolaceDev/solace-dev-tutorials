@@ -28,7 +28,7 @@ This tutorial assumes the following:
     * Enabled client username and password
     * Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://https//solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -87,7 +87,7 @@ There is no difference in the actual method calls to the JMS producer when sendi
 
 See [Configuring Queues](https://docs.solace.com/Configuring-and-Managing/Configuring-Queues.htm) for details on how to configure durable queues on Solace Message Routers with Solace CLI.
 
-See [Management Tools](https://docs.solace.com/Management-Tools.htm) for other tools for configure durable queues.
+See [Management Tools](https://docs.solace.com/#Management) for other tools for configure durable queues.
 
 The JMS 2.0 API allows the use of *method chaining* to create the producer, set the delivery mode and send the message.
 

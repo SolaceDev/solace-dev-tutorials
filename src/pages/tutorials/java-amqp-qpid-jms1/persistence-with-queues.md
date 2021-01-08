@@ -95,7 +95,7 @@ The queue for sending messages will be created on the Solace router as a `durabl
 
 See [Configuring Queues](https://docs.solace.com/Configuring-and-Managing/Configuring-Queues.htm) for details on how to configure durable queues on Solace Message Routers with Solace CLI.
 
-See [Management Tools](https://docs.solace.com/Management-Tools.htm) for other tools for configure durable queues.
+See [Management Tools](https://docs.solace.com/#Management) for other tools for configure durable queues.
 
 *QueueProducer.java*
 ```java

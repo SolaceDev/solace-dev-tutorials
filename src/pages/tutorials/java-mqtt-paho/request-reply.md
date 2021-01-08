@@ -18,7 +18,7 @@ This tutorial outlines both roles in the request-response message exchange patte
 
 This tutorial assumes the following:
 
-*   You are familiar with Solace [core concepts](https://docs.solace.com/Features/Core-Concepts.htm).
+*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password

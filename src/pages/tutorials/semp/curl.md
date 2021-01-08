@@ -10,7 +10,7 @@ links:
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/curl.md
 ---
 
-This is a quick tutorial to help you get started with the SEMP. You can learn more about the SEMP API using the [Online Documentation](https://docs.solace.com/SEMP/SEMP-Concepts.htm). These documents explain the API concepts and details about the REST API. Additionally developers will find the [SEMP API Reference](https://docs.solace.com/SEMP/SEMP-API-Ref.htm) useful in understanding how to apply the concepts in this tutorial to other Solace Messaging objects.
+This is a quick tutorial to help you get started with the SEMP. You can learn more about the SEMP API using the [Online Documentation](https://docs.solace.com/SEMP/Using-SEMP.htm). These documents explain the API concepts and details about the REST API. Additionally developers will find the [SEMP API Reference](https://docs.solace.com/SEMP/SEMP-API-Ref.htm) useful in understanding how to apply the concepts in this tutorial to other Solace Messaging objects.
 
 **Note**: This tutorial applies to the SEMP API starting in version 2. For older versions of the SEMP API, you can see the [Legacy SEMP Documentation](https://docs.solace.com/SEMP/Using-Legacy-SEMP.htm).
 
@@ -315,4 +315,4 @@ curl -X POST -u user:password solacevmr:8080/SEMP/v2/config/msgVpns/MyMessageVpn
 
 At this point, you have created, retrieved, updated and deleted a Client Username object using SEMP. The examples used `curl` to send and receive the HTTP requests, but you can adapt the steps to any programming language of your choice.
 
-SEMP is an extensive API that lets you configure anything on your Solace Messaging so there is a lot more to understand. If you want to know more, either you can get more familiar with the SEMP concepts by checking out the [Concepts Guide](https://docs.solace.com/SEMP/SEMP-Concepts.htm) or you can see the full [developer documentation for the API](https://docs.solace.com/SEMP/SEMP-API-Ref.htm).
+SEMP is an extensive API that lets you configure anything on your Solace Messaging so there is a lot more to understand. If you want to know more, either you can get more familiar with the SEMP concepts by checking out the [Concepts Guide](https://docs.solace.com/SEMP/Using-SEMP.htm) or you can see the full [developer documentation for the API](https://docs.solace.com/SEMP/SEMP-API-Ref.htm).

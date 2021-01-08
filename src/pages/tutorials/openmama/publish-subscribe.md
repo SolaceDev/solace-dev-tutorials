@@ -19,7 +19,7 @@ links:
 This tutorial assumes the following:
 
 *   You are familiar with OpenMAMA [core concepts](https://docs.solace.com/Solace-OpenMama/Solace-OpenMAMA-Overview.htm).
-    *   If not, see [this OpenMAMA guide](https://www.openmama.org/content/quick-start-guide) and [Solace OpenMAMA “Hello World” tutorial](../hello-world/).
+    *   If not, see [this OpenMAMA guide](https://openmama.finos.org/quickstart) and [Solace OpenMAMA “Hello World” tutorial](../hello-world/).
 *   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases).
     *   Solace middleware bridge with its dependencies is also installed
@@ -42,7 +42,7 @@ This tutorial will show you how to use OpenMAMA C API:
 
 ## Installation
 
-Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](https://www.openmama.org/content/quick-start-guide#main).
+Installation instructions for OpenMAMA can be found on [OpenMAMA Wiki](https://openmama.finos.org/quickstart#main).
 
 Simplified installation instructions for OpenMAMA with Solace middleware bridge [are available](../installation-linux/).
 
@@ -68,7 +68,7 @@ In OpenMAMA subscribing to a topic means _creating a subscription_. When creatin
 
 You already know what the **transport** is.
 
-For details of the **event queue** see [OpenMAMA Developer’s Guide for C](http://www.openmama.org/sites/default/files/OpenMAMA%20Developer%27s%20Guide%20C.pdf).
+For details of the **event queue** see [OpenMAMA Developer’s Guide for C](https://docplayer.net/5669811-Openmama-developer-s-guide-for-c.html).
 
 When multi-threading is not required it is recommended to use the _default internal event queue_ as an _event queue_:
 
@@ -310,7 +310,7 @@ Our application consists of two executables: _topicSubscriber_ and _topicPublish
 If you combine the example source code shown above and split them into the two mentioned executables, it results in the source that is available for download:
 
 * [mama.properties](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/pubsub/mama.properties)
-* [topicSubscriber.c](https://github.com/SolaceSamples/solace-samples-openmamablob/master/src/pubsub/topicSubscriber.c)
+* [topicSubscriber.c](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/pubsub/topicSubscriber.c)
 * [topicPublisher.c](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/pubsub/topicPublisher.c)
 
 ### Building
@@ -445,10 +445,10 @@ For more information about Solace technology:
 
 Other tutorials and related links:
 
-*   [OpenMAMA Quick Start Guide](https://www.openmama.org/content/quick-start-guide)
+*   [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart)
 *   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
 *   [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through)
 *   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
 *   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
-*   [OpenMAMA Documentation and Developers Guides](https://www.openmama.org/documentation)
+*   [OpenMAMA Documentation and Developers Guides](https://openmama.finos.org/documentation.html)
 *   [Solace’s Solution for OpenMAMA](https://solace.com/products/tech/)
