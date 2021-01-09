@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "/solace-dev-samples/"
+    },
+    {
+      "pattern": "/192.168.1/"
+    },
+    {
+      "pattern": "/solacevmr:8080/"
+    }
+  ],
+  "aliveStatusCodes": [400, 200]
+}
