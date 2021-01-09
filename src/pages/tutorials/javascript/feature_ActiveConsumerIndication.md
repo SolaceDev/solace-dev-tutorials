@@ -55,7 +55,7 @@ When running the full sample, first start this sample and then run the [confirme
 ## Learn More
 
 * Related Source Code: [ActiveConsumerIndication](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/ActiveConsumerIndication)
-* [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/Developer-Guide/Creating-Flows.htm#Active-Flow-Indication)
+* [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Creating-Flows.htm)
 
 
 

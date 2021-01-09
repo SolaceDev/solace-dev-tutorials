@@ -345,7 +345,7 @@ properties.setProperty(JCSMPProperties.HOST, hosts);
 ```
 When you do the Spring Cloud tutorial, you will see that the Solace Spring Cloud Connector takes care of this for you.
 
-Please consult the [Configuring Connections](https://docs.solace.com/Solace-Messaging-APIs/Configuring-Connection-T.htm) page.
+Please consult the [Configuring Connections](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Configuring-Connection-T.htm) page.
 
 As described in that document, when using High Availability it is recommended to set the following configuration:
 

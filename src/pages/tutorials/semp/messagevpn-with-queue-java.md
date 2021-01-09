@@ -33,7 +33,7 @@ This tutorial assumes that you have access to a running Solace VMR with the foll
 
 * A management user authorized with a minimum access scope level of *global/read-write*.
 
-One simple way to get access to a Solace Messaging system is to start a Solace VMR load as outlined [here](https://docs.solace.com/Solace-VMR-Set-Up/Setting-Up-VMRs.htm).
+One simple way to get access to a Solace Messaging system is to start a Solace VMR load as outlined [here](https://docs.solace.com/Solace-SW-Broker-Set-Up/SW-Broker-Image-Setup.htm).
 
 ### Trying it yourself
 

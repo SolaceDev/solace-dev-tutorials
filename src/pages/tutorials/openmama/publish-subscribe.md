@@ -447,7 +447,7 @@ Other tutorials and related links:
 
 *   [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart)
 *   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
-*   [OpenMAMA Example Walk Through](https://www.openmama.org/example-walk-through)
+*   [OpenMAMA Example Walk Through](https://openmama.finos.org/quickstart)
 *   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
 *   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
 *   [OpenMAMA Documentation and Developers Guides](https://openmama.finos.org/documentation.html)
