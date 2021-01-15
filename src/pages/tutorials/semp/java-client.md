@@ -2,9 +2,6 @@
 layout: tutorials
 title: Basic Operations - Java
 summary: The basics of how to create, read, update, and delete a SEMP object using a Java client library
-icon: java-logo.svg
-icon-height: 90px
-icon-width: 72px
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/java-client.md

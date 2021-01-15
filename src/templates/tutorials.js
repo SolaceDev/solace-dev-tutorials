@@ -55,10 +55,12 @@ const tutorials = ({ data, pageContext }) => {
               <a href={node.fields.slug}>
                 <div key={node.id} className="custom-card">
                   <div className="icon">
-                    <img
-                      src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
-                      alt={node.frontmatter.title}
-                    />
+                    {node.frontmatter.icon && (
+                      <img
+                        src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
+                        alt={node.frontmatter.title}
+                      />
+                    )}
                   </div>
                   <div className="category">Fundamentals</div>
                   <div className="title">{node.frontmatter.title}</div>
