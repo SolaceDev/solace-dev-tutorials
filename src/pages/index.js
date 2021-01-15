@@ -6,13 +6,15 @@ import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const SamplesIndex = ({ data }) => {
   const samples = data.allTutorialsYaml.edges
-  const crumbs = [{pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub"}]
+  const crumbs = [
+    { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
+  ]
 
   return (
     <Layout>
       <section id="breadcrumbs">
         <Container>
-          <Breadcrumb crumbs={crumbs}/>
+          <Breadcrumb crumbs={crumbs} />
         </Container>
       </section>
       <section id="intro">
@@ -47,6 +49,7 @@ const SamplesIndex = ({ data }) => {
                     <img
                       src={require(`../images/icons/svg/lang/${node.icon}`)}
                       alt={node.title}
+                      width="100px"
                     />
                   </div>
                   <div className="title">{node.title}</div>
