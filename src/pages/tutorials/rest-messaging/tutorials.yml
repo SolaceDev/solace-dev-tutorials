@@ -1,6 +1,6 @@
 - title: REST Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use REST.
-  icon: java.svg
+  icon: restful.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     download: https://github.com/SolaceSamples/solace-samples-rest-messaging/
