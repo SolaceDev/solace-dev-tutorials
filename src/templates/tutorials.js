@@ -11,7 +11,7 @@ const tutorials = ({ data, pageContext }) => {
   } = pageContext
   const solaceDevCrumb = {
     pathname: "https://solace.dev/",
-    crumbLabel: "Developer Hub"
+    crumbLabel: "Developer Hub",
   }
   crumbs.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
@@ -37,9 +37,9 @@ const tutorials = ({ data, pageContext }) => {
           download={node.buttons.download}
         ></Intro>
       ))}
-      <Container className="pt5 pb5">
+      <Container className="mb4">
         {tutorials.length !== 0 && (
-          <h2>{meta[0].node.section1 || "Fundamentals"}</h2>
+          <h2 className="mt4">{meta[0].node.section1 || "Fundamentals"}</h2>
         )}
         <Row>
           {tutorials.map(({ node }) => (
@@ -50,7 +50,7 @@ const tutorials = ({ data, pageContext }) => {
               md={6}
               lg={4}
               xl={4}
-              className="mt4 mb3"
+              className="mt3 mb2"
             >
               <a href={node.fields.slug}>
                 <div key={node.id} className="custom-card">
@@ -70,11 +70,21 @@ const tutorials = ({ data, pageContext }) => {
           ))}
         </Row>
         {features.length !== 0 && (
-          <h2>{meta[0].node.section2 || "API & Broker Features"}</h2>
+          <h2 className="mt4">
+            {meta[0].node.section2 || "API & Broker Features"}
+          </h2>
         )}
         <Row>
           {features.map(({ node }) => (
-            <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4}>
+            <Col
+              key={node.id}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={4}
+              className="mt3 mb2"
+            >
               <a href={node.fields.slug}>
                 <div key={node.id} className="custom-card">
                   <div className="category">API & Broker Features</div>
