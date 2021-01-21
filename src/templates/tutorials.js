@@ -34,7 +34,7 @@ const tutorials = ({ data, pageContext }) => {
           title={node.title}
           summary={node.summary}
           github={node.buttons.github}
-          download={node.buttons.download}
+          doclink={node.buttons.doclink}
         ></Intro>
       ))}
       <Container className="mb4">
@@ -116,7 +116,7 @@ export const query = graphql`
           summary
           title
           buttons {
-            download
+            doclink
             github
           }
           section1

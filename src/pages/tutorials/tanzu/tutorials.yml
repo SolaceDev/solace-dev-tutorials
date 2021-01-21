@@ -3,4 +3,4 @@
   icon: vmware-tanzu.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java/
+    doclink: https://docs.solace.com/Developer-Tutorials/Samples-VMWareTanzu.htm#mc-main-content

@@ -3,5 +3,5 @@
   icon: spring.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-spring/
+    doclink: https://github.com/SolaceProducts/spring-cloud-stream-binder-solace
   section1: "Getting started with Spring"

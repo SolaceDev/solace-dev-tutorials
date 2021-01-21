@@ -4,4 +4,4 @@
 
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-dotnet/
+    doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/dotNet-API/net-api-home.htm

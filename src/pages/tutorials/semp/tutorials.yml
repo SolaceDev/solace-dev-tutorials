@@ -3,4 +3,4 @@
   icon: semp.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-semp/
+    doclink: https://docs.solace.com/SEMP/Using-SEMP.htm#mc-main-content

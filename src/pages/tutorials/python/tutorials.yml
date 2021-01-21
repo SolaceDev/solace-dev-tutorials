@@ -3,4 +3,4 @@
   icon: python.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-python/
+    doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Solace-APIs-Overview.htm

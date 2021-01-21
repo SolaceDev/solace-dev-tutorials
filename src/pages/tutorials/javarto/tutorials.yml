@@ -3,4 +3,4 @@
   icon: java.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-javarto/
+    doclink: https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-get-started.htm

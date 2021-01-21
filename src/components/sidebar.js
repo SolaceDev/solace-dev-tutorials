@@ -1,6 +1,7 @@
 import React from "react"
 import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faComments } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Sidebar = (props) => {
@@ -47,7 +48,7 @@ const Sidebar = (props) => {
       </Col>
       <Col>
         <Button
-          className="mt3 mb3 w-100"
+          className="mt3 mb2 w-100"
           href={feedback_link}
           target="_blank"
           rel="noreferrer"
@@ -55,6 +56,17 @@ const Sidebar = (props) => {
           size="sm"
         >
           <FontAwesomeIcon icon={faGithub} size="1x" /> Improve this page{" "}
+        </Button>{" "}
+
+        <Button
+          className="mt1 mb3 w-100"
+          href="https://solace.community/"
+          target="_blank"
+          rel="noreferrer"
+          variant="primary"
+          size="sm"
+        >
+          <FontAwesomeIcon icon={faComments} size="1x" /> Discuss in Community{" "}
         </Button>{" "}
       </Col>
     </div>

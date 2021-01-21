@@ -1,7 +1,7 @@
 import React from "react"
 import { Container, Row, Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faDownload } from "@fortawesome/free-solid-svg-icons"
+import { faFileAlt} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Intro = (props) => {
@@ -20,19 +20,19 @@ const Intro = (props) => {
             <p className="mb4">{props.summary}</p>
             <Button
               className="mr2"
-              href={props.github}
+              href={props.doclink}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faGithub} size="1x" /> Improve Page
+              <FontAwesomeIcon icon={faFileAlt} size="1x" /> Documentation
             </Button>
             <Button
               className="ml2"
-              href={props.download}
               target="_blank"
+              href={props.github}
               rel="noopener noreferrer"
             >
-              <FontAwesomeIcon icon={faDownload} size="1x" /> Source Code
+              <FontAwesomeIcon icon={faGithub} size="1x" /> Sample Code
             </Button>
           </Col>
         </Row>

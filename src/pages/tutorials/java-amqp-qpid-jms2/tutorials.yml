@@ -3,4 +3,4 @@
   icon: amqp.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2/
+    doclink: https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm

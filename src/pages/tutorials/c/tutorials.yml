@@ -3,4 +3,4 @@
   icon: c.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
-    download: https://github.com/SolaceSamples/solace-samples-c/
+    doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/C-API/c-api-home.htm
