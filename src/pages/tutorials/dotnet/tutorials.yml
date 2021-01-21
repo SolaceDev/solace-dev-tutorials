@@ -1,6 +1,6 @@
 - title: C#/.NET Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your C#/.NET applications.
-  icon: c-sharp-logo.svg
+  icon: c-sharp.svg
 
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
