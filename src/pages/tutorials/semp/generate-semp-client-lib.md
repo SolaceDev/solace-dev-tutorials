@@ -2,9 +2,6 @@
 layout: tutorials
 title: Generating the SEMP Client Library
 summary: Generate a SEMP management client library for any of the supported programming languages
-icon: generate-semp-client-lib.svg
-icon-height: 70px
-icon-width: 228px
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/generate-semp-client-lib.md
