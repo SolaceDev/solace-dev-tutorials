@@ -21,9 +21,9 @@ const SamplesIndex = ({ data }) => {
             <Col>
               <h1>Solace API Tutorials</h1>
               <p className="pt3 pb3 f5">
-                Below are API tutorials that will help you integrate your
+                Below are API tutorials that will get you started with
                 <br />
-                applications with Solace technologies.
+                building event-driven applications
               </p>
             </Col>
           </Row>

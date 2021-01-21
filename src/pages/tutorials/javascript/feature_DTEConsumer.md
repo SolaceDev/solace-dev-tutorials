@@ -1,7 +1,7 @@
 ---
 layout: features
 title: DTE Consumer
-summary: Demonstrates receiving persistent messages from a DTE.
+summary: Demonstrates receiving persistent messages from a Durable Topic Endpoint.
 links:
     - label: DTEConsumer
       link: /blob/master/src/features/DTEConsumer

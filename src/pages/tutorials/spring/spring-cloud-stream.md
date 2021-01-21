@@ -53,7 +53,7 @@ Solace PubSub+ is a partner maintained binder implementation for Spring Cloud St
 ## Getting the Source
 Clone the GitHub repository containing the Solace samples.
 
-```
+```sh
 git clone https://github.com/SolaceSamples/solace-samples-spring
 cd solace-samples-spring
 ```
@@ -71,7 +71,7 @@ The following sections will run the apps from the command line, but if you prefe
 ### Install the data model
 In order to compile/run the actual applications the data model must first be installed to your local maven repo. 
 
-```
+```sh
 cd spring-samples-datamodel
 mvn clean install
 ```
@@ -79,14 +79,14 @@ mvn clean install
 ### Analyze the Maven Dependencies
 Using your favorite text editor open the cloud-stream-sink/pom.xml file
 
-```
+```sh
 cd cloud-stream-sink
 vim pom.xml
 ```
 
 This file defines the dependencies needed for our Sink app to build & run, but they are also the same for our Source and Processor apps. 
 Note that the app is actually a Spring Boot Application & is based off the spring-boot-starter-parent. 
-```
+```xml
     <parent>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-parent</artifactId>
@@ -97,7 +97,7 @@ Note that the app is actually a Spring Boot Application & is based off the sprin
 
 
 Also note that the dependency below is what enables us to use the Solace PubSub+ Binder. 
-```
+```xml
     <dependency>
             <groupId>com.solace.spring.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-solace</artifactId>
