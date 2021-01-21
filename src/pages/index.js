@@ -47,7 +47,7 @@ const SamplesIndex = ({ data }) => {
                 <div key={node.id} className="custom-card">
                   <div className="icon">
                     <img
-                      src={require(`../images/icons/svg/lang/${node.icon}`)}
+                      src={require(`../images/icons/lang/${node.icon}`)}
                       alt={node.title}
                       width="100px"
                     />

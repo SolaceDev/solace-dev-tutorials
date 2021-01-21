@@ -57,7 +57,7 @@ const tutorials = ({ data, pageContext }) => {
                     {node.frontmatter.icon && (
                       <div className="icon">
                         <img
-                          src={require(`../images/icons/svg/${node.frontmatter.icon}`)}
+                          src={require(`../images/icons/${node.frontmatter.icon}`)}
                           alt={node.frontmatter.title}
                         />
                       </div>
