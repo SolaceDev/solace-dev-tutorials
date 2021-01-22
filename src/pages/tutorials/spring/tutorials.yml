@@ -5,3 +5,4 @@
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://github.com/SolaceProducts/spring-cloud-stream-binder-solace
   section1: "Getting started with Spring"
+  priority: 2

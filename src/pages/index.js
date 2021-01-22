@@ -5,7 +5,8 @@ import Layout from "../components/layout"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const SamplesIndex = ({ data }) => {
-  const samples = data.allTutorialsYaml.edges
+  const samples = data.allTutorialsYaml.edges.sort()
+  console.log(samples)
   const crumbs = [
     { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
   ]
@@ -68,12 +69,18 @@ export default SamplesIndex
 
 export const query = graphql`
   {
-    allTutorialsYaml {
+    allTutorialsYaml(
+      sort: {
+        order: [ASC, ASC]
+        fields: [priority, title]
+        }
+      ) {
       edges {
         node {
           id
           title
           icon
+          priority
           fields {
             slug
           }

@@ -4,3 +4,4 @@
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm
+  priority: 3

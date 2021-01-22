@@ -4,3 +4,5 @@
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/NodeJS-API/node-js-home.htm
+  priority: 2
+

@@ -1,6 +1,7 @@
-- title: Java Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications.
+- title: JCSMP Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JCSMP applications.
   icon: java.svg
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Java-API/java-api-home.htm
+  priority: 1
