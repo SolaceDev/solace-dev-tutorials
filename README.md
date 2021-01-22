@@ -12,7 +12,6 @@ This was created from the [Gatsby Default Starter](https://www.gatsbyjs.org/star
 1. Instal dependencies `npm i`
 1. Run server `npm run develop`
 
-
 ## Naming Conventions For Solace Samples
 
 ### Tutorials 
