@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications for Tanzu.
   icon: vmware-tanzu.svg
   buttons:
-    github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
+    github: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
     doclink: https://docs.solace.com/Developer-Tutorials/Samples-VMWareTanzu.htm#mc-main-content
   type: open

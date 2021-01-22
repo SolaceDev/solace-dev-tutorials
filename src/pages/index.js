@@ -45,7 +45,7 @@ const SamplesIndex = ({ data }) => {
 
       <Container className="pb5">
         {/* SOLACE APIS */}
-        <h2 className="mt4">Solace API</h2>
+        <h2 className="mt4">Solace APIs</h2>
         <Row className="mt3">
           {solaceAPI.map(({ node }) => (
             <ApiCard node={node} />
@@ -53,7 +53,7 @@ const SamplesIndex = ({ data }) => {
         </Row>
 
         {/* OPEN APIS */}
-        <h2 className="mt4">Open API</h2>
+        <h2 className="mt4">Open APIs</h2>
         <Row className="mt3">
           {openAPI.map(({ node }) => (
             <ApiCard node={node} />
@@ -61,7 +61,7 @@ const SamplesIndex = ({ data }) => {
         </Row>
 
         {/* Management APIS */}
-        <h2 className="mt4">Management API</h2>
+        <h2 className="mt4">Management APIs</h2>
         <Row className="mt3">
           {mgmtAPI.map(({ node }) => (
             <ApiCard node={node} />

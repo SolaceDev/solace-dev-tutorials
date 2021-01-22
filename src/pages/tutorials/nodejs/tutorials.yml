@@ -2,7 +2,7 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Node.js applications.
   icon: node-js.svg
   buttons:
-    github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
+    github: https://github.com/SolaceSamples/solace-samples-nodejs
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/NodeJS-API/node-js-home.htm
   type: solace
 

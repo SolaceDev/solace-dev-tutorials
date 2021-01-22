@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use the Solace C APIs.
   icon: c.svg
   buttons:
-    github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
+    github: https://github.com/SolaceSamples/solace-samples-c
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/C-API/c-api-home.htm
   type: solace
