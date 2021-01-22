@@ -6,6 +6,7 @@ import ApiCard from "../components/apiCard"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const SamplesIndex = ({ data }) => {
+  // const samples = data.allTutorialsYaml.edges
   const crumbs = [
     { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
   ]
