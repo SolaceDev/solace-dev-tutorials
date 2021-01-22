@@ -156,7 +156,7 @@ const Footer = () => (
         <Col xs={6} sm={6} md={6} lg={3} xl={3}>
           <ul className="menu">
             <li>
-              <a href="https://solace.com/developers/">Developers</a>
+              <a href="https://solace.dev">Developers</a>
               <ul className="sub-menu">
                 <li>
                   <a
