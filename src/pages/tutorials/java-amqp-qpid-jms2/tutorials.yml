@@ -4,5 +4,5 @@
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm
-  priority: 3
+  type: open
 

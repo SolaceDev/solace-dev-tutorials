@@ -5,11 +5,18 @@ import Layout from "../components/layout"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 
 const SamplesIndex = ({ data }) => {
-  const samples = data.allTutorialsYaml.edges.sort()
-  console.log(samples)
   const crumbs = [
     { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
   ]
+  const solaceAPI = data.allTutorialsYaml.edges.filter(
+    (edge) => edge.node.type === "solace"
+  )
+  const openAPI = data.allTutorialsYaml.edges.filter(
+    (edge) => edge.node.type === "open"
+  )
+  const mgmtAPI = data.allTutorialsYaml.edges.filter(
+    (edge) => edge.node.type === "management"
+  )
 
   return (
     <Layout>
@@ -18,6 +25,7 @@ const SamplesIndex = ({ data }) => {
           <Breadcrumb crumbs={crumbs} />
         </Container>
       </section>
+
       <section id="intro">
         <Container className="pt6 pb5">
           <Row className="tc">
@@ -32,9 +40,13 @@ const SamplesIndex = ({ data }) => {
           </Row>
         </Container>
       </section>
+
       <Container className="pb5">
+
+        {/* SOLACE APIS */}
+        <h2 className="mt4">Solace API</h2>
         <Row className="mt3">
-          {samples.map(({ node }) => (
+          {solaceAPI.map(({ node }) => (
             <Col
               key={node.id}
               xs={12}
@@ -60,6 +72,67 @@ const SamplesIndex = ({ data }) => {
             </Col>
           ))}
         </Row>
+
+        {/* OPEN APIS */}
+        <h2 className="mt4">Open API</h2>
+        <Row className="mt3">
+          {openAPI.map(({ node }) => (
+            <Col
+              key={node.id}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={4}
+              className="mt3 mb3"
+            >
+              <a href={node.fields.slug}>
+                <div key={node.id} className="custom-card">
+                  <div className="icon">
+                    <img
+                      src={require(`../images/icons/lang/${node.icon}`)}
+                      alt={node.title}
+                      width="100px"
+                    />
+                  </div>
+                  <div className="title">{node.title}</div>
+                  <div className="link">Go To Tutorials >></div>
+                </div>
+              </a>
+            </Col>
+          ))}
+        </Row>
+
+        {/* Management APIS */}
+        <h2 className="mt4">Management API</h2>
+        <Row className="mt3">
+          {mgmtAPI.map(({ node }) => (
+            <Col
+              key={node.id}
+              xs={12}
+              sm={12}
+              md={6}
+              lg={4}
+              xl={4}
+              className="mt3 mb3"
+            >
+              <a href={node.fields.slug}>
+                <div key={node.id} className="custom-card">
+                  <div className="icon">
+                    <img
+                      src={require(`../images/icons/lang/${node.icon}`)}
+                      alt={node.title}
+                      width="100px"
+                    />
+                  </div>
+                  <div className="title">{node.title}</div>
+                  <div className="link">Go To Tutorials >></div>
+                </div>
+              </a>
+            </Col>
+          ))}
+        </Row>
+        
       </Container>
     </Layout>
   )
@@ -71,8 +144,8 @@ export const query = graphql`
   {
     allTutorialsYaml(
       sort: {
-        order: [ASC, ASC]
-        fields: [priority, title]
+        order: [ASC]
+        fields: [title]
         }
       ) {
       edges {
@@ -80,7 +153,7 @@ export const query = graphql`
           id
           title
           icon
-          priority
+          type
           fields {
             slug
           }

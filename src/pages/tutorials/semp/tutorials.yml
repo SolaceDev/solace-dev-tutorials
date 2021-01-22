@@ -4,3 +4,4 @@
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/SEMP/Using-SEMP.htm#mc-main-content
+  type: management

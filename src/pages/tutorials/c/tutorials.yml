@@ -4,4 +4,4 @@
   buttons:
     github: https://github.com/SolaceDev/solace-dev-samples/tree/master/src/pages/tutorials
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/C-API/c-api-home.htm
-  priority: 1
+  type: solace
