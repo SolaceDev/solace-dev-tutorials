@@ -846,15 +846,13 @@
 html {
   font-size: 16px;
   color: rgba(0, 0, 0, 1);
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .bg-dark {
@@ -873,7 +871,21 @@ h1 {
 }
 
 h2 {
-  font-size: 27px;
+  font-size: 32px;
+  padding: 10px;
+  border: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+h3 {
+  font-size: 24px;
+  padding: 10px;
+  border: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+h4 {
+  font-size: 18px;
   padding: 10px;
   border: none;
   color: rgba(0, 0, 0, 1);

@@ -35,9 +35,7 @@ const Sidebar = (props) => {
           <div key={node.id} className="pt2 pb2 border-bottom">
             <a
               className={
-                pageContext.slug === node.fields.slug
-                  ? "c-grey"
-                  : "c-grey4 o-90"
+                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
               }
               href={node.fields.slug}
             >
@@ -57,7 +55,6 @@ const Sidebar = (props) => {
         >
           <FontAwesomeIcon icon={faGithub} size="1x" /> Improve this page{" "}
         </Button>{" "}
-
         <Button
           className="mt1 mb3 w-100"
           href="https://solace.community/"
