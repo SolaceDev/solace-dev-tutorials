@@ -46,7 +46,7 @@ Following steps are required to generate the SEMP client library:
 
 There are two ways to obtain the API specification:
 
-* The latest version from the Solace Developer Portal here: [SEMP Schema](https://docs.solace.com/SEMP/SEMP-API-Archit.htm#SEMP)
+* The latest version from the Solace Developer Portal here: [SEMP Specification](https://docs.solace.com/SEMP/SEMP-API-Archit.htm#SEMP)
 * From the Solace Messaging directly via a GET call to the following URI: [http://solacevmr:8080/SEMP/v2/config/spec](http://solacevmr:8080/SEMP/v2/config/spec) - Remember to update the host and port to match your Solace Messaging system.
 
 It is generally recommended to download the latest API specification from the Solace developer portal, which will support all the versions of your currently used Solace messaging routers.
