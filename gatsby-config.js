@@ -40,6 +40,14 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: "gatsby-remark-code-buttons",
+            options: {
+              tooltipText: `Copy to clipboard`,
+              toasterText: "Copied to clipboard",
+              toasterDuration: 5000,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`, // Pulls in images within Markdown
             options: {
               // It's important to specify the maxWidth (in pixels) of
