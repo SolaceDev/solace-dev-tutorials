@@ -1,2 +1,15 @@
+# Netlify Build Plugins
+
+# Optimizes PNG, JPEG, GIF and SVG file formats on Build
+[[plugins]]
+package = "netlify-plugin-image-optim"
+
+# Runs a Google Lighthouse Audit on Build
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
+
+[plugins.inputs.thresholds]
+performance = 0.4
+accessibility = 0.8
+best-practices = 0.7
+seo = 0.8
