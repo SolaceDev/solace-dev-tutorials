@@ -58,7 +58,7 @@ For direct messages however, this is simplified through the use of the `Requesto
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
-`markdown:init.md`
+`markdown:initC.md`
 
 ## Making a request
 

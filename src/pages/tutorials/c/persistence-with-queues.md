@@ -39,7 +39,7 @@ The goal of this tutorial is to understand the following:
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
-`markdown:init.md`
+`markdown:initC.md`
 
 ## Provisioning a Queue through the API
 
