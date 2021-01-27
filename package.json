@@ -21,7 +21,7 @@
     "gatsby-plugin-sharp": "^2.6.27",
     "gatsby-remark-autolink-headers": "^2.3.11",
     "gatsby-remark-code-buttons": "^2.0.4",
-    "gatsby-remark-embed-markdown": "0.0.4",
+    "gatsby-remark-embed-markdown": "file:./gatsby-remark-embed-markdown",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.3.25",
     "gatsby-remark-prismjs": "^3.5.10",
