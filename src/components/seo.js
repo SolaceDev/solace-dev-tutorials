@@ -56,6 +56,10 @@ function SEO({ description, lang, meta, title }) {
           content: `summary`,
         },
         {
+          name: `twitter:img`,
+          content: "../static/solace-dev-solly.png",
+        },
+        {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
         },
