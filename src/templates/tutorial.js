@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Sidebar from "../components/sidebar"
 import { Col, Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import SEO from "../components/seo"
 
 const tutorial = ({ data, pageContext }) => {
   const {
@@ -11,7 +12,7 @@ const tutorial = ({ data, pageContext }) => {
   } = pageContext
   const solaceDevCrumb = {
     pathname: "https://solace.dev/",
-    crumbLabel: "Developer Hub"
+    crumbLabel: "Developer Hub",
   }
   crumbs.unshift(solaceDevCrumb)
   const node = data.tutorialBody.edges[0].node
@@ -29,6 +30,7 @@ const tutorial = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <SEO title={node.frontmatter.title} />
       <section id="breadcrumbs">
         <Container>
           <Breadcrumb

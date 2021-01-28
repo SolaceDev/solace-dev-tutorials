@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
 import ApiCard from "../components/apiCard"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import SEO from "../components/seo"
 
 const SamplesIndex = ({ data }) => {
   // const samples = data.allTutorialsYaml.edges
@@ -22,6 +23,7 @@ const SamplesIndex = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Home" />
       <section id="breadcrumbs">
         <Container>
           <Breadcrumb crumbs={crumbs} />
@@ -67,7 +69,6 @@ const SamplesIndex = ({ data }) => {
             <ApiCard node={node} />
           ))}
         </Row>
-        
       </Container>
     </Layout>
   )
@@ -77,12 +78,7 @@ export default SamplesIndex
 
 export const query = graphql`
   {
-    allTutorialsYaml(
-      sort: {
-        order: [ASC]
-        fields: [title]
-        }
-      ) {
+    allTutorialsYaml(sort: { order: [ASC], fields: [title] }) {
       edges {
         node {
           id

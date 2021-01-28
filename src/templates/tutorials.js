@@ -5,6 +5,7 @@ import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
 import { Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
+import SEO from "../components/seo"
 
 const tutorials = ({ data, pageContext }) => {
   const {
@@ -24,6 +25,7 @@ const tutorials = ({ data, pageContext }) => {
   )
   return (
     <Layout>
+      <SEO title={meta[0].node.title} />
       <section id="breadcrumbs">
         <Container>
           <Breadcrumb crumbs={crumbs} crumbSeparator=" 👉 " />
