@@ -52,11 +52,15 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: "https://solace-dev-samples.netlify.app/solace-dev-solly.png",
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
         {
-          name: `twitter:img`,
+          name: `twitter:image`,
           content: "https://solace-dev-samples.netlify.app/solace-dev-solly.png",
         },
         {
