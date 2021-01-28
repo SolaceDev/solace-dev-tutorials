@@ -39,14 +39,14 @@ module.exports = {
       resolve: `gatsby-transformer-remark`, // Transformer Plugin - Convert Markdown --> HTML
       options: {
         plugins: [
-          // {
-          //   resolve: "gatsby-remark-code-buttons",
-          //   options: {
-          //     tooltipText: `Copy to clipboard`,
-          //     toasterText: "Copied to clipboard",
-          //     toasterDuration: 5000,
-          //   },
-          // },
+          {
+            resolve: "gatsby-remark-code-buttons",
+            options: {
+              tooltipText: `Copy to clipboard`,
+              toasterText: "Copied to clipboard",
+              toasterDuration: 5000,
+            },
+          },
           {
             resolve: `gatsby-remark-images`, // Pulls in images within Markdown
             options: {
