@@ -8,8 +8,9 @@ package = "netlify-plugin-image-optim"
 [[plugins]]
 package = "@netlify/plugin-lighthouse"
 
-[plugins.inputs.thresholds]
-performance = 0.4
-accessibility = 0.8
-best-practices = 0.7
-seo = 0.8
+# Will configure these later
+# [plugins.inputs.thresholds]
+# performance = 0.8
+# accessibility = 0.8
+# best-practices = 0.8
+# seo = 0.8
