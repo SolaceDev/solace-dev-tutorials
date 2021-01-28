@@ -2,7 +2,7 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JMS applications.
   icon: jms.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-jms
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/C-API/c-api-home.htm
+    github: https://github.com/SolaceSamples/solace-samples-jms
   type: solace
 

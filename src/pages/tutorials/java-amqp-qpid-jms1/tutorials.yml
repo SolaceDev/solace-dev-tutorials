@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Apache Qpid JMS 1.1 with AMQP.
   icon: amqp.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms1
     doclink: https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm
+    github: https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms1
   type: open

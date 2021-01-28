@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your C#/.NET applications.
   icon: c-sharp.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-dotnet
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/dotNet-API/net-api-home.htm
+    github: https://github.com/SolaceSamples/solace-samples-dotnet
   type: solace

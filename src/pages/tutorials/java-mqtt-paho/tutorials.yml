@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology using MQTT.
   icon: mqtt.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-mqtt
     doclink: https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-get-started.htm
+    github: https://github.com/SolaceSamples/solace-samples-mqtt
   type: open

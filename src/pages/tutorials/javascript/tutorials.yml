@@ -2,7 +2,7 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JavaScript applications.
   icon: js.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-javascript
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/JavaScript-API/js-home.htm
+    github: https://github.com/SolaceSamples/solace-samples-javascript
   type: solace
 
