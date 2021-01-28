@@ -1,4 +1,4 @@
-- title: MQTT Tutorials
+- title: Java Paho MQTT Tutorials
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology using MQTT.
   icon: mqtt.svg
   buttons:

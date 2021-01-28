@@ -37,7 +37,7 @@ The goal of this tutorial is to demonstrate how to use Apache Qpid JMS 2.0 API o
 2. How to subscribe to a topic and receive a message
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-amqp.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:jmsApi.md`
 
