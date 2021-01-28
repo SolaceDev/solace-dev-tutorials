@@ -76,7 +76,7 @@ In this tutorial the payload of both the request and reply messages are formatte
 ```
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-mqtt.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:mqttApi.md`
 

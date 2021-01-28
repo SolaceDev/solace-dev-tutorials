@@ -32,7 +32,7 @@ The goal of this tutorial is to understand the following:
 1.  How to properly handle QoS 1 message acknowledgments on message send
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-mqtt.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:mqttApi.md`
 

@@ -203,7 +203,7 @@ module.exports = {
           },
           {
             pathname: "/java-mqtt-paho",
-            crumbLabel: "MQTT",
+            crumbLabel: "Java Paho MQTT",
           },
           {
             pathname: "/javarto",

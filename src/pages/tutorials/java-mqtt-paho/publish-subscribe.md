@@ -41,7 +41,7 @@ MQTT is a standard lightweight protocol for sending and receiving messages. As s
 2.  [https://www.eclipse.org/paho/](https://www.eclipse.org/paho/)
 
 `markdown:solaceMessaging-part1.md`
-![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
+![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info-mqtt.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:mqttApi.md`
 
