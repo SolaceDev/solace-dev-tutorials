@@ -219,7 +219,7 @@ module.exports = {
           },
           {
             pathname: "/jcsmp",
-            crumbLabel: "Java",
+            crumbLabel: "JCSMP",
           },
           {
             pathname: "/c",
