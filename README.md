@@ -1,4 +1,4 @@
-# Solace Samples
+# Solace Tutorials
 
 This repo will manage the Solace Tutorials, which helps developers get up to speed sending and receiving messages with Solace technology.
 
