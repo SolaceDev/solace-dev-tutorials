@@ -12,7 +12,7 @@ const SamplesIndex = ({ data }) => {
     { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
   ]
   const solaceAPI = data.allTutorialsYaml.edges.filter(
-    (edge) => edge.node.type === "solace"
+    (edge) => (edge.node.type === "solace" && edge.node.visible !== false)
   )
   const openAPI = data.allTutorialsYaml.edges.filter(
     (edge) => edge.node.type === "open"
@@ -85,6 +85,7 @@ export const query = graphql`
           title
           icon
           type
+          visible
           fields {
             slug
           }
