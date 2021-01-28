@@ -2,7 +2,7 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Spring.
   icon: spring.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-spring
     doclink: https://github.com/SolaceProducts/solace-spring-cloud/tree/master/solace-spring-cloud-starters/solace-spring-cloud-stream-starter
+    github: https://github.com/SolaceSamples/solace-samples-spring
   section1: "Getting started with Spring"
   type: open

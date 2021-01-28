@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use SEMP.
   icon: semp.svg
   buttons:
-    github: https://github.com/SolaceSamples/solace-samples-semp
     doclink: https://docs.solace.com/SEMP/Using-SEMP.htm#mc-main-content
+    github: https://github.com/SolaceSamples/solace-samples-semp
   type: management
