@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Solace API Tutorials`,
-    siteUrl: "http://localhost:8000", // TODO change to prod URL
+    siteUrl: "https://tutorials.solace.dev",
     description: `These tutorials get you up to speed sending and receiving messages with Solace technology.`,
-    author: `@solacedotcom`,
+    author: `@SolaceDevs`,
   },
   plugins: [
     `gatsby-plugin-sharp`,
@@ -30,10 +30,10 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Open Sans\:300,400,600` // you can also specify font weights and styles
+          `Open Sans\:300,400,600`, // you can also specify font weights and styles
         ],
-        display: 'swap'
-      }
+        display: "swap",
+      },
     },
     {
       resolve: `gatsby-transformer-remark`, // Transformer Plugin - Convert Markdown --> HTML
@@ -106,7 +106,7 @@ module.exports = {
               // setting this to '{ sh: "bash" }' will let you use
               // the language "sh" which will highlight using the
               // bash highlighter.
-              aliases: {sh: "bash"},
+              aliases: { sh: "bash" },
               // This toggles the display of line numbers globally alongside the code.
               // To use it, add the following line in gatsby-browser.js
               // right after importing the prism color scheme:
