@@ -4,4 +4,5 @@
   buttons:
     doclink: https://docs.solace.com/Developer-Tutorials/Samples-VMWareTanzu.htm#mc-main-content
     github: https://github.com/SolaceSamples/solace-samples-cloudfoundry-java
+  section1: "Getting started with Tanzu"
   type: open
