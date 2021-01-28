@@ -5,7 +5,7 @@ summary: A Java Application showing how to consume the VCAP_SERVICES environment
 icon: I_java.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/java-app.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/tanzu/java-app.md
 ---
 
 ## Overview

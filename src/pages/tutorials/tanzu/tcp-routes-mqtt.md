@@ -5,7 +5,7 @@ summary: A Simple Application showing how to consume a SERVICE KEY for Solace Me
 icon: I_mqtt_iot.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/tcp-routes-mqtt.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/tanzu/tcp-routes-mqtt.md
 ---
 
 ## Overview

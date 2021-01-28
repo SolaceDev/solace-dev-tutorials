@@ -7,7 +7,7 @@ icon-height: 90px
 icon-width: 180px
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/spring-cloud-autoconf-java.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/tanzu/spring-cloud-autoconf-java.md
 ---
 
 ## Overview

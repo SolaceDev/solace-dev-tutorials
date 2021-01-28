@@ -5,7 +5,7 @@ summary: A sample showing how to connect with the Solace Messaging service using
 icon: I_secure_session.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/secure-session.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/tanzu/secure-session.md
 ---
 
 ## Overview

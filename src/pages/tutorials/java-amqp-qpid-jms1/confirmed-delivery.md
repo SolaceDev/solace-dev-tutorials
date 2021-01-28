@@ -5,7 +5,7 @@ summary: Learn how to confirm that your messages are received by Solace Messagin
 icon: I_dev_confirm.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-1/confirmed-delivery.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-jms1/confirmed-delivery.md
 ---
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by Solace messaging and therefore can be guaranteed of no message loss.  

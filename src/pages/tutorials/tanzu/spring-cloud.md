@@ -5,7 +5,7 @@ summary: A Simple Application showing how to consume the VCAP_SERVICES using Spr
 icon: I_spring_cloud.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/spring-cloud.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/tanzu/spring-cloud.md
 ---
 
 ## Overview
