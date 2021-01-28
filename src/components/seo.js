@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:img`,
-          content: "../static/solace-dev-solly.png",
+          content: "https://solace-dev-samples.netlify.app/solace-dev-solly.png",
         },
         {
           name: `twitter:creator`,
