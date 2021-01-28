@@ -9,7 +9,7 @@ links:
     - label: TopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jms/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the JMS 1.1 API as implemented by Solace. The tutorial will exemplify connecting a client, subscribing to a topic and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.

@@ -5,7 +5,7 @@ summary: How to setup an LDAP Server to work with Solace and some examples on ho
 icon: I_ldap.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/cloudfoundry-java/ldap.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/cloudfoundry-java/ldap.md
 ---
 
 ## Overview

@@ -5,7 +5,7 @@ summary: Learn how to pub/sub using Solace REST Messaging with a Solace VMR.
 icon: I_dev_P+S.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/rest-messaging/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/rest-messaging/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the Solace REST messaging API. The tutorial will show you how to connecting a client, sending a message on a topic subscription and receive this message again through the Solace REST messaging API. This forms the basis for any publish / subscribe message exchange illustrated here:  

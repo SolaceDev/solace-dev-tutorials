@@ -9,7 +9,7 @@ links:
     - label: QueueConsumerJNDI.java
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumerJNDI.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jms/using-jndi.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/using-jndi.md
 ---
 
 This tutorial outlines the use of Java Naming and Directory Interface (JNDI) to create JMS objects including ConnectionFactories and Topic or Queue destinations. The [Publish/Subscribe](../publish-subscribe/) and other tutorials use the approach of programmatically creating these JMS objects, which is usually recommended for developers but JNDI is also a good option which increases the portability of your JMS application code.

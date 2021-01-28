@@ -9,7 +9,7 @@ links:
     - label: TopicSubscriber.js
       link: /blob/master/src/basic-samples/TopicSubscriber.js
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/nodejs/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/nodejs/publish-subscribe.md
 ---
 
 This tutorial will introduce you to the fundamentals of the Solace Node.js API version 10 or later by connecting a client, adding a topic subscription and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.

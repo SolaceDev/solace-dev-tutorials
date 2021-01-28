@@ -5,7 +5,7 @@ summary: Learn to publish and subscribe to messages.
 icon: I_dev_P+S.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/python/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/python/publish-subscribe.md
 ---
 
 `markdown:pubSubIntro.md`

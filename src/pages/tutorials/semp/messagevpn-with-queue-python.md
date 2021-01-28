@@ -4,7 +4,7 @@ title: Message VPN with Queue – Python
 summary: Sample integration into a Python-based management tool using the SEMP Python Client Library
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/semp/messagevpn-with-queue-python.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/semp/messagevpn-with-queue-python.md
 ---
 This tutorial will guide you through the steps of creating a sample Python-based tool to administer basic message-VPNs and queues.
 

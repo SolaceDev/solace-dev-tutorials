@@ -9,7 +9,7 @@ links:
     - label: QoS1Consumer.java
       link: /blob/master/src/main/java/com/solace/samples/QoS1Consumer.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-mqtt-paho/persistence-with-queues.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-mqtt-paho/persistence-with-queues.md
 
 ---
 

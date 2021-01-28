@@ -9,7 +9,7 @@ links:
     - label: ConfirmedPublish.js
       link: /blob/master/src/basic-samples/ConfirmedPublish/ConfirmedPublish.js
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/javascript/confirmed-delivery.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/confirmed-delivery.md
 ---
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. Once an acknowledgement for a message has been received and processed, you have confirmed your persistent messages have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.

@@ -6,7 +6,7 @@ links:
     - label: QueueProvisionAndRequestActiveFlowIndication.java
       link: /blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndRequestActiveFlowIndication.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/feature_active-flow-indication.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jcsmp/feature_active-flow-indication.md
 ---
 
 This sample shows how to request active flow indication for an endpoint (like a Queue) when creating a flow and how to handle active flow indication events.

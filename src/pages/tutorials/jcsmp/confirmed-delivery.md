@@ -7,7 +7,7 @@ links:
     - label: ConfirmedPublish.java
       link: /blob/master/src/main/java/com/solace/samples/ConfirmedPublish.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jcsmp/confirmed-delivery.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jcsmp/confirmed-delivery.md
 ---
 
 

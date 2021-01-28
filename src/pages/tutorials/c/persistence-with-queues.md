@@ -9,7 +9,7 @@ links:
     - label: QueueSubscriber.c
       link: /blob/master/src/intro/QueueSubscriber.c
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/c/persistence-with-queues.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/c/persistence-with-queues.md
 
 ---
 

@@ -11,7 +11,7 @@ links:
     - label: Processor Example
       link: /blob/master/cloud-streams-processor/src/main/java/com/solace/samples/spring/scs/ConvertFtoCProcessor.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/spring/spring-cloud-streams.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/spring/spring-cloud-streams.md
 ---
 
 This tutorial will introduce you to the fundamentals of using Spring Cloud Stream with the Solace PubSub+ Binder. You will create a Source (sending app), a Sink (receiving app), and a Processor (combination of a source & a sink). The apps will exchange events using a PubSub+ Event Broker

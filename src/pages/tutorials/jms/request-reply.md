@@ -9,7 +9,7 @@ links:
     - label: BasicReplier.java
       link: /blob/master/src/main/java/com/solace/samples/BasicReplier.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/jms/request-reply.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/request-reply.md
 ---
 
 

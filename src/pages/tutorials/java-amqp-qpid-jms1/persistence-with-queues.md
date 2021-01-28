@@ -9,7 +9,7 @@ links:
     - label: QueueConsumber.java
       link: /blob/master/src/main/java/com/solace/samples/QueueConsumer.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-amqp-qpid-1/persistence-with-queues.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-1/persistence-with-queues.md
 
 ---
 

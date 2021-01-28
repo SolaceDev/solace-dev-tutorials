@@ -9,7 +9,7 @@ links:
     - label: common.c
       link: /blob/master/src/intro/common.c
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/c/topic-to-queue-mapping.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/c/topic-to-queue-mapping.md
 ---
 
 This tutorial builds on the basic concepts introduced in the [Persistence with Queues tutorial](../persistence-with-queues/) and will show you how to make use of one of PubSub+’s advanced queueing features called “Topic to Queue Mapping.”

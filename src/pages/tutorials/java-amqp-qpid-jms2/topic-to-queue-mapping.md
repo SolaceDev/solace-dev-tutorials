@@ -5,7 +5,7 @@ summary: Learn how to map existing topics to Solace queues.
 icon: I_dev_topic2q.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-amqp-qpid-2/topic-to-queue-mapping.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-2/topic-to-queue-mapping.md
 ---
 
 This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to make use of one of Solace’s advanced queueing features called `Topic to Queue Mapping` with Apache Qpid JMS 2.0 client using AMQP and Solace messaging.

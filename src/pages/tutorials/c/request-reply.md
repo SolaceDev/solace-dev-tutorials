@@ -9,7 +9,7 @@ links:
     - label: BasicReplier.c
       link: /blob/master/src/intro/BasicReplier.c
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/c/request-reply.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/c/request-reply.md
 ---
 
 

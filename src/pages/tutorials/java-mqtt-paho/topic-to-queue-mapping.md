@@ -5,7 +5,7 @@ summary: Learn how to map existing topics to Solace queues.
 icon: I_dev_topic2q.svg
 links:
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-samples/blob/master/src/pages/tutorials/java-mqtt-paho/topic-to-queue-mapping.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-mqtt-paho/topic-to-queue-mapping.md
 ---
 
 The goal of this tutorial is to show you how to make use of one of Solace’s advanced queueing features called “Topic to Queue Mapping.”
