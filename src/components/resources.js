@@ -12,13 +12,11 @@ const Resources = (props) => {
         </Row>
         <Row>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
-            <a href="https://docs.solace.com/Developer-Tutorials/Developer-Tutorials.htm">
+            <a href="https://www.solace.dev/">
               <div className="custom-card">
-                <div className="title">Tutorials</div>
+                <div className="title">Developer Hub</div>
                 <div className="desc">
-                  Get up-to-speed in sending and receiving messages over open
-                  APIs and protocols, Solace Messaging APIs, and Pivotal
-                  Platform.
+                  One-stop shop for all things Solace Developers! 
                 </div>
                 <div className="link">Learn More >></div>
               </div>
