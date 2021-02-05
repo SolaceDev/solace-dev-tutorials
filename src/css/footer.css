@@ -48,12 +48,11 @@ footer img {
 }
 
 .footer-bottom a {
-    color: rgba(255,255,255,.3);
+    color: rgba(255,255,255,.6);
 }
 .footer-bottom a:hover {
     color: #ffffff;
 }
-
 
 a:hover .svg-inline--fa{
     color: rgba(255,255,255,.8);
