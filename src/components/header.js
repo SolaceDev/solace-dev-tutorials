@@ -11,7 +11,12 @@ const Header = ({ siteTitle }) => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={solaceDevLogo} alt="Solace Developers Logo" width="250px" />
+        <img
+          src={solaceDevLogo}
+          alt="Solace Developers Logo"
+          width="250px"
+          height="40px"
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse
