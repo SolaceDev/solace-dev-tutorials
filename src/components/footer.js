@@ -249,7 +249,7 @@ const Footer = () => (
             <FontAwesomeIcon icon={faLinkedin} size="1x" className="ma2" />
           </a>
           <a
-            href="https://twitter.com/solacedotcom"
+            href="https://twitter.com/SolaceDevs"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Twitter"
