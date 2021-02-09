@@ -228,6 +228,7 @@ const Footer = () => (
             href="https://dev.to/solacedevs"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Dev.to"
           >
             <FontAwesomeIcon icon={faDev} size="1x" className="ma2" />
           </a>
@@ -235,6 +236,7 @@ const Footer = () => (
             href="https://github.com/solacedev"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="GitHub"
           >
             <FontAwesomeIcon icon={faGithub} size="1x" className="ma2" />
           </a>
@@ -242,13 +244,15 @@ const Footer = () => (
             href="https://www.linkedin.com/company/solacedotcom/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn"
           >
             <FontAwesomeIcon icon={faLinkedin} size="1x" className="ma2" />
           </a>
           <a
-            href="https://twitter.com/solacedotcom"
+            href="https://twitter.com/SolaceDevs"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Twitter"
           >
             <FontAwesomeIcon icon={faTwitter} size="1x" className="ma2" />
           </a>
@@ -256,6 +260,7 @@ const Footer = () => (
             href="https://www.youtube.com/SolaceSystems"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="YouTube"
           >
             <FontAwesomeIcon icon={faYoutube} size="1x" className="ma2" />
           </a>
