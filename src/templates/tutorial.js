@@ -29,7 +29,7 @@ const tutorial = ({ data, pageContext }) => {
   const section_title = data.allTutorialsYaml.edges[0].node.section1
 
   return (
-    <Layout>
+    <Layout hideResources="true">
       <SEO title={node.frontmatter.title} />
       <section id="breadcrumbs">
         <Container>

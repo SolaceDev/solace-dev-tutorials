@@ -24,7 +24,7 @@ const tutorials = ({ data, pageContext }) => {
     (edge) => edge.node.frontmatter.layout === "features"
   )
   return (
-    <Layout>
+    <Layout hideResources="true">
       <SEO title={meta[0].node.title} />
       <section id="breadcrumbs">
         <Container>

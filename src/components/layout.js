@@ -11,12 +11,14 @@ import Resources from "./resources"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = (props) => {
   return (
     <>
       <Header />
-      <main>{children}</main>
-      <Resources />
+      <main>{props.children}</main>
+      {props.hideResources !== "true" && (
+        <Resources />
+      )}
       <Footer />
     </>
   )
