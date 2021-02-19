@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
+import HowtosCard from "../components/howtosCard"
 import { Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
@@ -23,6 +24,8 @@ const tutorials = ({ data, pageContext }) => {
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
+  const howtos = data.allHowtosYaml.edges
+  
   return (
     <Layout hideResources="true">
       <SEO title={meta[0].node.title} />
@@ -56,10 +59,17 @@ const tutorials = ({ data, pageContext }) => {
         )}
         <Row>
           {features.map(({ node }) => (
-            <TutorialCard
-              node={node}
-              catName="API & Broker Features"
-            ></TutorialCard>
+            <TutorialCard node={node} catName="API & Broker Features"></TutorialCard>
+          ))}
+        </Row>
+        {howtos.length !== 0 && (
+          <h2 className="mt4">
+            How Tos
+          </h2>
+        )}
+        <Row>
+          {howtos.map(({ node }) => (
+            <HowtosCard node={node} catName="How Tos"></HowtosCard>
           ))}
         </Row>
       </Container>
@@ -107,6 +117,16 @@ export const query = graphql`
           }
           id
           fileAbsolutePath
+        }
+      }
+    }
+    allHowtosYaml(filter: {fields: {slugRoot: {eq: $slugRoot}}}) {
+      edges {
+        node {
+          id
+          title
+          link
+          description
         }
       }
     }

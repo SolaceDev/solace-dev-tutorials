@@ -1,0 +1,6 @@
+- title: Basic Replier
+  description: This is a basic replier
+  link: https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/BasicReplier.c
+- title: Basic Requester
+  description: This is a basic requester
+  link: https://github.com/SolaceSamples/solace-samples-c/blob/master/src/intro/BasicRequestor.c
