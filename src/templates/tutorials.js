@@ -44,34 +44,18 @@ const tutorials = ({ data, pageContext }) => {
         ></Intro>
       ))}
       <Container className="mb4">
-        {tutorials.length !== 0 && (
-          <h2 className="mt4">{meta[0].node.section1 || "Fundamentals"}</h2>
-        )}
+
+        {/* Fundamentals */}
+        <TutorialCard content={tutorials} catName={meta[0].node.section1 || "Fundamentals"}></TutorialCard>
+
+        {/* API & Broker Features */}
+        <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
+
+        {/* How Tos */}
         <Row>
-          {tutorials.map(({ node }) => (
-            <TutorialCard node={node} catName="Fundamentals"></TutorialCard>
-          ))}
+          <HowtoTable howtos={howtos}></HowtoTable>
         </Row>
-        {features.length !== 0 && (
-          <h2 className="mt4">
-            {meta[0].node.section2 || "API & Broker Features"}
-          </h2>
-        )}
-        <Row>
-          {features.map(({ node }) => (
-            <TutorialCard node={node} catName="API & Broker Features"></TutorialCard>
-          ))}
-        </Row>
-        {howtos.length !== 0 && (
-          [
-          <h2 className="mt4">
-            How Tos
-          </h2>,
-          <Row>
-            <HowtoTable howtos={howtos}></HowtoTable>
-          </Row>
-          ]
-        )}
+
       </Container>
     </Layout>
   )
