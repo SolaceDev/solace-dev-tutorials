@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
 import HowtoTable from "../components/howtoTable"
-import { Container, Row } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 
@@ -52,9 +52,7 @@ const tutorials = ({ data, pageContext }) => {
         <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
 
         {/* How Tos */}
-        <Row>
-          <HowtoTable howtos={howtos}></HowtoTable>
-        </Row>
+        <HowtoTable howtos={howtos}></HowtoTable>
 
       </Container>
     </Layout>
