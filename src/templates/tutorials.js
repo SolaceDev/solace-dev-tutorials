@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
-import HowtosCard from "../components/howtosCard"
+import HowtoTable from "../components/HowtoTable"
 import { Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
@@ -68,9 +68,7 @@ const tutorials = ({ data, pageContext }) => {
           </h2>
         )}
         <Row>
-          {howtos.map(({ node }) => (
-            <HowtosCard node={node} catName="How Tos"></HowtosCard>
-          ))}
+          <HowtoTable howtos={howtos}></HowtoTable>
         </Row>
       </Container>
     </Layout>
