@@ -45,13 +45,10 @@ const tutorials = ({ data, pageContext }) => {
       ))}
       <Container className="mb4">
 
-        {/* Fundamentals */}
         <TutorialCard content={tutorials} catName={meta[0].node.section1 || "Fundamentals"}></TutorialCard>
 
-        {/* API & Broker Features */}
         <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
 
-        {/* How Tos */}
         <HowtoTable howtos={howtos}></HowtoTable>
 
       </Container>
