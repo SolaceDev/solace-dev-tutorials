@@ -63,13 +63,15 @@ const tutorials = ({ data, pageContext }) => {
           ))}
         </Row>
         {howtos.length !== 0 && (
+          [
           <h2 className="mt4">
             How Tos
-          </h2>
+          </h2>,
+          <Row>
+            <HowtoTable howtos={howtos}></HowtoTable>
+          </Row>
+          ]
         )}
-        <Row>
-          <HowtoTable howtos={howtos}></HowtoTable>
-        </Row>
       </Container>
     </Layout>
   )
