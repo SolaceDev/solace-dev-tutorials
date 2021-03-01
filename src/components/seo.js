@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: "https://solace-dev-tutorials.netlify.app/solace-dev-solly.png",
+          content: "https://solace-dev-tutorials.netlify.app/solace-dev-meta-og-image.png",
         },
         {
           name: `twitter:card`,
@@ -61,7 +61,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: "https://solace-dev-tutorials.netlify.app/solace-dev-solly.png",
+          content: "https://solace-dev-tutorials.netlify.app/solace-dev-meta-og-image.png",
         },
         {
           name: `twitter:creator`,
