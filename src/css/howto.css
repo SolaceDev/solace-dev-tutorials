@@ -1,0 +1,20 @@
+#howto table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+  
+ #howto th:nth-child(1) {
+    width: 40% !important;
+    text-align: left;
+  }
+
+  #howto th:nth-child(2) {
+    width: 60% !important;
+    text-align: left;
+  }
+
+  #howto td:nth-child(1) {
+font-weight: bold;
+  }

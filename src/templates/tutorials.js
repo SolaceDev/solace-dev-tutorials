@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
-import HowtoTable from "../components/howtoTable"
-import { Container } from "react-bootstrap"
+import HowTo from "../components/howto"
+import { Container, Row, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 
@@ -44,13 +44,15 @@ const tutorials = ({ data, pageContext }) => {
         ></Intro>
       ))}
       <Container className="mb4">
-
-        <TutorialCard content={tutorials} catName={meta[0].node.section1 || "Fundamentals"}></TutorialCard>
-
-        <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
-
-        <HowtoTable howtos={howtos}></HowtoTable>
-
+        <Row>
+          <Col xs={12} sm={12} md={8} lg={9} xl={9}>
+            <TutorialCard content={tutorials} catName={meta[0].node.section1 || "Fundamentals"}></TutorialCard>
+            <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
+          </Col>
+          <Col xs={12} sm={12} md={4} lg={3} xl={3}>
+            <HowTo howtos={howtos}></HowTo>
+          </Col>
+        </Row>
       </Container>
     </Layout>
   )
