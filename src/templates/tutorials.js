@@ -25,7 +25,7 @@ const tutorials = ({ data, pageContext }) => {
     (edge) => edge.node.frontmatter.layout === "features"
   )
   const howtos = data.allHowtosYaml.edges
-  
+
   return (
     <Layout hideResources="true">
       <SEO title={meta[0].node.title} />
@@ -43,11 +43,17 @@ const tutorials = ({ data, pageContext }) => {
           doclink={node.buttons.doclink}
         ></Intro>
       ))}
-      <Container className="mb4">
+      <Container className="mt4 pb4">
         <Row>
           <Col xs={12} sm={12} md={8} lg={9} xl={9}>
-            <TutorialCard content={tutorials} catName={meta[0].node.section1 || "Fundamentals"}></TutorialCard>
-            <TutorialCard content={features} catName={meta[0].node.section2 || "API & Broker Features"}></TutorialCard>
+            <TutorialCard
+              content={tutorials}
+              catName={meta[0].node.section1 || "Fundamentals"}
+            ></TutorialCard>
+            <TutorialCard
+              content={features}
+              catName={meta[0].node.section2 || "API & Broker Features"}
+            ></TutorialCard>
           </Col>
           <Col xs={12} sm={12} md={4} lg={3} xl={3}>
             <HowTo howtos={howtos}></HowTo>
@@ -101,7 +107,7 @@ export const query = graphql`
         }
       }
     }
-    allHowtosYaml(filter: {fields: {slugRoot: {eq: $slugRoot}}}) {
+    allHowtosYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {
       edges {
         node {
           id

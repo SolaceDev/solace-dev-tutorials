@@ -1,20 +1,26 @@
-#howto table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    background: #fff;
-  }
-  
- #howto th:nth-child(1) {
-    width: 40% !important;
-    text-align: left;
-  }
+#howto {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(27, 31, 35, 0.15);
+  background: #fff;
+  font-size: 12px;
+  font-weight: 400;
+}
 
-  #howto th:nth-child(2) {
-    width: 60% !important;
-    text-align: left;
-  }
+#howto .heading {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(#20262a, #37404a) !important;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px;
+}
 
-  #howto td:nth-child(1) {
-font-weight: bold;
-  }
+#howto .heading:not(:first-child) {
+  border-radius: 0;
+}

@@ -1,27 +1,31 @@
 import React from "react"
-import { Row, Col } from "react-bootstrap"
+import { Col } from "react-bootstrap"
 
 const HowTo = (props) => {
   let howtos = props.howtos
   return (
     <>
-      {howtos.length !== 0 && (
-        <React.Fragment>
-          <Row>
-            {/* Header */}
-            <h2 className="mt4">
-              How Tos
-            </h2>
-            </Row>
-            <Row>
-              <Col>
-
-                    {howtos.map(({ node }) => (<a href={node.link} target="_blank" rel="noopener noreferrer">{node.title}</a>
-                    ))}
-              </Col>
-          </Row>
-        </React.Fragment>
-      )}
+      <div id="howto">
+        {howtos.length !== 0 && (
+          <React.Fragment>
+            <div className="heading">How Do I?</div>
+            <Col>
+              {howtos.map(({ node }) => (
+                <div className="pt2 pb2 border-bottom">
+                  <a
+                    href={node.link}
+                    className="c-grey c-grey6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {node.title}
+                  </a>
+                </div>
+              ))}
+            </Col>
+          </React.Fragment>
+        )}
+      </div>
     </>
   )
 }

@@ -9,14 +9,20 @@ const TutorialCard = (props) => {
       {content.length !== 0 && (
         <React.Fragment>
           {/* Header */}
-          <h2 className="mt4">
-            {catName}
-          </h2>
-          
+          <h2>{catName}</h2>
+
           {/* Cards */}
           <Row>
             {content.map(({ node }) => (
-              <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4} className="mt3 mb2">
+              <Col
+                key={node.id}
+                xs={12}
+                sm={12}
+                md={6}
+                lg={4}
+                xl={4}
+                className="mb2"
+              >
                 <a href={node.fields.slug}>
                   <div key={node.id} className="custom-card">
                     <div className="category">{catName}</div>
@@ -28,7 +34,6 @@ const TutorialCard = (props) => {
               </Col>
             ))}
           </Row>
-          
         </React.Fragment>
       )}
     </>
