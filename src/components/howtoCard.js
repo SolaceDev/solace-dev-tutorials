@@ -22,8 +22,8 @@ const HowTo = (props) => {
                   xs={12}
                   sm={12}
                   md={6}
-                  lg={4}
-                  xl={4}
+                  lg={3}
+                  xl={3}
                   className="mb4"
                 >
                   <a href={node.link} target="_blank" rel="noopener noreferrer">
