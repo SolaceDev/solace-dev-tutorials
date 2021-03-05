@@ -5,7 +5,7 @@ const HowTo = (props) => {
   let howtos = props.howtos
   return (
     <>
-      <div id="howto">
+      <div id="howto" className="mt5">
         {howtos.length !== 0 && (
           <React.Fragment>
             <div className="heading">How Do I?</div>
