@@ -127,12 +127,12 @@
 }
 
 #howto {
-  background: #ececec !important;
-  border-top: 1px solid #ccc;
+  background: #fdfdfd !important;
+  border-top: 1px solid #eceeef;
 }
 
 .howto-card {
-  background: #f2f2f2;
+  background: #fff;
   font-size: 14px;
   border-radius: 6px;
   border-right: 1px solid #ccc;
