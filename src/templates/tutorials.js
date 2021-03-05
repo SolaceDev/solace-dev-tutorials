@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/tutorialCard"
-import HowTo from "../components/howto"
+import HowTo from "../components/howtoCard"
 import { Container, Row, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
@@ -45,7 +45,7 @@ const tutorials = ({ data, pageContext }) => {
       ))}
       <Container className="mt4 pb4">
         <Row>
-          <Col xs={12} sm={12} md={8} lg={9} xl={9}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
             <TutorialCard
               content={tutorials}
               catName={meta[0].node.section1 || "Fundamentals"}
@@ -55,11 +55,15 @@ const tutorials = ({ data, pageContext }) => {
               catName={meta[0].node.section2 || "API & Broker Features"}
             ></TutorialCard>
           </Col>
-          <Col xs={12} sm={12} md={4} lg={3} xl={3}>
-            <HowTo howtos={howtos}></HowTo>
-          </Col>
         </Row>
       </Container>
+      <section id="howto" className="pb4">
+        <Container>
+          <Row>
+            <HowTo howtos={howtos}></HowTo>
+          </Row>
+        </Container>
+      </section>
     </Layout>
   )
 }
