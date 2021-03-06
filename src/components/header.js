@@ -4,7 +4,7 @@ import { Container, Navbar, Nav } from "react-bootstrap"
 import solaceDevLogo from "../images/solace-developers-logo-white.png"
 
 const Header = ({ siteTitle }) => (
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Container>
       <Navbar.Brand
         href="https://solace.dev/"
