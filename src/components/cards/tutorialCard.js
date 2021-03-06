@@ -1,5 +1,5 @@
 import React from "react"
-import { Col, Row } from "react-bootstrap"
+import { Col, Row, Card } from "react-bootstrap"
 
 const TutorialCard = (props) => {
   let content = props.content
@@ -24,12 +24,14 @@ const TutorialCard = (props) => {
                 className="mb4"
               >
                 <a href={node.fields.slug}>
-                  <div key={node.id} className="custom-card">
-                    <div className="category">{catName}</div>
-                    <div className="title">{node.frontmatter.title}</div>
-                    <div className="desc">{node.frontmatter.summary}</div>
-                    <div className="link">Learn More</div>
-                  </div>
+                  <Card key={node.id}>
+                    <Card.Header>{catName}</Card.Header>
+                    <Card.Body>
+                      <Card.Title>{node.frontmatter.title}</Card.Title>
+                      <Card.Text>{node.frontmatter.summary}</Card.Text>
+                    </Card.Body>
+                    <Card.Footer>Learn More</Card.Footer>
+                  </Card>
                 </a>
               </Col>
             ))}

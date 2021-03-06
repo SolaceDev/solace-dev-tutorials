@@ -29,11 +29,15 @@ const tutorials = ({ data, pageContext }) => {
   return (
     <Layout hideResources="true">
       <SEO title={meta[0].node.title} />
+      {/* TODO - Move Breadcrumbs into it's own component */}
+      {/* Breadcrumbs Start */}
       <section id="breadcrumbs">
         <Container>
           <Breadcrumb crumbs={crumbs} crumbSeparator=" 👉 " />
         </Container>
       </section>
+      {/* Breadcrumbs Ends */}
+      {/* Intro Component Starts */}
       {meta.map(({ node }) => (
         <Intro
           key={node.id}
@@ -43,6 +47,8 @@ const tutorials = ({ data, pageContext }) => {
           doclink={node.buttons.doclink}
         ></Intro>
       ))}
+      {/* Intro Component Ends */}
+      {/* TutorialCard Component Starts */}
       <Container className="mt4 pb4">
         <Row>
           <Col xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -57,6 +63,8 @@ const tutorials = ({ data, pageContext }) => {
           </Col>
         </Row>
       </Container>
+      {/* TutorialCard Component Ends */}
+      {/* HowTos Component Starts */}
       <section id="howto" className="pb4">
         <Container>
           <Row>
@@ -64,11 +72,12 @@ const tutorials = ({ data, pageContext }) => {
           </Row>
         </Container>
       </section>
+      {/* HowTos Component Ends */}
     </Layout>
   )
 }
 
-// query to get all markdowns that are not assets
+// Query to get all markdowns that are not assets
 export const query = graphql`
   query mySamplesQuery($slugRoot: String) {
     allTutorialsYaml(filter: { fields: { slugRoot: { eq: $slugRoot } } }) {

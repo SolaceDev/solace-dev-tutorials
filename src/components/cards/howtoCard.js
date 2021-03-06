@@ -1,7 +1,7 @@
 import React from "react"
 import { Row, Col } from "react-bootstrap"
-import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const HowTo = (props) => {
   let howtos = props.howtos
@@ -25,10 +25,10 @@ const HowTo = (props) => {
                   <a href={node.link} target="_blank" rel="noopener noreferrer">
                     <div key={node.id} className="howto-card">
                       <div className="title">{node.title}</div>
-                      <FontAwesomeIcon
-                        icon={faExternalLinkSquareAlt}
-                        size="1x"
-                      />
+                      <div className="card-footer">
+                        View on GitHub{" "}
+                        <FontAwesomeIcon icon={faGithub} size="1x" />
+                      </div>
                     </div>
                   </a>
                 </Col>
