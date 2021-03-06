@@ -1,9 +1,6 @@
 import React from "react"
 import { Row, Col } from "react-bootstrap"
-import {
-  faCode,
-  faExternalLinkSquareAlt,
-} from "@fortawesome/free-solid-svg-icons"
+import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const HowTo = (props) => {
@@ -14,7 +11,6 @@ const HowTo = (props) => {
         {howtos.length !== 0 && (
           <React.Fragment>
             <h3 className="mt3 mb4">How Do I?</h3>
-
             <Row>
               {howtos.map(({ node }) => (
                 <Col
@@ -33,7 +29,6 @@ const HowTo = (props) => {
                         icon={faExternalLinkSquareAlt}
                         size="1x"
                       />
-                      <FontAwesomeIcon icon={faCode} size="1x" />
                     </div>
                   </a>
                 </Col>

@@ -5,10 +5,10 @@
  */
 
 // module styles
-import "./node_modules/bootstrap/dist/css/bootstrap.css";
-import "prismjs/themes/prism-tomorrow.css";
-import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import "./node_modules/bootstrap/dist/css/bootstrap.css"
+import "prismjs/themes/prism-tomorrow.css"
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 
 // user styles
-import "./src/css/global.css";
-import "./src/css/breadcrumb.css"
+import "./src/css/global.css"
+import "./src/css/breadcrumbs.css"

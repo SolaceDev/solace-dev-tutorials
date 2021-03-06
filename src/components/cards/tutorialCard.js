@@ -28,7 +28,7 @@ const TutorialCard = (props) => {
                     <div className="category">{catName}</div>
                     <div className="title">{node.frontmatter.title}</div>
                     <div className="desc">{node.frontmatter.summary}</div>
-                    <div className="link">Learn More >></div>
+                    <div className="link">Learn More</div>
                   </div>
                 </a>
               </Col>

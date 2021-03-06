@@ -9,13 +9,13 @@ const ApiCard = (props) => {
         <div key={node.id} className="custom-card">
           <div className="icon">
             <img
-              src={require(`../images/icons/lang/${node.icon}`)}
+              src={require(`../../images/icons/lang/${node.icon}`)}
               alt={node.title}
               width="100px"
             />
           </div>
           <div className="title">{node.title}</div>
-          <div className="link">Go To Tutorials >></div>
+          <div className="link">Go To Tutorials</div>
         </div>
       </a>
     </Col>
