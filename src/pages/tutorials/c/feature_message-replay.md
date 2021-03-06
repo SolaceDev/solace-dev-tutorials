@@ -1,7 +1,7 @@
 ---
 layout: features
 title: Message Replay
-summary: Learn how to make use of Message Replay via the Solace C client library
+summary: Learn how to make use of Message Replay via the Solace C client library.
 links:
     - label: MessageReplay.c
       link: /blob/master/src/intro/MessageReplay.c
