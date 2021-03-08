@@ -13,6 +13,7 @@
 
 .card:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: translate(0, -5px);
   cursor: pointer;
 }
 
@@ -53,6 +54,17 @@
   text-transform: uppercase;
   color: #00ad93;
   padding: 10px 0 0 0;
+}
+
+.card-footer .learn-more {
+  color: #00ad93;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 10px;
+  transition: all 0.4s;
+  width: 50%;
 }
 
 .card-img {

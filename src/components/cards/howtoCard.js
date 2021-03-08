@@ -10,7 +10,7 @@ const HowTo = (props) => {
       <div>
         {howtos.length !== 0 && (
           <React.Fragment>
-            <h3 className="mt3 mb4">How Do I?</h3>
+            <h3 className="mt3 mb4">How Tos</h3>
             <Row>
               {howtos.map(({ node }) => (
                 <Col
