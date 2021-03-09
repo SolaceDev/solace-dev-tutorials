@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Generating the SEMP Client Library
-summary: Generate a SEMP management client library for any of the supported programming languages
+summary: Generate a SEMP management client library for any of the supported programming languages.
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/semp/generate-semp-client-lib.md

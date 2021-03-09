@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Publish/Subscribe
-summary: Demonstrates the publish/subscribe message exchange pattern
+summary: Demonstrates the publish/subscribe message exchange pattern.
 icon: I_dev_P+S.svg
 links:
     - label: TopicPublisher.java

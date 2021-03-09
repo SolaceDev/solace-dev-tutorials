@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Message VPN with Queue – Java
-summary: Sample integration into a Java-based management tool using the SEMP Java Client Library
+summary: Sample integration into a Java-based management tool using the SEMP Java Client Library.
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/semp/messagevpn-with-queue-java.md

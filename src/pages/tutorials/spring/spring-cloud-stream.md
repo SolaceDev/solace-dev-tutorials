@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Spring Cloud Stream
-summary: Learn how to use Spring Cloud Stream w/ the PubSub+ Binder
+summary: Learn how to use Spring Cloud Stream w/ the PubSub+ Binder.
 icon: spring-cloud.svg
 links:
     - label: Source Example

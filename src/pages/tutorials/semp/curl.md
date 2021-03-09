@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Basic Operations - curl
-summary: The basics of how to create, read, update, and delete a SEMP object using an HTTP client (curl)
+summary: The basics of how to create, read, update, and delete a SEMP object using an HTTP client (curl).
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/semp/curl.md

@@ -1,7 +1,7 @@
 ---
 layout: features
 title: Message Replay
-summary: Learn how to make use of Message Replay via the Solace Java client library
+summary: Learn how to make use of Message Replay via the Solace Java client library.
 links:
     - label: MessageReplay.java
       link: /blob/master/src/main/java/com/solace/samples/features/MessageReplay.java
