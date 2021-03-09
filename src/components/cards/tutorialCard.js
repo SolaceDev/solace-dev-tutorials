@@ -33,7 +33,7 @@ const TutorialCard = (props) => {
                       <Card.Text>{node.frontmatter.summary}</Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      Learn More{" "}
+                      View The Tutorial{" "}
                       <FontAwesomeIcon
                         icon={faArrowRight}
                         size="1x"

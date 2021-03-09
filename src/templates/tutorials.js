@@ -65,13 +65,9 @@ const tutorials = ({ data, pageContext }) => {
       </Container>
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
-      <section id="howto" className="pb4">
-        <Container>
-          <Row>
-            <HowTo howtos={howtos}></HowTo>
-          </Row>
-        </Container>
-      </section>
+
+      <HowTo howtos={howtos}></HowTo>
+
       {/* HowTos Component Ends */}
     </Layout>
   )
