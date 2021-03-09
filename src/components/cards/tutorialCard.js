@@ -34,7 +34,11 @@ const TutorialCard = (props) => {
                     </Card.Body>
                     <Card.Footer>
                       Learn More{" "}
-                      <FontAwesomeIcon icon={faArrowRight} size="1x" />
+                      <FontAwesomeIcon
+                        icon={faArrowRight}
+                        size="1x"
+                        className="link-arrow"
+                      />
                     </Card.Footer>
                   </Card>
                 </a>
