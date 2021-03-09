@@ -2,6 +2,7 @@ import React from "react"
 import { Container, Row, Col, Card } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 
 const HowTo = (props) => {
   let howtos = props.howtos
@@ -30,13 +31,22 @@ const HowTo = (props) => {
                         rel="noopener noreferrer"
                       >
                         <Card key={node.id}>
+                          <FontAwesomeIcon
+                            icon={faGithub}
+                            size="2x"
+                            className="github-icon"
+                          />
                           <Card.Header>How To</Card.Header>
                           <Card.Body>
                             <Card.Text>{node.title}</Card.Text>
                           </Card.Body>
-                          <Card.Footer className="card-footer">
+                          <Card.Footer>
                             View on GitHub{" "}
-                            <FontAwesomeIcon icon={faGithub} size="1x" />
+                            <FontAwesomeIcon
+                              icon={faArrowRight}
+                              size="1x"
+                              className="link-arrow"
+                            />
                           </Card.Footer>
                         </Card>
                       </a>

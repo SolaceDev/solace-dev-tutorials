@@ -67,6 +67,14 @@
   transform: translate(10px, 0);
 }
 
+.card .github-icon {
+  color: #fff;
+  margin: 0 0 5px 5px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
 .card-img {
   background-color: #00ad93;
   box-shadow: 0 2px 4px rgba(27, 31, 35, 0.8);
