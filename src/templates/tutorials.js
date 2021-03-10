@@ -63,7 +63,7 @@ const tutorials = ({ data, pageContext }) => {
           </Col>
         </Row>
       </Container>
-      <div className="bg-image"></div>
+      {/* <div className="bg-image"></div> */}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
       <HowTo howtos={howtos}></HowTo>
