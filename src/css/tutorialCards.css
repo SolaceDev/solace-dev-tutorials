@@ -7,7 +7,7 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 20px;
   height: 100%;
-  position: relative;
+  z-index: 2;
 }
 
 .card:hover {
