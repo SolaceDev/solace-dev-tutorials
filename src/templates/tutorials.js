@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Intro from "../components/intro"
 import TutorialCard from "../components/cards/tutorialCard"
 import HowTo from "../components/cards/howtoCard"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 
@@ -18,9 +18,11 @@ const tutorials = ({ data, pageContext }) => {
   }
   crumbs.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
+
   const tutorials = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "tutorials"
   )
+  console.log(tutorials)
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
@@ -50,24 +52,19 @@ const tutorials = ({ data, pageContext }) => {
       {/* Intro Component Ends */}
       {/* TutorialCard Component Starts */}
       <Container className="mt4 pb4">
-        <Row>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
-            <TutorialCard
-              content={tutorials}
-              catName={meta[0].node.section1 || "Fundamentals"}
-            ></TutorialCard>
-            <TutorialCard
-              content={features}
-              catName={meta[0].node.section2 || "API & Broker Features"}
-            ></TutorialCard>
-          </Col>
-        </Row>
+        <TutorialCard
+          content={tutorials}
+          catName={meta[0].node.section1 || "Fundamentals"}
+        ></TutorialCard>
+        <TutorialCard
+          content={features}
+          catName={meta[0].node.section2 || "API & Broker Features"}
+        ></TutorialCard>
       </Container>
       {/* <div className="bg-image"></div> */}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
       <HowTo howtos={howtos}></HowTo>
-
       {/* HowTos Component Ends */}
     </Layout>
   )
@@ -111,6 +108,7 @@ export const query = graphql`
             slug
             slugRoot
           }
+          timeToRead
           id
           fileAbsolutePath
         }

@@ -1,7 +1,7 @@
 import React from "react"
 import { Col, Row, Card } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faClock } from "@fortawesome/free-solid-svg-icons"
 
 const TutorialCard = (props) => {
   let content = props.content
@@ -27,7 +27,17 @@ const TutorialCard = (props) => {
               >
                 <a href={node.fields.slug}>
                   <Card key={node.id}>
-                    <Card.Header>{catName}</Card.Header>
+                    <Card.Header>
+                      <div>{catName}</div>
+                      <div>
+                        <FontAwesomeIcon
+                          icon={faClock}
+                          size="1x"
+                          className="link-arrow"
+                        />
+                        {node.timeToRead} Min
+                      </div>
+                    </Card.Header>
                     <Card.Body>
                       <Card.Title>{node.frontmatter.title}</Card.Title>
                       <Card.Text>{node.frontmatter.summary}</Card.Text>
