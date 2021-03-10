@@ -861,7 +861,7 @@ body {
 }
 
 main {
-  min-height: 75vh;
+  /* min-height: 75vh; */
   background: #fff !important;
 }
 
