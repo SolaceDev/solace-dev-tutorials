@@ -226,6 +226,10 @@ module.exports = {
             crumbLabel: "C",
           },
           {
+            pathname: "/java",
+            crumbLabel: "Java",
+          },
+          {
             pathname: "/java-amqp-qpid-jms1",
             crumbLabel: "Apache Qpid JMS 1.1 AMQP",
           },

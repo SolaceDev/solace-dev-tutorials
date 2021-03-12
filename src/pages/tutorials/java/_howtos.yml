@@ -1,12 +1,12 @@
 - title: Access Additional Information About Receiver 
   description: Sample code showing how to access additional information about receiver 
   link: AccessAdditionalInformationAboutReceiver.java
-- title: Access Api Information 
-  description: Sample code showing how to access api information 
-  link: AccessApiInformation.java
-- title: Access Api Metrics 
-  description: Sample code showing how to access api metrics 
-  link: AccessApiMetrics.java
+- title: Access API Information 
+  description: Sample code showing how to access API information 
+  link: AccessAPIInformation.java
+- title: Access API Metrics 
+  description: Sample code showing how to access API metrics 
+  link: AccessAPIMetrics.java
 - title: Access Pub Sub Plus Service 
   description: Sample code showing how to access pub sub plus service 
   link: AccessPubSubPlusService.java

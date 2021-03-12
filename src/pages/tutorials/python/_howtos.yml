@@ -46,9 +46,6 @@
 - title: Connect messaging service
   description: Sample code showing how to connect messaging service
   link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_connect_messaging_service.py
-- title: For unusual situtations
-  description: Sample code showing how to for unusual situtations
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_for_unusual_situtations.py
 - title: Handle service interruption and failures
   description: Sample code showing how to handle service interruption and failures
   link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_handle_service_interruption_and_failures.py
