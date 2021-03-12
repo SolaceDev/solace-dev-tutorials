@@ -22,7 +22,6 @@ const tutorials = ({ data, pageContext }) => {
   const tutorials = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "tutorials"
   )
-  console.log(tutorials)
   const features = data.allMarkdownRemark.edges.filter(
     (edge) => edge.node.frontmatter.layout === "features"
   )
@@ -51,17 +50,19 @@ const tutorials = ({ data, pageContext }) => {
       ))}
       {/* Intro Component Ends */}
       {/* TutorialCard Component Starts */}
-      <Container className="mt4 pb4">
-        <h2>Tutorials</h2>
-        <TutorialCard
-          content={tutorials}
-          catName={meta[0].node.section1 || "Key Message Exchange Patterns"}
-        ></TutorialCard>
-        <TutorialCard
-          content={features}
-          catName={meta[0].node.section2 || "API & Broker Features"}
-        ></TutorialCard>
-      </Container>
+      {(tutorials.length !== 0 || features.length !== 0) && (
+        <Container className="mt4 pb4">
+          <h2>Tutorials</h2>
+          <TutorialCard
+            content={tutorials}
+            catName={meta[0].node.section1 || "Key Message Exchange Patterns"}
+          ></TutorialCard>
+          <TutorialCard
+            content={features}
+            catName={meta[0].node.section2 || "API & Broker Features"}
+          ></TutorialCard>
+        </Container>
+      )}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
       <HowTo howtos={howtos}></HowTo>
