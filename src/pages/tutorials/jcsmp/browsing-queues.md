@@ -6,7 +6,7 @@ links:
     - label: QueueProvisionAndBrowse.java
       link: /blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndBrowse.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jcsmp/feature_browsing-queues.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jcsmp/browsing-queues.md
 ---
 
 This sample shows how to use a Browser to look at the Queue's contents.
