@@ -1,0 +1,21 @@
+#howto {
+  background: #e6e6e6;
+  background-image: url(../images/bg/how-to-tile-bg.png);
+  background-repeat: repeat;
+  border-top: 1px solid #ededed;
+}
+
+.bg-image {
+  background: url(../../src/images/illustrations/undraw_code_inspection_bdl7.svg);
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  right: 0;
+  bottom: 0;
+  margin-right: 0;
+  margin-bottom: 330px;
+  z-index: 1;
+}

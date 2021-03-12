@@ -1,83 +1,17 @@
-.card {
-  background: #20262a !important;
-  border-radius: 8px;
-  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0,0,0,.12);
-  border-width: 1px;
-  border-style: solid;
-  border-color: #e0e0e0;
-  text-align: center;
-
-}
-
-.card a {
-  color: #474747;
-}
-
-.card a:hover {
-  color: #474747;
-  box-shadow: 0 4px 6px rgba(49, 54, 68, 0.05),
-    0 5px 20px rgba(49, 54, 68, 0.08);
-  cursor: pointer;
-  transform: translatey(-4px);
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
-}
-
-.card-img {
-  background-color: #00ad93;
-  box-shadow: 0 2px 4px rgba(27, 31, 35, 0.8);
-  border-radius: 200px;
-  border: 4px solid #fff;
-  height: 60%;
-  width: 30%;
-  margin-top: -50px;
-}
-
-.card-title {
-  background: linear-gradient(#20262a, #37404a) !important;
-  border-radius: 0;
-  margin-top: 8px;
-  color: #fff;
-  font-size: 18px;
-}
-
-.card-text {
-  font-size: 14px;
-  line-height: normal;
-  text-align: left;
-}
-
-.card-body {
-  padding: 0;
-  background: #fff;
-}
-
-.card-footer {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-align: right;
-  color: #00ad93;
-  border-radius: 0 0 0 8px !important;
-}
-
-
-
-
 .custom-card {
   background: #20262a;
   border-radius: 6px;
   border-top: 1px solid #00ad93;
   border-right: 5px solid #000;
   border-bottom: 5px solid #000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   padding: 20px;
   height: 100%;
   position: relative;
 }
 .custom-card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   cursor: pointer;
 }
 
@@ -90,7 +24,7 @@
 }
 
 .custom-card .category {
-  color:rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
@@ -104,7 +38,7 @@
 }
 
 .custom-card .desc {
-  color:rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 100;
   font-size: 13px;
   padding-bottom: 20px;
@@ -119,6 +53,12 @@
   position: absolute;
   bottom: 10px;
   transition: all 0.4s;
+  width: 50%;
+}
+
+.custom-card .arrow {
+  color: #fff;
+  width: 50%;
 }
 
 .custom-card .icon {

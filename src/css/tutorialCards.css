@@ -1,0 +1,106 @@
+.card {
+  background: #20262a;
+  border-radius: 6px;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px;
+  height: 100%;
+  z-index: 2;
+}
+
+.card:hover {
+  border-top: 1px solid #00ad93;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transform: translate(0, -5px);
+  cursor: pointer;
+}
+
+.card-header {
+  color: hsla(0, 0%, 100%, 0.4);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 0 0 5px 0;
+  border: none;
+}
+
+.card-header .icon-doc {
+  color: #fff;
+  margin: 0 0 5px 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.card-body {
+  padding: 0;
+}
+
+.card-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.card-text {
+  color: hsla(0, 0%, 100%, 0.8);
+  font-weight: 100;
+  font-size: 13px;
+  padding: 0 0 10px 0;
+  transition: all 0.3s;
+}
+
+.card:hover .card-text {
+  color: #fff;
+}
+
+.card-footer {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #00ad93;
+  padding: 10px 0 0 0;
+}
+
+.card-footer .link-arrow {
+  visibility: hidden;
+}
+
+.card:hover .link-arrow {
+  color: #00ad93;
+  visibility: visible;
+  transition: all 0.5s ease-in-out;
+  transform: translate(10px, 0);
+}
+
+.card .icon-clock {
+  color: hsla(0, 0%, 100%, 0.4);
+  position: absolute;
+  font-size: 12px;
+  bottom: 20px;
+  right: 20px;
+  font-weight: 300;
+}
+.card:hover .icon-clock {
+  color: hsla(0, 0%, 100%, 0.4) !important;
+}
+
+.card .github-icon {
+  color: #fff;
+  margin: 0 0 5px 5px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.card-img {
+  background-color: #00ad93;
+  box-shadow: 0 2px 4px rgba(27, 31, 35, 0.8);
+  border-radius: 200px;
+  border: 4px solid #fff;
+  height: 60%;
+  width: 30%;
+  margin-top: -50px;
+}

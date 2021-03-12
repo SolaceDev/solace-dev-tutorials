@@ -1,7 +1,7 @@
 ---
 layout: features
 title: Message Replay
-summary: Learn how to make use of Message Replay via the Solace JavaScript client library
+summary: Learn how to make use of Message Replay via the Solace JavaScript client library.
 links:
     - label: MessageReplay.html
       link: /blob/master/src/features/MessageReplay/MessageReplay.html

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Container, Navbar, Nav } from "react-bootstrap"
-import solaceDevLogo from "../images/solace-developers-logo-white-lrg.png"
+import solaceDevLogo from "../images/solace-developers-logo-white.png"
 
 const Header = ({ siteTitle }) => (
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -14,8 +14,8 @@ const Header = ({ siteTitle }) => (
         <img
           src={solaceDevLogo}
           alt="Solace Developers Logo"
-          width="250px"
-          height="40px"
+          width="125px"
+          height="36px"
         />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />

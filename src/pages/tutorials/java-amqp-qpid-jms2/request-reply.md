@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Request/Reply
-summary: Demonstrates the request/reply message exchange pattern
+summary: Demonstrates the request/reply message exchange pattern.
 icon: I_dev_R+R.svg
 links:
     - label: BasicRequestor.java

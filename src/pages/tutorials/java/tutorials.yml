@@ -1,0 +1,7 @@
+- title: Java Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications.
+  icon: java.svg
+  buttons:
+    doclink: http://solace.dev/java-api-docs
+    github: https://github.com/SolaceSamples/solace-samples-java-new
+  type: solace

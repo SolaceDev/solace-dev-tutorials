@@ -1,14 +1,18 @@
 import React from "react"
-
+import { Col, Container, Row } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// TODO fix styling for 404, etc.
 const NotFoundPage = () => (
   <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <SEO title="404: Page Not Found" />
+    <Container className="mt5 mb5">
+      <Row>
+        <Col>
+          <h1>Page Not Found</h1>
+        </Col>
+      </Row>
+    </Container>
   </Layout>
 )
 

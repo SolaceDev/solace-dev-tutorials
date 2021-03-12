@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import Layout from "../components/layout"
-import ApiCard from "../components/apiCard"
+import ApiCard from "../components/cards/apiCard"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 
@@ -12,7 +12,7 @@ const SamplesIndex = ({ data }) => {
     { pathname: "https://solace.dev/", crumbLabel: " 👈 Developer Hub" },
   ]
   const solaceAPI = data.allTutorialsYaml.edges.filter(
-    (edge) => (edge.node.type === "solace" && edge.node.visible !== false)
+    (edge) => edge.node.type === "solace" && edge.node.visible !== false
   )
   const openAPI = data.allTutorialsYaml.edges.filter(
     (edge) => edge.node.type === "open"

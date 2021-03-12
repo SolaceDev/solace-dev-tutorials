@@ -43,6 +43,26 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: "slugRoot",
     })
   }
+  
+  if (node.internal.type === "HowtosYaml") {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: "pages",
+    })
+
+    createNodeField({
+      node,
+      value: slug,
+      name: "slug",
+    })
+
+    createNodeField({
+      node,
+      value: slug.split("/")[1],
+      name: "slugRoot",
+    })
+  }
 }
 
 exports.createPages = async ({ graphql, actions }) => {

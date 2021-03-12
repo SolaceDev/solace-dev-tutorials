@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Spring Boot Autoconfig (JMS)
-summary: Learn how to use Spring Boot Autoconfig with JMS & Solace PubSub+ 
+summary: Learn how to use Spring Boot Autoconfig with JMS & Solace PubSub+.
 icon: spring-cloud.svg
 links:
     - label: SpringBootSender

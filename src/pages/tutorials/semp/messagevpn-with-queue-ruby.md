@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Message VPN with Queue – Ruby
-summary: Sample integration into a Ruby-based management tool using the SEMP Ruby Client Library
+summary: Sample integration into a Ruby-based management tool using the SEMP Ruby Client Library.
 links:
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/semp/messagevpn-with-queue-ruby.md
