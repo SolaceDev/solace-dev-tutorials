@@ -1,8 +1,7 @@
-- title: JavaScript Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JavaScript applications.
+- title: JavaScript
+  summary: These Tutorials and How Tos will get you up to speed sending and receiving messages with Solace technology in your JavaScript applications.
   icon: js.svg
   buttons:
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/JavaScript-API/js-home.htm
     github: https://github.com/SolaceSamples/solace-samples-javascript
   type: solace
-

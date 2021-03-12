@@ -1,7 +1,11 @@
 import React from "react"
 import { Col, Row, Card } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faClock } from "@fortawesome/free-solid-svg-icons"
+import {
+  faArrowRight,
+  faClock,
+  faFileCode,
+} from "@fortawesome/free-solid-svg-icons"
 
 const TutorialCard = (props) => {
   let content = props.content
@@ -11,7 +15,7 @@ const TutorialCard = (props) => {
       {content.length !== 0 && (
         <React.Fragment>
           {/* Header */}
-          <h2>{catName}</h2>
+          <h3>{catName}</h3>
 
           {/* Cards */}
           <Row>
@@ -28,14 +32,13 @@ const TutorialCard = (props) => {
                 <a href={node.fields.slug}>
                   <Card key={node.id}>
                     <Card.Header>
-                      <div>{catName}</div>
+                      {catName}
                       <div>
                         <FontAwesomeIcon
-                          icon={faClock}
-                          size="1x"
-                          className="link-arrow"
+                          icon={faFileCode}
+                          size="2x"
+                          className="icon-doc"
                         />
-                        {node.timeToRead} Min
                       </div>
                     </Card.Header>
                     <Card.Body>
@@ -49,6 +52,10 @@ const TutorialCard = (props) => {
                         size="1x"
                         className="link-arrow"
                       />
+                      <div className="icon-clock">
+                        <FontAwesomeIcon icon={faClock} size="1x" />{" "}
+                        {node.timeToRead} Min
+                      </div>
                     </Card.Footer>
                   </Card>
                 </a>

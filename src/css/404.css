@@ -1,0 +1,123 @@
+/* 404 */
+section.error404 {
+  padding: 60px 0;
+}
+.error404 .container {
+  max-width: 1100px;
+}
+
+.error404-header {
+  background-color: #20262a;
+  color: #fff;
+}
+.error404-header h1 {
+  display: none;
+}
+.error404-header .row {
+  align-items: flex-end;
+}
+
+.error404 .solly404 img {
+  margin-bottom: 0;
+  max-width: 400px;
+  width: 100%;
+}
+.error404_right {
+  align-self: center;
+}
+.error404 .right_side {
+  background-color: #00c895;
+  background: linear-gradient(131deg, #00c895 0%, #12b39b 52%);
+  color: #fff;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+}
+.error404 .right_side h2 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.error404 .right_side p {
+  color: #fff;
+}
+
+.error404 [rel="tooltip"] {
+  border-bottom: 1px dashed #fff;
+}
+.error404 [rel="tooltip"]:hover {
+  cursor: help;
+}
+
+#tooltip {
+  background: #20262a;
+  color: #fff;
+  border-radius: 8px;
+  border: solid 1px #00c895;
+  border-bottom: solid 5px #00c895;
+  letter-spacing: 0.3px;
+  max-width: 400px;
+  padding: 10px;
+  position: absolute;
+  text-align: left;
+  z-index: 100;
+}
+#tooltip:after {
+  /* triangle decoration */
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #00c895;
+  content: "";
+  left: 50%;
+  bottom: -15px;
+  margin-left: -10px;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+#tooltip.top:after {
+  border-top-color: transparent;
+  border-bottom: 10px solid #00c895;
+  bottom: auto;
+  top: -21px;
+}
+#tooltip.left:after {
+  left: 10px;
+  margin: 0;
+}
+
+#tooltip.right:after {
+  right: 10px;
+  left: auto;
+  margin: 0;
+}
+.error404-text {
+  padding: 100px 0;
+}
+.error404-text ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+.error404-text li {
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 7px;
+}
+
+@media (min-width: 768px) {
+  .error404 .solly404 img {
+    max-width: 550px;
+  }
+  .error404 .right_side h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  .error404 .right_side {
+    max-width: 400px;
+    margin-top: 20%;
+    padding: 30px 40px 10px 40px;
+  }
+}
+/* 404 end*/

@@ -52,16 +52,16 @@ const tutorials = ({ data, pageContext }) => {
       {/* Intro Component Ends */}
       {/* TutorialCard Component Starts */}
       <Container className="mt4 pb4">
+        <h2>Tutorials</h2>
         <TutorialCard
           content={tutorials}
-          catName={meta[0].node.section1 || "Fundamentals"}
+          catName={meta[0].node.section1 || "Key Message Exchange Patterns"}
         ></TutorialCard>
         <TutorialCard
           content={features}
           catName={meta[0].node.section2 || "API & Broker Features"}
         ></TutorialCard>
       </Container>
-      {/* <div className="bg-image"></div> */}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
       <HowTo howtos={howtos}></HowTo>

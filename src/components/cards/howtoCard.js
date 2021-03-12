@@ -2,7 +2,10 @@ import React from "react"
 import { Container, Row, Col, Card } from "react-bootstrap"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import {
+  faArrowRight,
+  faExternalLinkSquareAlt,
+} from "@fortawesome/free-solid-svg-icons"
 
 const HowTo = (props) => {
   let howtos = props.howtos
@@ -12,7 +15,7 @@ const HowTo = (props) => {
         <Container>
           {howtos.length !== 0 && (
             <React.Fragment>
-              <h2 className="mt3 mb4">How Tos</h2>
+              <h2 className="mt4 mb3">How Tos</h2>
               <Row>
                 {howtos.map(({ node }) => (
                   <Col
@@ -30,23 +33,43 @@ const HowTo = (props) => {
                       rel="noopener noreferrer"
                     >
                       <Card key={node.id}>
-                        <FontAwesomeIcon
-                          icon={faGithub}
-                          size="2x"
-                          className="github-icon"
-                        />
-                        <Card.Header>How To</Card.Header>
+                        <Card.Header>How to</Card.Header>
                         <Card.Body>
                           <Card.Text>{node.title}</Card.Text>
                         </Card.Body>
-                        <Card.Footer>
-                          View on GitHub{" "}
-                          <FontAwesomeIcon
-                            icon={faArrowRight}
-                            size="1x"
-                            className="link-arrow"
-                          />
-                        </Card.Footer>
+                        {node.link.includes("github") ? (
+                          <>
+                            <FontAwesomeIcon
+                              icon={faGithub}
+                              size="1x"
+                              className="github-icon"
+                            />
+                            <Card.Footer>
+                              View on Github{" "}
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                size="1x"
+                                className="link-arrow"
+                              />
+                            </Card.Footer>
+                          </>
+                        ) : (
+                          <>
+                            <FontAwesomeIcon
+                              icon={faExternalLinkSquareAlt}
+                              size="1x"
+                              className="github-icon"
+                            />
+                            <Card.Footer>
+                              Open External Link{" "}
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                size="1x"
+                                className="link-arrow"
+                              />
+                            </Card.Footer>
+                          </>
+                        )}
                       </Card>
                     </a>
                   </Col>

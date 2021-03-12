@@ -26,6 +26,14 @@
   border: none;
 }
 
+.card-header .icon-doc {
+  color: #fff;
+  margin: 0 0 5px 5px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 .card-body {
   padding: 0;
 }
@@ -67,12 +75,24 @@
   transform: translate(10px, 0);
 }
 
+.card .icon-clock {
+  color: hsla(0, 0%, 100%, 0.4);
+  position: absolute;
+  font-size: 12px;
+  bottom: 20px;
+  right: 20px;
+  font-weight: 300;
+}
+.card:hover .icon-clock {
+  color: hsla(0, 0%, 100%, 0.4) !important;
+}
+
 .card .github-icon {
   color: #fff;
   margin: 0 0 5px 5px;
   position: absolute;
-  top: 8px;
-  right: 8px;
+  bottom: 20px;
+  right: 20px;
 }
 
 .card-img {
