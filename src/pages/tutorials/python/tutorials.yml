@@ -5,3 +5,4 @@
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Solace-APIs-Overview.htm
     github: https://github.com/SolaceSamples/solace-samples-python
   type: solace
+  visible: true 
