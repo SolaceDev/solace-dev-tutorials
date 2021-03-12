@@ -2,7 +2,6 @@ import React from "react"
 import { Col, Container, Row } from "react-bootstrap"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import notFound from "../images/illustrations/undraw_page_not_found_su7k.svg"
 
 const NotFoundPage = () => (
   <Layout>
@@ -10,7 +9,7 @@ const NotFoundPage = () => (
     <Container className="mt5 mb5">
       <Row>
         <Col>
-          <img src={notFound} alt="404: Page Not Found" />
+          <h1>Page Not Found</h1>
         </Col>
       </Row>
     </Container>
