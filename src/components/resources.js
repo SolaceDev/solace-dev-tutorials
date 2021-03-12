@@ -16,9 +16,9 @@ const Resources = (props) => {
               <div className="custom-card">
                 <div className="title">Developer Hub</div>
                 <div className="desc">
-                  One-stop shop for all things Solace Developers! 
+                  One-stop shop for all things Solace Developers!
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -29,7 +29,7 @@ const Resources = (props) => {
                 <div className="desc">
                   A high level introduction to how PubSub+ processes events.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -38,7 +38,7 @@ const Resources = (props) => {
               <div className="custom-card">
                 <div className="title">Developer Community</div>
                 <div className="desc">Technical community for PubSub+.</div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -50,7 +50,7 @@ const Resources = (props) => {
                   Check out our Solace samples for Spring, JMS, MQTT, AMQP,
                   JavaScript, and more.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -63,18 +63,18 @@ const Resources = (props) => {
                   PubSub+ messaging components whether you're using SMF, JMS,
                   MQTT, or REST.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
             <a href="https://codelabs.solace.dev/">
               <div className="custom-card">
-                <div className="title">Codelabs & Workshops</div>
+                <div className="title">Codelabs &amp; Workshops</div>
                 <div className="desc">
                   Get guided, hands on coding experience with PubSub+ Codelabs.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -86,7 +86,7 @@ const Resources = (props) => {
                   Access Quick Start deployment templates and Connectors
                   available as open source projects on GitHub.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -97,7 +97,7 @@ const Resources = (props) => {
                 <div className="desc">
                   Get up to speed on our managed messaging service.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -108,7 +108,7 @@ const Resources = (props) => {
                 <div className="desc">
                   Learn the fundamentals of PubSub+ at your own pace.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -120,7 +120,7 @@ const Resources = (props) => {
                   Get a jump start plugging PubSub+ into AWS, Kafka, Spark, IBM
                   WebSphere, and much more.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -134,7 +134,7 @@ const Resources = (props) => {
                   checking configuration, and exploring features associated with
                   your PubSub+ message broker.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
@@ -146,7 +146,7 @@ const Resources = (props) => {
                   Get all the information you need to use JMS ToolBox with
                   PubSub+.
                 </div>
-                <div className="link">Learn More >></div>
+                <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
