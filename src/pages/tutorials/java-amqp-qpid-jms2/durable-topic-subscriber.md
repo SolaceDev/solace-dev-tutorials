@@ -6,7 +6,7 @@ links:
     - label: DurableTopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/features/DurableTopicSubscriber.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-jms2/DurableTopicSubscriber.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-jms2/durable-topic-subscriber.md
 ---
 
 This feature introduction shows how to create a Durable JMS Subscription using Apache Qpid JMS 2.0 API over AMQP 1.0.  Solace messaging is used as the message broker. In Solace messaging, durable JMS subscriptions are implemented using Durable Topic Endpoints (DTEs).
@@ -38,5 +38,5 @@ String message = context.createDurableConsumer(topic, SUBSCRIPTION_NAME).receive
 
 ## Learn More
 
-* Related Source Code: [DurableTopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-amqp-qpid-jms2/blob/master/src/main/java/com/solace/samples/features/DurableTopicSubscriber.java)
+* Related Source Code: [DurableTopicSubscriber.java](https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-amqp-qpid-jms2/durable-topic-subscriber.md)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Creating-Durable-Topic-S.htm)

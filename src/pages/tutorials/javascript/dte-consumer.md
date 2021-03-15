@@ -6,7 +6,7 @@ links:
     - label: DTEConsumer
       link: /blob/master/src/features/DTEConsumer
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/DTEConsumer.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/dte-consumer.md
 ---
 
 This sample shows how to consume messages from a Durable Topic Endpoint (DTE). The sample will bind to a DTE and subscribe with the topic "tutorial/topic".

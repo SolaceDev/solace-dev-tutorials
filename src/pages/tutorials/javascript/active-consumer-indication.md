@@ -6,7 +6,7 @@ links:
     - label: ActiveConsumerIndication
       link: /blob/master/src/features/ActiveConsumerIndication
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/ActiveConsumerIndication.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/active-consumer-indication.md
 ---
 
 This feature introduction shows how multiple consumers can bind to an exclusive queue, but only one client at a time can actively receive messages.
