@@ -22,7 +22,7 @@ This tutorial will introduce you to the fundamentals of the JMS 1.1 API as imple
 
 JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
 
-1.  [http://java.sun.com/products/jms/docs.html](http://java.sun.com/products/jms/docs.html)
+1.  [https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html)
 2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
 3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
 
@@ -40,7 +40,7 @@ This tutorial will make use of two JMS administered objects:
 *   A ConnectionFactory object – used by JMS clients to successfully connect to a message broker like a Solace message router
 *   A Topic Destination – used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/pubsub`
 
-The [JMS specification](http://java.sun.com/products/jms/docs.html) provides two ways to create administered objects:
+The [JMS specification](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html) provides two ways to create administered objects:
 
 *   JNDI Lookup
 *   Programmatic creation through the JMS API.
