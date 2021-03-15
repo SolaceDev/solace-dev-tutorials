@@ -3,11 +3,11 @@
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessAdditionalInformationAboutReceiver.java
 - title: Access API Information 
   description: Sample code showing how to access API information 
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessAPIInformation.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessApiInformation.java
 - title: Access API Metrics 
   description: Sample code showing how to access API metrics 
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessAPIMetrics.java
-- title: Access Pub Sub Plus Service 
+  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessApiMetrics.java
+- title: Access PubSubPlus Service 
   description: Sample code showing how to access pub sub plus service 
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessPubSubPlusService.java
 - title: Configure Authentication 
@@ -88,6 +88,6 @@
 - title: Use Versioned Configuration Profiles 
   description: Sample code showing how to use versioned configuration profiles 
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToUseVersionedConfigurationProfiles.java
-- title: Work with Solace Sdt Types and Messages 
+- title: Work with Solace SDT Types and Messages 
   description: Sample code showing how to work with solace sdt types and messages 
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToWorkWithSolaceSDTTypesAndMessages.java
