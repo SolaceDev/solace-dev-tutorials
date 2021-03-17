@@ -65,7 +65,9 @@ const tutorials = ({ data, pageContext }) => {
       )}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
-      <HowTo howtos={howtos}></HowTo>
+      {howtos.length !== 0 && (
+        <HowTo howtos={howtos}></HowTo>
+      )}
       {/* HowTos Component Ends */}
     </Layout>
   )
