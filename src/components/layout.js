@@ -10,16 +10,23 @@ import "../css/layout.css"
 import Resources from "./resources"
 import Header from "./header"
 import Footer from "./footer"
+import ReactTooltip from "react-tooltip"
 
 const Layout = (props) => {
   return (
     <>
       <Header />
       <main>{props.children}</main>
-      {props.hideResources !== "true" && (
-        <Resources />
-      )}
+      {props.hideResources !== "true" && <Resources />}
       <Footer />
+      <ReactTooltip
+        id="registerTip"
+        place="top"
+        effect="float"
+        backgroundColor="black"
+      >
+        Spraint is the proper name for otter dung
+      </ReactTooltip>
     </>
   )
 }
