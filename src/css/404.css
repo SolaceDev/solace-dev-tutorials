@@ -96,15 +96,9 @@
   margin: 0;
 }
 
-/* Large (lg) */
+/* Fix Solly / Card Margin */
 @media (max-width: 991px) {
   .card {
     margin-top: 0px;
   }
-}
-/* Medium (md) */
-@media (max-width: 768px) {
-}
-/* Small (sm) */
-@media (max-width: 576px) {
 }
