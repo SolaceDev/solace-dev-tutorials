@@ -25,9 +25,8 @@ const NotFoundPage = () => (
               <p>
                 This isn’t what you hoped for (it’s better, I know), but without
                 me you’d be up{" "}
-                <span data-tip data-for="registerTip">
-                  {" "}
-                  spraint{" "}
+                <span data-tip data-for="registerTip" className="spraint">
+                  spraint
                 </span>{" "}
                 creek without a paddle.
               </p>

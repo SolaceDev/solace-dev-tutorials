@@ -12,6 +12,10 @@
   border-radius: 20px;
 }
 
+.spraint {
+  border-bottom: 1px dotted #fff;
+}
+
 #error404 .card:hover {
   transition: none;
   transform: none;
