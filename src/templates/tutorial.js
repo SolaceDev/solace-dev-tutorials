@@ -14,7 +14,10 @@ const tutorial = ({ data, pageContext }) => {
     pathname: "https://solace.dev/",
     crumbLabel: "Developer Hub",
   }
-  crumbs.unshift(solaceDevCrumb)
+  // Clone the crumbs object
+  const crumbs_clone = crumbs.slice()
+  crumbs_clone.unshift(solaceDevCrumb)
+
   const node = data.tutorialBody.edges[0].node
   const tutorials = data.tableOfContent.edges.filter(
     (edge) => edge.node.frontmatter.layout === "tutorials"
@@ -34,7 +37,7 @@ const tutorial = ({ data, pageContext }) => {
       <section id="breadcrumbs">
         <Container>
           <Breadcrumb
-            crumbs={crumbs}
+            crumbs={crumbs_clone}
             crumbLabel={node.frontmatter.title}
             crumbSeparator=" 👉 "
           />
