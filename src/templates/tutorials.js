@@ -16,7 +16,9 @@ const tutorials = ({ data, pageContext }) => {
     pathname: "https://solace.dev/",
     crumbLabel: "Developer Hub",
   }
-  crumbs.unshift(solaceDevCrumb)
+  // Clone the crumbs object
+  const crumbs_clone = crumbs.slice()
+  crumbs_clone.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
 
   const tutorials = data.allMarkdownRemark.edges.filter(
@@ -34,7 +36,7 @@ const tutorials = ({ data, pageContext }) => {
       {/* Breadcrumbs Start */}
       <section id="breadcrumbs">
         <Container>
-          <Breadcrumb crumbs={crumbs} crumbSeparator=" 👉 " />
+          <Breadcrumb crumbs={crumbs_clone} crumbSeparator=" 👉 " />
         </Container>
       </section>
       {/* Breadcrumbs Ends */}
@@ -65,9 +67,7 @@ const tutorials = ({ data, pageContext }) => {
       )}
       {/* TutorialCard Component Ends */}
       {/* HowTos Component Starts */}
-      {howtos.length !== 0 && (
-        <HowTo howtos={howtos}></HowTo>
-      )}
+      {howtos.length !== 0 && <HowTo howtos={howtos}></HowTo>}
       {/* HowTos Component Ends */}
     </Layout>
   )
