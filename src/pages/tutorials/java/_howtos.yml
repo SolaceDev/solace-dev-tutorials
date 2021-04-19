@@ -7,8 +7,8 @@
 - title: Access API Metrics 
   description: Sample code showing how to access API metrics 
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessApiMetrics.java
-- title: Access PubSubPlus Service 
-  description: Sample code showing how to access pub sub plus service 
+- title: Access PubSub+ Service 
+  description: Sample code showing how to access PubSub+ service 
   link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/samples/src/main/java/com/solace/sampler/HowToAccessPubSubPlusService.java
 - title: Configure Authentication 
   description: Sample code showing how to configure authentication 
