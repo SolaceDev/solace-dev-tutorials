@@ -1,4 +1,4 @@
-name: Broken Links Checker
+name: tutorials.solace.dev full site link checker
 on:
   push:
     branches: [master]
