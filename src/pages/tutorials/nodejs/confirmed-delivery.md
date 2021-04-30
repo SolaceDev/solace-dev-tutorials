@@ -46,7 +46,7 @@ const correlationKey = {
 
 ## Implementing Confirmed Delivery
 
-This tutorial’s sample application will send guaranteed messages to a durable queue pre-configured on the Solace message router. You can use SolAdmin or SEMP to create a durable queue. This tutorial assumes that the queue named `tutorial/queue` has been created.
+This tutorial’s sample application will send guaranteed messages to a durable queue pre-configured on the Solace message router. You can use Solace PubSub+ Manager, SEMP or CLI to create a durable queue. This tutorial assumes that the queue named `tutorial/queue` has been created.
 
 The structure of the code is similar to the Persistence with Queues tutorial's Queue Producer with the additions of several messages being sent and the acknowledgements logged for each message that comes back from the Solace message router.
 
