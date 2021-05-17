@@ -6,3 +6,4 @@
     github: https://github.com/SolaceSamples/solace-samples-spring
   section1: "Getting started with Spring"
   type: open
+  visible: false

@@ -15,10 +15,10 @@ const SamplesIndex = ({ data }) => {
     (edge) => edge.node.type === "solace" && edge.node.visible !== false
   )
   const openAPI = data.allTutorialsYaml.edges.filter(
-    (edge) => edge.node.type === "open"
+    (edge) => edge.node.type === "open" && edge.node.visible !== false
   )
   const mgmtAPI = data.allTutorialsYaml.edges.filter(
-    (edge) => edge.node.type === "management"
+    (edge) => edge.node.type === "management" && edge.node.visible !== false
   )
 
   return (
