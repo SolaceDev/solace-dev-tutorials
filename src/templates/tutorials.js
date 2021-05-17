@@ -22,10 +22,14 @@ const tutorials = ({ data, pageContext }) => {
   const meta = data.allTutorialsYaml.edges
 
   const tutorials = data.allMarkdownRemark.edges.filter(
-    (edge) => edge.node.frontmatter.layout === "tutorials"
+    (edge) =>
+      edge.node.frontmatter.layout === "tutorials" &&
+      edge.node.frontmatter.visible !== false
   )
   const features = data.allMarkdownRemark.edges.filter(
-    (edge) => edge.node.frontmatter.layout === "features"
+    (edge) =>
+      edge.node.frontmatter.layout === "features" &&
+      edge.node.frontmatter.visible !== false
   )
   const howtos = data.allHowtosYaml.edges
 
@@ -104,6 +108,7 @@ export const query = graphql`
           frontmatter {
             title
             layout
+            visible
             summary
             icon
           }

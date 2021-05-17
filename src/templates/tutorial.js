@@ -20,10 +20,14 @@ const tutorial = ({ data, pageContext }) => {
 
   const node = data.tutorialBody.edges[0].node
   const tutorials = data.tableOfContent.edges.filter(
-    (edge) => edge.node.frontmatter.layout === "tutorials"
+    (edge) =>
+      edge.node.frontmatter.layout === "tutorials" &&
+      edge.node.frontmatter.visible !== false
   )
   const features = data.tableOfContent.edges.filter(
-    (edge) => edge.node.frontmatter.layout === "features"
+    (edge) =>
+      edge.node.frontmatter.layout === "features" &&
+      edge.node.frontmatter.visible !== false
   )
   const feedback = node.frontmatter.links.filter(
     (link) => link.label === "feedback"
@@ -84,6 +88,7 @@ export const query = graphql`
             title
             summary
             layout
+            visible
             links {
               label
               link
