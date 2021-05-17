@@ -15,6 +15,11 @@ links:
 visible: true
 ---
 
+## WARNING - PLEASE READ
+**⚠️  This tutorial uses the Spring Cloud Stream Annotation based coding style. This was deprecated in Spring Cloud Stream v3. It is recommended that you use Spring Cloud Function to write the code instead.     
+⚠️  See this codelab to get started: [Spring Cloud Stream Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-basics/#0)    
+🔨 This tutorial will be modified soon**
+
 This tutorial will introduce you to the fundamentals of using Spring Cloud Stream with the Solace PubSub+ Binder. You will create a Source (sending app), a Sink (receiving app), and a Processor (combination of a source & a sink). The apps will exchange events using a PubSub+ Event Broker
 
 ## Assumptions

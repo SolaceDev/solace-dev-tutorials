@@ -1,3 +1,7 @@
-- title: Codelab title
-  description: Codelab description
-  link: https://codelabs.solace.dev/?cat=spring
+- title: Codelab - Spring Cloud Stream Basics
+  description: Spring Cloud Stream Basics Codelab
+  link: https://codelabs.solace.dev/codelabs/spring-cloud-stream-basics/#0
+- title: Codelab - AsyncAPI Code Generation w/ Spring Cloud Stream
+  desription: AsyncAPI Code Generation of Cloud Stream Microservice
+  link: https://codelabs.solace.dev/codelabs/design-to-code-workshop/#0
+  
