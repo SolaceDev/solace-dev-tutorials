@@ -19,6 +19,7 @@
     "gatsby-plugin-offline": "^3.2.23",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-plugin-sitemap": "^4.4.0",
     "gatsby-remark-autolink-headers": "^2.3.11",
     "gatsby-remark-code-buttons": "^2.0.4",
     "gatsby-remark-embed-markdown": "file:./gatsby-remark-embed-markdown",
