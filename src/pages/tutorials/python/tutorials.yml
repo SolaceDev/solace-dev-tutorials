@@ -1,8 +1,8 @@
 - title: Python Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Spring.
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Python.
   icon: python.svg
   buttons:
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Solace-APIs-Overview.htm
     github: https://github.com/SolaceSamples/solace-samples-python
   type: solace
-  visible: true 
+  visible: true
