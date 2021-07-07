@@ -4,5 +4,5 @@
   buttons:
     doclink: https://docs.solace.com/SEMP/Using-SEMP.htm#mc-main-content
     github: https://github.com/SolaceSamples/solace-samples-semp
-   section1: "Getting started with SEMP"
+  section1: "Getting started with SEMP"
   type: management
