@@ -17,6 +17,10 @@ visible: true
 
 This tutorial will introduce you to the fundamentals of using Spring Cloud Stream with the Solace PubSub+ Binder. You will create a Source (sending app), a Sink (receiving app), and a Processor (combination of a source & a sink). The apps will exchange events using a PubSub+ Event Broker
 
+For more Spring Cloud Stream Tutorials checkout these codelabs: 
+* [Spring Cloud Stream - Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-basics/#0)
+* [Spring Cloud Stream - Beyond the Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-beyond/#0)
+
 ## Assumptions
 
 This tutorial assumes the following:
