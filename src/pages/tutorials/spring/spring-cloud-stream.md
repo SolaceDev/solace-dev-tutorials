@@ -310,33 +310,33 @@ The class is a processor which receives SensorReadings in Fahrenheit from one to
 
 A few things to take note of: 
 * As before the [@SpringBootApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-using-springbootapplication-annotation.html) annotation enables auto-configuration and component scanning
-* The @EnableBinding(Processor.class) annotation tells us that we are creating a Spring Cloud Stream Processor application and enables the Input & Output channels on the Processor binding interface. This Processor's input & output channels will be bound to our messaging system at run time.
-* The @StreamListener annotation defines which method should be invoked when an event is received on our Processor.INPUT channel. 
-* The @SendTo annotation defines that returned objects from the method should be sent to the Processor.OUTPUT channel. 
+* The `convertFtoC` function returns a `java.util.function.Function` which as a Functional Interface allows Spring Cloud Function to register it. Once registered this function can be used to handle messages via Spring Cloud Stream.
+* Note that a `java.util.function.Function` will be used as Spring Cloud Stream processor where it will receive a message, process it and publish an outbound message.
+* In this case we can see that our function will receive and publish a `SensorReading`. This is possible due to the built in Content-Type Negotiation provided by the framework
 
 ``` java
 @SpringBootApplication
-@EnableBinding(Processor.class)
 public class ConvertFtoCProcessor {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(ConvertFtoCProcessor.class);
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(ConvertFtoCProcessor.class, args);
 	}
-	
-	@StreamListener(Processor.INPUT)
-	@SendTo(Processor.OUTPUT)
-	public SensorReading handle(SensorReading reading) {
-		
-		log.info("Received: " + reading);
-        
-		double temperatureCelsius = (reading.getTemperature().doubleValue() - 32) * 5 / 9;
-                reading.setTemperature(temperatureCelsius);
-                reading.setBaseUnit(SensorReading.BaseUnit.CELSIUS);
 
-		log.info("Sending: " + reading);
-		return reading;
+	@Bean
+	public Function<SensorReading, SensorReading> convertFtoC() {
+		return reading -> {
+			log.info("Received: " + reading);
+
+			double temperatureCelsius = (reading.getTemperature().doubleValue() - 32) * 5 / 9;
+			reading.setTemperature(temperatureCelsius);
+			reading.setBaseUnit(SensorReading.BaseUnit.CELSIUS);
+
+			log.info("Sending: " + reading);
+
+			return reading;
+		};
 	}
 }
 ```
@@ -346,24 +346,27 @@ Next let's take a look at the application.yml file. As stated earlier, an applic
 Open the application.yml file in the "cloud-streams-processor" project.
 
 A few things to take note of: 
-* The spring.cloud.stream.bindings now includes both an "input" and an "output" binding. These maps to our Processor.INPUT & Processor.OUTPUT channels respectively; note that our output destination will be sending to the "sensor/temperature/celsius" topic. 
-* Spring Cloud Stream will use the "local_solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
+* The `spring.cloud.function.definition` registers the `convertFtoC` function with Spring Cloud Function which also allows it to be used by Spring Cloud Stream
+* The `spring.cloud.stream.bindings` section of the config tells Spring Cloud Stream how to configure the bindings of our function to both send and receive messages. Receiving is configured by the `convertFtoC-in-0` binding and sending is configured via `convertFtoC-out-0`.
+* Spring Cloud Stream will use the "local-solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
 * Change your *host*, *msgVpn*, *clientUsername* & *clientPassword* to match your Solace Messaging Service. The host should be your "SMF URI".
-* Notice the spring.cloud.steam.solace.bindings is where Solace specific configurations can be set; here we see an example where we are telling our input bindings queue to subscribe to the "sensor/temperature/fahrenheit" topic.
+* Notice the `spring.cloud.steam.solace.bindings` section of the config is where Solace specific configurations can be set; here we see an example where we are telling our input bindings queue to subscribe to the "sensor/temperature/fahrenheit" topic.
 
 ``` yaml
 spring:
   cloud:
+    function:
+      definition: convertFtoC
     stream:
-      default-binder: local_solace
+      default-binder: local-solace
       bindings:
-        input:
+        convertFtoC-in-0:
           destination: TEMPS.Q
           group: PROCESSOR
-        output:
+        convertFtoC-out-0:
           destination: sensor/temperature/celsius
       binders:
-        local_solace:
+        local-solace:
           type: solace
           environment:
             solace:
@@ -376,7 +379,7 @@ spring:
                 reconnectRetries: -1
       solace:
         bindings:
-          input:
+          convertFtoC-in-0:
             consumer:
               queueAdditionalSubscriptions: sensor/temperature/fahrenheit
 ```
