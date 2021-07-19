@@ -15,12 +15,11 @@ links:
 visible: true
 ---
 
-## WARNING - PLEASE READ
-**⚠️  This tutorial uses the Spring Cloud Stream Annotation based coding style. This was deprecated in Spring Cloud Stream v3. It is recommended that you use Spring Cloud Function to write the code instead.     
-⚠️  See this codelab to get started: [Spring Cloud Stream Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-basics/#0)    
-🔨 This tutorial will be modified soon**
-
 This tutorial will introduce you to the fundamentals of using Spring Cloud Stream with the Solace PubSub+ Binder. You will create a Source (sending app), a Sink (receiving app), and a Processor (combination of a source & a sink). The apps will exchange events using a PubSub+ Event Broker
+
+For more Spring Cloud Stream Tutorials checkout these codelabs: 
+* [Spring Cloud Stream - Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-basics/#0)
+* [Spring Cloud Stream - Beyond the Basics](https://codelabs.solace.dev/codelabs/spring-cloud-stream-beyond/#0)
 
 ## Assumptions
 
@@ -96,7 +95,7 @@ Note that the app is actually a Spring Boot Application & is based off the sprin
     <parent>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-parent</artifactId>
-            <version>2.1.4.RELEASE</version>
+            <version>2.4.5.RELEASE</version>
             <relativePath /> <!-- lookup parent from repository -->
     </parent>
 ```
@@ -107,7 +106,7 @@ Also note that the dependency below is what enables us to use the Solace PubSub+
     <dependency>
             <groupId>com.solace.spring.cloud</groupId>
             <artifactId>spring-cloud-starter-stream-solace</artifactId>
-            <version>1.1.0</version>
+            <version>2.1.0</version>
     </dependency>
 ```
 
@@ -122,24 +121,26 @@ This class shows how simple it is to write a Spring Cloud Stream app that consum
 
 A few things to take note of: 
 * The [@SpringBootApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-using-springbootapplication-annotation.html) annotation enables auto-configuration and component scanning
-* The @EnableBinding(Sink.class) annotation tells us that we are creating a Spring Cloud Stream Sink application and enables the Input channel on the Sink binding interface. This Sink's input channel will connect to our messaging system at run time.
-* The @StreamListener annotation defines which method should be invoked when an event is received on our Sink.INPUT channel. 
+* The `sink` @Bean returns a `java.util.function.Consumer`. This function implements a Functional Interface, and can be registered as a Spring Cloud Function which in turn is recognized by Spring Cloud Stream. Because it is a `Consumer` it will be wired up by Spring Cloud Stream to receive events from the broker. 
+* The `Consumer<SensorReading>` returned takes in a `SensorReading` object. This is possible because the framework performs Content-Type Negotiation prior to calling the function for each message that will be receeived. 
 
 ``` java
 @SpringBootApplication
-@EnableBinding(Sink.class)
 public class TemperatureSink {
-	private static final Logger log = LoggerFactory.getLogger(TemperatureSink.class);
 
-	public static void main(String[] args) {
-		SpringApplication.run(TemperatureSink.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TemperatureSink.class, args);
+    }
 
-	// We define an INPUT to receive from
-	@StreamListener(Sink.INPUT)
-	public void sink(SensorReading reading) {
-		log.info("Received: " + reading);
-	}
+    /*
+     *  Check out application.yml to see how to
+     *  1. Use `concurrency` for multi-threaded consumption
+     *  2. Use wildcard subscriptions
+     */
+    @Bean
+    public Consumer<SensorReading> sink(){
+        return System.out::println;
+    }
 }
 ```
 
@@ -148,23 +149,29 @@ Next let's take a look at the application.yml file. Note that an application.pro
 Open the application.yml file in the "cloud-stream-sink" project.
 
 A few things to take note of: 
-* The spring.cloud.stream.bindings.input maps to the Sink.INPUT channel for our application. 
-* Because a "group" is specified we are following the Spring Cloud Stream "Consumer Group" pattern; if a group was not specified the app would be using the Publish-Subscribe pattern. 
-* Spring Cloud Stream will use the "local_solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
+* The `spring.cloud.function.definition` registered the `sink` function as a Spring Cloud Function.
+* The properties under `spring.cloud.stream.bindings.sink-in-0` configure how Spring Cloud Stream binds the `sink` function to the broker via the Solace binder. Note the `in-0` part of the configuration mean the first input parameter of the method. This would be `out-0` for the first output parameter. It could also be `in-1`, `out-1`, etc. if Tuples are used to have multiple inputs/outputs to a function but this isn't very common and won't be covered here. 
+* Note the `spring.cloud.stream.bindings.sink-in-0.group` property is set. When this is specified we are following the Spring Cloud Stream "Consumer Group" pattern; if a group was not specified the app would be using the Publish-Subscribe pattern. 
+* Spring Cloud Stream will use the "local-solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
 * Change your *host*, *msgVpn*, *clientUsername* & *clientPassword* to match your Solace Messaging Service. The host should be your "SMF URI".
-* Notice the spring.cloud.steams.solace.bindings is where Solace specific configurations can be set; here we see an example where we are telling our queue to subscribe to the "sensor/temperature/>" topic. The ">" sign is a wildcard that allows us to receive any events sent to any topic that starts with "sensor/temperature/" We will be using it to receive events on "sensor/temperature/celsius" and "sensor/temperature/fahrenheit" topics.
+* Notice the `spring.cloud.stream.solace.bindings` is where Solace specific configurations can be set; here we see an example where we are telling our queue to subscribe to the "sensor/temperature/>" topic. The ">" sign is a wildcard that allows us to receive any events sent to any topic that starts with "sensor/temperature/" We will be using it to receive events on "sensor/temperature/celsius" and "sensor/temperature/fahrenheit" topics.
 
 ``` yaml
 spring:
   cloud:
+    function:
+      definition: sink
     stream:
       bindings:
-        input:
+        sink-in-0:
           destination: TEMPS.Q
           #The presence of "group" tells the binder to follow the "consumer group" pattern
           group: SINK
+          consumer:
+            #Concurrency can be used with a consumer group (non-exclusive queue) to process events in multiple threads
+            concurrency: 5
       binders:
-        local_solace:
+        local-solace:
           type: solace
           environment:
             solace:
@@ -175,8 +182,9 @@ spring:
                 clientPassword: default
       solace:
         bindings:
-          input:
+          sink-in-0:
             consumer:
+              #This adds a topic subscription w/ wildcards to the queue created with a name of TEMPS.Q.SINK above
               queueAdditionalSubscriptions: sensor/temperature/>
 ```
 
@@ -203,37 +211,44 @@ The class is simulating an event source that emits a temperature, in Fahrenheit,
 
 A few things to take note of: 
 * As before the [@SpringBootApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-using-springbootapplication-annotation.html) annotation enables auto-configuration and component scanning
-* The @EnableBinding(Source.class) annotation tells us that we are creating a Spring Cloud Stream Source application and enables the Output channel on the Source binding interface. This Source's output channel will connect to our messaging system at run time.
-* The @InboundChannelAdapter annotation defines which method will be using the Source.OUTPUT channel. It is also enabling us to send a SensorReading event every 5 seconds. 
+* Note the `emitSensorReading` @Bean returns a `Supplier<SensorReading>`. Since `java.util.function.Supplier` is a functional interface this bean will be registerd with Spring Cloud Function and can be used by Spring Cloud Stream to publish messages.
+* By default the Supplier will be triggered every 1 second, but that can be tuned using the `spring.cloud.stream.poller.fixed-delay` property
+* Since the Supplier outputs a `SensorReading` that object will be included as the payload of messages published back to the Event Broker.
 
 ``` java
 @SpringBootApplication
-@EnableBinding(Source.class)
 public class FahrenheitTempSource {
-    private static final Logger log = LoggerFactory.getLogger(FahrenheitTempSource.class);
+	private static final Logger log = LoggerFactory.getLogger(FahrenheitTempSource.class);
 
-    private static final UUID sensorIdentifier = UUID.randomUUID();
-    private static final Random random = new Random(System.currentTimeMillis());
-    private static final int RANDOM_MULTIPLIER = 100;
-    
+	private static final UUID sensorIdentifier = UUID.randomUUID();
+	private static final Random random = new Random(System.currentTimeMillis());
+	private static final int RANDOM_MULTIPLIER = 100;
 
-        public static void main(String[] args) {
-                SpringApplication.run(FahrenheitTempSource.class, args);
-        }
+	public static void main(String[] args) {
+		SpringApplication.run(FahrenheitTempSource.class);
+	}
 
-    @InboundChannelAdapter(channel = Source.OUTPUT, poller = @Poller(fixedRate = "5000"))
-    public SensorReading emitSensorReading() {
-        double temperature = random.nextDouble() * RANDOM_MULTIPLIER;
+	/* 
+	 * Basic Supplier which sends messages every X milliseconds
+	 * Configurable using spring.cloud.stream.poller.fixed-delay 
+	 */
+	@Bean
+	public Supplier<SensorReading> emitSensorReading() {
+		return () -> {
+			double temperature = random.nextDouble() * RANDOM_MULTIPLIER;
 
-        SensorReading reading = new SensorReading();
-        reading.setSensorID(sensorIdentifier.toString());
-        reading.setTemperature(temperature);
-        reading.setBaseUnit(BaseUnit.FAHRENHEIT);
-        
-        log.info("Emitting " + reading);
+			SensorReading reading = new SensorReading();
+			reading.setSensorID(sensorIdentifier.toString());
+			reading.setTemperature(temperature);
+			reading.setBaseUnit(BaseUnit.FAHRENHEIT);
 
-        return reading;
-    }
+			log.info("Emitting " + reading);
+
+			return reading;
+		};
+	}
+
+}
 ```
 
 ### Source:application.yml
@@ -241,20 +256,25 @@ Next let's take a look at the application.yml file. As stated earlier, an applic
 Open the application.yml file in the "cloud-stream-source" project.
 
 A few things to take note of: 
-* The spring.cloud.stream.bindings.output maps to the Source.OUTPUT channel for our application; in this example we are sending to the "sensor/temperature/fahrenheit" topic. 
-* Spring Cloud Stream will use the "local_solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
+* The `spring.cloud.function.definition` registers the `emitSensorReading` function as a Spring Cloud Function
+* The `spring.cloud.stream.bindings.emitSensorReading-out-0` bindings configuration tells Spring Cloud Stream how to bind the function to the event broker. In this case it will be publishing toot he `sensor/temperature/fahrenheit` topic.
+* Spring Cloud Stream will use the "local-solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
 * Change your *host*, *msgVpn*, *clientUsername* & *clientPassword* to match your Solace Messaging Service. The host should be your "SMF URI".
 
 ``` yaml
 spring:
   cloud:
+    function:
+      definition: emitSensorReading
     stream:
+      poller:
+        fixed-delay: 5000
       bindings:
-        output:
+        emitSensorReading-out-0:
           destination: sensor/temperature/fahrenheit
-          binder: local_solace
+          binder: local-solace
       binders:
-        local_solace:
+        local-solace:
           type: solace
           environment:
             solace:
@@ -263,6 +283,8 @@ spring:
                 msgVpn: default
                 clientUsername: default
                 clientPassword: default
+                connectRetries: -1
+                reconnectRetries: -1
 ```
 
 ### Source:Run the app
@@ -292,33 +314,33 @@ The class is a processor which receives SensorReadings in Fahrenheit from one to
 
 A few things to take note of: 
 * As before the [@SpringBootApplication](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-using-springbootapplication-annotation.html) annotation enables auto-configuration and component scanning
-* The @EnableBinding(Processor.class) annotation tells us that we are creating a Spring Cloud Stream Processor application and enables the Input & Output channels on the Processor binding interface. This Processor's input & output channels will be bound to our messaging system at run time.
-* The @StreamListener annotation defines which method should be invoked when an event is received on our Processor.INPUT channel. 
-* The @SendTo annotation defines that returned objects from the method should be sent to the Processor.OUTPUT channel. 
+* The `convertFtoC` function returns a `java.util.function.Function` which as a Functional Interface allows Spring Cloud Function to register it. Once registered this function can be used to handle messages via Spring Cloud Stream.
+* Note that a `java.util.function.Function` will be used as Spring Cloud Stream processor where it will receive a message, process it and publish an outbound message.
+* In this case we can see that our function will receive and publish a `SensorReading`. This is possible due to the built in Content-Type Negotiation provided by the framework
 
 ``` java
 @SpringBootApplication
-@EnableBinding(Processor.class)
 public class ConvertFtoCProcessor {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(ConvertFtoCProcessor.class);
-	
+
 	public static void main(String[] args) {
 		SpringApplication.run(ConvertFtoCProcessor.class, args);
 	}
-	
-	@StreamListener(Processor.INPUT)
-	@SendTo(Processor.OUTPUT)
-	public SensorReading handle(SensorReading reading) {
-		
-		log.info("Received: " + reading);
-        
-		double temperatureCelsius = (reading.getTemperature().doubleValue() - 32) * 5 / 9;
-                reading.setTemperature(temperatureCelsius);
-                reading.setBaseUnit(SensorReading.BaseUnit.CELSIUS);
 
-		log.info("Sending: " + reading);
-		return reading;
+	@Bean
+	public Function<SensorReading, SensorReading> convertFtoC() {
+		return reading -> {
+			log.info("Received: " + reading);
+
+			double temperatureCelsius = (reading.getTemperature().doubleValue() - 32) * 5 / 9;
+			reading.setTemperature(temperatureCelsius);
+			reading.setBaseUnit(SensorReading.BaseUnit.CELSIUS);
+
+			log.info("Sending: " + reading);
+
+			return reading;
+		};
 	}
 }
 ```
@@ -328,24 +350,27 @@ Next let's take a look at the application.yml file. As stated earlier, an applic
 Open the application.yml file in the "cloud-streams-processor" project.
 
 A few things to take note of: 
-* The spring.cloud.stream.bindings now includes both an "input" and an "output" binding. These maps to our Processor.INPUT & Processor.OUTPUT channels respectively; note that our output destination will be sending to the "sensor/temperature/celsius" topic. 
-* Spring Cloud Stream will use the "local_solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
+* The `spring.cloud.function.definition` registers the `convertFtoC` function with Spring Cloud Function which also allows it to be used by Spring Cloud Stream
+* The `spring.cloud.stream.bindings` section of the config tells Spring Cloud Stream how to configure the bindings of our function to both send and receive messages. Receiving is configured by the `convertFtoC-in-0` binding and sending is configured via `convertFtoC-out-0`.
+* Spring Cloud Stream will use the "local-solace" binder since it's the only one present; if multiple binders are present you can specify the binder on each binding. 
 * Change your *host*, *msgVpn*, *clientUsername* & *clientPassword* to match your Solace Messaging Service. The host should be your "SMF URI".
-* Notice the spring.cloud.steam.solace.bindings is where Solace specific configurations can be set; here we see an example where we are telling our input bindings queue to subscribe to the "sensor/temperature/fahrenheit" topic.
+* Notice the `spring.cloud.steam.solace.bindings` section of the config is where Solace specific configurations can be set; here we see an example where we are telling our input bindings queue to subscribe to the "sensor/temperature/fahrenheit" topic.
 
 ``` yaml
 spring:
   cloud:
+    function:
+      definition: convertFtoC
     stream:
-      default-binder: local_solace
+      default-binder: local-solace
       bindings:
-        input:
+        convertFtoC-in-0:
           destination: TEMPS.Q
           group: PROCESSOR
-        output:
+        convertFtoC-out-0:
           destination: sensor/temperature/celsius
       binders:
-        local_solace:
+        local-solace:
           type: solace
           environment:
             solace:
@@ -358,7 +383,7 @@ spring:
                 reconnectRetries: -1
       solace:
         bindings:
-          input:
+          convertFtoC-in-0:
             consumer:
               queueAdditionalSubscriptions: sensor/temperature/fahrenheit
 ```
