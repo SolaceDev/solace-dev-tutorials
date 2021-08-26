@@ -6,14 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   TwitterShareButton,
   FacebookShareButton,
-  WhatsappShareButton,
   LinkedinShareButton,
-  TelegramShareButton,
   TwitterIcon,
   FacebookIcon,
-  WhatsappIcon,
   LinkedinIcon,
-  TelegramIcon,
 } from "react-share"
 
 const Sidebar = (props) => {
@@ -105,20 +101,6 @@ const Sidebar = (props) => {
         >
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
-        <WhatsappShareButton
-          className="pr-1 pl-1"
-          url={link}
-          title={social_string}
-        >
-          <WhatsappIcon size={32} round={true} />
-        </WhatsappShareButton>
-        <TelegramShareButton
-          className="pr-1 pl-1"
-          url={link}
-          title={social_string}
-        >
-          <TelegramIcon size={32} round={true} />
-        </TelegramShareButton>
       </Col>
     </div>
   )
