@@ -34,6 +34,9 @@ const tutorial = ({ data, pageContext }) => {
   )
   const feedback_link = feedback[0].link || ""
   const section_title = data.allTutorialsYaml.edges[0].node.section1
+  const page_title = node.frontmatter.title
+  const slug = node.fields.slug
+  const slugRoot = node.fields.slugRoot
 
   return (
     <Layout hideResources="true">
@@ -63,6 +66,9 @@ const tutorial = ({ data, pageContext }) => {
               feedback_link={feedback_link}
               section_title={section_title}
               pageContext={pageContext}
+              page_title={page_title}
+              slug={slug}
+              slugRoot={slugRoot}
             ></Sidebar>
           </Col>
         </Row>

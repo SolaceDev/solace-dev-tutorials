@@ -24,3 +24,11 @@
 #sidebar .heading:not(:first-child) {
   border-radius: 0;
 }
+
+.social {
+  text-align: center;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  background: linear-gradient(#20262a, #37404a) !important;
+  padding: 10px;
+}
