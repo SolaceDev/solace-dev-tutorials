@@ -20,6 +20,7 @@ const Sidebar = (props) => {
   let pageContext = props.pageContext
   let link = `https://tutorials.solace.dev${props.slug}`
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
+  let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
   return (
     <div id="sidebar">
       {tutorials.length !== 0 && (
@@ -81,7 +82,7 @@ const Sidebar = (props) => {
           className="pr-1 pl-1"
           url={link}
           title={social_string}
-          hashtags={["solace", "pubsub", "tutorial", "DEVCommunity"]}
+          hashtags={hashtags}
           via="SolaceDevs"
         >
           <TwitterIcon size={32} round={true} />
@@ -97,7 +98,7 @@ const Sidebar = (props) => {
           className="pr-1 pl-1"
           url={link}
           quote={social_string}
-          hashtags={["solace", "pubsub", "tutorial", "DEVCommunity"]}
+          hashtags={hashtags}
         >
           <FacebookIcon size={32} round={true} />
         </FacebookShareButton>
