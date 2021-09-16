@@ -1,54 +1,54 @@
 - title: Add and remove subscription
   description: Sample code showing how to add and remove subscription
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_add_and_remove_subscription.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_add_and_remove_subscription.py
 - title: Consume persistent message
   description: Sample code showing how to consume persistent message
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_consume_persistent_message.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_consume_persistent_message.py
 - title: Consume persistent message with auto acknowledgement
   description: Sample code showing how to consume persistent message with auto acknowledgement
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_consume_persistent_message_with_auto_acknowledgement.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_consume_persistent_message_with_auto_acknowledgement.py
 - title: Direct consume message
   description: Sample code showing how to direct consume message
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_direct_consume_message.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_direct_consume_message.py
 - title: Direct consume with share name
   description: Sample code showing how to direct consume with share name
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_direct_consume_with_share_name.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_direct_consume_with_share_name.py
 - title: Direct publish business obj
   description: Sample code showing how to direct publish business obj
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_direct_publish_business_obj.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_direct_publish_business_obj.py
 - title: Direct publish consume business obj
   description: Sample code showing how to direct publish consume business obj
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_direct_publish_consume_business_obj.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_direct_publish_consume_business_obj.py
 - title: Direct publish message
   description: Sample code showing how to direct publish message
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_direct_publish_message.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_direct_publish_message.py
 - title: Publish health check
   description: Sample code showing how to publish health check
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_publish_health_check.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_publish_health_check.py
 - title: Publish persistent message
   description: Sample code showing how to publish persistent message
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_publish_persistent_message.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_publish_persistent_message.py
 - title: Use publish with back pressure
   description: Sample code showing how to use publish with back pressure
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_use_publish_with_back_pressure.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/pubsub/how_to_use_publish_with_back_pressure.py
 - title: Access api metrics
   description: Sample code showing how to access api metrics
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_access_api_metrics.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_access_api_metrics.py
 - title: Configure authentication
   description: Sample code showing how to configure authentication
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_configure_authentication.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_configure_authentication.py
 - title: Configure service connection reconnection retries
   description: Sample code showing how to configure service connection reconnection retries
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_configure_service_connection_reconnection_retries.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_configure_service_connection_reconnection_retries.py
 - title: Configure transport layer security
   description: Sample code showing how to configure transport layer security
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_configure_transport_layer_security.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_configure_transport_layer_security.py
 - title: Connect messaging service
   description: Sample code showing how to connect messaging service
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_connect_messaging_service.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_connect_messaging_service.py
 - title: Handle service interruption and failures
   description: Sample code showing how to handle service interruption and failures
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_handle_service_interruption_and_failures.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_handle_service_interruption_and_failures.py
 - title: Set core api log level
   description: Sample code showing how to set core api log level
-  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/extras/how_to_set_core_api_log_level.py
+  link: https://github.com/SolaceSamples/solace-samples-python/blob/master/howtos/how_to_set_core_api_log_level.py
