@@ -1,93 +1,93 @@
 - title: Access Additional Information About Receiver
   description: Sample code showing how to access additional information about receiver
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToAccessAdditionalInformationAboutReceiver.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToAccessAdditionalInformationAboutReceiver.java
 - title: Access API Information
   description: Sample code showing how to access API information
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToAccessApiInformation.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToAccessApiInformation.java
 - title: Access API Metrics
   description: Sample code showing how to access API metrics
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToAccessApiMetrics.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToAccessApiMetrics.java
 - title: Access PubSub+ Service
   description: Sample code showing how to access PubSub+ service
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToAccessPubSubPlusService.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToAccessPubSubPlusService.java
 - title: Configure Authentication
   description: Sample code showing how to configure authentication
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConfigureAuthentication.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConfigureAuthentication.java
 - title: Configure Service Access with Properties
   description: Sample code showing how to configure service access with properties
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConfigureServiceAccessWithProperties.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConfigureServiceAccessWithProperties.java
 - title: Configure Service Connection Reconnection Retries
   description: Sample code showing how to configure service connection reconnection retries
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConfigureServiceConnectionReconnectionRetries.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConfigureServiceConnectionReconnectionRetries.java
 - title: Configure Transport Layer Security
   description: Sample code showing how to configure transport layer security
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConfigureTransportLayerSecurity.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConfigureTransportLayerSecurity.java
 - title: Connect Later to Publisher or Receiver
   description: Sample code showing how to connect later to publisher or receiver
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConnectLaterToPublisherOrReceiver.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConnectLaterToPublisherOrReceiver.java
 - title: Consume Direct Message
   description: Sample code showing how to consume direct message
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumeDirectMessage.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumeDirectMessage.java
 - title: Consume Direct Message with Streaming
   description: Sample code showing how to consume direct message with streaming
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumeDirectMessageWithStreaming.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumeDirectMessageWithStreaming.java
 - title: Consume Message Exclusive vs Shared Mode
   description: Sample code showing how to consume message exclusive vs shared mode
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumeMessageExclusiveVsSharedMode.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumeMessageExclusiveVsSharedMode.java
 - title: Consume Persistent Message
   description: Sample code showing how to consume persistent message
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumePersistentMessage.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumePersistentMessage.java
 - title: Consume Persistent Message Non Blocking
   description: Sample code showing how to consume persistent message non blocking
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumePersistentMessageNonBlocking.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumePersistentMessageNonBlocking.java
 - title: Consume Persistent Message with Auto Acknowledgement
   description: Sample code showing how to consume persistent message with auto acknowledgement
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToConsumePersistentMessageWithAutoAcknowledgement.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToConsumePersistentMessageWithAutoAcknowledgement.java
 - title: Create Async Message Consumer Pipeline
   description: Sample code showing how to create async message consumer pipeline
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToCreateAsyncMessageConsumerPipeline.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToCreateAsyncMessageConsumerPipeline.java
 - title: Create Async Message Publisher Callback Pipeline
   description: Sample code showing how to create async message publisher callback pipeline
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToCreateAsyncMessagePublisherCallbackPipeline.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToCreateAsyncMessagePublisherCallbackPipeline.java
 - title: Create Async Message Publisher Reactive Pipeline
   description: Sample code showing how to create async message publisher reactive pipeline
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToCreateAsyncMessagePublisherReactivePipeline.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToCreateAsyncMessagePublisherReactivePipeline.java
 - title: Create Outbound Messages
   description: Sample code showing how to create outbound messages
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToCreateOutboundMessages.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToCreateOutboundMessages.java
 - title: Enable Auto Creation of Missing Resources on Broker
   description: Sample code showing how to enable auto creation of missing resources on broker
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToEnableAutoCreationOfMissingResourcesOnBroker.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToEnableAutoCreationOfMissingResourcesOnBroker.java
 - title: Handle Service Interruptions and Failures
   description: Sample code showing how to handle service interruptions and failures
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToHandleServiceInterruptionsAndFailures.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToHandleServiceInterruptionsAndFailures.java
 - title: Publish Direct Message
   description: Sample code showing how to publish direct message
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToPublishDirectMessage.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToPublishDirectMessage.java
 - title: Publish Persistent Message
   description: Sample code showing how to publish persistent message
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToPublishPersistentMessage.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToPublishPersistentMessage.java
 - title: Trigger Replay and Consume Persistent Message
   description: Sample code showing how to trigger replay and consume persistent message
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToTriggerReplayAndConsumePersistentMessage.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToTriggerReplayAndConsumePersistentMessage.java
 - title: Use Back Pressure Features
   description: Sample code showing how to use back pressure features
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseBackPressureFeatures.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseBackPressureFeatures.java
 - title: Use Cached Message Subscriptions
   description: Sample code showing how to use cached message subscriptions
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseCachedMessageSubscriptions.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseCachedMessageSubscriptions.java
 - title: Use Local Transactions
   description: Sample code showing how to use local transactions
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseLocalTransactions.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseLocalTransactions.java
 - title: Use Message Subscriptions
   description: Sample code showing how to use message subscriptions
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseMessageSubscriptions.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseMessageSubscriptions.java
 - title: Use Request Reply Pattern
   description: Sample code showing how to use request reply pattern
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseRequestReplyPattern.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseRequestReplyPattern.java
 - title: Use Versioned Configuration Profiles
   description: Sample code showing how to use versioned configuration profiles
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToUseVersionedConfigurationProfiles.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseVersionedConfigurationProfiles.java
 - title: Work with Solace SDT Types and Messages
   description: Sample code showing how to work with solace sdt types and messages
-  link: https://github.com/SolaceSamples/solace-samples-java-new/tree/main/src/main/java/com/solace/samples/java/samples/java/snippets/HowToWorkWithSolaceSDTTypesAndMessages.java
+  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToWorkWithSolaceSDTTypesAndMessages.java
