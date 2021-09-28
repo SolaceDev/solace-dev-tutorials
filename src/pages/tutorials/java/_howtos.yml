@@ -55,7 +55,7 @@
 - title: Create Outbound Messages
   description: Sample code showing how to create outbound messages
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToCreateOutboundMessages.java
-- title: Enable Auto Creation of Missing Resources on Broker
+- title: Enable Auto-Creation of Missing Resources on Broker
   description: Sample code showing how to enable auto creation of missing resources on broker
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToEnableAutoCreationOfMissingResourcesOnBroker.java
 - title: Handle Service Interruptions and Failures
@@ -70,21 +70,12 @@
 - title: Trigger Replay and Consume Persistent Message
   description: Sample code showing how to trigger replay and consume persistent message
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToTriggerReplayAndConsumePersistentMessage.java
-- title: Use Back Pressure Features
+- title: Use Back-Pressure Features
   description: Sample code showing how to use back pressure features
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseBackPressureFeatures.java
-- title: Use Cached Message Subscriptions
-  description: Sample code showing how to use cached message subscriptions
-  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseCachedMessageSubscriptions.java
-- title: Use Local Transactions
-  description: Sample code showing how to use local transactions
-  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseLocalTransactions.java
 - title: Use Message Subscriptions
   description: Sample code showing how to use message subscriptions
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseMessageSubscriptions.java
-- title: Use Request Reply Pattern
-  description: Sample code showing how to use request reply pattern
-  link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseRequestReplyPattern.java
 - title: Use Versioned Configuration Profiles
   description: Sample code showing how to use versioned configuration profiles
   link: https://github.com/SolaceSamples/solace-samples-java-new/blob/main/src/main/java/com/solace/samples/java/snippets/HowToUseVersionedConfigurationProfiles.java
