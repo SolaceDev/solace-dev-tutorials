@@ -55,8 +55,8 @@ In the Paho Java client library, MQTT sessions are created from the MqttClient c
 MqttClient mqttClient = new MqttClient(host, "HelloWorldSub");
 MqttConnectOptions connOpts = new MqttConnectOptions();
 connOpts.setCleanSession(true);
-connOpts.setUsername(username);
-connOpts.setPassword(password.toCharArray())
+connOpts.setUserName(username);
+connOpts.setPassword(password.toCharArray());
 mqttClient.connect(connOpts);
 ```
 
