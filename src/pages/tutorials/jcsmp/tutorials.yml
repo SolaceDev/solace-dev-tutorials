@@ -3,5 +3,5 @@
   icon: java.svg
   buttons:
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Java-API/java-api-home.htm
-    github: https://github.com/SolaceSamples/solace-samples-java
+    github: https://github.com/SolaceSamples/solace-samples-java-jcsmp
   type: solace

@@ -78,7 +78,7 @@ public void onReceive(BytesXMLMessage message) {
 
 ## Learn More
 
-* Related Source Code: [Transactions.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/Transactions.java)
+* Related Source Code: [Transactions.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/Transactions.java)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Using-Transacted-Sessions.htm?Highlight=Transactions)
 
 

@@ -94,5 +94,5 @@ Thread.sleep(1000);
 
 ## Learn More
 
-* Related Source Code: [MessageTTLAndDeadMessageQueue.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/MessageTTLAndDeadMessageQueue.java)
+* Related Source Code: [MessageTTLAndDeadMessageQueue.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/MessageTTLAndDeadMessageQueue.java)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Setting-Message-Properties.htm?Highlight=Time%20to%20live)
