@@ -3,5 +3,5 @@
   icon: java.svg
   buttons:
     doclink: http://solace.dev/java-api-docs
-    github: https://github.com/SolaceSamples/solace-samples-java-new
+    github: https://github.com/SolaceSamples/solace-samples-java
   type: solace
