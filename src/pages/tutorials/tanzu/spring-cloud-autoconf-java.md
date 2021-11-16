@@ -153,7 +153,7 @@ for (SolaceServiceCredentials discoveredSolaceMessagingService : springJCSMPFact
 
 ### Connecting to the Solace PubSub+ Service
 
-The `SpringJCSMPFactory solaceFactory` was already autowired, you can use it to connect the Solace Session in the conventional way as outlined in the [Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/). Use the `solaceFactory` to create a `Session`:
+The `SpringJCSMPFactory solaceFactory` was already autowired, you can use it to connect the Solace Session in the conventional way as outlined in the [Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/). Use the `solaceFactory` to create a `Session`:
 
 ```java
 try {
@@ -244,7 +244,7 @@ public ResponseEntity<SimpleMessage> getLastMessageReceived() {
 
 The subscription JSON document used by the `/subscription` endpoint is modeled by the `SimpleSubscription` class, whereas the `/message` endpoint JSON document is modeled by the `SimpleMessage` class.
 
-For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/).
+For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/).
 
 ## Building
 

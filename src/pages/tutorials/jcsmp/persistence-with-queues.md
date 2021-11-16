@@ -199,10 +199,10 @@ try {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java-jcsmp). If you combine the example source code shown above results in the following source:
 
-* [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueProducer.java)
-* [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/QueueConsumer.java)
+* [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/QueueProducer.java)
+* [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/QueueConsumer.java)
 
 
 Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
@@ -212,8 +212,8 @@ Learn how to verify all messages arrive to the Solace message router in our next
 This tutorial is available in GitHub.  To get started, clone the GitHub repository containing the Solace samples.
 
 ```
-git clone https://github.com/SolaceSamples/solace-samples-java
-cd solace-samples-java
+git clone https://github.com/SolaceSamples/solace-samples-java-jcsmp
+cd solace-samples-java-jcsmp
 ```
 
 ### Building

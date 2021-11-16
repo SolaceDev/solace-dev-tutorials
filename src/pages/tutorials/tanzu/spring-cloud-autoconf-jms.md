@@ -271,7 +271,7 @@ public ResponseEntity<SimpleMessage> getLastMessageReceived() {
 
 The subscription JSON document used by the `/subscription` endpoint is modeled by the `SimpleSubscription` class, whereas the `/message` endpoint JSON document is modeled by the `SimpleMessage` class.
 
-For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/).
+For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/).
 
 ## Building
 
