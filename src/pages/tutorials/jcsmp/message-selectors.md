@@ -48,7 +48,7 @@ for (String p : new String[] { "macaroni", "fettuccini", "farfalle", "fiori", "r
 
 ## Learn More
 
-* Related Source Code: [MessageSelectorsOnQueue.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/MessageSelectorsOnQueue.java)
+* Related Source Code: [MessageSelectorsOnQueue.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/MessageSelectorsOnQueue.java)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-JMS-API/Selectors.htm?Highlight=selector)
 
 

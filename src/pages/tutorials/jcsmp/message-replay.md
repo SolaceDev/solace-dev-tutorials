@@ -195,7 +195,7 @@ public void onException(JCSMPException exception) {
 
 ## Running the Sample
 
-Follow the instructions to [build the samples](https://github.com/SolaceSamples/solace-samples-java/blob/master/README.md#build-the-samples).
+Follow the instructions to [build the samples](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/README.md#build-the-samples).
 
 Before running this sample, be sure that Message Replay is enabled in the Message VPN. Also, messages must have been published to the replay log for the queue that is used. The "QueueProducer" sample can be used to create and publish messages to the queue. The "QueueConsumer" sample can be used to drain the queue so that replay is performed on an empty queue and observed by this sample. Both samples are from the [Persistence with Queues](../persistence-with-queues/) tutorial.
 
@@ -223,5 +223,5 @@ This will replay all logged messages including the live one published in step 2.
 ![Screenshot: Initiating Replay using Solace PubSub+ Manager](../../../images/screenshots/initiate-replay.png)
 
 ## Learn More
-* Related Source Code: [MessageReplay.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/MessageReplay.java)
+* Related Source Code: [MessageReplay.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/MessageReplay.java)
 * [Solace Feature Documentation](https://docs.solace.com/Overviews/Message-Replay-Overview.htm)

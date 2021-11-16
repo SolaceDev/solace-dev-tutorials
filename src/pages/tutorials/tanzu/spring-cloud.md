@@ -125,7 +125,7 @@ if (solaceServiceCredentials == null) {
 
 ### Connecting to the Solace PubSub+ Service
 
-Once you have the `SolaceServiceCredentials`, you can create and then connect the Solace Session in the conventional way as outlined in the [Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/). You set the JCSMP properties and then use the `JCSMPFactory` to create a `Session`:
+Once you have the `SolaceServiceCredentials`, you can create and then connect the Solace Session in the conventional way as outlined in the [Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/). You set the JCSMP properties and then use the `JCSMPFactory` to create a `Session`:
 
 ```java
 final JCSMPProperties properties = new JCSMPProperties();
@@ -225,7 +225,7 @@ public ResponseEntity<SimpleMessage> getLastMessageReceived() {
 
 The subscription JSON document used by the `/subscription` endpoint is modeled by the `SimpleSubscription` class, whereas the `/message` endpoint JSON document is modeled by the `SimpleMessage` class.
 
-For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../solace-samples-java/publish-subscribe/).
+For more details on sending and receiving messages, you can checkout the [JCSMP Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/).
 
 ## Building
 

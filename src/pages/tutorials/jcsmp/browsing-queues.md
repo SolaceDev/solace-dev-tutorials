@@ -52,5 +52,5 @@ do {
 
 ## Learn More
 
-* Related Source Code: [QueueProvisionAndBrowse.java](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/features/QueueProvisionAndBrowse.java)
+* Related Source Code: [QueueProvisionAndBrowse.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/QueueProvisionAndBrowse.java)
 * [Solace Feature Documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Creating-Flows.htm)
