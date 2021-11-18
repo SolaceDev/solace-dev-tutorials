@@ -102,7 +102,7 @@ sessionProps[propIndex++] = username;
 sessionProps[propIndex++] = SOLCLIENT_SESSION_PROP_PASSWORD;
 sessionProps[propIndex++] = password;
 
-sessionProps[propIndex] = NULL;
+sessionProps[propIndex++] = NULL;
 
 /* Create the Session. */
 solClient_session_create ( ( char ** ) sessionProps,
