@@ -1,6 +1,6 @@
 ### Option 2: Start a PubSub+ Software
 
-* Follow [these instructions](https://docs.solace.com/Solace-SW-Broker-Set-Up/SW-Broker-Image-Setup.htm) to start the PubSub+ Software in leading Clouds, Container Platforms or Hypervisors. The tutorials outline where to download and how to install the PubSub+ Software.
+* Follow [these instructions](https://docs.solace.com/Basics/Getting-Started-Try-Broker.htm) to start the PubSub+ Software in leading Clouds, Container Platforms or Hypervisors. The tutorials outline where to download and how to install the PubSub+ Software.
 * The messaging connectivity information are the following:
     * Host: <public_ip> (IP address assigned to the VMR in tutorial instructions)
     * Message VPN: default

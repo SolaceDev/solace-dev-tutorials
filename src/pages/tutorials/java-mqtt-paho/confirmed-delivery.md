@@ -10,7 +10,7 @@ links:
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java-mqtt-paho/confirmed-delivery.md
 ---
 
-This tutorial builds on the basic concepts introduced in [Persistence with MQTT](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. When you receive an acknowledgement for a QoS level 1 message, you have confirmed your message have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
+This tutorial builds on the basic concepts introduced in [Persistence with Queues](../persistence-with-queues/) tutorial and will show you how to properly process publisher acknowledgements. When you receive an acknowledgement for a QoS level 1 message, you have confirmed your message have been properly accepted by the Solace message router and therefore can be guaranteed of no message loss.
 
 ## Assumptions
 

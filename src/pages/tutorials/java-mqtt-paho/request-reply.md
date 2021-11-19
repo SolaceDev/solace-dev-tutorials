@@ -48,7 +48,7 @@ MQTT is a standard lightweight protocol for sending and receiving messages. As s
 
 ## Overview
 
-MQTT does not explicitly support the request-response message exchange pattern. However, this tutorial will implement the pattern by defining a topic structure to send requests and by obtaining a unique Reply-To topic from the Solace message router on which the response should be sent back to the requestor. Obtaining the Reply-To topic from a MQTT session is a Solace extension to MQTT and is achieved by adding a topic subscription to the designated special topic `“$SYS/client/reply-to”`. You can learn more details on requesting MQTT session information by referring to the [Solace Docs – Managing MQTT Messaging](https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-get-started.htm).
+MQTT does not explicitly support the request-response message exchange pattern. However, this tutorial will implement the pattern by defining a topic structure to send requests and by obtaining a unique Reply-To topic from the Solace message router on which the response should be sent back to the requestor. Obtaining the Reply-To topic from a MQTT session is a Solace extension to MQTT and is achieved by adding a topic subscription to the designated special topic `“$SYS/client/reply-to”`. You can learn more details on requesting MQTT session information by referring to the [Solace Docs – Managing MQTT Messaging](https://docs.solace.com/Configuring-and-Managing/Managing-MQTT-Sessions.htm?Highlight=request%2Freply%20mqtt#Special-MQTT-Topics).
 
 This tutorial will be using the MQTT Quality of Service (QoS) level 0 to send and receive request and response messages, but it is possible to use any of the QoS level 0, 1, or 2 for the request response scenarios. 
 
@@ -96,7 +96,7 @@ The requestor must obtain the unique reply-to topic. Using Solace Messaging, thi
 mqttClient.setCallback(new MqttCallback() {
     public void messageArrived(String topic, MqttMessage message) throws Exception {
         // If the topic is "$SYS/client/reply-to" then set our replyToTopic
-        // to with the contents of the message payload received
+        // with the contents of the message payload received
         if (topic != null && topic.equals("$SYS/client/reply-to")) {
             replyToTopic = new String(message.getPayload());
         } else {
