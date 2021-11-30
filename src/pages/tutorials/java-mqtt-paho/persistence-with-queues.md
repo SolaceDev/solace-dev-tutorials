@@ -74,13 +74,13 @@ Then you must subscribe to a topic filter with a QoS level of 1 in order to expr
 mqttClient.subscribe("Q/tutorial", 1);
 ~~~
 
-The above demonstrates the simplest way to add an OoS 1 subscription with an 'MqttClient'. However, the client is not informed of which QoS is actually granted. This tutorial will confirm if the broker has actually granted the client with OoS 1 subscription. In order do so, we can modify our tutorial to use an 'MqttAsyncClient' instead of an 'MqttClient'. The 'MqttAsyncClient' provides the granted QoS in the response from the subscribe method. You create a client as follows:
+The above demonstrates the simplest way to add a QoS 1 subscription with an 'MqttClient'. However, the client is not informed of which QoS is actually granted. This tutorial will confirm if the broker has actually granted the client with QoS 1 subscription. In order do so, we can modify our tutorial to use an 'MqttAsyncClient' instead of an 'MqttClient'. The 'MqttAsyncClient' provides the granted QoS in the response from the subscribe method. You create a client as follows:
 
 ~~~java
 MqttAsyncClient mqttClient = new MqttAsyncClient("tcp://" + args[0], "HelloWorldQoS1Subscriber");
 ~~~
 
-We use the 'MqttAsyncClient.subscribe' method, which returns an 'IMqttToken', to track and wait for the subscribe call to complete. Then it is possible to confirm if the client was been granted the OoS 1 level for the topic subscribed.
+We use the 'MqttAsyncClient.subscribe' method, which returns an 'IMqttToken', to track and wait for the subscribe call to complete. Then it is possible to confirm if the client was been granted the QoS 1 level for the topic subscribed.
 
 ~~~java
 IMqttToken subToken = mqttClient.subscribe("Q/tutorial", 1);
@@ -90,7 +90,7 @@ if (!subToken.isComplete() || subToken.getException() != null) {
     System.exit(-1);
 }
 if (subToken.getGrantedQos()[0] != 1) {
-    System.out.println("Expected OoS level 1 but got OoS level: " + subToken.getGrantedQos()[0]);
+    System.out.println("Expected QoS level 1 but got QoS level: " + subToken.getGrantedQos()[0]);
     System.exit(-1);
 }
 ~~~
@@ -150,7 +150,7 @@ QoS1Consumer initializing...
 Connecting to Solace messaging at <host:port>
 Connected
 Subscribing client to topic: Q/tutorial
-Subscribed with OoS level 1 and waiting to receive msgs
+Subscribed with QoS level 1 and waiting to receive msgs
 
 Received a Message!
         Time:     2015-10-26 13:50:56.091
