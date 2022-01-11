@@ -50,7 +50,7 @@ headers = []
 ### Exclusions
 ###
 # Exclude URLs from checking (supports regex)
-exclude = ["data:image/*", "https://www.googletagmanager.com/*"]
+exclude = ["data:image/*", "https://www.googletagmanager.com/*","https://twitter.com/*"]
 
 include = []
 
