@@ -65,7 +65,7 @@ First this tutorial will show how to setup the subscriber side so that you are r
 
 ![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-On the consume side, the Solace REST messaging API depends on a guaranteed messaging queue. As such it is a requirement for REST consumers that Solace messaging support guaranteed messaging and have this feature configured as outlined in the [assumptions section above](#assumptions).
+On the consume side, the Solace REST messaging API depends on a guaranteed messaging queue. As such it is a requirement for REST consumers that Solace messaging support guaranteed messaging and have this feature configured as outlined in the [assumptions section above](#Assumptions).
 
 In order to receive REST messages from Solace messaging, you must configure a Guaranteed messaging queue and a REST delivery point. The queue is used to attract messages to the consumer application. The REST delivery point is the Solace message router component that delivers the messages from the queue to the consumer application asynchronously through HTTP POST requests. This is explained in more detail in the [REST Messaging Concepts](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm) where the REST consumers are explained. This tutorial will walk you through the required Solace messaging configuration steps required to create a queue and REST delivery point to connect to your REST consumer application.
 
@@ -82,22 +82,26 @@ http.createServer(function (req, res) {
     console.log('Received message: ' + req.url);
     res.writeHead(200);
     res.end();
-}).listen(RC_PORT, 'RC_HOST');
-console.log('Server running at http://RC_HOST:RC_PORT/');
+}).listen(RC_PORT, RC_HOST);
+console.log('Server running at http://' + RC_HOST + ':' + RC_PORT + '/');
 ```
 
-In the above, you need to update RC_HOST and RC_PORT to represent the HOST and PORT that your REST consumer application will be listening on. This HTTP server listens for incoming requests and for each request it will print the URL of the request and respond with a 200 OK response. The 200 OK response indicates to Solace messaging that the message has been successfully processed and it can be removed from Solace messaging queue.
+<br/><div style="padding:5px;border:1px solid #AAAAAA;background:lightgray">
+<b>Note:</b> The values of RC\_HOST and RC\_PORT need to be updated with the host and port where the REST server is running. It should be noted that this host and port will be updated as REST endpoint host and port in the REST Delivery Point configuration.
+</div><br/>
+
+In the above, you need to update RC\_HOST and RC\_PORT to represent the HOST and PORT that your REST consumer application will be listening on. This HTTP server listens for incoming requests and for each request it will print the URL of the request and respond with a 200 OK response. The 200 OK response indicates to Solace messaging that the message has been successfully processed and it can be removed from Solace messaging queue.
 
 Start your REST consumer using Node.js. For example:
 
 ```
 $ node NodeRestServer.js
-Server running at http://RC_HOST:RC_PORT/
+Server running at http://<RC_HOST>:<RC_PORT>/
 ```
 
 **Note:** The executable is `nodejs` on Ubuntu due to a naming conflict with other packages.
 
-Again in your environment, the RC_HOST and RC_PORT will be the host/IP and port that your server is listening on. For example http://192.168.1.110:9090/.
+Again in your environment, the RC\_HOST and RC\_PORT will be the host/IP and port that your server is listening on. For example http://192.168.1.110:10000/ or with a public DNS name http://myhost.mydomain.com:10000 (for example).
 
 **Note:** Even though this tutorial is illustrating how to publish with direct messages, for REST delivery points, the messages are always consumed from a queue. The incoming messages are promoted into the Solace queue as non-persistent messages and delivered to the REST consumer as non-persistent messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes](https://docs.solace.com/PubSub-Basics/Topic-Matching-and-Delivery-Modes.htm).
 
@@ -144,7 +148,359 @@ Next, you must configure a queue and REST delivery point on Solace messaging. Th
   </tr>
 </table>
 
-You can learn about each of these components using [Features – REST Introduction](https://docs.solace.com/Open-APIs-Protocols/Using-REST.htm). In the script below, update VPNNAME to match that of your Solace messaging solution, and the RC_HOST and RC_PORT to match your REST consumer application.
+You can learn about each of these components using [Features – REST Introduction](https://docs.solace.com/Open-APIs-Protocols/Using-REST.htm). In the script below, update VPNNAME to match that of your Solace messaging solution, and the RC\_HOST and RC\_PORT to match your REST consumer application.
+
+### Option 1: Using PubSub+ Broker Manager
+
+<div style='background:#E6F4EA;color:#137333;margin:2em 0;padding:0.5em 1em;border-left:4px solid;border-radius:4px'>Applicable to Solace PubSub+ Software & Cloud Brokers</div>
+
+ - Create a Queue object
+  
+![Create queue](../../../images/screenshots/brokerman-create-queue-1.png)  
+
+![Create queue](../../../images/screenshots/brokerman-create-queue-2.png)  
+
+![Create queue](../../../images/screenshots/brokerman-create-queue-3.png)  
+
+ - Create Queue Subscription object
+
+![Create Queue Subscription](../../../images/screenshots/brokerman-create-sub-1.png)  
+
+![Create Queue Subscription](../../../images/screenshots/brokerman-create-sub-2.png)  
+
+
+ - Create a REST Delivery Point object
+
+![Create REST Delivery Point](../../../images/screenshots/brokerman-create-rdp-1.png)  
+
+![Create REST Delivery Point](../../../images/screenshots/brokerman-create-rdp-2.png)  
+
+![Create REST Delivery Point](../../../images/screenshots/brokerman-create-rdp-3.png)  
+
+ - Create a Queue Binding object
+  
+![Create Queue Binding](../../../images/screenshots/brokerman-create-queue-binding-1.png)  
+
+![Create Queue Binding](../../../images/screenshots/brokerman-create-queue-binding-2.png)  
+
+![Create Queue Binding](../../../images/screenshots/brokerman-create-queue-binding-3.png)  
+
+![Create Queue Binding](../../../images/screenshots/brokerman-create-queue-binding-4.png)  
+
+ - Create a REST Consumer object
+  
+![Create REST Consumer](../../../images/screenshots/brokerman-create-rest-consumer-1.png)  
+
+![Create REST Consumer](../../../images/screenshots/brokerman-create-rest-consumer-2.png)  
+
+![Create REST Consumer](../../../images/screenshots/brokerman-create-rest-consumer-3.png)  
+  
+![Create REST Consumer](../../../images/screenshots/brokerman-create-rest-consumer-4.png)  
+
+<br/>
+
+To know more about PubSub+ Broker Manager check out [PubSub+ Broker Manager overview](https://docs.solace.com/Broker-Manager/PubSub-Manager-Overview.htm).
+
+### Option 2: Using SEMP and Postman
+
+<div style='background:#E6F4EA;color:#137333;margin:2em 0;padding:0.5em 1em;border-left:4px solid;border-radius:4px'>Applicable to Solace PubSub+ Software & Cloud Brokers</div>
+
+Solace Element Management Protocol version 2 (SEMP v2) is a RESTful API that you can use to configure Solace PubSub+ event brokers. It complements Solace's CLI and SolAdmin, and provides a programmable way to configure Solace PubSub+ event brokers.
+
+1. Download SEMP v2 specification
+
+![Download SEMP v2](../../../images/screenshots/download-sempv2-spec.png)
+<br/>
+   Alternately, you can download from the following URLs:
+    
+  ```
+  http://<SOFTWARE_BROKER_HOST>:8080/SEMP/v2/config/spec
+  ```
+
+  *or*
+  ```
+  https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config/spec
+  ```
+
+2. Launch postman and import the JSON file
+   
+![Import SEMP v2](../../../images/screenshots/postman-import-sempv2-spec.png)<br/>
+
+3. Note the SEMP v2 URL and access credentials<br/>
+   
+   For PubSub+ Software Broker - the SEMP requests can be posted to the following URL
+    ```
+    http://<SOFTWARE_BROKER_HOST>:8080/SEMP/v2/config
+    ```
+    where the BROKER_HOST is the host name of the Software Broker is running. 
+
+    Make a note of the broker name and client username and password that has **full access** to the broker. 
+    <br/>  
+
+    For PubSub+ Cloud Broker - select the Broker Service, select the **Manage** tab and locate the *SEMP - REST API* section. Note the URL to SEMP spec 
+    ```
+    https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config
+    ```
+    where the BROKER_HOST is the host name of the Software Broker is running.
+
+    Make a note of the SEMP user credentials listed here.
+    <br/>
+
+![SEMP - Cloud Broker](../../../images/screenshots/enable-sempv2-cloud.png)
+    
+
+  <br/>
+  
+4. Execute the following SEMP POST requests to create resources associated with REST Delivery Point. 
+   
+   Ensue that the REST requests are appropriately updated with user credentials.    
+
+![Create queue](../../../images/screenshots/postman-semp-creds.png)
+
+   <br/>
+
+ - Create a Queue object
+  
+  ```
+  URL: 
+  https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config/msgVpns/restbroker/queues
+
+  BODY:
+  {
+    "accessType": "exclusive",
+    "egressEnabled": true,
+    "ingressEnabled": true,
+    "msgVpnName": "restbroker",
+    "owner": "all",
+    "permission": "delete",
+    "queueName": "Q/rdp1/input"
+  }
+  ```
+
+![Create queue](../../../images/screenshots/postman-semp-queue.png)
+
+ - Create Queue Subscription object
+
+<div style="padding:5px;border:1px solid #AAAAAA;background:lightgray">
+<b>Note:</b> Since the queue name parameter contains '/' character, you have to select the queue name string in the URL and encode the URI component.
+
+  ![Create queue](../../../images/screenshots/postman-semp-queuesub-1.png)
+
+  ![Create queue](../../../images/screenshots/postman-semp-queuesub-2.png)
+
+  ![Create queue](../../../images/screenshots/postman-semp-queuesub-3.png)
+
+</div><br/>
+
+  ```  
+  URL: 
+  https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config/msgVpns/restbroker/queues/Q%2Frdp1%2Finput/subscriptions
+  BODY:
+  {
+      "msgVpnName": "restbroker",
+      "queueName": "Q/rdp1/input",
+      "subscriptionTopic": "T/rest/pubsub"
+  }
+  ```
+
+![Create queue](../../../images/screenshots/postman-semp-queuesub-4.png)
+
+ - Create a REST Delivery Point object
+  
+  ```
+  URL: 
+  https://CLOUD_BROKER_HOST:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints
+
+  BODY:
+  {
+      "clientProfileName": "default",
+      "enabled": true,
+      "msgVpnName": "restbroker",
+      "restDeliveryPointName": "rdp1"
+  }
+  ```
+
+![Create queue](../../../images/screenshots/postman-semp-rdp.png) 
+
+ - Create a Queue Binding object
+  
+  ```
+  URL: 
+  https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints/rdp1/queueBindings
+
+  BODY:
+  {
+      "gatewayReplaceTargetAuthorityEnabled": false,
+      "msgVpnName": "restbroker",
+      "postRequestTarget": "/rest/tutorials",
+      "queueBindingName": "Q/rdp1/input",
+      "restDeliveryPointName": "rdp1"
+  }
+  ```
+
+![Create queue](../../../images/screenshots/postman-semp-queue-binding.png)
+
+ - Create a REST Consumer object
+  
+  ```
+  URL: 
+  https://<CLOUD_BROKER_HOST>:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints/rdp1/restConsumers
+
+  BODY:
+  {
+      "enabled": true,
+      "msgVpnName": "restbroker",
+      "remoteHost": "RC_HOST",
+      "remotePort": RC_PORT,
+      "restConsumerName": "rc1",
+      "restDeliveryPointName": "rdp1",
+      "tlsEnabled": false
+  }
+  ```
+
+![Create queue](../../../images/screenshots/postman-semp-rest-consumer.png)   
+
+<br/><div style="padding:5px;border:1px solid #AAAAAA;background:lightgray">
+<b>Note:</b> It should be noted that Postman tool offers a UI based API invocation to affect changes on the Broker. Non-UI tools like *curl* can also be used to accomplish the same.
+</div><br/>
+
+
+To know more about SEMP check out [SEMP overview](https://docs.solace.com/SEMP/Using-SEMP.htm).
+### Option 3: Using SEMP and <code>curl</code>
+
+<div style='background:#E6F4EA;color:#137333;margin:2em 0;padding:0.5em 1em;border-left:4px solid;border-radius:4px'>Applicable to Solace PubSub+ Software & Cloud Brokers</div>
+
+Here is a list of curl commands that can accomplish the REST Delivery Point creation similar to Postman. 
+
+<table>
+  <tr>
+    <th>
+      Create a Queue object
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+curl \
+  -X POST 'https://mrgt77uxm7c7e.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/restbroker/queues' \
+  -d '{
+      "accessType": "exclusive",
+      "egressEnabled": true,
+      "ingressEnabled": true,
+      "msgVpnName": "restbroker",
+      "owner": "all",
+      "permission": "delete",
+      "queueName": "Q/rdp1/input"
+  }'\
+  -H 'Content-Type: application/json' \
+  -H 'Solace-delivery-mode: direct'  \
+  --user restbroker-admin:p7ea15ri8l7ro6bk03u1pt77on
+      </pre>
+    </td>
+  </tr>
+  <tr>
+    <th>Create Queue Subscription object</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+curl \
+    -X POST 'https://mrgt77uxm7c7e.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/restbroker/queues/Q%2Frdp1%2Finput/subscriptions' \
+    -d '{
+        "msgVpnName": "restbroker",
+        "queueName": "Q/rdp1/input",
+        "subscriptionTopic": "T/rest/pubsub"
+    }'\
+    -H 'Content-Type: application/json' \
+    -H 'Solace-delivery-mode: direct'  \
+    --user restbroker-admin:p7ea15ri8l7ro6bk03u1pt77on
+      </pre>
+      <div style="padding:5px;border:1px solid #AAAAAA;background:lightgray">
+      <b>Note:</b> Since the queue name parameter contains '/' character, you have to select the queue name string in the URL and encode the URI component.
+      </div>
+    </td>
+  </tr>  
+  <tr>
+    <th>Create a REST Delivery Point object</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+curl \
+    -X POST 'https://mrgt77uxm7c7e.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints' \
+    -d '{
+        "clientProfileName": "default",
+        "enabled": true,
+        "msgVpnName": "restbroker",
+        "restDeliveryPointName": "rdp1"
+    }'\
+    -H 'Content-Type: application/json' \
+    -H 'Solace-delivery-mode: direct'  \
+    --user restbroker-admin:p7ea15ri8l7ro6bk03u1pt77on
+      </pre>
+    </td>
+  </tr>  
+  <tr>
+    <th>Create a Queue Binding object</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+curl \
+    -X POST 'https://mrgt77uxm7c7e.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints/rdp1/queueBindings' \
+    -d '{
+        "gatewayReplaceTargetAuthorityEnabled": false,
+        "msgVpnName": "restbroker",
+        "postRequestTarget": "/rest/tutorials",
+        "queueBindingName": "Q/rdp1/input",
+        "restDeliveryPointName": "rdp1"
+    }' \
+    -H 'Content-Type: application/json' \
+    -H 'Solace-delivery-mode: direct'  \
+    --user restbroker-admin:p7ea15ri8l7ro6bk03u1pt77on
+      </pre>
+    </td>
+  </tr>  
+  <tr>
+    <th>Create a REST Consumer object</th>
+  </tr>
+  <tr>
+    <td>
+      <pre>
+curl \
+    -X POST 'https://mrgt77uxm7c7e.messaging.solace.cloud:943/SEMP/v2/config/msgVpns/restbroker/restDeliveryPoints/rdp1/restConsumers' \
+    -d '{
+        "enabled": true,
+        "msgVpnName": "restbroker",
+        "remoteHost": "RC_HOST",
+        "remotePort": RC_PORT,
+        "restConsumerName": "rc1",
+        "restDeliveryPointName": "rdp1",
+        "tlsEnabled": false
+    }' \
+    -H 'Content-Type: application/json' \
+    -H 'Solace-delivery-mode: direct'  \
+    --user restbroker-admin:p7ea15ri8l7ro6bk03u1pt77on
+      </pre>
+    </td>
+  </tr>  
+</table>
+
+### Option 4: Using Solace CLI
+
+<div style='background:#E6F4EA;color:#137333;margin:2em 0;padding:0.5em 1em;border-left:4px solid;border-radius:4px'>Applicable to Solace PubSub+ Software & Appliance Brokers</div>
+
+The Solace Command Line Interface (CLI) is a text-based interface for configuring and monitoring Solace event brokers. It allows a user to perform event broker administration, configuration and provisioning, and network troubleshooting tasks. The CLI automatically starts after the event broker powers up.
+
+Reference guides to the Solace CLI can be found in these locations: [Appliance CLI Commands](https://docs.solace.com/Solace-CLI/CLI-Reference/APPL_CLI_Commands.html) and [Software Event Broker CLI Commands](https://docs.solace.com/Solace-CLI/CLI-Reference/VMR_CLI_Commands.html).
+
+
+The following script captures necessary commands in sequence to configure the above mentioned [resources](#Configuring-a-REST-Delivery-Point).
+
+<br/><div style="padding:5px;border:1px solid #AAAAAA;background:lightgray">
+<b>Note:</b> Ensure that the values of VPNNAME, RC\_HOST and RC\_PORT are updated with correct values in the following CLI script fragment (Message VPN name, host and port where the REST server is running).
+</div><br/>
+
 
 ```
 home
@@ -187,18 +543,6 @@ end
 
 To apply this configuration, simply log in to Solace messaging CLI as an admin user and paste the above script fragments into the CLI.
 
-If connecting using Solace Cloud, obtain your management credentials by scrolling down to the Management section on the Connectivity tab, and connect using port 2222.
-
-![Diagram: Using Jindi](../../../images/diagrams/management-info.png)
-
-```
-ssh <management-username>@<HOST> -p 2222
-Solace - Virtual Message Router (VMR)
-Password:
-```
-
-If using a VMR load, log in to the Solace message router CLI using the management username and password for your Solace VMR.
-
 ```
 ssh admin@<HOST>
 Solace - Virtual Message Router (VMR)
@@ -235,6 +579,9 @@ rdp1                 default             U U       3 / 3       1 / 1        0
 
 At this point the consumer is up and ready to receive messages.
 
+To know more about Solace CLI check out [Solace CLI overview](https://docs.solace.com/Solace-CLI/Using-Solace-CLI.htm).
+
+We have successfully configured a REST Delivery Point using Solace CLI. Follow the instructions in the next section to send a POST request on the designated POST URL and see that it is delivered to the designated queue, and in turn retrieved on the REST consumer we started here - [A Simple REST Consumer](#A-Simple-REST-Consumer).
 ## Sending a message
 
 Now it is time to send a message to the waiting consumer.  
