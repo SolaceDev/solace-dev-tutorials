@@ -5,7 +5,7 @@ summary: Learn to publish and subscribe to messages.
 icon: I_dev_P+S.svg
 links:
     - label: TopicPublisher.java
-      link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
+      link: /blob/master/src/main/java/com/solace/samples/javarto/patterns/TopicPublisher.java
     - label: TopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
     - label: feedback
@@ -207,7 +207,7 @@ At this point the producer has sent a message to the Solace message router and y
 
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-javarto). If you combine the example source code shown above results in the following source:
 
-* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/javarto/patterns/TopicPublisher.java)
 * [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
 
 ### Getting the Source
