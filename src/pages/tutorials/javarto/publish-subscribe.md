@@ -208,7 +208,7 @@ At this point the producer has sent a message to the Solace message router and y
 The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-javarto). If you combine the example source code shown above results in the following source:
 
 * [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/javarto/patterns/TopicPublisher.java)
-* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-javarto/blob/master/src/main/java/com/solace/samples/javarto/patterns/TopicSubscriber.java)
 
 ### Getting the Source
 
