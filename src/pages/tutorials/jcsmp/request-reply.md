@@ -166,7 +166,7 @@ try {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/-jcsmp). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-java-jcsmp). If you combine the example source code shown above results in the following source:
 
 * [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/BasicRequestor.java)
 * [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/features/BasicReplier.java)
