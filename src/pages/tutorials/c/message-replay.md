@@ -212,7 +212,7 @@ if (flowErrorInfo.subCode == SOLCLIENT_SUBCODE_REPLAY_STARTED) {
 
 ## Running the Sample
 
-Follow the instructions to [check out and build the samples](https://github.com/SolaceSamples/solace-samples-c/blob/master/README.md#checking-out-and-building).
+Follow the instructions to [check out and build the samples](https://github.com/SolaceSamplessdsdsdss/solace-samples-c/blob/master/README.md#checking-out-and-building).
 
 Before running this sample, be sure that Message Replay is enabled in the Message VPN. Also, messages must have been published to the replay log for the queue that is used. The "QueueProducer" sample can be used to create and publish messages to the queue. The "QueueConsumer" sample can be used to drain the queue so that replay is performed on an empty queue and observed by this sample. Both samples are from the [Persistence with Queues](../persistence-with-queues/) tutorial.
 
