@@ -8,7 +8,7 @@ links:
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/rest-messaging/publish-subscribe.md
 ---
 
-This tutorial will introduce you to the fundamentals of the Solace REST messaging API. The tutorial will show you how to connect a client, send a message on a topic subscription and receive this message again through the Solace REST messaging API. This forms the basis for any publish / subscribe message exchange illustrated here:  
+This tutorial will introduce you to the fundamentals of the Solace REST messaging API. The tutorial will show you how to connect a client, send a message on a topic subscription and receive this message again through the Solace REST messaging API. 
 
 ## Assumptions
 
@@ -22,8 +22,6 @@ This tutorial assumes the following:
     *   Client-profile enabled with guaranteed messaging permissions
 
 *   The REST service is enabled and set to *Messaging* mode, allowing the VPN to act as a message broker
-
-REST service is enabled and set to *Messaging* mode allowing the Message VPN to act 
 
 One simple way to get access to Solace messaging systems quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/).
 
@@ -239,7 +237,23 @@ Enable the REST Consumer and set HOST:PORT details of the message HTTP listener
 ![Create REST Consumer](../../../images/screenshots/brokerman-create-rest-consumer-3.png)  
   
 <div style="border:1px solid #AAAAAA;background:lightgray">
-<b>Note:</b> If you do not have a public IP or DNS name for the host where the consumer is run, you can use <i>ngrok</i> utility to expose the local host:port to be accessible from anywhere.
+<b>Note:</b> If you do not have a public IP or DNS name for the host where the consumer is run, you can use <i>ngrok</i> utility to expose the local host:port to be accessible from anywhere.<br/><br/>
+
+To use ngrok for this purpose:
+- Download and install <i>ngrok</i> from [https://ngrok.com/download](https://ngrok.com/download)
+- Run the <i>ngrok</i> command from the terminal or command window:
+    <pre>ngrok <i>protocol</i> <i>portnumber</i></pre>
+  
+  The first parameter is the protocol and second parameter is the port number on which the local listener is running.<br/><br/>
+
+  For example to expose a web server on port 1000 of your local machine to the internet, you can run the following command.
+  <pre>ngrok http 10000</pre>
+  Upon start, the ngrok utility will open tunnels for plain and secured connections. 
+
+  ![ngrok command](../../../images/screenshots/ngrok-command.png)
+
+  Now the local service is available for access from the net via host <i>eb2f-49-205-141-108.ngrok.io</i> and port <i>80</i> or <i>443</i>
+
 </div><br/>
 
 REST Consumer successfully created
