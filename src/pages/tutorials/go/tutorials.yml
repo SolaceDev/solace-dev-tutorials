@@ -1,0 +1,8 @@
+- title: Go Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your applications that use Go.
+  icon: go.png
+  buttons:
+    doclink: https://solace.dev/go-api-docs
+    github: https://github.com/SolaceSamples/solace-samples-go
+  type: solace
+  visible: true
