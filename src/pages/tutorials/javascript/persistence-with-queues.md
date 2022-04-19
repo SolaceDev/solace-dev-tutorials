@@ -74,7 +74,7 @@ try {
 }
 ```
 
-At this point your JavaScript application is connected as a client to the Solace message router. You can use SolAdmin to view this client connection and related details.
+At this point your JavaScript application is connected as a client to the Solace message router. You can use PubSub+ Manager to view this client connection and related details.
 
 #### Session Events
 
