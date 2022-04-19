@@ -62,7 +62,7 @@ mqttClient.connect(connOpts);
 
 A MQTT client can maintain state information between sessions. The state information is used to ensure delivery and receipt of messages, and include subscriptions created by an MQTT client. This tutorial sets the "clean session" flag to true, via the `MqttConnectOptions` class, to clear the state information after each session disconnect.
 
-At this point your client is connected to the Solace messaging. You can use SolAdmin to view the client connection and related details.
+At this point your client is connected to the Solace messaging. You can use PubSub+ Manager to view the client connection and related details.
 
 ## Receive a message
 

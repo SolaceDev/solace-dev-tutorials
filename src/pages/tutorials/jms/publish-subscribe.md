@@ -81,7 +81,7 @@ Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in JMS to suit your application needs. Solace supports all of the JMS acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default JMS client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
 
-At this point your client is connected to Solace messaging. You can use SolAdmin to view the client connection and related details.
+At this point your client is connected to Solace messaging. You can use PubSub+ Manager to view the client connection and related details.
 
 ## Receiving a message
 

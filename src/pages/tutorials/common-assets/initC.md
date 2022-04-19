@@ -116,4 +116,4 @@ printf ( "Connected.\n" );
 
 When creating the session, the factory method takes the session properties, the session pointer and information about the session callback functions. The API then creates the session within the supplied context and returns a reference in the session pointer. The final call to solClient_session_connect establishes the connection to the PubSub+ message router which makes the session ready for use.
 
-At this point your client is connected to the PubSub+ message router. You can use SolAdmin to view the client connection and related details.
+At this point your client is connected to the PubSub+ message router. You can use PubSub+ Manager to view the client connection and related details.

@@ -114,7 +114,7 @@ for (int i = 1; i <= count; i++) {
 }
 ```
 
-These messages are now on your queue. You can validate this through SolAdmin by inspecting the queue. Now receive the messages using a flow consumer as outlined in detail in previous tutorials.
+These messages are now on your queue. You can validate this through PubSub+ Manager by inspecting the queue. Now receive the messages using a flow consumer as outlined in detail in previous tutorials.
 
 ```java
 ConsumerFlowProperties flow_prop = new ConsumerFlowProperties();

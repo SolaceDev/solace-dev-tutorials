@@ -136,7 +136,7 @@ sessionHandle.connect();
 
 Similar to the creating a Context, a new instance of `SessionHandle` must be created first and then allocated using the previously created `contextHandle` instance. The bounded `SessionHandle`, session properties, the message callback, and the session callback functions are passed as parameters. The final call to `SessionHandle.connect` establishes the connection to the Solace message router which makes the session ready for use.
 
-At this point your client is connected to the Solace message router. You can use SolAdmin to view the client connection and related details.
+At this point your client is connected to the Solace message router. You can use PubSub+ Manager to view the client connection and related details.
 
 ## Receiving a message
 
