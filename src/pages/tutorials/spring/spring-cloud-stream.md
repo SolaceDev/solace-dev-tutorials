@@ -48,7 +48,7 @@ The goal of this tutorial is to demonstrate the use of Spring Cloud Stream with 
 It is based on Spring Boot, Spring Cloud, Spring Integration and Spring Messaging
 Solace PubSub+ is a partner maintained binder implementation for Spring Cloud Stream. 
 1. Spring Cloud Stream Project Home: [https://spring.io/projects/spring-cloud-stream](https://spring.io/projects/spring-cloud-stream)
-2. The Reference Guide for that current version is available [here](https://docs.spring.io/spring-cloud-stream/docs/current/reference/htmlsingle)
+2. The Reference Guide for that current version is available [here](https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/)
 3. PubSub+ Binder [https://github.com/SolaceProducts/spring-cloud-stream-binder-solace](https://github.com/SolaceProducts/spring-cloud-stream-binder-solace)
 
 `markdown:solaceMessaging-part1.md`
