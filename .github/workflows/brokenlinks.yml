@@ -1,4 +1,4 @@
-name: Broken Links Checker
+name: Weekly Broken Links Checker
 on:
   push:
     branches: [master]
