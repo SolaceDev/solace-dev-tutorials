@@ -83,7 +83,7 @@ using (ISession session = context.CreateSession(sessionProps, HandleMessage, nul
 }
 ```
 
-At this point your client is connected to the Solace message router. You can use SolAdmin to view the client connection and related details.
+At this point your client is connected to the Solace message router. You can use PubSub+ Manager to view the client connection and related details.
 
 ## Receiving a message
 

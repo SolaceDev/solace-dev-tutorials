@@ -146,7 +146,7 @@ using (IMessage message = ContextFactory.Instance.CreateMessage())
 }
 ```
 
-These messages are now on your queue. You can validate this through SolAdmin by inspecting the queue. Now receive the messages using a flow consumer as outlined in detail in previous tutorials.
+These messages are now on your queue. You can validate this through PubSub+ Manager by inspecting the queue. Now receive the messages using a flow consumer as outlined in detail in previous tutorials.
 
 ```csharp
 Flow = session.CreateFlow(new FlowProperties()

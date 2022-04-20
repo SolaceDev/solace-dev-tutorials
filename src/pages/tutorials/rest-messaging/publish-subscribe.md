@@ -271,7 +271,7 @@ To know more about PubSub+ Broker Manager check out [PubSub+ Broker Manager over
 
 ### Option 2: Using SEMP and Postman
 
-Solace Element Management Protocol version 2 (SEMP v2) is a RESTful API that you can use to configure Solace PubSub+ event brokers. It complements Solace's CLI and SolAdmin, and provides a programmable way to configure Solace PubSub+ event brokers.
+Solace Element Management Protocol version 2 (SEMP v2) is a RESTful API that you can use to configure Solace PubSub+ event brokers. It complements Solace's CLI and PubSub+ Manager, and provides a programmable way to configure Solace PubSub+ event brokers.
 
 1. Download SEMP v2 specification
 
@@ -628,7 +628,7 @@ Password:
 ```
 BROKER_HOST is the host name where the Broker is running.
 
-At this the REST delivery point is configured and should be operational and connected to your REST consumer application. You can verify this using SolAdmin or through the following CLI command.
+At this the REST delivery point is configured and should be operational and connected to your REST consumer application. You can verify this using PubSub+ Manager or through the following CLI command.
 
 ```
 solace(configure)# show message-vpn VPNNAME rest rest-delivery-point *
