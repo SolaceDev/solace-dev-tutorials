@@ -24,65 +24,76 @@ const TableOfContent = (props) => {
     props.slugRoot
   } on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
-  return (
-    <div id="sidebar">
-      <div className="heading">Table of content</div>
-      <Col> {
-        headings.map((heading) => (
-          <div key={
-              heading.id
-            }
-            className="pt2 pb2 border-bottom">
-            <a href={
-              "#" + heading.value.split(" ").join("-")
-            }>
-              {
-              heading.value
-            } </a>
-          </div>
-        ))
-      } </Col>
-      <Col>
-        <Button className="mt3 mb2 w-100"
-          href={feedback_link}
-          target="_blank"
-          rel="noreferrer"
-          variant="primary"
-          size="sm">
-          <FontAwesomeIcon icon={faGithub}
-            size="1x"/>
-          Improve this page{" "} </Button>
-        {" "}
-        <Button className="mt1 mb3 w-100" href="https://solace.community/" target="_blank" rel="noreferrer" variant="primary" size="sm">
-          <FontAwesomeIcon icon={faComments}
-            size="1x"/>
-          Discuss in Community{" "} </Button>
-        {" "} </Col>
-      <Col className="social">
-        <TwitterShareButton className="pr-1 pl-1"
-          url={link}
-          title={social_string}
-          hashtags={hashtags}
-          via="SolaceDevs">
-          <TwitterIcon size={32}
-            round={true}/>
-        </TwitterShareButton>
-        <LinkedinShareButton className="pr-1 pl-1"
-          url={link}
-          summary={social_string}>
-          <LinkedinIcon size={32}
-            round={true}/>
-        </LinkedinShareButton>
-        <FacebookShareButton className="pr-1 pl-1"
-          url={link}
-          quote={social_string}
-          hashtags={hashtags}>
-          <FacebookIcon size={32}
-            round={true}/>
-        </FacebookShareButton>
-      </Col>
-    </div>
-  )
+  return (<div id="sidebar"> {
+    updateIDs(headings)
+  }
+    <div className="heading">Table of content</div>
+    <Col> {
+      headings.map((heading) => (<div key={
+          heading.id
+        }
+        className="pt2 pb2 border-bottom">
+        <a href={
+          "#" + heading.value.split(" ").join("-")
+        }> {
+          heading.value
+        } </a>
+      </div>))
+    } </Col>
+    <Col>
+      <Button className="mt3 mb2 w-100"
+        href={feedback_link}
+        target="_blank"
+        rel="noreferrer"
+        variant="primary"
+        size="sm">
+        <FontAwesomeIcon icon={faGithub}
+          size="1x"/>
+        Improve this page{" "} </Button>
+      {" "}
+      <Button className="mt1 mb3 w-100" href="https://solace.community/" target="_blank" rel="noreferrer" variant="primary" size="sm">
+        <FontAwesomeIcon icon={faComments}
+          size="1x"/>
+        Discuss in Community{" "} </Button>
+      {" "} </Col>
+    <Col className="social">
+      <TwitterShareButton className="pr-1 pl-1"
+        url={link}
+        title={social_string}
+        hashtags={hashtags}
+        via="SolaceDevs">
+        <TwitterIcon size={32}
+          round={true}/>
+      </TwitterShareButton>
+      <LinkedinShareButton className="pr-1 pl-1"
+        url={link}
+        summary={social_string}>
+        <LinkedinIcon size={32}
+          round={true}/>
+      </LinkedinShareButton>
+      <FacebookShareButton className="pr-1 pl-1"
+        url={link}
+        quote={social_string}
+        hashtags={hashtags}>
+        <FacebookIcon size={32}
+          round={true}/>
+      </FacebookShareButton>
+    </Col>
+  </div>)
+}
+
+
+function updateIDs(headings) {
+  // headings.map(heading => {
+  // console.log(`The heading is ${heading}`)
+  // console.log(heading)
+  // })
+  let h2elms = document.getElementsByTagName("h2")
+  h2elms.forEach(element => console.log(element))
+
+  // h2elms.map((elm) => {
+  // console.log(elm.accessKey)
+  // })
 }
 
 export default TableOfContent
