@@ -83,17 +83,17 @@ const TableOfContent = (props) => {
 }
 
 
-function updateIDs(headings) {
-  // headings.map(heading => {
-  // console.log(`The heading is ${heading}`)
-  // console.log(heading)
-  // })
-  let h2elms = document.getElementsByTagName("h2")
-  h2elms.forEach(element => console.log(element))
+// function updateIDs(headings) {
+// // headings.map(heading => {
+// // console.log(`The heading is ${heading}`)
+// // console.log(heading)
+// // })
+// let h2elms = document.getElementsByTagName("h2")
+// h2elms.forEach(element => console.log(element))
 
-  // h2elms.map((elm) => {
-  // console.log(elm.accessKey)
-  // })
-}
+// // h2elms.map((elm) => {
+// // console.log(elm.accessKey)
+// // })
+// }
 
 export default TableOfContent
