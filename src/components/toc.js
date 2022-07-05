@@ -21,7 +21,6 @@ const TableOfContent = (props) => {
   return (
   
     <div id="sidebar">
-<<<<<<< HEAD
     <div className="heading">Table of content</div>
     <Col> {
       headings.map((heading) => (<div key={
@@ -89,71 +88,6 @@ function updateIDs(headings) {
   // h2elms.map((elm) => {
   // console.log(elm.accessKey)
   // })
-=======
-      <div className="heading">Table of Contents</div>
-      <Col>
-        {" "}
-        {headings.map((heading) => (
-          <div key={heading.id} className="pt2 pb2 border-bottom">
-            <a href={"#" + heading.value.split(" ").join("-")}>
-              {heading.value}{" "}
-            </a>
-          </div>
-        ))}{" "}
-      </Col>
-      <Col>
-        <Button
-          className="mt3 mb2 w-100"
-          href={feedback_link}
-          target="_blank"
-          rel="noreferrer"
-          variant="primary"
-          size="sm"
-        >
-          <FontAwesomeIcon icon={faGithub} size="1x" />
-          Improve this page{" "}
-        </Button>{" "}
-        <Button
-          className="mt1 mb3 w-100"
-          href="https://solace.community/"
-          target="_blank"
-          rel="noreferrer"
-          variant="primary"
-          size="sm"
-        >
-          <FontAwesomeIcon icon={faComments} size="1x" />
-          Discuss in Community{" "}
-        </Button>{" "}
-      </Col>
-      <Col className="social">
-        <TwitterShareButton
-          className="pr-1 pl-1"
-          url={link}
-          title={social_string}
-          hashtags={hashtags}
-          via="SolaceDevs"
-        >
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <LinkedinShareButton
-          className="pr-1 pl-1"
-          url={link}
-          summary={social_string}
-        >
-          <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
-        <FacebookShareButton
-          className="pr-1 pl-1"
-          url={link}
-          quote={social_string}
-          hashtags={hashtags}
-        >
-          <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
-      </Col>
-    </div>
-  )
->>>>>>> b35fa4a (Fixed missing IDs in H2s from includes)
 }
 
 export default TableOfContent
