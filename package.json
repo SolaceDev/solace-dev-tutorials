@@ -24,6 +24,7 @@
     "gatsby-remark-embed-markdown": "file:./gatsby-remark-embed-markdown",
     "gatsby-remark-embed-snippet": "^7.19.0",
     "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-heading-slug": "^0.2.0",
     "gatsby-remark-images": "^3.3.25",
     "gatsby-remark-prismjs": "^3.13.0",
     "gatsby-source-filesystem": "^2.3.24",
