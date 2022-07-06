@@ -24,7 +24,7 @@ const tutorial = ({ data, pageContext }) => {
   // Make sure there is IDs for every h2 to be used in hrefs of TOC
   let modified_html = node.html
   headersWithNullIds.map((heading) => {
-    modified_html = node.html.replace(
+    modified_html = modified_html.replace(
       `<h2>${heading.value}</h2>`,
       `<h2 id="${heading.value.split(" ").join("-")}">${heading.value}</h2>`
     )
