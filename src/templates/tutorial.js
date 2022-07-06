@@ -19,13 +19,8 @@ const tutorial = ({ data, pageContext }) => {
   crumbs_clone.unshift(solaceDevCrumb)
 
   const node = data.tutorialBody.edges[0].node
-  const tutorials = data.tableOfContent.edges.filter(
-    (edge) =>
-      edge.node.frontmatter.layout === "tutorials" &&
-      edge.node.frontmatter.visible !== false
-  )
-  const headings = node.headings.filter((heading) => heading.depth == 2)
-  const headersWithNullIds = headings.filter((elm) => elm.id == null)
+  const headings = node.headings.filter((heading) => heading.depth === 2)
+  const headersWithNullIds = headings.filter((elm) => elm.id === null)
   // Make sure there is IDs for every h2 to be used in hrefs of TOC
   let modified_html = node.html
   headersWithNullIds.map((heading) => {
