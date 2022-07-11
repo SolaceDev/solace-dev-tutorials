@@ -60,7 +60,7 @@ The following sections from the [Persistence with Queues](../persistence-with-qu
 
 ### Configuring Per-Message publisher acknowledge event mode
 
-To confirm successful delivery of each published guaranteed message to the message router, set "Per-Message" publisher acknowledgement so the application receives an acknowledgement event for every message. To learn more about publisher acknowledge event modes refer to the [Customer Documentation - Acknowledging Published Messages](https://solace.com/samples/solace-samples-javascript/confirmed-delivery/).
+To confirm successful delivery of each published guaranteed message to the message router, set "Per-Message" publisher acknowledgement so the application receives an acknowledgement event for every message. To learn more about publisher acknowledge event modes refer to the [Customer Documentation - Acknowledging Published Messages](https://docs.solace.com/API/API-Developer-Guide/Acknowledging-Published-.htm).
 
 Because the guaranteed message publisher is embedded in the `Session` object, configure the `publisherProperties` property of the `SessionProperties` which is used when creating the session. Specifically, set the `acknowledgeMode` of the `publisherProperties`:
 
