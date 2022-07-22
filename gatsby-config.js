@@ -86,6 +86,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {
+              directory: `${__dirname}/.cache/gatsby-source-git`
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -246,6 +252,23 @@ module.exports = {
         // optional: switch to className styling (styling is under breadcrumb.css)
         useClassNames: true,
       },
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `C-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-c/`,
+        commit: '5646284cb253a7c76eaa70f026ac4ba68e907d0b',
+        patterns: `src/intro/**`
+      }
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `JCSMP-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-java-jcsmp`,
+        commit: '044af6eb26c416380c3e6598a1a3d4ff72eb81f0'
+      }
     },
   ],
 }

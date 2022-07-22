@@ -16,6 +16,8 @@ This tutorial outlines both roles in the request-response message exchange patte
 
 `markdown:assumption.md`
 
+`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectProcessor.java#L131-153`
+
 ## Goals
 
 The goal of this tutorial is to understand the following:
