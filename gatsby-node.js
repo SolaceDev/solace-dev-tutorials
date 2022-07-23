@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const resultTutorial = await graphql(`
     {
       allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/^(?!.*assets).*$/" } }
+        filter: { fileAbsolutePath: { regex: "/^(?!.*(cache|assets)).*$/" } }
       ) {
         edges {
           node {
