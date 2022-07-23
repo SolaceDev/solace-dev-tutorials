@@ -26,3 +26,24 @@ This repo will manage the Solace Tutorials, which helps developers get up to spe
 
 ### Snippets in tutorial
 - Code snippets referenced in tutorials
+
+## Development
+### Referring to code snippets lines from github
+
+1. Define the git repo in the `gatsby-config.js` file as follows 
+```
+{
+  resolve: `gatsby-source-git`,
+  options: {
+    name: `{Lang}-Samples`,
+    remote: `{git_repo_url},
+    commit: '{commit_number}'
+  }
+}
+```
+
+2. In your tutorial markdown file (under `src/pages/tutorials/{api}/{tutorial}.md), refer to your code snippet as follows
+```
+`embed:{Lang}-Samples/{path/to/file}#L{start_line}-{end_line}`
+```
+For example `embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectProcessor.java#L131-153`
