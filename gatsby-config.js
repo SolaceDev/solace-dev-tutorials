@@ -262,13 +262,5 @@ module.exports = {
         patterns: `src/intro/**`
       }
     },
-    {
-      resolve: `gatsby-source-git`,
-      options: {
-        name: `JCSMP-Samples`,
-        remote: `https://github.com/SolaceSamples/solace-samples-java-jcsmp`,
-        commit: '044af6eb26c416380c3e6598a1a3d4ff72eb81f0'
-      }
-    },
   ],
 }

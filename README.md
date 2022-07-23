@@ -42,7 +42,7 @@ This repo will manage the Solace Tutorials, which helps developers get up to spe
 }
 ```
 
-2. In your tutorial markdown file (under `src/pages/tutorials/{api}/{tutorial}.md), refer to your code snippet as follows
+2. In your tutorial markdown file (under `src/pages/tutorials/{api}/{tutorial}.md`), refer to your code snippet as follows
 ```
 `embed:{Lang}-Samples/{path/to/file}#L{start_line}-{end_line}`
 ```
