@@ -21,6 +21,12 @@ const tutorials = ({ data, pageContext }) => {
   crumbs_clone.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
 
+  const helloworld = data.allMarkdownRemark.edges.filter(
+    (edge) =>
+      edge.node.frontmatter.layout === "helloworld" &&
+      edge.node.frontmatter.visible !== false
+  )
+
   const tutorials = data.allMarkdownRemark.edges.filter(
     (edge) =>
       edge.node.frontmatter.layout === "tutorials" &&
@@ -58,6 +64,10 @@ const tutorials = ({ data, pageContext }) => {
       {/* TutorialCard Component Starts */}
       {(tutorials.length !== 0 || features.length !== 0) && (
         <Container className="mt4 pb4">
+          <TutorialCard
+            content={helloworld}
+            catName={meta[0].node.section1}
+          ></TutorialCard>
           <h2>Tutorials</h2>
           <TutorialCard
             content={tutorials}
