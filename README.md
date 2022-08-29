@@ -8,7 +8,7 @@ This repo will manage the Solace Tutorials, which helps developers get up to spe
 
 ## Quick Start
 1. Clone repo
-1. Instal dependencies `npm i`
+1. Install dependencies `npm i`
 1. Run server `npm run develop`
 
 ## Naming Conventions For Solace Samples
