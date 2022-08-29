@@ -1,7 +1,7 @@
 
-## Obtaining Apache Qpid JMS 1.1
+## Obtaining Apache Qpid JMS
 
-This tutorial assumes you have downloaded and successfully installed the [Apache Qpid JMS client](https://qpid.apache.org/components/jms/index.html). If your environment differs from the example, then adjust the build instructions appropriately.
+This tutorial assumes you have downloaded and successfully installed the [Apache Qpid JMS client](https://qpid.apache.org/components/jms). If your environment differs from the example, then adjust the build instructions appropriately.
 
 The easiest way to install it is through Gradle or Maven.
 
@@ -9,7 +9,7 @@ The easiest way to install it is through Gradle or Maven.
 
 ```
 dependencies {
-    compile("org.apache.qpid:qpid-jms-client:0.27.0")
+    compile("org.apache.qpid:qpid-jms-client:1.6.0")
 }
 ```
 
@@ -19,6 +19,6 @@ dependencies {
 <dependency>
     <groupId>org.apache.qpid</groupId>
     <artifactId>qpid-jms-client</artifactId>
-    <version>0.27.0</version>
+    <version>1.6.0</version>
 </dependency>
 ```
