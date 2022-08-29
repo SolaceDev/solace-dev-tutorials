@@ -86,6 +86,12 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {
+              directory: `${__dirname}/.cache/gatsby-source-git`
+            },
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
@@ -247,5 +253,13 @@ module.exports = {
         useClassNames: true,
       },
     },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `JCSMP-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-java-jcsmp`,
+        commit: '044af6eb26c416380c3e6598a1a3d4ff72eb81f0',
+      }
+    }
   ],
 }

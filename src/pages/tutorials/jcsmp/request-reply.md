@@ -59,22 +59,7 @@ First let’s look at the requestor. This is the application that will send the 
 
 For convenience, we will use the `Requestor` object that is created from the `Session` object. The Requestor object makes use of the Session’s `Producer` and `Consumer` objects to send messages and receive replies. So in order for the `Requestor` to function correctly, there must be a `Producer` and `Consumer` created within the session. Normally this will already be done by other parts of the application. However, for demonstration purposes, the simplest was to accomplish this is show below.
 
-```java
-XMLMessageProducer producer = session.getMessageProducer(new JCSMPStreamingPublishEventHandler() {
-
-    @Override
-    public void responseReceived(String messageID) {
-        System.out.println("Producer received response for msg: " + messageID);
-    }
-
-    @Override
-    public void handleError(String messageID, JCSMPException e, long timestamp) {
-        System.out.printf("Producer received error for msg: %s@%s - %s%n",
-            messageID,timestamp,e);
-    }
-});
-XMLMessageConsumer consumer = session.getMessageConsumer((XMLMessageListener)null); consumer.start();
-```
+`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectRequestorBlocking.java#L80-98`
 
 Next you must create a message and the topic to send the message to. This is done in the same way as illustrated in the [publish/subscribe tutorial](../publish-subscribe/).
 
