@@ -28,7 +28,7 @@ const TableOfContent = (props) => {
         }
         className="pt2 pb2 border-bottom">
         <a href={
-          "#" + heading.value.split(" ").join("-")
+          "#" + heading.value.split(" ").join("-").replace(/:/g, '')
         }> {
           heading.value
         } </a>
