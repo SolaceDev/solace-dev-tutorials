@@ -6,7 +6,7 @@ import { Col, Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 
-const tutorial = ({ data, pageContext }) => {
+const Tutorial = ({ data, pageContext }) => {
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -21,7 +21,8 @@ const tutorial = ({ data, pageContext }) => {
   const node = data.tutorialBody.edges[0].node
   const headings = node.headings.filter((heading) => heading.depth === 2)
   const headersWithNullIds = headings.filter((elm) => elm.id === null)
-  // Make sure there is IDs for every h2 to be used in hrefs of TOC
+  
+  // This is to sure there are IDs for every h2 to be used in hrefs of TOC
   let modified_html = node.html
   headersWithNullIds.map((heading) => {
     modified_html = modified_html.replace(
@@ -60,8 +61,7 @@ const tutorial = ({ data, pageContext }) => {
           <Col xs={12} sm={12} md={8} lg={9} xl={9}>
             <h1>{node.frontmatter.title}</h1>
             <h5 id="minutes" className="mb3 pt2">
-              {node.timeToRead}
-              Minute Read
+              {node.timeToRead} Minute Read
             </h5>
             <div dangerouslySetInnerHTML={{ __html: modified_html }} />
           </Col>
@@ -145,4 +145,4 @@ export const query = graphql`
   }
 `
 
-export default tutorial
+export default Tutorial

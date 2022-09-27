@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
@@ -12,14 +12,42 @@ import {
   LinkedinIcon,
 } from "react-share"
 
-const TableOfContent = (props) => {
+const TableOfContent = (props) => { 
   let headings = props.headings
   let feedback_link = props.feedback_link
   let link = `https://tutorials.solace.dev${props.slug}`
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
+
+  const handleObserverEvent = entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { 
+        console.log(entry.target)
+        // console.log(`${entry.target.id} is visible`)
+        // Figure out a way to update the element's style/className (entry.target) and render html
+      }
+    })
+  }
+
+  useEffect(() => {
+    let options = {
+      root: document.querySelector('#scrollArea'),
+      rootMargin: '0px',
+      threshold: 1.0
+    }
+    let observer = new IntersectionObserver(handleObserverEvent, options)
+    const h2s = document.getElementsByTagName("h2")
+    var elms = Array.prototype.slice.call(h2s)
+    elms.map(elm => {
+      observer.observe(elm)
+    })
+    return () => {
+      if (observer) observer.disconnect()
+      observer = null
+    }
+  }, [])
+
   return (
-  
     <div id="sidebar">
     <div className="heading">Table of content</div>
     <Col> {
