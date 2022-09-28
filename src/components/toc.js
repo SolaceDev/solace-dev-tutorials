@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React, {useEffect, useState} from "react"
 import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
@@ -19,23 +19,22 @@ const TableOfContent = (props) => {
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
 
+  const [visibleHeader, setVisibleHeader] = useState(null);
   const handleObserverEvent = entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { 
-        console.log(entry.target)
-        // console.log(`${entry.target.id} is visible`)
-        // Figure out a way to update the element's style/className (entry.target) and render html
+        setVisibleHeader(entry.target.id.split("-").join(" "))
       }
     })
   }
 
   useEffect(() => {
     let options = {
-      root: document.querySelector('#scrollArea'),
+      root: null,
       rootMargin: '0px',
       threshold: 1.0
     }
-    let observer = new IntersectionObserver(handleObserverEvent, options)
+    let observer = new IntersectionObserver(handleObserverEvent, {})
     const h2s = document.getElementsByTagName("h2")
     var elms = Array.prototype.slice.call(h2s)
     elms.map(elm => {
@@ -54,6 +53,7 @@ const TableOfContent = (props) => {
       headings.map((heading) => (<div key={
           heading.id
         }
+        style={{ background: visibleHeader == heading.value? 'red': 'blue'}}
         className="pt2 pb2 border-bottom">
         <a href={
           "#" + heading.value.split(" ").join("-").replace(/:/g, '')

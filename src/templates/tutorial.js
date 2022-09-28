@@ -56,6 +56,7 @@ const Tutorial = ({ data, pageContext }) => {
           />
         </Container>
       </section>
+      <section id="tutorial-content">
       <Container className="mt4 pb4">
         <Row>
           <Col xs={12} sm={12} md={8} lg={9} xl={9}>
@@ -79,6 +80,7 @@ const Tutorial = ({ data, pageContext }) => {
           </Col>
         </Row>
       </Container>
+      </section>
     </Layout>
   )
 }
