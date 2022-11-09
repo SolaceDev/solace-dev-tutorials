@@ -31,10 +31,10 @@ const TableOfContent = (props) => {
   useEffect(() => {
     let options = {
       root: null,
-      rootMargin: "0px",
-      threshold: 1.0,
+      rootMargin: "0% 0% -80% 0%",
+      threshold: 1,
     }
-    let observer = new IntersectionObserver(handleObserverEvent, {})
+    let observer = new IntersectionObserver(handleObserverEvent, options)
     const h2s = document.getElementsByTagName("h2")
     var elms = Array.prototype.slice.call(h2s)
     elms.map((elm) => {
@@ -53,11 +53,10 @@ const TableOfContent = (props) => {
         {" "}
         {headings.map((heading) => (
           <div
-            key={heading.id}
-            style={{
-              background: visibleHeader === heading.value ? "#000" : " ",
-            }}
-            className="pt2 pb2 border-bottom"
+            key={heading.value.split(" ").join("-")}
+            className={
+              visibleHeader === heading.value ? "pt2 pb2 border-bottom visible-header" : "pt2 pb2 border-bottom nonvisible-header" 
+            }
           >
             <a
               href={"#" + heading.value.split(" ").join("-").replace(/:/g, "")}

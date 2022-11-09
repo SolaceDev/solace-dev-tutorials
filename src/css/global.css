@@ -911,3 +911,11 @@ a:hover {
 .btn-primary:hover {
   background: #20262a;
 }
+
+.visible-header {
+background: #ff0000;
+}
+
+.nonvisible-header {
+  background: #ffff00;
+  }
