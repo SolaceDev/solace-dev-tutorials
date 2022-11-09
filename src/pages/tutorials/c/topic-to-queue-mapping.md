@@ -164,7 +164,7 @@ Binary Attachment:                      len=16
 Acknowledging message Id: 2.
 Exiting.
 ```
-On `TopicSubscriber` subswcribing to `my/sample/topic/1`
+On `TopicSubscriber` subscribing to `my/sample/topic/1`
 ```
 TopicSubscriber initializing...
 Connected.
@@ -180,7 +180,7 @@ Message Id:                             1
 Binary Attachment:                      len=16
   6d 79 20 61 74 74 61 63  68 65 64 20 64 61 74 61      my attac   hed data
 ```
-On `TopicSubscriber` subswcribing to `my/sample/topic/2`
+On `TopicSubscriber` subscribing to `my/sample/topic/2`
 ```
 opicSubscriber initializing...
 Connected.
