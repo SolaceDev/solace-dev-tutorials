@@ -20,7 +20,7 @@ const TableOfContent = (props) => {
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
 
   const [visibleHeader, setVisibleHeader] = useState(
-    headings[0].value.split(" ").join("-")
+    headings[0] ? headings[0].value.split(" ").join("-") : null
   )
   console.log(headings)
   const handleObserverEvent = (entries) => {
