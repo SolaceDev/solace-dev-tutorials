@@ -19,7 +19,10 @@ const TableOfContent = (props) => {
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
 
-  const [visibleHeader, setVisibleHeader] = useState(null)
+  const [visibleHeader, setVisibleHeader] = useState(
+    headings[0].value.split(" ").join("-")
+  )
+  console.log(headings)
   const handleObserverEvent = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -47,15 +50,17 @@ const TableOfContent = (props) => {
   }, [])
 
   return (
-    <div id="sidebar">
-      <div className="heading">Table of content</div>
+    <div id="toc">
+      <div className="heading">On This Page</div>
       <Col>
         {" "}
         {headings.map((heading) => (
           <div
             key={heading.value.split(" ").join("-")}
             className={
-              visibleHeader === heading.value ? "pt2 pb2 border-bottom visible-header" : "pt2 pb2 border-bottom nonvisible-header" 
+              visibleHeader === heading.value
+                ? "pt2 pb2 visible-header"
+                : "pt2 pb2 nonvisible-header"
             }
           >
             <a
@@ -90,32 +95,6 @@ const TableOfContent = (props) => {
           <FontAwesomeIcon icon={faComments} size="1x" />
           Discuss in Community{" "}
         </Button>{" "}
-      </Col>
-      <Col className="social">
-        <TwitterShareButton
-          className="pr-1 pl-1"
-          url={link}
-          title={social_string}
-          hashtags={hashtags}
-          via="SolaceDevs"
-        >
-          <TwitterIcon size={32} round={true} />
-        </TwitterShareButton>
-        <LinkedinShareButton
-          className="pr-1 pl-1"
-          url={link}
-          summary={social_string}
-        >
-          <LinkedinIcon size={32} round={true} />
-        </LinkedinShareButton>
-        <FacebookShareButton
-          className="pr-1 pl-1"
-          url={link}
-          quote={social_string}
-          hashtags={hashtags}
-        >
-          <FacebookIcon size={32} round={true} />
-        </FacebookShareButton>
       </Col>
     </div>
   )

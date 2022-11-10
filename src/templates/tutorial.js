@@ -21,7 +21,7 @@ const Tutorial = ({ data, pageContext }) => {
   const node = data.tutorialBody.edges[0].node
   const headings = node.headings.filter((heading) => heading.depth === 2)
   const headersWithNullIds = headings.filter((elm) => elm.id === null)
-  
+
   // This is to sure there are IDs for every h2 to be used in hrefs of TOC
   let modified_html = node.html
   headersWithNullIds.map((heading) => {
@@ -57,29 +57,29 @@ const Tutorial = ({ data, pageContext }) => {
         </Container>
       </section>
       <section id="tutorial-content">
-      <Container className="mt4 pb4">
-        <Row>
-          <Col xs={12} sm={12} md={8} lg={9} xl={9}>
-            <h1>{node.frontmatter.title}</h1>
-            <h5 id="minutes" className="mb3 pt2">
-              {node.timeToRead} Minute Read
-            </h5>
-            <div dangerouslySetInnerHTML={{ __html: modified_html }} />
-          </Col>
-          <Col xs={12} sm={12} md={4} lg={3} xl={3}>
-            <TableOfContent
-              features={features}
-              headings={headings}
-              pageContext={pageContext}
-              feedback_link={feedback_link}
-              section_title={section_title}
-              page_title={page_title}
-              slug={slug}
-              slugRoot={slugRoot}
-            ></TableOfContent>
-          </Col>
-        </Row>
-      </Container>
+        <Container className="mt4 pb4">
+          <Row>
+            <Col xs={12} sm={12} md={8} lg={9} xl={9}>
+              <h1>{node.frontmatter.title}</h1>
+              <h5 id="minutes" className="mb3 pt2">
+                {node.timeToRead} Minute Read
+              </h5>
+              <div dangerouslySetInnerHTML={{ __html: modified_html }} />
+            </Col>
+            <Col xs={12} sm={12} md={4} lg={3} xl={3}>
+              <TableOfContent
+                features={features}
+                headings={headings}
+                pageContext={pageContext}
+                feedback_link={feedback_link}
+                section_title={section_title}
+                page_title={page_title}
+                slug={slug}
+                slugRoot={slugRoot}
+              ></TableOfContent>
+            </Col>
+          </Row>
+        </Container>
       </section>
     </Layout>
   )
