@@ -3,21 +3,10 @@ import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  TwitterShareButton,
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterIcon,
-  FacebookIcon,
-  LinkedinIcon,
-} from "react-share"
 
 const TableOfContent = (props) => {
   let headings = props.headings
   let feedback_link = props.feedback_link
-  let link = `https://tutorials.solace.dev${props.slug}`
-  let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
-  let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
 
   const [visibleHeader, setVisibleHeader] = useState(
     headings[0] ? headings[0].value.split(" ").join("-") : null
