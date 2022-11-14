@@ -63,9 +63,9 @@ const Tutorial = ({ data, pageContext }) => {
         </Container>
       </section>
       <section id="tutorial-content">
-        <Container className="mt4 pb4">
+        <Container fluid="xl" className="mt4 pb4">
           <Row>
-            <Col xs={12} sm={12} md={3} lg={2} xl={2}>
+            <Col xs={12} sm={12} md={3} lg={3} xl={3}>
               <RelatedArticles
                 features={features}
                 tutorials={tutorials}
@@ -77,14 +77,14 @@ const Tutorial = ({ data, pageContext }) => {
                 slugRoot={slugRoot}
               />
             </Col>
-            <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+            <Col xs={12} sm={12} md={6} lg={6} xl={6}>
               <h1>{node.frontmatter.title}</h1>
               <h5 id="minutes" className="mb3 pt2">
                 {node.timeToRead} Minute Read
               </h5>
               <div dangerouslySetInnerHTML={{ __html: modified_html }} />
             </Col>
-            <Col xs={12} sm={12} md={4} lg={2} xl={2}>
+            <Col xs={12} sm={12} md={3} lg={3} xl={3}>
               <OnThisPage
                 features={features}
                 headings={headings}
