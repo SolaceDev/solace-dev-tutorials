@@ -3,6 +3,7 @@ import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Link, animateScroll as scroll } from "react-scroll";
 
 const OnThisPage = (props) => {
   let headings = props.headings
@@ -50,14 +51,15 @@ const OnThisPage = (props) => {
               visibleHeader === heading.value
                 ? "pt2 pb2 visible-header"
                 : "pt2 pb2 nonvisible-header"
-            }
-          >
-            <a
-              href={"#" + heading.value.split(" ").join("-").replace(/:/g, "")}
-            >
-              {" "}
-              {heading.value}{" "}
-            </a>
+            }>
+            <Link 
+              to={heading.value.split(" ").join("-").replace(/:/g, "")}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+            >{" "}{heading.value}{" "}
+            </Link>
           </div>
         ))}{" "}
       </Col>
