@@ -4,7 +4,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-const TableOfContent = (props) => {
+const OnThisPage = (props) => {
   let headings = props.headings
   let feedback_link = props.feedback_link
 
@@ -89,4 +89,4 @@ const TableOfContent = (props) => {
   )
 }
 
-export default TableOfContent
+export default OnThisPage

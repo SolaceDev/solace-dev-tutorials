@@ -12,7 +12,7 @@ import {
   LinkedinIcon,
 } from "react-share"
 
-const Sidebar = (props) => {
+const RelatedArticles = (props) => {
   let features = props.features
   let tutorials = props.tutorials
   let feedback_link = props.feedback_link
@@ -22,7 +22,7 @@ const Sidebar = (props) => {
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
   return (
-    <div id="sidebar">
+    <div id="related-articles">
       {tutorials.length !== 0 && (
         <div className="heading">{section_title || "Fundamentals"}</div>
       )}
@@ -107,4 +107,4 @@ const Sidebar = (props) => {
   )
 }
 
-export default Sidebar
+export default RelatedArticles

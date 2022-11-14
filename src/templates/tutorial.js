@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import TableOfContent from "../components/toc"
+import RelatedArticles from "../components/relatedArticles"
+import OnThisPage from "../components/otp"
 import { Col, Container, Row } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
@@ -30,7 +31,12 @@ const Tutorial = ({ data, pageContext }) => {
       `<h2 id="${heading.value.split(" ").join("-")}">${heading.value}</h2>`
     )
   })
-  const features = data.tableOfContent.edges.filter(
+  const tutorials = data.onThisPage.edges.filter(
+    (edge) =>
+      edge.node.frontmatter.layout === "tutorials" &&
+      edge.node.frontmatter.visible !== false
+  )
+  const features = data.onThisPage.edges.filter(
     (edge) =>
       edge.node.frontmatter.layout === "features" &&
       edge.node.frontmatter.visible !== false
@@ -59,15 +65,27 @@ const Tutorial = ({ data, pageContext }) => {
       <section id="tutorial-content">
         <Container className="mt4 pb4">
           <Row>
-            <Col xs={12} sm={12} md={8} lg={9} xl={9}>
+            <Col xs={12} sm={12} md={3} lg={2} xl={2}>
+              <RelatedArticles
+                features={features}
+                tutorials={tutorials}
+                pageContext={pageContext}
+                feedback_link={feedback_link}
+                section_title={section_title}
+                page_title={page_title}
+                slug={slug}
+                slugRoot={slugRoot}
+              />
+            </Col>
+            <Col xs={12} sm={12} md={8} lg={8} xl={8}>
               <h1>{node.frontmatter.title}</h1>
               <h5 id="minutes" className="mb3 pt2">
                 {node.timeToRead} Minute Read
               </h5>
               <div dangerouslySetInnerHTML={{ __html: modified_html }} />
             </Col>
-            <Col xs={12} sm={12} md={4} lg={3} xl={3}>
-              <TableOfContent
+            <Col xs={12} sm={12} md={4} lg={2} xl={2}>
+              <OnThisPage
                 features={features}
                 headings={headings}
                 pageContext={pageContext}
@@ -76,7 +94,7 @@ const Tutorial = ({ data, pageContext }) => {
                 page_title={page_title}
                 slug={slug}
                 slugRoot={slugRoot}
-              ></TableOfContent>
+              ></OnThisPage>
             </Col>
           </Row>
         </Container>
@@ -123,7 +141,7 @@ export const query = graphql`
         }
       }
     }
-    tableOfContent: allMarkdownRemark(
+    onThisPage: allMarkdownRemark(
       filter: {
         fileAbsolutePath: { regex: "/^(?!.*assets).*$/" }
         fields: { slugRoot: { eq: $slugRoot } }
