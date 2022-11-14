@@ -3,7 +3,7 @@ import { Col, Button } from "react-bootstrap"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { faComments } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll"
 
 const OnThisPage = (props) => {
   let headings = props.headings
@@ -51,41 +51,20 @@ const OnThisPage = (props) => {
               visibleHeader === heading.value
                 ? "pt2 pb2 visible-header"
                 : "pt2 pb2 nonvisible-header"
-            }>
-            <Link 
+            }
+          >
+            <Link
               to={heading.value.split(" ").join("-").replace(/:/g, "")}
               spy={true}
               smooth={true}
-              offset={-70}
+              offset={-50}
               duration={500}
-            >{" "}{heading.value}{" "}
+            >
+              {" "}
+              {heading.value}{" "}
             </Link>
           </div>
         ))}{" "}
-      </Col>
-      <Col>
-        <Button
-          className="mt3 mb2 w-100"
-          href={feedback_link}
-          target="_blank"
-          rel="noreferrer"
-          variant="primary"
-          size="sm"
-        >
-          <FontAwesomeIcon icon={faGithub} size="1x" />
-          Improve this page{" "}
-        </Button>{" "}
-        <Button
-          className="mt1 mb3 w-100"
-          href="https://solace.community/"
-          target="_blank"
-          rel="noreferrer"
-          variant="primary"
-          size="sm"
-        >
-          <FontAwesomeIcon icon={faComments} size="1x" />
-          Discuss in Community{" "}
-        </Button>{" "}
       </Col>
     </div>
   )
