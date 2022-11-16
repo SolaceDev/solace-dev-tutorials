@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import RelatedArticles from "../components/relatedArticles"
 import OnThisPage from "../components/otp"
-import { Col, Container, Row } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
 import SEO from "../components/seo"
 

@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { Col, Button } from "react-bootstrap"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { faComments } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Col } from "react-bootstrap"
 import { Link, animateScroll as scroll } from "react-scroll"
 
 const OnThisPage = (props) => {
   let headings = props.headings
-  let feedback_link = props.feedback_link
 
   const [visibleHeader, setVisibleHeader] = useState(
     headings[0] ? headings[0].value.split(" ").join("-") : null
