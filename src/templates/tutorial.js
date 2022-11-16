@@ -23,7 +23,7 @@ const Tutorial = ({ data, pageContext }) => {
   const headings = node.headings.filter((heading) => heading.depth === 2)
   const headersWithNullIds = headings.filter((elm) => elm.id === null)
 
-  // This is to sure there are IDs for every h2 to be used in hrefs of TOC
+  // This is to sure there are IDs for every h2 to be used in hrefs of On This Page
   let modified_html = node.html
   headersWithNullIds.map((heading) => {
     modified_html = modified_html.replace(
@@ -63,7 +63,7 @@ const Tutorial = ({ data, pageContext }) => {
         </Container>
       </section>
       <section id="tutorial-content">
-        <Container fluid="xl" className="mt4 pb4">
+        <Container className="mt4 pb4">
           <Row>
             <Col xs={12} sm={12} md={3} lg={3} xl={3}>
               <RelatedArticles

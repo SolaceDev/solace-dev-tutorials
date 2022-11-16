@@ -36,7 +36,7 @@ const OnThisPage = (props) => {
   }, [])
 
   return (
-    <div id="toc">
+    <div id="otp">
       <div className="heading">On This Page</div>
       <Col>
         {" "}
