@@ -3,32 +3,39 @@
   position: sticky;
   top: 20px;
   border: 0;
-  border-radius: 3px;
-  box-shadow: 0 2px 4px rgba(27, 31, 35, 0.15);
-  background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
 }
 
 #related-articles .heading {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background: linear-gradient(#20262a, #37404a) !important;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
   padding: 10px;
-}
-
-#related-articles .heading:not(:first-child) {
-  border-radius: 0;
 }
 
 .social {
   text-align: center;
-  border-bottom-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-  background: linear-gradient(#20262a, #37404a) !important;
   padding: 10px;
+}
+
+#related-articles .active {
+  background: #e6faf4;
+  color: black;
+  font-weight: 600;
+  border-left: 2px solid #00c895;
+  padding-left: 12px;
+}
+
+#related-articles .active a {
+  color: #647481;
+}
+
+#related-articles .non-active {
+  border-left: 2px solid #ccc;
+  padding-left: 8px;
+  color: #647481;
+}
+
+#related-articles .non-active a {
+  color: #647481;
 }

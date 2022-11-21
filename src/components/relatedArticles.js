@@ -23,15 +23,18 @@ const RelatedArticles = (props) => {
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
   return (
     <div id="related-articles">
+      <div className="heading">Related Topics</div>
       {tutorials.length !== 0 && (
-        <div className="heading">{section_title || "Fundamentals"}</div>
+        <div className="subheading pb3">{section_title || "Fundamentals"}</div>
       )}
       <Col>
         {tutorials.map(({ node }) => (
-          <div key={node.id} className="pt2 pb2 border-bottom">
+          <div key={node.id}>
             <a
               className={
-                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
+                pageContext.slug === node.fields.slug
+                  ? "pt2 pb2 active"
+                  : "pt2 pb2 non-active"
               }
               href={node.fields.slug}
             >
@@ -40,13 +43,17 @@ const RelatedArticles = (props) => {
           </div>
         ))}
       </Col>
-      {features.length !== 0 && <div className="heading">Features</div>}
+      {features.length !== 0 && (
+        <div className="subheading pt3 pb3">Features</div>
+      )}
       <Col>
         {features.map(({ node }) => (
-          <div key={node.id} className="pt2 pb2 border-bottom">
+          <div key={node.id}>
             <a
               className={
-                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
+                pageContext.slug === node.fields.slug
+                  ? "pt2 pb2 active"
+                  : "pt2 pb2 non-active"
               }
               href={node.fields.slug}
             >
