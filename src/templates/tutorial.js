@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import RelatedArticles from "../components/relatedArticles"
+import RelatedTopics from "../components/relatedTopics"
 import OnThisPage from "../components/otp"
 import { Container, Row, Col } from "react-bootstrap"
 import { Breadcrumb } from "gatsby-plugin-breadcrumb"
@@ -66,7 +66,7 @@ const Tutorial = ({ data, pageContext }) => {
         <Container className="mt4 pb4">
           <Row>
             <Col xs={12} sm={12} md={3} lg={3} xl={3}>
-              <RelatedArticles
+              <RelatedTopics
                 features={features}
                 tutorials={tutorials}
                 pageContext={pageContext}

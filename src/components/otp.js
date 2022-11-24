@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Col } from "react-bootstrap"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { Link } from "react-scroll"
 
 const OnThisPage = (props) => {
   let headings = props.headings
@@ -28,6 +28,7 @@ const OnThisPage = (props) => {
     var elms = Array.prototype.slice.call(h2s)
     elms.map((elm) => {
       observer.observe(elm)
+      return null
     })
     return () => {
       if (observer) observer.disconnect()
@@ -37,7 +38,7 @@ const OnThisPage = (props) => {
 
   return (
     <div id="otp">
-      <div className="heading">On This Page</div>
+      <div className="heading pt3 pb3">On This Page</div>
       <Col>
         {" "}
         {headings.map((heading) => (
