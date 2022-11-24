@@ -28,7 +28,7 @@ The goal of this tutorial is to understand the following:
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
-## Prerequisite: Creating a Durable Queue on the Solace message router
+## Prerequisite Creating a Durable Queue on the Solace message router
 
 A difference with the publish/subscribe tutorial is that for guaranteed messaging a physical endpoint resource – a durable queue, associated with the queue destination – needs to be created on the Solace message router, which will persist the messages until consumed.
 

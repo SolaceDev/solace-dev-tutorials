@@ -8,7 +8,6 @@ const OnThisPage = (props) => {
   const [visibleHeader, setVisibleHeader] = useState(
     headings[0] ? headings[0].value.split(" ").join("-") : null
   )
-  console.log(headings)
   const handleObserverEvent = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -51,7 +50,7 @@ const OnThisPage = (props) => {
             }
           >
             <Link
-              to={heading.value.split(" ").join("-").replace(/:/g, "")}
+              to={heading.value.split(" ").join("-")}
               spy={true}
               smooth={true}
               offset={-50}
