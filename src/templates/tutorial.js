@@ -71,6 +71,7 @@ const Tutorial = ({ data, pageContext }) => {
               md={12}
               lg={3}
               xl={3}
+              xxl={2}
               className="d-none d-lg-block"
             >
               <RelatedTopics
@@ -84,7 +85,7 @@ const Tutorial = ({ data, pageContext }) => {
                 slugRoot={slugRoot}
               />
             </Col>
-            <Col xs={12} sm={12} md={12} lg={6} xl={6}>
+            <Col xs={12} sm={12} md={12} lg={6} xl={6} xxl={8}>
               <h1>{node.frontmatter.title}</h1>
               <h5 id="minutes" className="mb3 pt2">
                 {node.timeToRead} Minute Read
@@ -97,6 +98,7 @@ const Tutorial = ({ data, pageContext }) => {
               md={12}
               lg={3}
               xl={3}
+              xxl={2}
               className="d-none d-lg-block"
             >
               <OnThisPage
