@@ -12,7 +12,7 @@ import {
   LinkedinIcon,
 } from "react-share"
 
-const Sidebar = (props) => {
+const RelatedTopics = (props) => {
   let features = props.features
   let tutorials = props.tutorials
   let feedback_link = props.feedback_link
@@ -22,36 +22,40 @@ const Sidebar = (props) => {
   let social_string = `I am learning ${props.page_title} for ${props.slugRoot} on the Solace API Tutorials page! Check it out here 👇 🤓 \n`
   let hashtags = ["solace", "pubsub", "tutorial", "DEVCommunity"]
   return (
-    <div id="sidebar">
+    <div id="related-topics">
+      <div className="heading pt3 pb3">Related Topics</div>
       {tutorials.length !== 0 && (
-        <div className="heading">{section_title || "Fundamentals"}</div>
+        <div className="subheading pb3">{section_title || "Fundamentals"}</div>
       )}
       <Col>
+        {" "}
         {tutorials.map(({ node }) => (
-          <div key={node.id} className="pt2 pb2 border-bottom">
-            <a
-              className={
-                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
-              }
-              href={node.fields.slug}
-            >
-              {node.frontmatter.title}
-            </a>
+          <div
+            key={node.id}
+            className={
+              pageContext.slug === node.fields.slug
+                ? "pt2 pb2 active"
+                : "pt2 pb2 non-active"
+            }
+          >
+            <a href={node.fields.slug}>{node.frontmatter.title}</a>
           </div>
         ))}
       </Col>
-      {features.length !== 0 && <div className="heading">Features</div>}
+      {features.length !== 0 && (
+        <div className="subheading pt3 pb3">Features</div>
+      )}
       <Col>
         {features.map(({ node }) => (
-          <div key={node.id} className="pt2 pb2 border-bottom">
-            <a
-              className={
-                pageContext.slug === node.fields.slug ? "c-grey" : "c-grey6"
-              }
-              href={node.fields.slug}
-            >
-              {node.frontmatter.title}
-            </a>
+          <div
+            key={node.id}
+            className={
+              pageContext.slug === node.fields.slug
+                ? "pt2 pb2 active"
+                : "pt2 pb2 non-active"
+            }
+          >
+            <a href={node.fields.slug}>{node.frontmatter.title}</a>
           </div>
         ))}
       </Col>
@@ -107,4 +111,4 @@ const Sidebar = (props) => {
   )
 }
 
-export default Sidebar
+export default RelatedTopics

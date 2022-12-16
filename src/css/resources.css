@@ -1,12 +1,12 @@
 #resources {
   background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),
-  url(../images/bg/jeremy-bishop-G9i_plbfDgk-unsplash.jpg);
+    url(../images/bg/jeremy-bishop-G9i_plbfDgk-unsplash.jpg);
   background-size: cover;
   background-position: center 30%;
   border-top: 1px solid #000;
 }
 
-#resources h2{
+#resources h2 {
   color: #fff;
 }
 
@@ -14,13 +14,13 @@
   border: none;
   border-radius: 0;
   color: #fff !important;
-height: 100%;
+  height: 100%;
   margin: 10px 0;
 }
 
 #resources .card a:hover {
   box-shadow: 0 4px 6px rgba(49, 54, 68, 0.05),
-  0 5px 20px rgba(49, 54, 68, 0.08);
+    0 5px 20px rgba(49, 54, 68, 0.08);
   cursor: pointer;
   transform: translatey(-2px);
   text-decoration: none;

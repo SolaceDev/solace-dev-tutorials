@@ -6,12 +6,12 @@ const Resources = (props) => {
     <section id="resources" className="pa4">
       <Container>
         <Row>
-          <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+          <Col xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
             <h2>Resources</h2>
           </Col>
         </Row>
         <Row>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://www.solace.dev/">
               <div className="custom-card">
                 <div className="title">Developer Hub</div>
@@ -22,7 +22,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/PubSub-ConceptMaps/Event-Stream-Maps.htm">
               <div className="custom-card">
                 <div className="title">Event Stream Concept Maps</div>
@@ -33,7 +33,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://solace.community/">
               <div className="custom-card">
                 <div className="title">Developer Community</div>
@@ -42,7 +42,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://github.com/SolaceSamples">
               <div className="custom-card">
                 <div className="title">GitHub Samples</div>
@@ -54,7 +54,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/PubSub-ConceptMaps/Component-Maps.htm">
               <div className="custom-card">
                 <div className="title">Component Concept Maps</div>
@@ -67,7 +67,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://codelabs.solace.dev/">
               <div className="custom-card">
                 <div className="title">Codelabs &amp; Workshops</div>
@@ -78,7 +78,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/Developer-Tools/QuickStarts-Connectors/Quickstarts-Connectors.htm">
               <div className="custom-card">
                 <div className="title">Quick Starts</div>
@@ -90,7 +90,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://solace.com/cloud-learning/">
               <div className="custom-card">
                 <div className="title">Cloud Learning Center</div>
@@ -101,7 +101,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://www.udemy.com/user/leah-robert/">
               <div className="custom-card">
                 <div className="title">Free Courses</div>
@@ -112,7 +112,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/Developer-Tools/Integration-Guides/Integration-Guides.htm">
               <div className="custom-card">
                 <div className="title">Integration Guides</div>
@@ -124,7 +124,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/SDKPerf/SDKPerf.htm">
               <div className="custom-card">
                 <div className="title">SDKPerf</div>
@@ -138,7 +138,7 @@ const Resources = (props) => {
               </div>
             </a>
           </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} className="mt4 mb3">
+          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://solace.com/blog/jmstoolbox-and-solace/">
               <div className="custom-card">
                 <div className="title">Queue Browser</div>

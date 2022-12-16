@@ -1,0 +1,41 @@
+#otp {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+#otp .col {
+  padding: 0;
+}
+
+#otp a {
+  cursor: pointer;
+}
+
+#otp .heading {
+  font-size: 16px;
+  font-weight: 600;
+  color: #37404a;
+}
+
+.visible-header {
+  background: #e6faf4;
+  border-left: 2px solid #00c895;
+  padding-left: 12px;
+}
+.visible-header a {
+  color: #37404a;
+  font-weight: 600;
+}
+
+.nonvisible-header {
+  background: #fff;
+  border-left: 2px solid #ccc;
+  padding-left: 8px;
+}
+
+.nonvisible-header a {
+  color: #647481;
+}

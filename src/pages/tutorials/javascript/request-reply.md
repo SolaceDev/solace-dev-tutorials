@@ -51,7 +51,7 @@ For direct messages however, this is simplified through the use of the `Requesto
 
 `markdown:solaceApi.md`
 
-## Implementing Request/Reply
+## Implementing Request Reply
 
 This tutorial’s sample code comes as two separate web applications: one (with the “requestor” object) send requests to a specific topic and the other (with the “replier” object) subscribes to requests on that topic, receives the requests and replies on them.
 

@@ -4,7 +4,16 @@ import { Col } from "react-bootstrap"
 const ApiCard = (props) => {
   let node = props.node
   return (
-    <Col key={node.id} xs={12} sm={12} md={6} lg={4} xl={4} className="mt3 mb3">
+    <Col
+      key={node.id}
+      xs={12}
+      sm={12}
+      md={6}
+      lg={4}
+      xl={4}
+      xxl={3}
+      className="mt3 mb3"
+    >
       <a href={node.fields.slug}>
         <div key={node.id} className="custom-card">
           <div className="icon">
