@@ -27,6 +27,7 @@ const TutorialCard = (props) => {
                 md={6}
                 lg={4}
                 xl={4}
+                xxl={3}
                 className="mb4"
               >
                 <a href={node.fields.slug}>

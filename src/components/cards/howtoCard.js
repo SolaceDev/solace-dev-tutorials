@@ -25,6 +25,7 @@ const HowTo = (props) => {
                     md={6}
                     lg={3}
                     xl={3}
+                    xxl={3}
                     className="mb4"
                   >
                     <a
