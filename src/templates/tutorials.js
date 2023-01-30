@@ -21,6 +21,11 @@ const tutorials = ({ data, pageContext }) => {
   crumbs_clone.unshift(solaceDevCrumb)
   const meta = data.allTutorialsYaml.edges
 
+  const intros = data.allMarkdownRemark.edges.filter(
+    (edge) =>
+      edge.node.frontmatter.layout === "intros" &&
+      edge.node.frontmatter.visible !== false
+  )
   const tutorials = data.allMarkdownRemark.edges.filter(
     (edge) =>
       edge.node.frontmatter.layout === "tutorials" &&
@@ -59,6 +64,10 @@ const tutorials = ({ data, pageContext }) => {
       {(tutorials.length !== 0 || features.length !== 0) && (
         <Container className="mt4 pb4">
           <h2>Tutorials</h2>
+          <TutorialCard
+            content={intros}
+            catName={meta[0].node.section0 || "Introduction"}
+          ></TutorialCard>
           <TutorialCard
             content={tutorials}
             catName={meta[0].node.section1 || "Key Message Exchange Patterns"}
