@@ -61,7 +61,7 @@ const tutorials = ({ data, pageContext }) => {
       ))}
       {/* Intro Component Ends */}
       {/* TutorialCard Component Starts */}
-      {(intros !=== 0 || tutorials.length !== 0 || features.length !== 0) && (
+      {(intros !== 0 || tutorials.length !== 0 || features.length !== 0) && (
         <Container className="mt4 pb4">
           <h2>Tutorials</h2>
           <TutorialCard
