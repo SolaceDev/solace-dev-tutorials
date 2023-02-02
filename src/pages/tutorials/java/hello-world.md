@@ -50,6 +50,14 @@ This Hello World sample application will connect to a Solace PubSub+ Event Broke
 
 
 
+## Source Code
+
+The [full source code for this sample](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/java/HelloWorld.java) is available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java-java).
+
+Details on how to clone, build, and run the samples are all on GitHub.
+
+
+
 ## 1. Command line arguments
 The first couple lines of the program simply read connection parameters from the console:
 
@@ -155,10 +163,3 @@ Got a handle on how a basic Solace native app sends and receives messages?  Wond
 
 
 
-
-
-## Source Code
-
-The [full source code for this sample](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/java/HelloWorld.java) is available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java-java).
-
-Details on how to clone, build, and run the samples are all on GitHub.
