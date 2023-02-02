@@ -1,0 +1,10 @@
+- title: How To Configure Session TLS Keystore
+  link: https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/snippets/HowToConfigureSessionTlsKeystore.java
+- title: How To Configure Session Using OAuth2
+  link: https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/snippets/HowToConfigureSessionUsingOAUTH2.java
+- title: How To Configure Session TLS Keystore
+  link: https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/snippets/HowToConfigureSessionUsingOpenIdConnect.java
+- title: How to Listen to Reconnection Events
+  link: https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/snippets/HowToListenToReconnectionEvents.java
+- title: How To Test Almost Every Message Header
+  link: https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/snippets/TestEveryMessageSetting.java
