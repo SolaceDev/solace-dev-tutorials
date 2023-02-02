@@ -268,6 +268,14 @@ module.exports = {
         remote: `https://github.com/SolaceSamples/solace-samples-java`,
         commit: 'ddd4ff08703c466e3879bf9c6b449fb6884f03cf',
       }
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Python-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-python`,
+        commit: '4be7e22dcc602bb064d889e7dc57a29158aeaa02',
+      }
     }
   ],
 }
