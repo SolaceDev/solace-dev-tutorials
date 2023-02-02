@@ -11,7 +11,7 @@ Alternatively, you can also fetch the API through Gradle or Maven.
 
 ### Get the API: Using Gradle
 
-```
+```groovy
 dependencies {
     compile("com.solace:solace-messaging-client:1.+")
 }
@@ -19,7 +19,7 @@ dependencies {
 
 ### Get the API: Using Maven
 
-```
+```xml
 <dependency>
     <groupId>com.solace</groupId>
     <artifactId>solace-messaging-client</artifactId>

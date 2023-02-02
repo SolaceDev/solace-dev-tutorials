@@ -78,7 +78,7 @@ The next few lines of Hello World initialize the connection parameters, as well 
 
 `embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/HelloWorld.java#L63-74`
 
-(LEGACY): The additional property "reapply subscriptions" is very useful for applications using *Direct* messaging (e.g. at-most-once delivery): it tells the API that following a reconnection to a broker (either due to network flap or broker failover), the API should automatically resubscribe any previously added Direct subscriptions; by default, this set to false and the application would be responsible.
+(CLASSIC): The additional property "reapply subscriptions" is very useful for applications using *Direct* messaging (e.g. at-most-once delivery): it tells the API that following a reconnection to a broker (either due to network flap or broker failover), the API should automatically resubscribe any previously added Direct subscriptions; by default, this set to false and the application would be responsible.
 
 (NEXTGEN): blank
 
@@ -91,7 +91,7 @@ The "producer" or publisher in Solace APIs is the component that sends messages 
 
 The producer configuration options varies from API to API.  For example, in JCSMP, you specify two callback handlers: these are mostly used for Guaranteed messaging applications, which we'll see later.  As our Hello World app uses only Direct messaging, these are not as useful, but still need to be configured regardless.  In Python or the PubSub+ Messaging API for Java, Direct publishers do not have to configure this.
 
-(LEGACY) callback handlers
+(CLASSIC) callback handlers
 
 (NEXTGEN) backpressure strategy
 
