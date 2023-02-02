@@ -33,10 +33,11 @@ However, as you can tell from this [Wikipedia article](https://en.wikipedia.org/
 This Hello World sample application will connect to a Solace PubSub+ Event Broker, and publish/subscribe in a loop.  Let's begin!
 
 
-
 [//]: # (`markdown:pubSubIntro.md`)
 
 `markdown:assumption.md`
+
+`markdown:smf-jcsmp.md`
 
 [//]: # (`markdown:pubSubGoal.md`)
 
@@ -45,9 +46,6 @@ This Hello World sample application will connect to a Solace PubSub+ Event Broke
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
 
 `markdown:solaceMessaging-part2.md`
-
-`markdown:solaceApi.md`
-
 
 
 ## 1. Command line arguments
@@ -74,11 +72,11 @@ This part is certainly not required in production applications, but allows Hello
 `embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/HelloWorld.java#L54-60`
 
 
-## 3. Connection Properties
+## 3. Connect to the Broker
 
-The next few lines of Hello World initialize the connection parameters, as well as a few other properties that might be useful:
+The next few lines of Hello World initialize the connection parameters, as well as a few other properties that might be useful, and connects to the broker.
 
-`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/HelloWorld.java#L63-72`
+`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/HelloWorld.java#L63-74`
 
 (LEGACY): The additional property "reapply subscriptions" is very useful for applications using *Direct* messaging (e.g. at-most-once delivery): it tells the API that following a reconnection to a broker (either due to network flap or broker failover), the API should automatically resubscribe any previously added Direct subscriptions; by default, this set to false and the application would be responsible.
 
