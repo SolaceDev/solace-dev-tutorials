@@ -78,7 +78,7 @@ This part is certainly not required in production applications, but allows Hello
 
 The next few lines of Hello World initialize the connection parameters, as well as a few other properties that might be useful, and connects to the broker.
 
-`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L63-78`
+`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L63-74`
 
 (LEGACY): The additional property "reapply subscriptions" is very useful for applications using *Direct* messaging (e.g. at-most-once delivery): it tells the API that following a reconnection to a broker (either due to network flap or broker failover), the API should automatically resubscribe any previously added Direct subscriptions; by default, this set to false and the application would be responsible.
 
@@ -89,7 +89,7 @@ The next few lines of Hello World initialize the connection parameters, as well 
 
 The "producer" or publisher in Solace APIs is the component that sends messages to the Solace broker.  The producer can be configured to send both Direct and Guaranteed messages on the same session, as well as transactions and other qualities-of-service.
 
-`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L76-91`
+`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L75-77`
 
 The producer configuration options varies from API to API.  For example, in JCSMP, you specify two callback handlers: these are mostly used for Guaranteed messaging applications, which we'll see later.  As our Hello World app uses only Direct messaging, these are not as useful, but still need to be configured regardless.  In Python or the PubSub+ Messaging API for Java, Direct publishers do not have to configure this.
 
@@ -102,7 +102,7 @@ The producer configuration options varies from API to API.  For example, in JCSM
 
 The next part of the sample sets up the ability to receive messages from the broker asynchronously - that is: the application does not have to poll the broker for the next message. 
 
-`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L93-108`
+`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L79-85`
 
 As you can see, the "on receive" or "on message" callback does not do very much in this simple application, it simply outputs the message to the screen, and continues.
 
@@ -111,7 +111,7 @@ As you can see, the "on receive" or "on message" callback does not do very much 
 
 To receive messages from the broker, you have to tell it what you want to receive.  To receive messages via Direct messaging, you add a (topic) subscription:
 
-`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L110-113`
+`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L79-85`
 
 Notice a few things:
  - The topic subscription is hierarchical: there are "`/`" characters between levels
@@ -129,7 +129,7 @@ After adding the only one subscription (you can add as many as you'd like, withi
 
 Now we are ready to send some messages, and the subscription will allow us to receive those messages back.  So in a loop, wait for some user input, and publish a message every 5 seconds:
 
-`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L116-136`
+`embed:Java-Samples/src/main/java/com/solace/samples/java/HelloWorld.java#L90-106`
  
 Note that we specify the payload each loop (could be a text `String`, or a binary `byte[]` payload, etc.), as well as define what the message's published topic is.  Recall: topics are not configured in the Solace broker, they are metadata of the message, and a _pattern matching_ (via subscriptions) is done on each received message.
 
