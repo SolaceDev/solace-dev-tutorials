@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Direct Request-Reply
-summary: Higher performance Direct messaging apps.
+summary: Using convenience helpers for request-reply.
 icon: I_dev_P+S.svg
 links:
     - label: TopicPublisher.java
@@ -13,7 +13,7 @@ links:
 ---
 
 
-In this tutorial, we will discuss another common Message Exchange Pattern (MEP) called request-reply.  This is where an application (requestor) is expecting a response from a backend service (replier); those familiar with RESTful APIs should be familiar with this pattern, as opposed to the unidirectional pattern of publish/subscribe.  This pattern is often implemented as a blocking API call, which simplifies application code from having to correlate asynchronous replies with outstanding requests.
+In this tutorial, we will discuss another common Message Exchange Pattern (MEP) called request-reply.  This is where an application (requestor) is expecting a response from a backend service (replier); those familiar with RESTful APIs should recognize this pattern, as opposed to the unidirectional pattern of publish/subscribe.  This pattern is often implemented as a blocking API call, which simplifies application code from having to correlate asynchronous replies with outstanding requests.
 
 Notice that "under the covers" a request-reply message interaction is just a bi-directional publish/subscribe interaction: the Requestor (sender) publishes a message which the Replier (receiver) receives, and then responds by publishing a response message back to the Requestor application.
 
@@ -35,20 +35,36 @@ Notice that "under the covers" a request-reply message interaction is just a bi-
 
 
 
+
+
+## Source Code
+
+The full source code for these samples are available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java-jcsmp):
+
+- [DirectRequestorBlocking.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/patterns/DirectRequestorBlocking.java)
+- [DirectReplier.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/patterns/DirectReplier.java)
+
+Details on how to clone, build, and run the samples are all on GitHub.
+
+
+
+
+
 ## Requestor Helper Object
 
-In both classic and NextGen Solace APIs, there are helper objects and methods designed to aid the application developer making request-reply calls.  This allows a requestor application to make a single API request() call that blocks, and returns a message with the response when it is received.  Similarly, a Replier application has helper methods to automatically respond to a request message that is received.
+Request-reply messaging is supported by Solace for both Direct and Guaranteed messaging modes; these samples will be using Direct messaging.  In both classic and NextGen Solace APIs, there are helper objects and methods designed to aid the application developer making request-reply calls.  This allows a requestor application to make a single API request() call that blocks, and returns a message with the response when it is received.  Similarly, a Replier application has helper methods to automatically respond to a request message that is received.
 
 
 ### Additional Implementation Details
 
 Under-the-covers, this is implemented by automatically populating a message with a number of message properties:
 
-- **Reply-To Topic:** when the Requestor publishes the request message, this field is populated so that the Replier application knows where to send the response.  By default, the Requestor’s "inbox topic " is used, which is a topic similar to #P2P/abc123 
-- **Correlation ID:** this is a per-request identifier that is send in the request message that the Replier application will pass back via the response message.  It allows the Requestor’s API to know which Request (if there are multiple outstanding from multiple threads) object/thread to unblock and deliver the response message to.
+- **Reply-To Topic:** when the Requestor publishes the request message, this field is populated so that the Replier application knows where to send the response.  By default, the Requestor’s "inbox topic" is used, which is a topic similar to `#P2P/v:router/...`, a subscription that is automatically added for every connected Solace client.  This inbox subscrpition topic is retrievable by querying the Session properties as well.
+- **Correlation ID:** this is a per-request identifier that is send in the request message that the Replier application will pass back via the response message.  It allows the Requestor’s API to know which Request (if there are multiple outstanding from multiple threads) object/thread to unblock and deliver the response message to.  By default, it is an incrementing counter per-request.
 - **Reply Message Flag:** this is an optional message flag set by the Replier application when responding to a request message to indicate to the Requestor API that this incoming message is in response to a request.
 
 If you are `dump()`ing the message payloads to the console on both Requestor and Replier applications, you should see these fields and values being set.
+
 
 
 
@@ -63,7 +79,7 @@ Note that majority of the application initialization code is very familiar from 
 
 `embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectReplier.java#L93-104`
 
-One the response message has been constructed, it uses an API helper function `sendReply()` – instead of just plain `send()` – which tells the API to copy the reply-to topic and correlation ID out of the request message to use in the response message.
+Once the response message has been constructed, it uses an API helper function `sendReply()` – instead of just plain `send()` – which tells the API to copy the reply-to topic and correlation ID out of the request message to use in the response message.
 
 `embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectReplier.java#L105-108`
 
@@ -74,19 +90,12 @@ See the docs for more information: https://docs.solace.com/Solace-PubSub-Messagi
 
 Once the backend Replier application is running, the Requestor application can start up and start to submit requests.  Since this is a Direct messaging application, it can use the API convenience Requestor object, which sends a request message and blocks the thread waiting for the response.  As with the Replier application, this application must be able to both send and receive messages, so it must configure both a Producer and Consumer object.
 
-Once connected, it can send a request message using the `sendReply()` method.  If a timeout value of 0 is passed in, the call becomes non-blocking and returns immediately.
+`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectRequestorBlocking.java#L80-98`
+
+Once connected, it can send a request message using the `request()` method.  If a timeout value of 0 is passed in, the call becomes non-blocking and returns immediately.
+
+`embed:JCSMP-Samples/src/main/java/com/solace/samples/jcsmp/patterns/DirectRequestorBlocking.java#L104-111`
 
 
 
 
-
-
-## Source Code
-
-The full source code for these samples are available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java-jcsmp):
-
-- [DirectPublisher.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/patterns/DirectPublisher.java)
-- [DirectProcessor.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/patterns/DirectProcessor.java)
-- [DirectSubscriber.java](https://github.com/SolaceSamples/solace-samples-java-jcsmp/blob/master/src/main/java/com/solace/samples/jcsmp/patterns/DirectSubscriber.java)
-
-Details on how to clone, build, and run the samples are all on GitHub.
