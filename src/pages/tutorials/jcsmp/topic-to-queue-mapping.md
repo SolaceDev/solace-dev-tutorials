@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: xxxtutorials
 title: Topic to Queue Mapping
 summary: Learn how to map topics to Solace queues.
 icon: I_dev_topic2q.svg

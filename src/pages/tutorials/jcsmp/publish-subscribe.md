@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: xxxtutorials
 title: Publish/Subscribe
 summary: Learn to publish and subscribe to messages.
 icon: I_dev_P+S.svg
