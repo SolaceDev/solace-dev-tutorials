@@ -1,7 +1,7 @@
 name: Broken Links Checker
 on:
   pull_request:
-    types: [opened, reopened]
+    branches: [ master ]
 jobs:
   Broken_Link_Checker:
     runs-on: ubuntu-latest
