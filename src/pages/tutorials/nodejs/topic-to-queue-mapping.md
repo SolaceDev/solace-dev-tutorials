@@ -77,7 +77,7 @@ try {
     subscriber.log(error.toString());
 }
 ```
-At this point your browser is connected as a client to the Solace message broker. You can use SolAdmin to view this client connection and related details.
+At this point your nodejs application is connected as a client to the Solace message broker. You can use SolAdmin to view this client connection and related details.
 
 ## Session Events
 
