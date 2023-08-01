@@ -24,7 +24,7 @@ The goal of this tutorial is to demonstrate auto injecting a [SpringJCSMPFactory
 
 1. How to Autowire a [SpringJCSMPFactory](https://github.com/SolaceProducts/solace-spring-boot/blob/master/solace-spring-boot-autoconfigure/solace-java-spring-boot-autoconfigure/src/main/java/com/solacesystems/jcsmp/SpringJCSMPFactory.java) into your application
 1. How to Autowire the [SolaceServiceCredentials](https://github.com/SolaceProducts/solace-services-info/blob/master/src/main/java/com/solace/services/core/model/SolaceServiceCredentials.java) provided by the Cloud Foundry environment using Java CFEnv.
-1. How to Autowire [SpringJCSMPFactoryCloudFactory](https://github.com/SolaceProducts/solace-spring-boot/blob/master/solace-spring-boot-autoconfigure/solace-java-spring-boot-autoconfigure/src/main/java/com/solacesystems/jcsmp/SpringJCSMPFactoryCloudFactory.java) which you can use to access other Cloud Available Solace PubSub+ Instances and create other instances of SpringJCSMPFactory.
+1. How to Autowire [SpringJCSMPFactoryCloudFactory](https://github.com/SolaceProducts/solace-spring-boot/blob/master/solace-spring-boot-autoconfigure/solace-java-spring-boot-autoconfigure/src/main/java/com/solacesystems/jcsmp/SpringJCSMPFactory.java) which you can use to access other Cloud Available Solace PubSub+ Instances and create other instances of SpringJCSMPFactory.
 1. How to establish a connection to the Solace PubSub+ service.
 1. How to publish, subscribe and receive messages.
 
