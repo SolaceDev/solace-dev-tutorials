@@ -105,7 +105,7 @@ The Pivotal Cloud Foundry environment exposes any bound Service Instances in a J
 
 You can see the full structure of the Solace PubSub+ `VCAP_SERVICES` in the [Solace PubSub+ for PCF documentation](https://docs.pivotal.io/solace-messaging/credentials.html).
 
-This sample use the [Spring Cloud Connectors](https://cloud.spring.io/spring-cloud-connectors) project to retrieve the `VCAP_SERVICES` information in the form of a `ServiceInfo` object. For Solace PubSub+ in Cloud Foundry, there is a Spring Cloud Connectors extension in GitHub called [sl-spring-cloud-connectors](https://github.com/SolaceProducts/solace-spring-cloud/tree/master/solace-spring-cloud-connector)(). This library parses the `VCAP_SERVICES` environment variable and exposes the information by implementing the `ServiceInfo` interface in the `SolaceMessagingInfo` object.
+This sample use the [Spring Cloud Connectors](https://cloud.spring.io/spring-cloud-connectors) project to retrieve the `VCAP_SERVICES` information in the form of a `ServiceInfo` object. For Solace PubSub+ in Cloud Foundry, there is a Spring Cloud Connectors extension in GitHub called [sl-spring-cloud-connectors](https://github.com/SolaceProducts/sl-spring-cloud-connectors). This library parses the `VCAP_SERVICES` environment variable and exposes the information by implementing the `ServiceInfo` interface in the `SolaceMessagingInfo` object.
 
 The `init()` method retrieves the Solace PubSub+ Service Instance details for the service named `solace-pubsub-sample-instance` as follows:
 

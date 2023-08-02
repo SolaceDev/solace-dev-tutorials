@@ -5,9 +5,9 @@ summary: Learn how to set up persistence for guaranteed delivery.
 icon: I_dev_Persistent.svg
 links:
     - label: QueueProducer.js
-      link: /blob/master/src/basic-samples/QueueProducer.js
+      link: /blob/master/src/features/QueueProducer.js
     - label: QueueConsumer.js
-      link: /blob/master/src/basic-samples/QueueConsumer.js
+      link: /blob/master/src/features/QueueConsumer.js
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/nodejs/persistence-with-queues.md
 ---
@@ -215,8 +215,8 @@ consumer.messageConsumer.on(solace.MessageConsumerEventName.MESSAGE, function (m
 
 Combining the example source code shown above results in the following source code files:
 
-* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/basic-samples/QueueProducer.js)
-* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/basic-samples/QueueConsumer.js)
+* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/features/QueueProducer.js)
+* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-nodejs/blob/master/src/features/QueueConsumer.js)
 
 
 Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
