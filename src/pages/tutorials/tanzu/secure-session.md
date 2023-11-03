@@ -67,6 +67,22 @@ That is all that is required when using a Certificate Authority issued certifica
 The JRE's trusted store comes pre-configured with certificates that are sufficient
 to validated your CA-issued certificate.
 
+### In-Memory Trust Store
+
+```java
+KeyStore keystore;
+// initialize keystore
+properties.setProperty(JCSMPProperties.SSL_IN_MEMORY_TRUST_STORE, keystore);
+```
+It is also possible to configure JCSMP to know that the trusted certificates are available as in-memory trust store.  The in-memory store
+must be in a `java.security.KeyStore` format, and is passed into the `JCSMPProperties` with [`SSL_IN_MEMORY_TRUST_STORE`](https://docs.solace.com/API-Developer-Online-Ref-Documentation/java/com/solacesystems/jcsmp/JCSMPProperties.html).
+The `SSL_TRUST_STORE_PASSWORD` property is not required. It is expected that the user will not modify KeyStore object after it is passed into JCSMP.
+
+Note that only one of `SSL_IN_MEMORY_TRUST_STORE` and `SSL_TRUST_STORE` should be used at once, otherwise an `InvalidPropertiesException` will be raised.
+
+There is also an option for using an in-memory key store, by passing in another Java KeyStore object with the JCSMP property [`SSL_IN_MEMORY_KEY_STORE`](https://docs.solace.com/API-Developer-Online-Ref-Documentation/java/com/solacesystems/jcsmp/JCSMPProperties.html).
+
+
 ## Working with a Self-signed Certificate
 
 You can install your Solace Messaging service for PCF with a self-signed certificate. For instructions on how to do this see the [Solace Messaging Documentation](https://docs.pivotal.io/solace-messaging/installing.html#configure).
