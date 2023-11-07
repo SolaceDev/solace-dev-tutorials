@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: xxxtutorials
 title: Persistence with Queues
 summary: Learn how send persistent messages to a Queue.
 icon: I_dev_Persistent.svg

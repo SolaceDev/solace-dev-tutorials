@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: xxxtutorials
 title: Request/Reply
 summary: Learn how to set up request/reply messaging.
 icon: I_dev_R+R.svg
