@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JavaRTO applications.
   icon: jni.svg
   buttons:
-    doclink: https://docs.solace.com/Open-APIs-Protocols/MQTT/MQTT-get-started.htm
+    doclink: https://docs.solace.com/API/Messaging-APIs/JavaRTO-API/java-rto-home.htm
     github: https://github.com/SolaceSamples/solace-samples-javarto
   type: solace
