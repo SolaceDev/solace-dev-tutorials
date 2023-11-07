@@ -27,7 +27,7 @@ This tutorial assumes the following:
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Enabled MQTT service
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/platform/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -64,7 +64,7 @@ First connect and subscribe to receive the messages sent to a QoS 1 subscription
 
 This tutorial uses Quality of Service (QoS) level of 1 (equivalent to Solace “Guaranteed” or “Persistent” messages), which are at least once delivery messages. So first, let’s express interest in the messages by subscribing to a topic filter.
 
-A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Filters section of [MQTT Specification Conformance – Operational Behavior](https://docs.solace.com/MQTT-311-Prtl-Conformance-Spec/Operational_behavior.htm).
+A topic filter in MQTT differs from a Solace SMF topic subscription. Users can learn more about the differences between the two in the Topic Names and Filters section of [MQTT Specification Conformance – Operational Behavior](https://docs.solace.com/API/MQTT-v50-Prtl-Conformance-Spec/mqtt-v50-4-operational-behavior.htm).
 
 As with other tutorials, this tutorial receives messages asynchronously through callbacks. So define a callback using the 'MqttCallback' interface as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
