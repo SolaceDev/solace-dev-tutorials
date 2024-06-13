@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your Java applications.
   icon: java.svg
   buttons:
-    doclink: https://docs.solace.com/API-Developer-Online-Ref-Documentation/pubsubplus-java/index.html 
+    doclink: https://docs.solace.com/API/Messaging-APIs/Java-API/java-api-home.htm 
     github: https://github.com/SolaceSamples/solace-samples-java
   type: solace
