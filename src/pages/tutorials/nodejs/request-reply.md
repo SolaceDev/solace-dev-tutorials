@@ -192,7 +192,7 @@ The publisher application publishes one message and exits, the subscriber applic
 First run `BasicReplier.js` in Node.js, giving it following arguments:
 
 ```
-node _BasicReplier.js <host:port> <client-username> <client-password> <message-vpn>
+node BasicReplier.js <host:port> <client-username>@<message-vpn> <client-password> 
 ```
 
 The following is the output of the tutorial’s _BasicReplier.js_ application after it successfully connected to the Solace message router and subscribed to the request topic.
