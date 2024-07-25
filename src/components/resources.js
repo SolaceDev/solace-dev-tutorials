@@ -23,21 +23,22 @@ const Resources = (props) => {
             </a>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
-            <a href="https://docs.solace.com/PubSub-ConceptMaps/Event-Stream-Maps.htm">
+            <a href="https://solace.community/">
               <div className="custom-card">
-                <div className="title">Event Stream Concept Maps</div>
-                <div className="desc">
-                  A high level introduction to how PubSub+ processes events.
-                </div>
+                <div className="title">Developer Community</div>
+                <div className="desc">Technical community for PubSub+.</div>
                 <div className="link">Learn More</div>
               </div>
             </a>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
-            <a href="https://solace.community/">
+            <a href="https://solace.com/engage-developer-advocate/">
               <div className="custom-card">
-                <div className="title">Developer Community</div>
-                <div className="desc">Technical community for PubSub+.</div>
+                <div className="title">Engage with an Advocate</div>
+                <div className="desc">
+                  Chat with a developer advocate on your schedule! We want to
+                  meet you and hear about your Solace experience.
+                </div>
                 <div className="link">Learn More</div>
               </div>
             </a>
@@ -57,11 +58,10 @@ const Resources = (props) => {
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
             <a href="https://docs.solace.com/PubSub-ConceptMaps/Component-Maps.htm">
               <div className="custom-card">
-                <div className="title">Component Concept Maps</div>
+                <div className="title">Best Practice Articles</div>
                 <div className="desc">
-                  A high level introduction on how your app interacts with
-                  PubSub+ messaging components whether you're using SMF, JMS,
-                  MQTT, or REST.
+                  Articles that provide guidance, examples, or recommendations
+                  for how best to use Solace products.
                 </div>
                 <div className="link">Learn More</div>
               </div>
@@ -73,18 +73,6 @@ const Resources = (props) => {
                 <div className="title">Codelabs &amp; Workshops</div>
                 <div className="desc">
                   Get guided, hands on coding experience with PubSub+ Codelabs.
-                </div>
-                <div className="link">Learn More</div>
-              </div>
-            </a>
-          </Col>
-          <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
-            <a href="https://docs.solace.com/Developer-Tools/QuickStarts-Connectors/Quickstarts-Connectors.htm">
-              <div className="custom-card">
-                <div className="title">Quick Starts</div>
-                <div className="desc">
-                  Access Quick Start deployment templates and Connectors
-                  available as open source projects on GitHub.
                 </div>
                 <div className="link">Learn More</div>
               </div>
@@ -113,12 +101,11 @@ const Resources = (props) => {
             </a>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
-            <a href="https://docs.solace.com/Developer-Tools/Integration-Guides/Integration-Guides.htm">
+            <a href="https://solace.com/integration-hub/">
               <div className="custom-card">
-                <div className="title">Integration Guides</div>
+                <div className="title">Integration Hub</div>
                 <div className="desc">
-                  Get a jump start plugging PubSub+ into AWS, Kafka, Spark, IBM
-                  WebSphere, and much more.
+                  Your one-stop shop for enabling event-driven integration.
                 </div>
                 <div className="link">Learn More</div>
               </div>
