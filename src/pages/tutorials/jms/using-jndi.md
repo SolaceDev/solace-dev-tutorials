@@ -37,7 +37,7 @@ This tutorial assumes the following:
     *   Client-profile enabled with guaranteed messaging permissions.
     *   Admin level rights to configure the message-VPN
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/platform/cloud/). You can find other ways to get access to Solace messaging below.
 
 ### Goals
 
