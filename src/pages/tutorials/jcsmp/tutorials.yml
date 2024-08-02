@@ -2,6 +2,6 @@
   summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JCSMP applications.
   icon: java.svg
   buttons:
-    doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/Java-API/java-api-home.htm
+    doclink: https://docs.solace.com/API/Messaging-APIs/JCSMP-API/jcsmp-api-home.htm
     github: https://github.com/SolaceSamples/solace-samples-java-jcsmp
   type: solace

@@ -258,7 +258,31 @@ module.exports = {
       options: {
         name: `JCSMP-Samples`,
         remote: `https://github.com/SolaceSamples/solace-samples-java-jcsmp`,
-        commit: '044af6eb26c416380c3e6598a1a3d4ff72eb81f0',
+        commit: '7ce4d7edfb53d03e44a8b45a405aa53ed10348ef',
+      }
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Java-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-java`,
+        commit: 'ddd4ff08703c466e3879bf9c6b449fb6884f03cf',
+      }
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Python-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-python`,
+        commit: '4be7e22dcc602bb064d889e7dc57a29158aeaa02',
+      }
+    },
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `Go-Samples`,
+        remote: `https://github.com/SolaceSamples/solace-samples-go`,
+        commit: '432f50653b171ab4a081724fc8a5d15648cd12ca',
       }
     }
   ],
