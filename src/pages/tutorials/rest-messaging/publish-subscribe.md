@@ -23,7 +23,7 @@ This tutorial assumes the following:
 
 *   The REST service is enabled and set to *Messaging* mode, allowing the VPN to act as a message broker
 
-One simple way to get access to Solace messaging systems quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/cloud/).
+One simple way to get access to Solace messaging systems quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/platform/cloud/).
 
 You can learn all about REST on a Solace Message VPN by referring to the [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm).
 
