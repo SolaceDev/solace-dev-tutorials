@@ -24,7 +24,7 @@ The goal of this tutorial is to demonstrate auto injecting a [Spring JndiTemplat
 
 1. How to Autowire a [`JndiTemplate`](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jndi/JndiTemplate.html) into your application
 1. How to Autowire the [SolaceServiceCredentials](https://github.com/SolaceProducts/solace-services-info/blob/master/src/main/java/com/solace/services/core/model/SolaceServiceCredentials.java) provided by the Cloud Foundry environment using Java CFEnv.
-1. How to Autowire [SpringSolJmsJndiTemplateCloudFactory](https://github.com/SolaceProducts/solace-spring-boot/tree/master/solace-spring-boot-autoconfigure/solace-jms-spring-boot-autoconfigure/src/main/java/com/solacesystems/jms/SpringSolJmsJndiTemplateCloudFactory.java) which you can use to access other Cloud Available Solace Messaging Instances and create other Solace implementations of the Sprint `JndiTemplate`.
+1. How to Autowire [SpringSolJmsJndiTemplateCloudFactory](https://github.com/SolaceProducts/solace-spring-boot/blob/master/solace-spring-boot-autoconfigure/solace-jms-spring-boot-autoconfigure/src/main/java/com/solace/spring/boot/autoconfigure/SolaceJmsAutoConfiguration.java) which you can use to access other Cloud Available Solace Messaging Instances and create other Solace implementations of the Sprint `JndiTemplate`.
 1. How to establish a connection to the Solace Messaging service.
 1. How to publish, subscribe and receive messages.
 
