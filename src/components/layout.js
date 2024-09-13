@@ -10,29 +10,32 @@ import "../css/layout.css"
 import Resources from "./resources"
 import Header from "./header"
 import Footer from "./footer"
-import ReactTooltip from "react-tooltip"
+// import ReactTooltip from "react-tooltip"
 
-const Layout = (props) => {
+
+
+const Layout = ({ children, hideResources }) => {
+  console.log(children)
   return (
-    <>
+    <div>
       <Header />
-      <main>{props.children}</main>
-      {props.hideResources !== "true" && <Resources />}
+      <main>{children}</main>
+      {hideResources !== "true" && <Resources />}
       <Footer />
-      <ReactTooltip
+      {/* <ReactTooltip
         id="registerTip"
         place="top"
         effect="float"
         backgroundColor="black"
       >
         Spraint is the proper name for otter dung
-      </ReactTooltip>
-    </>
-  )
-}
+      </ReactTooltip> */}
+    </div>
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Layout;
