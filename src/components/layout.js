@@ -15,7 +15,6 @@ import Footer from "./footer"
 
 
 const Layout = ({ children, hideResources }) => {
-  console.log(children)
   return (
     <div>
       <Header />
