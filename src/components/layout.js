@@ -12,8 +12,6 @@ import Header from "./header"
 import Footer from "./footer"
 // import ReactTooltip from "react-tooltip"
 
-
-
 const Layout = ({ children, hideResources }) => {
   return (
     <div>
@@ -30,11 +28,11 @@ const Layout = ({ children, hideResources }) => {
         Spraint is the proper name for otter dung
       </ReactTooltip> */}
     </div>
-  );
-};
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout;
+export default Layout
