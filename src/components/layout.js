@@ -6,7 +6,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false /* eslint-disable import/first */
-import "../css/layout.css"
 import Resources from "./resources"
 import Header from "./header"
 import Footer from "./footer"

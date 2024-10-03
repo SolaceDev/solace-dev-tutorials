@@ -10,6 +10,6 @@ import "prismjs/themes/prism-tomorrow.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 
 // user styles
-import "./src/css/global.css"
 import "./src/css/layout.css"
+import "./src/css/global.css"
 import "./src/css/breadcrumbs.css"
