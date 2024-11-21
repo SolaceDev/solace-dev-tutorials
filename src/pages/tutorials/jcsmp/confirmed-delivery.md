@@ -1,5 +1,5 @@
 ---
-layout: tutorials
+layout: xxxtutorials
 title: Confirmed Delivery
 summary: Learn how to confirm your messages are delivered to Solace messaging.
 icon: I_dev_confirm.svg
