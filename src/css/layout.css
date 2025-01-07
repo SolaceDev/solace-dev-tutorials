@@ -57,6 +57,53 @@
   text-decoration: none !important;
 }
 
+/* Lightning Banner */
+.lightning_banner {
+  background: #ec008c;
+  background: linear-gradient(
+    91.72deg,
+    #ec008c 0.29%,
+    #fcb900 81.16%,
+    #f37021 95.55%
+  ) !important;
+  display: block;
+  height: auto;
+  background: rgb(237, 8, 135);
+  padding: 4px 15px !important;
+  top: 0;
+  width: 100%;
+}
+.lightning_banner p {
+  display: block;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600 !important;
+}
+
+.lightning_banner
+  p
+  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(.wraps-image):before {
+  display: none !important;
+}
+
+.lightning_banner p a {
+  background-color: #e20880 !important;
+  border-radius: 20px;
+  color: #fff !important;
+  display: inline-block;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 2px 20px !important;
+  margin-left: 8px;
+  text-decoration: none !important;
+}
+.lightning_banner p a:hover {
+  background-color: #e20880 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
 
 html {
   font-size: 16px;
