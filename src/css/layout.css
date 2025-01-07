@@ -62,9 +62,9 @@
   background: #ec008c;
   background: linear-gradient(
     91.72deg,
-    #ec008c 0.29%,
-    #fcb900 81.16%,
-    #f37021 95.55%
+    #00c895 0.29%,
+    #015b82 81.16%,
+    #03223b 95.55%
   ) !important;
   display: block;
   height: auto;
@@ -100,7 +100,7 @@
   text-decoration: none !important;
 }
 .lightning_banner p a:hover {
-  background-color: #e20880 !important;
+  background-color: #f37021 !important;
   color: #000 !important;
   text-decoration: none !important;
 }
