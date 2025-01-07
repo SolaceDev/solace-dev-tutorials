@@ -4,8 +4,8 @@ const LightningBanner = (props) => {
   return (
     <div class="lightning_banner">
       <p>
-        The Third Solace Community Lightning Talks hosted on January 15, 2025
-        <a href="https://www.youtube.com/watch?v=mv4NFa_MPPU" target="_blank">
+        Solace Community Lightning Talks: Live Streaming on January 15, 2025
+        <a href="https://solace.com/event/community-lightning-talks-jan-2025/" target="_blank">
           Watch Now!
         </a>
       </p>
