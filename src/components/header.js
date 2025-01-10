@@ -2,11 +2,13 @@ import PropTypes from "prop-types"
 import React from "react"
 import { Container, Navbar, Nav } from "react-bootstrap"
 import solaceDevLogo from "../images/solace-developers-logo-white.png"
-import EDABanner from "./header/eda-banner"
+// import EDABanner from "./header/eda-banner"
+import LightningBanner from "./header/lightning-banner"
 
 const Header = ({ siteTitle }) => (
   <>
-    <EDABanner />
+    {/* <EDABanner /> */}
+    <LightningBanner />
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand
