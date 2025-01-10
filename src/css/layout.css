@@ -8,7 +8,6 @@
 @import "footer.css";
 @import "404.css";
 
-
 /* EDA Summit Banner */
 .eda_banner {
   background: #ec008c;
@@ -36,7 +35,9 @@
 
 .eda_banner
   p
-  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(.wraps-image):before {
+  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(
+    .wraps-image
+  ):before {
   display: none !important;
 }
 
@@ -59,16 +60,9 @@
 
 /* Lightning Banner */
 .lightning_banner {
-  background: #ec008c;
-  background: linear-gradient(
-    91.72deg,
-    #00c895 0.29%,
-    #015b82 81.16%,
-    #03223b 95.55%
-  ) !important;
+  background: #00c895 !important;
   display: block;
   height: auto;
-  background: rgb(237, 8, 135);
   padding: 4px 15px !important;
   top: 0;
   width: 100%;
@@ -77,25 +71,27 @@
   display: block;
   color: #000;
   margin: 0;
-  text-align: center;
-  font-size: 16px;
+  text-align: left;
+  font-size: 14px;
   font-weight: 600 !important;
 }
 
 .lightning_banner
   p
-  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(.wraps-image):before {
+  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(
+    .wraps-image
+  ):before {
   display: none !important;
 }
 
 .lightning_banner p a {
-  background-color: #f37021 !important;
+  background-color: #fff !important;
   border-radius: 20px;
   color: #000 !important;
   display: inline-block;
-  font-size: 15px !important;
+  font-size: 14px !important;
   font-weight: 600 !important;
-  padding: 2px 20px !important;
+  padding: 2px 18px !important;
   margin-left: 8px;
   text-decoration: none !important;
 }
