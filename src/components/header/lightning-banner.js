@@ -6,7 +6,7 @@ const LightningBanner = (props) => {
     <div class="lightning_banner">
       <Container>
         <p>
-          Join the 3rd Edition Solace Community Lighting Talks on January 15
+          Join the 3rd Edition Solace Community Lighting Talks ⚡️ on January 15
           <a
             href="https://solace.com/event/community-lightning-talks-jan-2025/"
             target="_blank"
