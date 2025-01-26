@@ -59,6 +59,8 @@ Then the `ContextFactory` instance can be used to create the context `IContext` 
 
 Notice the optional `HandleMessage` parameter in the `CreateSession` call. This is the message consumer. It needs to be present only for receiving a message (see details on how to receive a message in the next section of this tutorial).
 
+Note: To bypass SSL checks, you can add `SSLValidateCertificate = false` in the SessionProperties object. See more details on session properties [here](https://docs.solace.com/API-Developer-Online-Ref-Documentation/net/html/82816aab-350c-a890-cc35-ac125b35421c.htm) 
+
 ```csharp
 SessionProperties sessionProps = new SessionProperties()
 {
