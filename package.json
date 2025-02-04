@@ -37,7 +37,7 @@
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-scroll": "^1.9.0",
-    "react-share": "^5.1.0",
+    "react-share": "^5.2.0",
     "react-tooltip": "^5.28.0"
   },
   "devDependencies": {
