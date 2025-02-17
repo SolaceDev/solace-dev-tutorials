@@ -6,7 +6,7 @@ const OnThisPage = (props) => {
   let headings = props.headings
 
   const [visibleHeader, setVisibleHeader] = useState(
-    headings[0] ? headings[0].value.split(" ").join("-") : null
+    headings[0] ? headings[0].value.split(" ").join("-").replace(/\./g, "") : null
   )
   const handleObserverEvent = (entries) => {
     entries.forEach((entry) => {
@@ -25,6 +25,7 @@ const OnThisPage = (props) => {
     let observer = new IntersectionObserver(handleObserverEvent, options)
     const h2s = document.getElementsByTagName("h2")
     var elms = Array.prototype.slice.call(h2s)
+    console.log(elms)
     elms.map((elm) => {
       observer.observe(elm)
       return null
@@ -42,7 +43,7 @@ const OnThisPage = (props) => {
         {" "}
         {headings.map((heading) => (
           <div
-            key={heading.value.split(" ").join("-")}
+            key={heading.value.split(" ").join("-").replace(/\./g, "")}
             className={
               visibleHeader === heading.value
                 ? "pt2 pb2 visible-header"
@@ -50,7 +51,7 @@ const OnThisPage = (props) => {
             }
           >
             <Link
-              to={heading.value.split(" ").join("-")}
+              to={heading.value.split(" ").join("-").replace(/\./g, "")}
               spy={true}
               smooth={true}
               offset={-50}
