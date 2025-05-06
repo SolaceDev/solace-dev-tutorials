@@ -109,7 +109,7 @@ If running Solace PubSub+ Broker locally, a “localhost” or a local DHCP IP f
 
 **Note:** Even though this tutorial is illustrating how to publish direct messages, for REST delivery points, the messages are always consumed from a queue. Direct messages get promoted in the queue, and are delivered to the REST consumer as Guaranteed messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes](https://docs.solace.com/PubSub-Basics/Topic-Matching-and-Delivery-Modes.htm).
 
-### Configuring a REST Delivery Point
+## Configuring a REST Delivery Point
 
 Next, you must configure a queue and a REST delivery point on Solace Message VPN. 
 
