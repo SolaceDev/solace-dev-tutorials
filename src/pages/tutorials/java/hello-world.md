@@ -24,7 +24,7 @@ links:
 
 ## Source Code
 
-The [full source code for this sample](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/java/HelloWorld.java) is available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java-java).
+The [full source code for this sample](https://github.com/SolaceSamples/solace-samples-java/blob/master/src/main/java/com/solace/samples/java/HelloWorld.java) is available in the [SolaceSamples GitHub repo](https://github.com/SolaceSamples/solace-samples-java).
 
 Details on how to clone, build, and run the samples are all in the README.md file in the repo.
 
