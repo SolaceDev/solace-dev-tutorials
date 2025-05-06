@@ -24,9 +24,14 @@ const OnThisPage = (props) => {
     }
     let observer = new IntersectionObserver(handleObserverEvent, options)
     const h2s = document.getElementsByTagName("h2")
+    const h3s = document.getElementsByTagName("h3")
     var elms = Array.prototype.slice.call(h2s)
-    console.log(elms)
+    var elmsh3 = Array.prototype.slice.call(h3s)
     elms.map((elm) => {
+      observer.observe(elm)
+      return null
+    })
+    elmsh3.map((elm) => {
       observer.observe(elm)
       return null
     })
