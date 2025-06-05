@@ -4,15 +4,16 @@
 [build]
 publish = "public"
 
-[[plugins]]
+# [[plugins]]
+# package = "netlify-plugin-gatsby-cache"
 
 # Optimizes PNG, JPEG, GIF and SVG file formats on Build
 [[plugins]]
 package = "netlify-plugin-image-optim"
 
 # Runs a Google Lighthouse Audit on Build
-[[plugins]]
-package = "@netlify/plugin-lighthouse"
+# [[plugins]]
+# package = "@netlify/plugin-lighthouse"
 # Will configure these later
 # [plugins.inputs.thresholds]
 # performance = 0.8
