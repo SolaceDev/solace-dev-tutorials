@@ -178,7 +178,7 @@ const Footer = () => (
                 </li>
                 <li>
                   <a
-                    href="https://solace.community"
+                    href="https://community.solace.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
