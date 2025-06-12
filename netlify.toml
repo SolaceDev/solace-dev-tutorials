@@ -1,9 +1,13 @@
-# Netlify Build Plugins
-
-# Persist the Gatsby cache between Netlify builds for huge build speed improvements
 [build]
 publish = "public"
+
+[[plugins]]
+package = "netlify-plugin-gatsby-cache"
 
 # Optimizes PNG, JPEG, GIF and SVG file formats on Build
 [[plugins]]
 package = "netlify-plugin-image-optim"
+
+# Runs a Google Lighthouse Audit on Build
+[[plugins]]
+package = "@netlify/plugin-lighthouse"
