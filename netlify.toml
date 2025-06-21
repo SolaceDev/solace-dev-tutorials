@@ -4,8 +4,8 @@
 [build]
 publish = "public"
 
-[[plugins]]
-package = "@netlify/plugin-gatsby"
+# [[plugins]]
+# package = "@netlify/plugin-gatsby"
 
 # Optimizes PNG, JPEG, GIF and SVG file formats on Build
 [[plugins]]
