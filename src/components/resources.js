@@ -23,7 +23,7 @@ const Resources = (props) => {
             </a>
           </Col>
           <Col xs={12} sm={12} md={6} lg={4} xl={4} xxl={3} className="mt4 mb3">
-            <a href="https://solace.community/">
+            <a href="https://community.solace.com/">
               <div className="custom-card">
                 <div className="title">Developer Community</div>
                 <div className="desc">Technical community for PubSub+.</div>
