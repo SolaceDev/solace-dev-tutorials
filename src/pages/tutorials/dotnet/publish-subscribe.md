@@ -23,7 +23,7 @@ This tutorial assumes the following:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](http://www.solace.com/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](http://solace.com/products/platform/cloud/). You can find other ways to get access to Solace messaging below.
 
 
 ## Goals
@@ -58,6 +58,8 @@ ContextFactory.Instance.Init(cfp);
 Then the `ContextFactory` instance can be used to create the context `IContext` (see API [concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm) that is used to create Solace sessions (ISession) from a set of `SessionProperties`.
 
 Notice the optional `HandleMessage` parameter in the `CreateSession` call. This is the message consumer. It needs to be present only for receiving a message (see details on how to receive a message in the next section of this tutorial).
+
+Note: To bypass SSL checks, you can add `SSLValidateCertificate = false` in the SessionProperties object. See more details on session properties [here](https://docs.solace.com/API-Developer-Online-Ref-Documentation/net/html/82816aab-350c-a890-cc35-ac125b35421c.htm) 
 
 ```csharp
 SessionProperties sessionProps = new SessionProperties()
