@@ -1,8 +1,8 @@
+
+# Netlify Build Plugins
 [build]
 publish = "public"
-
-[[plugins]]
-package = "netlify-plugin-gatsby-cache"
+command = "gatsby build"
 
 # Optimizes PNG, JPEG, GIF and SVG file formats on Build
 [[plugins]]
