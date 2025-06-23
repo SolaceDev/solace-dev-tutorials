@@ -7,9 +7,9 @@ import {
   TwitterShareButton,
   FacebookShareButton,
   LinkedinShareButton,
-  TwitterIcon,
   FacebookIcon,
   LinkedinIcon,
+  XIcon
 } from "react-share"
 
 const RelatedTopics = (props) => {
@@ -89,7 +89,7 @@ const RelatedTopics = (props) => {
           hashtags={hashtags}
           via="SolaceDevs"
         >
-          <TwitterIcon size={32} round={true} />
+          <XIcon size={32} round={true} />
         </TwitterShareButton>
         <LinkedinShareButton
           className="pr-1 pl-1"

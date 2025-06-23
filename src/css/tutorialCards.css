@@ -1,45 +1,49 @@
 .card {
-  background: #20262a;
+  background: #20262a !important;
   border-radius: 6px;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  padding: 20px;
-  height: 100%;
+  padding: 20px !important;
+  height: 100% !important;
   z-index: 2;
 }
 
 .card:hover {
   border-top: 1px solid #00ad93;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
   transform: translate(0, -5px);
   cursor: pointer;
 }
 
 .card-header {
-  color: hsla(0, 0%, 100%, 0.4);
+  color: hsla(0, 0%, 100%, 0.4) !important;
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  padding: 0 0 5px 0;
+  padding: 0 0 5px 0 !important;
   border: none;
 }
 
 .card-header .icon-doc {
-  color: #fff;
-  margin: 0 0 5px 5px;
+  color: #fff !important;
+  margin: 0 0 5px 5px !important;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 20px !important;
+  right: 20px !important;
 }
 
 .card-body {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .card-title {
-  color: #fff;
+  color: #fff !important;
   font-size: 18px;
   font-weight: 400;
 }
@@ -60,8 +64,8 @@
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #00ad93;
-  padding: 10px 0 0 0;
+  color: #00ad93 !important;
+  padding: 10px 0 0 0 !important;
 }
 
 .card-footer .link-arrow {

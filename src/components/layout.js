@@ -6,28 +6,27 @@ import "@fortawesome/fontawesome-svg-core/styles.css"
 // Prevent fontawesome from adding its CSS since we did it manually above:
 import { config } from "@fortawesome/fontawesome-svg-core"
 config.autoAddCss = false /* eslint-disable import/first */
-import "../css/layout.css"
 import Resources from "./resources"
 import Header from "./header"
 import Footer from "./footer"
-import ReactTooltip from "react-tooltip"
+// import ReactTooltip from "react-tooltip"
 
-const Layout = (props) => {
+const Layout = ({ children, hideResources }) => {
   return (
-    <>
+    <div>
       <Header />
-      <main>{props.children}</main>
-      {props.hideResources !== "true" && <Resources />}
+      <main>{children}</main>
+      {hideResources !== "true" && <Resources />}
       <Footer />
-      <ReactTooltip
+      {/* <ReactTooltip
         id="registerTip"
         place="top"
         effect="float"
         backgroundColor="black"
       >
         Spraint is the proper name for otter dung
-      </ReactTooltip>
-    </>
+      </ReactTooltip> */}
+    </div>
   )
 }
 

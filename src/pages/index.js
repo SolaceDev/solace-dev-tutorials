@@ -78,7 +78,7 @@ export default SamplesIndex
 
 export const query = graphql`
   {
-    allTutorialsYaml(sort: { order: [ASC], fields: [title] }) {
+    allTutorialsYaml(sort: {title: ASC}) {
       edges {
         node {
           id
