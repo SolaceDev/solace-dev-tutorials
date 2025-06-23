@@ -18,7 +18,7 @@ const ApiCard = (props) => {
         <div key={node.id} className="custom-card">
           <div className="icon">
             <img
-              src={require(`../../images/icons/lang/${node.icon}`)}
+              src={require(`../../images/icons/lang/${node.icon}`).default}
               alt={node.title}
               width="100px"
             />

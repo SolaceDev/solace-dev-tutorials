@@ -5,13 +5,13 @@ summary: Learn how to set up persistence for guaranteed delivery.
 icon: I_dev_Persistent.svg
 links:
     - label: QueueProducer.html
-      link: /blob/master/src/basic-samples/QueueProducer/QueueProducer.html
+      link: /blob/master/src/features/QueueProducer/QueueProducer.html
     - label: QueueProducer.js
-      link: /blob/master/src/basic-samples/QueueProducer/QueueProducer.js
+      link: /blob/master/src/features/QueueProducer/QueueProducer.js
     - label: QueueConsumer.html
-      link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.html
+      link: /blob/master/src/features/QueueConsumer/QueueConsumer.html
     - label: QueueConsumer.js
-      link: /blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js
+      link: /blob/master/src/features/QueueConsumer/QueueConsumer.js
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/javascript/persistence-with-queues.md
 ---
@@ -219,10 +219,10 @@ consumer.messageConsumer.on(solace.MessageConsumerEventName.MESSAGE, function (m
 
 Combining the example source code shown above results in the following source code files:
 
-* [QueueProducer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueProducer/QueueProducer.html)
-* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueProducer/QueueProducer.js)
-* [QueueConsumer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueConsumer/QueueConsumer.html)
-* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/basic-samples/QueueConsumer/QueueConsumer.js)
+* [QueueProducer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/QueueProducer/QueueProducer.html)
+* [QueueProducer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/QueueProducer/QueueProducer.js)
+* [QueueConsumer.html](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/QueueConsumer/QueueConsumer.html)
+* [QueueConsumer.js](https://github.com/SolaceSamples/solace-samples-javascript/blob/master/src/features/QueueConsumer/QueueConsumer.js)
 
 
 Learn how to verify all messages arrive to the Solace message router in our next tutorial, [Confirmed Delivery](../confirmed-delivery/).
@@ -252,7 +252,7 @@ The samples consist of two separate producer and consumer browser applications, 
 
 **Sample Output**
 
-First open `src/basic-samples/QueueConsumer/QueueConsumer.html` page in the browser and connect to a Solace router by specifying the message router properties and clicking "Connect" button.
+First open `src/features/QueueConsumer/QueueConsumer.html` page in the browser and connect to a Solace router by specifying the message router properties and clicking "Connect" button.
 
 Then bind to the destination queue by clicking the "Consume messages" button.
 
@@ -262,7 +262,7 @@ The following is a screenshot of the tutorial’s `QueueConsumer.html` web page 
 
 ![Screenshot: Queue Consumer](../../../images/screenshots/perswithqueues-javascript_img-1.png)
 
-Now, open `src/basic-samples/QueueProducer/QueueProducer.html` page in the browser and connect to the same Solace router by specifying the message router properties and clicking "Connect" button.
+Now, open `src/features/QueueProducer/QueueProducer.html` page in the browser and connect to the same Solace router by specifying the message router properties and clicking "Connect" button.
 
 Send messages by clicking the "Send Message" button on the page.
 

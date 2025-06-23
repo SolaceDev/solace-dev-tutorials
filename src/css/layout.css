@@ -1,3 +1,4 @@
+@import "osano.css";
 @import "card.css";
 @import "tutorialCards.css";
 @import "howtoCards.css";
@@ -6,6 +7,99 @@
 @import "resources.css";
 @import "footer.css";
 @import "404.css";
+
+/* EDA Summit Banner */
+.eda_banner {
+  background: #ec008c;
+  background: linear-gradient(
+    91.72deg,
+    #ec008c 0.29%,
+    #fcb900 81.16%,
+    #f37021 95.55%
+  ) !important;
+  display: block;
+  height: auto;
+  background: rgb(237, 8, 135);
+  padding: 4px 15px !important;
+  top: 0;
+  width: 100%;
+}
+.eda_banner p {
+  display: block;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600 !important;
+}
+
+.eda_banner
+  p
+  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(
+    .wraps-image
+  ):before {
+  display: none !important;
+}
+
+.eda_banner p a {
+  background-color: #e20880 !important;
+  border-radius: 20px;
+  color: #fff !important;
+  display: inline-block;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  padding: 2px 20px !important;
+  margin-left: 8px;
+  text-decoration: none !important;
+}
+.eda_banner p a:hover {
+  background-color: #e20880 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* Lightning Banner */
+.lightning_banner {
+  background: #00c895 !important;
+  display: block;
+  height: auto;
+  padding: 4px 15px !important;
+  top: 0;
+  width: 100%;
+}
+.lightning_banner p {
+  display: block;
+  color: #000;
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600 !important;
+}
+
+.lightning_banner
+  p
+  > a:not(.cta):not(.button):not(.button-dark):not(.button-white):not(
+    .wraps-image
+  ):before {
+  display: none !important;
+}
+
+.lightning_banner p a {
+  background-color: #fff !important;
+  border-radius: 20px;
+  color: #000 !important;
+  display: inline-block;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 2px 18px !important;
+  margin-left: 8px;
+  text-decoration: none !important;
+}
+.lightning_banner p a:hover {
+  background-color: #f37021 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
 
 html {
   font-size: 16px;
@@ -126,12 +220,16 @@ main {
   border: none;
   font-size: 14px;
   font-weight: 400;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btn:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .btn:focus {
@@ -149,12 +247,16 @@ main {
   text-align: center;
   background: #f2f2f2;
   text-transform: uppercase;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .btnSmall:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
   color: #009193;
 }
 

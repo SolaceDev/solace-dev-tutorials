@@ -1,0 +1,72 @@
+.osano-cm-info{
+  max-width:22em
+}
+.osano-cm-view{
+  padding:0 1em
+}
+.osano-cm-widget--position_right{
+  right:auto;
+  left:12px
+}
+.osano-cm-info-dialog-header{
+  border-bottom:1px solid #ccc;
+  margin-bottom:15px;
+  box-shadow:0 0 15px rgba(0,0,0,.2)
+}
+.osano-cm-header,.osano-cm-info-dialog-header{
+  background:#fff!important
+}
+.osano-cm-info-dialog__info p{
+  font-size:14px;
+  line-height:1.4;
+  color:#647481
+}
+.osano-cm-drawer-toggle .osano-cm-label,.osano-cm-info__info-dialog-header p{
+  color:#273749;
+  font-size:16px;
+  font-weight:600
+}
+.osano-cm-info__info-dialog-header p{
+  font-size:22px;
+  font-weight:600;
+  height:103px
+}
+.osano-cm-toggle__input+.osano-cm-toggle__switch:before{
+  border-color:#ababab
+}
+.osano-cm-toggle__input:checked+.osano-cm-toggle__switch:before{
+  border-color:#b3dedf
+}
+.osano-cm-list-item__disclosure{
+  padding-top:.7em
+}
+.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:focus+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::before{
+  background-color:#f3f9f9
+}
+.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:focus+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::after{
+  background-color:#7ac5c6
+}
+.osano-cm-dialog--type_bar .osano-cm-button.osano-cm-accept-all{
+  background-color:#f37021
+}
+.osano-cm-info--position_left .osano-cm-save{
+  background-color:#f37021;
+  border-color:#f37021;
+  border-radius:30px;
+  padding:15px;
+  font-size:16px
+}
+.osano-cm-info-dialog-header__close,.osano-cm-info-dialog-header__close:focus,.osano-cm-info-dialog-header__close:hover{
+  background-color:#f7f8f9;
+  stroke:#647481!important;
+  padding:5px;
+  border:1px solid #222!important;
+  outline:0
+}
+.osano-cm-close{
+  stroke-width:2px!important
+}
+.osano-cm-widget:focus{
+  border-radius:50%;
+/*  outline:#00c895 solid 1px */
+}

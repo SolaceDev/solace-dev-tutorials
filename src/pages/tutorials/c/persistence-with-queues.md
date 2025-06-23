@@ -180,7 +180,7 @@ flowEventCallback ( solClient_opaqueFlow_pt opaqueFlow_p, solClient_flow_eventCa
  * Create a Flow
 *************************************************************************/
 /* Flow Properties */
-const char     *flowProps[20] = (0, };
+const char     *flowProps[20] = {0, };
 
 /* Flow */
 solClient_opaqueFlow_pt flow_p;

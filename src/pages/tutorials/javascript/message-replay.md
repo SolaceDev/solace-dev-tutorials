@@ -155,8 +155,8 @@ Follow the instructions to [check out and run the samples](https://github.com/So
 
 Before running this sample, be sure that Message Replay is enabled in the Message VPN. Also, create an exclusive queue with the name "tutorial/queue" and messages must have been published to the replay log for this queue:
 
-* Use the "QueueProducer" sample from `src/basic-samples/QueueProducer` in your cloned repo to create and publish one message to the queue. To start, simply load `QueueConsumer.html` into you browser.
-* Use the "QueueConsumer" sample from `src/basic-samples/QueueConsumer` to drain the queue so that replay is performed on an empty queue and observed by this sample. Both samples are from the [Persistence with Queues](../persistence-with-queues/) tutorial and they are using "tutorial/queue" by default. Note: after draining, disconnect the "QueueConsumer" from the queue because there can be only one consumer flow active on an exclusive queue at any time and the replay sample will need to connect a new one.
+* Use the "QueueProducer" sample from `src/features/QueueProducer` in your cloned repo to create and publish one message to the queue. To start, simply load `QueueConsumer.html` into you browser.
+* Use the "QueueConsumer" sample from `src/features/QueueConsumer` to drain the queue so that replay is performed on an empty queue and observed by this sample. Both samples are from the [Persistence with Queues](../persistence-with-queues/) tutorial and they are using "tutorial/queue" by default. Note: after draining, disconnect the "QueueConsumer" from the queue because there can be only one consumer flow active on an exclusive queue at any time and the replay sample will need to connect a new one.
 
 At this point the replay log has one message.
 

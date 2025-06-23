@@ -35,7 +35,7 @@ There are several ways you can get access to PubSub+ Messaging and find these re
 
 ### Option 1: Use PubSub+ Cloud
 
-* Follow [these instructions](https://www.solace.com/cloud/) to quickly spin up a cloud-based PubSub+ messaging service for your applications.
+* Follow [these instructions](https://solace.com/products/platform/cloud/) to quickly spin up a cloud-based PubSub+ messaging service for your applications.
 * The messaging connectivity information is found in the service details in the connectivity tab (shown below). You will need:
     * Host:Port (use the SMF URI)
     * Message VPN

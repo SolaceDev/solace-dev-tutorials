@@ -1,3 +1,26 @@
+- title: Direct Receiver
+  description: Sample code showing how to build a Direct Receiver
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/direct_receiver.go
+- title: Direct Publisher
+  description: Sample code showing how to build a Direct Publisher
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/direct_publisher.go
+- title: Guaranteed Receiver
+  description: Sample code showing how to build a Guaranteed Receiver
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/guaranteed_receiver.go
+- title: Guaranteed Publisher
+  description: Sample code showing how to build a Guaranteed Publisher
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/guaranteed_publisher.go
+- title: Guaranteed Processor
+  description: Sample code showing how to build a Guaranteed Processor
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/guaranteed_processor.go
+- title: Direct Processor
+  description: Sample code showing how to build a Direct Processor
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/direct_processor.go
 - title: Secure connection
   description: Sample code showing how to have a secure connection to Solace PubSub+ Broker
   link: https://github.com/SolaceSamples/solace-samples-go/blob/main/howtos/secure_connection.go
+- title: Update Service Properties - Oauth Token
+  description: Sample code showing how to change Oauth Tokens by updating the Service Properties
+  link: https://github.com/SolaceSamples/solace-samples-go/blob/main/howtos/update_service_properties.go
+
+
