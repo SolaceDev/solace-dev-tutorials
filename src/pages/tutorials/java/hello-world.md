@@ -9,7 +9,7 @@ links:
     - label: TopicSubscriber.java
       link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
     - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java/publish-subscribe.md
+      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/java/hello-world.md
 ---
 
 `markdown:helloWorld-intro.md`

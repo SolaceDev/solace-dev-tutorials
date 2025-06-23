@@ -40,7 +40,7 @@ const Header = ({ siteTitle }) => (
               Tutorials
             </Nav.Link>
             <Nav.Link
-              href="https://solace.community/"
+              href="https://community.solace.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
