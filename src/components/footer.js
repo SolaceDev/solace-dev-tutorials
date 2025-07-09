@@ -4,7 +4,7 @@ import {
   faDev,
   faGithub,
   faLinkedin,
-  faTwitter,
+  faSquareXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import { Container, Row, Col } from "react-bootstrap"
@@ -254,7 +254,11 @@ const Footer = () => (
             rel="noopener noreferrer"
             aria-label="Twitter"
           >
-            <FontAwesomeIcon icon={faTwitter} size="1x" className="ma2" />
+            <FontAwesomeIcon
+              icon={faSquareXTwitter}
+              size="1x"
+              className="ma2"
+            />
           </a>
           <a
             href="https://www.youtube.com/SolaceSystems"
