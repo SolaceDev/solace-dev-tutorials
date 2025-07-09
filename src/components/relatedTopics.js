@@ -9,7 +9,7 @@ import {
   LinkedinShareButton,
   FacebookIcon,
   LinkedinIcon,
-  XIcon
+  XIcon,
 } from "react-share"
 
 const RelatedTopics = (props) => {
@@ -72,7 +72,7 @@ const RelatedTopics = (props) => {
         </Button>{" "}
         <Button
           className="mt1 mb3 w-100"
-          href="https://solace.community/"
+          href="https://community.solace.com/"
           target="_blank"
           rel="noreferrer"
           variant="primary"
@@ -92,7 +92,7 @@ const RelatedTopics = (props) => {
           <XIcon size={32} round={true} />
         </TwitterShareButton>
         <LinkedinShareButton
-          className="pr-1 pl-1"
+          className="pr-1 pl-1 px-2"
           url={link}
           summary={social_string}
         >

@@ -4,26 +4,26 @@ title: Solace Hello World
 summary: This tutorial demonstrates basic publishing using OpenMAMA with Solace messaging.
 icon: I_Solace.svg
 links:
-    - label: mama.properties
-      link: /blob/master/src/helloworld/mama.properties
-    - label: topicPublishOne.c
-      link: /blob/master/src/helloworld/topicPublishOne.c
-    - label: feedback
-      link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/openmama/hello-world.md
+  - label: mama.properties
+    link: /blob/master/src/helloworld/mama.properties
+  - label: topicPublishOne.c
+    link: /blob/master/src/helloworld/topicPublishOne.c
+  - label: feedback
+    link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/openmama/hello-world.md
 ---
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with OpenMAMA [core concepts](https://docs.solace.com/Solace-OpenMama/Solace-OpenMAMA-Overview.htm).
-    *   If not, see [this guide](https://openmama.finos.org/quickstart).
-*   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases).
-    *   Solace middleware bridge with its dependencies is also installed
-*   You have access to Solace messaging with the following configuration details:
-    *   Connectivity information for a Solace message-VPN
-    *   Enabled client username and password
+- You are familiar with OpenMAMA [core concepts](https://docs.solace.com/Solace-OpenMama/Solace-OpenMAMA-Overview.htm).
+  - If not, see [this guide](https://openmama.finos.org/quickstart).
+- You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
+- You have access to a properly installed OpenMAMA [release](https://github.com/OpenMAMA/OpenMAMA/releases).
+  - Solace middleware bridge with its dependencies is also installed
+- You have access to Solace messaging with the following configuration details:
+  - Connectivity information for a Solace message-VPN
+  - Enabled client username and password
 
 One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/platform/cloud/). You can find other ways to get access to Solace messaging below.
 
@@ -58,8 +58,8 @@ The program will consist of two major parts:
 
 Any OpenMAMA program begins with initialization that consists of loading a bridge and opening it, in this particular order:
 
-*   load
-*   open
+- load
+- open
 
 This is how it is done.
 
@@ -154,8 +154,8 @@ In order to publish a message we need to do the following **in this particular o
 
 Creating of transport includes two steps in this particular order:
 
-*   allocate
-*   create
+- allocate
+- create
 
 ```c
 mamaTransport transport = NULL;
@@ -230,11 +230,11 @@ mama.solace.transport.vmr.allow_recover_gaps=false
 
 Notice how `solace` and `vmr` property token names are the same as in `mama_loadBridge(&bridge, "solace")` and `mamaTransport_create(transport, "vmr", bridge)` calls.
 
-*   `mama.solace.transport.vmr.session_host` is `Host` and usually has a value of the host address of your **Solace messaging**.
-*   `mama.solace.transport.vmr.session_username` is `Client Username`
-*   `mama.solace.transport.vmr.session_password` is optional `Client Password`
-*   `mama.solace.transport.vmr.session_vpn_name` is `Message VPN`
-*   `mama.solace.transport.vmr.allow_recover_gaps` doesn’t have a default value and specifies whether the Solace middleware bridge should override applications settings for recovering from sequence number gaps in subscriptions. When `allow_recover_gaps` is `true` applications are allowed to specify the gap recovery behaviour. When `allow_recover_gaps` is `false`, the gap recovery is disabled for all subscriptions, regardless of applications settings.
+- `mama.solace.transport.vmr.session_host` is `Host` and usually has a value of the host address of your **Solace messaging**.
+- `mama.solace.transport.vmr.session_username` is `Client Username`
+- `mama.solace.transport.vmr.session_password` is optional `Client Password`
+- `mama.solace.transport.vmr.session_vpn_name` is `Message VPN`
+- `mama.solace.transport.vmr.allow_recover_gaps` doesn’t have a default value and specifies whether the Solace middleware bridge should override applications settings for recovering from sequence number gaps in subscriptions. When `allow_recover_gaps` is `true` applications are allowed to specify the gap recovery behaviour. When `allow_recover_gaps` is `false`, the gap recovery is disabled for all subscriptions, regardless of applications settings.
 
 Now we need to modify our program to refer to this **properties file** by its name and location (in the current directory: `"."`):
 
@@ -369,8 +369,8 @@ int main(int argc, const char** argv)
 
 Combining the example source code shown above results in the following source code files:
 
-* [mama.properties](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/helloworld/mama.properties)
-* [topicPublishOne.c](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/helloworld/topicPublishOne.c)
+- [mama.properties](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/helloworld/mama.properties)
+- [topicPublishOne.c](https://github.com/SolaceSamples/solace-samples-openmama/blob/master/src/helloworld/topicPublishOne.c)
 
 ### Building
 
@@ -449,22 +449,22 @@ Congratulations! You have now successfully published a message on Solace messagi
 
 For more information about OpenMAMA:
 
-*   The OpenMAMA [website](https://www.openmama.org/)
-*   The OpenMAMA code repository on [GitHub](https://github.com/OpenMAMA/OpenMAMA)
-*   Chat with OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA)
+- The OpenMAMA [website](https://www.openmama.org/)
+- The OpenMAMA code repository on [GitHub](https://github.com/OpenMAMA/OpenMAMA)
+- Chat with OpenMAMA developers and users at [Gitter OpenMAMA room](https://gitter.im/OpenMAMA/OpenMAMA)
 
 For more information about Solace technology:
 
-*   The [Solace Developer Portal website](https://www.solace.dev)
-*   Get a better understanding of [Solace technology](https://solace.com/products/tech/)
-*   Ask the [Solace community](https://solace.community)
+- The [Solace Developer Portal website](https://www.solace.dev)
+- Get a better understanding of [Solace technology](https://solace.com/products/tech/)
+- Ask the [Solace community](https://community.solace.com)
 
 Other tutorials and related links:
 
-*   [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart)
-*   [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
-*   [OpenMAMA Example Walk Through](https://openmama.finos.org/quickstart)
-*   [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
-*   [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
-*   [OpenMAMA Documentation and Developers Guides](https://openmama.finos.org/documentation.html)
-*   [Solace’s Solution for OpenMAMA](https://solace.com/products/tech/)
+- [OpenMAMA Quick Start Guide](https://openmama.finos.org/quickstart)
+- [OpenMAMA Wiki Quick Start Guide](https://github.com/OpenMAMA/OpenMAMA/wiki/Quick-Start-Guide)
+- [OpenMAMA Example Walk Through](https://openmama.finos.org/quickstart)
+- [OpenMAMA Code Examples](https://github.com/OpenMAMA/OpenMAMA/tree/master/mama/c_cpp/src/examples)
+- [OpenMAMA Wiki](https://github.com/OpenMAMA/OpenMAMA/wiki)
+- [OpenMAMA Documentation and Developers Guides](https://openmama.finos.org/documentation.html)
+- [Solace’s Solution for OpenMAMA](https://solace.com/products/tech/)
