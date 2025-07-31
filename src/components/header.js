@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Container, Navbar, Nav } from "react-bootstrap"
-import solaceDevLogo from "../images/solace-developers-logo-white.png"
+import solaceDevLogo from "../images/solace-developers-logo-white.svg"
 // import EDABanner from "./header/eda-banner"
 // import LightningBanner from "./header/lightning-banner"
 
@@ -19,8 +19,7 @@ const Header = ({ siteTitle }) => (
           <img
             src={solaceDevLogo}
             alt="Solace Developers Logo"
-            width="125px"
-            height="36px"
+            width="250px"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
