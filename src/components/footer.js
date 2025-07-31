@@ -8,7 +8,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
 import { Container, Row, Col } from "react-bootstrap"
-import solaceLogo from "../images/solace-logo-white.png"
+import solaceLogo from "../images/solace-logo-white.svg"
 
 const Footer = () => (
   <footer>
