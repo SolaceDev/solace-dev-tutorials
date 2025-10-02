@@ -19,7 +19,7 @@ This feature exploration shows how to use the Solace Schema Registry with JSON S
 
 The Solace Schema Registry provides a centralized repository for managing message schemas, enabling schema validation, versioning, and evolution across your event-driven applications. The Schema Registry SERDES integration with JCSMP allows you to serialize and deserialize messages while automatically validating them against registered schemas.
 
-![Schema Registry Flow](image.png)
+![Schema Registry Flow](serdesProcess.png)
 
 Key benefits include:
 * **Automatic Schema Validation**: Messages are validated against registered schemas during serialization and deserialization
