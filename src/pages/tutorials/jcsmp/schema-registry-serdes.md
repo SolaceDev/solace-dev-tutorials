@@ -13,7 +13,7 @@ links:
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jcsmp/schema-registry-serdes.md
 ---
 
-This feature exploration shows how to use the Solace Schema Registry with JSON Schema serializers and deserializers (SERDES) to automatically validate and manage event schemas when publishing and consuming events. AVRO and generic SERDES are also availble in JCSMP and work in a very similar way.  We will not explore those examples specifically in this tutorial but there are samples available in the JCSMP Samples repository. 
+This feature exploration shows how to use the Solace Schema Registry with JSON Schema serializers and deserializers (SERDES) to automatically validate and manage event schemas when publishing and consuming events. AVRO and generic SERDES are also available in JCSMP and work in a very similar way.  We will not explore those examples specifically in this tutorial but there are samples available in the JCSMP Samples repository. 
 
 ## Feature Overview
 
