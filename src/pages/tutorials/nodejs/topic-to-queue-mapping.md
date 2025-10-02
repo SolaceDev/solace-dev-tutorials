@@ -266,9 +266,9 @@ The following is the output of the tutorial’s `GuaranteedConsumer.js` applicat
 ```bash
 $ node GuaranteedConsumer.js ws://192.168.133.64 testuser@default passw
 [16:08:25] *** Consumer to queue "tutorial/queue" is ready to connect ***
-[16:08:25] Connecting to Solace PubSub+ Event Broker using url: ws://localhost:8008
+[16:08:25] Connecting to Solace Event Broker using url: ws://localhost:8008
 [16:08:25] Client username: default
-[16:08:25] Solace PubSub+ Event Broker VPN name: default
+[16:08:25] Solace Event Broker VPN name: default
 [16:08:25] Press Ctrl-C to exit
 [16:08:25] === Successfully connected and ready to start the message subscriber. ===
 [16:08:25] Starting subscriber for queue: tutorial/queue
@@ -291,14 +291,14 @@ The following is the output of the tutorial’s `GuaranteedPublisher.js` applica
 ```bash
 $ node GuaranteedPublisher.js ws://192.168.133.64 testuser@default passw
 [16:09:20] *** publisher to topic "solace/samples/nodejs/pers" is ready to connect ***
-[16:09:20] Connecting to Solace PubSub+ Event Broker using url: ws://localhost:8008
+[16:09:20] Connecting to Solace Event Broker using url: ws://localhost:8008
 [16:09:20] Client username: default
-[16:09:20] Solace PubSub+ Event Broker VPN name: default
+[16:09:20] Solace Event Broker VPN name: default
 [16:09:20] === Successfully connected and ready to publish messages. ===
 [16:09:20] Publishing message "Sample Message" to topic "solace/samples/nodejs/pers/1675939160521"...
 [16:09:20] Message sent with correlation key: 1675939160521
-[16:09:21] Delivery of message to PubSub+ Broker with correlation key = 1675939160521 confirmed.
-[16:09:21] Disconnecting from Solace PubSub+ Event Broker...
+[16:09:21] Delivery of message to Solace Event Broker with correlation key = 1675939160521 confirmed.
+[16:09:21] Disconnecting from Solace Event Broker...
 [16:09:21] Disconnected.
 ```
 

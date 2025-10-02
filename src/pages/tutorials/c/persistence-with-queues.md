@@ -13,19 +13,19 @@ links:
 
 ---
 
-This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a PubSub+ queue in a point to point fashion.
+This tutorial builds on the basic concepts introduced in the [publish/subscribe tutorial](../publish-subscribe/), and will show you how to send and receive persistent messages from a Solace queue in a point to point fashion.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
 *   You are familiar with Solace PubSub+ [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to PubSub+ messaging with the following configuration details:
-    *   Connectivity information for a PubSub+ message-VPN configured for guaranteed messaging support
+*   You have access to Solace messaging with the following configuration details:
+    *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace PubSub+ Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Solace Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
@@ -52,9 +52,9 @@ Durable endpoints are not auto created on Solace message routers. However there 
 *   Using the management interface
 *   Using the APIs
 
-Using the Solace PubSub+ APIs to provision an endpoint can be a convenient way of getting started quickly without needing to become familiar with the management interface. This is why it is used in this tutorial. However it should be noted that the management interface provides more options to control the queue properties. So generally it becomes the preferred method over time.
+Using the Solace Solace Messaging APIs to provision an endpoint can be a convenient way of getting started quickly without needing to become familiar with the management interface. This is why it is used in this tutorial. However it should be noted that the management interface provides more options to control the queue properties. So generally it becomes the preferred method over time.
 
-Provisioning an endpoint through the API requires the “Guaranteed Endpoint Create” permission in the client-profile. You can confirm this is enabled by looking at the client profile in PubSub+ Manager. If it is correctly set you will see the following:
+Provisioning an endpoint through the API requires the “Guaranteed Endpoint Create” permission in the client-profile. You can confirm this is enabled by looking at the client profile in Broker Manager. If it is correctly set you will see the following:
 
 ![Screenshot: Persistence](../../../images/screenshots/persistence-tutorial-image-3.png)
 
@@ -112,7 +112,7 @@ Now it is time to send a message to the queue.
 
 ![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue.png)
 
-To send a message, you must create a message and a queue destination. This tutorial will send a PubSub+ binary message with contents "Hello world!". Then you must send the message to the PubSub+ message router.
+To send a message, you must create a message and a queue destination. This tutorial will send a PubSub+ binary message with contents "Hello world!". Then you must send the message to the Solace Event Broker.
 
 
 ```cpp
@@ -145,7 +145,7 @@ To send a message, you must create a message and a queue destination. This tutor
 
 ```
 
-The message is transferred to the PubSub+ message router asynchronously, but if all goes well, it will be waiting for your consumer on the queue. 
+The message is transferred to the Solace Event Broker asynchronously, but if all goes well, it will be waiting for your consumer on the queue. 
 
 ## Receiving a message from a queue
 
@@ -153,11 +153,11 @@ Now it is time to receive the messages sent to your queue.
 
 ![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue.png)
 
-You still need to connect a session just as you did with the publisher. With a connected session, you then need to bind to the PubSub+ message router queue with a flow receiver. Flow receivers allow applications to receive messages from a PubSub+ guaranteed message flow. Flows encapsulate all of the acknowledgement behaviour required for guaranteed messaging. Conveniently flow receivers have the same interface as message consumers but flows also require some additional properties on creation.
+You still need to connect a session just as you did with the publisher. With a connected session, you then need to bind to the Solace Event Broker queue with a flow receiver. Flow receivers allow applications to receive messages from a PubSub+ guaranteed message flow. Flows encapsulate all of the acknowledgement behaviour required for guaranteed messaging. Conveniently flow receivers have the same interface as message consumers but flows also require some additional properties on creation.
 
 A flow requires properties. At its most basic, the flow properties require the endpoint (our newly provisioned or existing queue) and an ack mode. In this example you’ll use the client ack mode where the application will explicitly acknowledge each message.
 
-Flows are created from PubSub+ session objects just as direct message consumers are.
+Flows are created from Solace session objects just as direct message consumers are.
 
 Notice `flowMessageReceiveCallback` and `flowEventCallback` callbacks that are passed in when creating a flow. These callbacks will be invoked when a message arrives to the endpoint (the queue) or a flow events occurs.
 
@@ -227,7 +227,7 @@ Combining the example source code shown above results in the following source co
 
 ### Running the Samples
 
-If you start the `QueuePublisher` with the required arguments of your PubSub+ messaging, if will publish the message to the specified queue. In the example below, a message is published to a queue `q1`
+If you start the `QueuePublisher` with the required arguments of your Solace messaging, if will publish the message to the specified queue. In the example below, a message is published to a queue `q1`
 ```sh
 bin$ . /setenv.sh
 bin$ ./QueuePublisher <msg_backbone_ip:port> <message-vpn> <client-username> <password> <queue>

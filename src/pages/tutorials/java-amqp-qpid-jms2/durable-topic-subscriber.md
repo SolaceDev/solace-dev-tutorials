@@ -22,9 +22,9 @@ no consumer associated with it.
 
 To create a durable subscription, you must first create a JMS connection as with all JMS samples. See the [publish/subscribe tutorial](../publish-subscribe/) for more details if you need.
 
-A durable subscription requires that you create a durable consumer given a subscription name and topic. The subscription name will be the name used for the Durable Topic Endpoint in the Solace PubSub+ messaging service and the topic name is what will attract the messages you wish to receive.
+A durable subscription requires that you create a durable consumer given a subscription name and topic. The subscription name will be the name used for the Durable Topic Endpoint in the Solace Solace messaging service and the topic name is what will attract the messages you wish to receive.
 
-One aspect that is unusual with Qpid JMS is that a client ID is required to create a durable consumer. Therefore, you must set this on the context. Keep in mind that client IDs must be unique within the Solace PubSub+ messaging service.
+One aspect that is unusual with Qpid JMS is that a client ID is required to create a durable consumer. Therefore, you must set this on the context. Keep in mind that client IDs must be unique within the Solace Solace messaging service.
 
 The following code snippet outlines this.
 

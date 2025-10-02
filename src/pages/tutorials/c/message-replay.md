@@ -23,11 +23,11 @@ It's important to note that when initiating replay, the message broker will disc
 
 ## Prerequisite
 
-A replay log must be created on the message broker for the Message VPN using [Message Replay CLI configuration](https://docs.solace.com/Configuring-and-Managing/Msg-Replay-Config.htm) or using [Solace PubSub+ Manager](https://docs.solace.com/Solace-PubSub-Manager/PubSub-Manager-Overview.htm) administration console. Another option for configuration is to use the [SEMP API](https://docs.solace.com/SEMP/Using-SEMP.htm).
+A replay log must be created on the message broker for the Message VPN using [Message Replay CLI configuration](https://docs.solace.com/Configuring-and-Managing/Msg-Replay-Config.htm) or using [Broker Manager](https://docs.solace.com/Solace-PubSub-Manager/PubSub-Manager-Overview.htm) administration console. Another option for configuration is to use the [SEMP API](https://docs.solace.com/SEMP/Using-SEMP.htm).
 
 **NOTE:** Message Replay is supported on Solace PubSub+ 3530 and 3560 appliances running release 9.1 and greater, and on the Solace PubSub+ software message broker running release 9.1 and greater. Solace C API version 10.5 or later is required.
 
-![Screenshot: Configuring Replay Log using Solace PubSub+ Manager](../../../images/screenshots/config-replay-log.png)
+![Screenshot: Configuring Replay Log using Broker Manager](../../../images/screenshots/config-replay-log.png)
 
 ## Code
 
@@ -237,7 +237,7 @@ $ ./QueuePublisher  <msg_backbone_ip:port> <vpn> <client-username> <password> Q/
 3. Now start a replay from the message broker. The flow event callback monitors for a replay start event. When the message broker initiates a replay, the flow will see a `SOLCLIENT_FLOW_EVENT_DOWN_ERROR` event with SubCode `SOLCLIENT_SUBCODE_REPLAY_STARTED`. This means an administrator has initiated a replay, and the application must destroy and re-create the flow to receive the replayed messages.
 This will replay all logged messages including the live one published in step 2.
 
-![Screenshot: Initiating Replay using Solace PubSub+ Manager](../../../images/screenshots/initiate-replay.png)
+![Screenshot: Initiating Replay using Broker Manager](../../../images/screenshots/initiate-replay.png)
 
 ## Learn More
 

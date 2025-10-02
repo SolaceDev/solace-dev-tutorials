@@ -16,4 +16,4 @@ However, as you can tell from this [Wikipedia article](https://en.wikipedia.org/
  - **Asynchronous messaging:** use of callback handlers
  - **Connection lifecycle management:** connect once, and stay online for the lifetime of the app
 
-This Hello World sample application will connect to a Solace PubSub+ Event Broker, and publish/subscribe in a loop.  Let's begin!
+This Hello World sample application will connect to a Solace Event Broker, and publish/subscribe in a loop.  Let's begin!

@@ -23,7 +23,7 @@ This feature can be used to guarantee that a message is not removed from the mes
 
 The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow transacted sessions](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-Trans-Sess).
 
-NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
+NOTE:  This is the default configuration in Solace Cloud messaging services.
 
 ## Code
 

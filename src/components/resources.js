@@ -26,7 +26,7 @@ const Resources = (props) => {
             <a href="https://community.solace.com/">
               <div className="custom-card">
                 <div className="title">Developer Community</div>
-                <div className="desc">Technical community for PubSub+.</div>
+                <div className="desc">Technical community for Solace.</div>
                 <div className="link">Learn More</div>
               </div>
             </a>
@@ -72,7 +72,7 @@ const Resources = (props) => {
               <div className="custom-card">
                 <div className="title">Codelabs &amp; Workshops</div>
                 <div className="desc">
-                  Get guided, hands on coding experience with PubSub+ Codelabs.
+                  Get guided, hands on coding experience with Solace Codelabs.
                 </div>
                 <div className="link">Learn More</div>
               </div>
@@ -94,7 +94,7 @@ const Resources = (props) => {
               <div className="custom-card">
                 <div className="title">Free Courses</div>
                 <div className="desc">
-                  Learn the fundamentals of PubSub+ at your own pace.
+                  Learn the fundamentals of Solace at your own pace.
                 </div>
                 <div className="link">Learn More</div>
               </div>
@@ -119,7 +119,7 @@ const Resources = (props) => {
                   {" "}
                   SDKPerf is a command line tool for validating performance,
                   checking configuration, and exploring features associated with
-                  your PubSub+ message broker.
+                  your Solace message broker.
                 </div>
                 <div className="link">Learn More</div>
               </div>
@@ -131,7 +131,7 @@ const Resources = (props) => {
                 <div className="title">Queue Browser</div>
                 <div className="desc">
                   Get all the information you need to use JMS ToolBox with
-                  PubSub+.
+                  Solace.
                 </div>
                 <div className="link">Learn More</div>
               </div>

@@ -17,7 +17,7 @@
   description: Sample code showing how to build a Direct Processor
   link: https://github.com/SolaceSamples/solace-samples-go/blob/main/patterns/direct_processor.go
 - title: Secure connection
-  description: Sample code showing how to have a secure connection to Solace PubSub+ Broker
+  description: Sample code showing how to have a secure connection to Solace Event Broker
   link: https://github.com/SolaceSamples/solace-samples-go/blob/main/howtos/secure_connection.go
 - title: Update Service Properties - Oauth Token
   description: Sample code showing how to change Oauth Tokens by updating the Service Properties

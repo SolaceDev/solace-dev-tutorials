@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Topic to Queue Mapping
-summary: Learn how to map topics to PubSub+ queues.
+summary: Learn how to map topics to Solace queues.
 icon: I_dev_topic2q.svg
 links:
     - label: TopicToQueueMapping.c
@@ -20,25 +20,25 @@ The following diagram illustrates this feature.
 
 ![Diagram: C Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
 
-If you have a durable queue named `Q`, it will receive messages published directly to the queue destination named `Q`. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics `A` and `B`. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations `A` and `B`. When you combine this with the wildcard support provided by PubSub+ topics this opens up a number of interesting use cases.
+If you have a durable queue named `Q`, it will receive messages published directly to the queue destination named `Q`. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics `A` and `B`. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations `A` and `B`. When you combine this with the wildcard support provided by Solace topics this opens up a number of interesting use cases.
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You have access to PubSub+ messaging with the following configuration details:
-    *   Connectivity information for a PubSub+ message-VPN configured for guaranteed messaging support
+*   You have access to Solace messaging with the following configuration details:
+    *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
     *   Client-profile enabled with guaranteed messaging permissions.
 
-One simple way to get access to PubSub+ messaging quickly is to create a messaging service in PubSub+ Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to PubSub+ messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
 
 ## Goals
 
 The goal of this tutorial is to understand the following:
 
 *   How to add topic subscriptions to a queue. Two ways are shown in this case.
-*   How to interrogate the PubSub+ message router to confirm capabilities.
+*   How to interrogate the Solace Event Broker to confirm capabilities.
 *   How to delete a queue.
 
 

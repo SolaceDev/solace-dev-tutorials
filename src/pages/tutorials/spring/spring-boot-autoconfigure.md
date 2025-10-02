@@ -57,7 +57,7 @@ In order for us to run our sender/receiver we need to first create the Queue tha
 We will be creating a queue named "SpringTestQueue". 
 
 * If using Solace Cloud, create the queue by following these instructions: [Create Queue](https://solace.com/cloud-learning/group_getting_started/ggs_queue.html)
-* If using a local docker instance login to the PubSub+ Manager at localhost:8080/#/login. Once logged in choose your message VPN, click "Queues" on the left, and click the "+Queue" button on the top right to create your queue. 
+* If using a local docker instance login to the Broker Manager at localhost:8080/#/login. Once logged in choose your message VPN, click "Queues" on the left, and click the "+Queue" button on the top right to create your queue. 
 * If using an appliance, ask your administrator to create the queue for you.
 
 * You can also create a queue from the CLI. [Learn how to login to the cli here](https://docs.solace.com/Solace-CLI/Using-Solace-CLI.htm) 
@@ -119,7 +119,7 @@ Sample code [is here](https://github.com/SolaceSamples/solace-samples-spring/tre
 ### SpringBootReceiver.java
 Open a new console/terminal if needed. 
 Open the SpringBootReceiver.java file in the "spring-boot-autoconfig-receiver" project.
-This class shows how simple it is to create a Spring Boot app that receives events from a PubSub+ queue. 
+This class shows how simple it is to create a Spring Boot app that receives events from a Solace queue. 
 The class will setup a JmsListener on the "SpringTestQueue" which should already be created. 
 
 A few things to take note of:
@@ -184,7 +184,7 @@ Sample code [is here](https://github.com/SolaceSamples/solace-samples-spring/tre
 ### SpringBootSender.java
 Open a new console/terminal if needed. 
 Open the SpringBootSender.java file in the "spring-boot-autoconfig-sender" project.
-This class shows how simple it is to create a Spring Boot app that sends events to a PubSub+ queue. 
+This class shows how simple it is to create a Spring Boot app that sends events to a Solace queue. 
 The class will send an event every 5 seconds
 
 A few things to take note of:

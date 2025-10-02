@@ -17,7 +17,7 @@ The example code builds on the Consumer in the [QueueConsumer](../persistence-wi
 
 A topic endpoint attracts messages published to a topic for which the topic endpoint has a matching topic subscription. The topic subscription for the topic endpoint is specified in the client request to bind a Flow to that topic endpoint.
 
-Durable queues and topic endpoints are provisioned objects on the message broker that have a life span independent of a particular client session. They also survive a message broker restart and are preserved as part of the message broker configuration for backup and restoration purposes. Administrators can provision durable queues and topic endpoints through the Solace CLI, SEMP, or PubSub+ Manager; client applications can dynamically provision durable endpoints through the Solace messaging APIs.
+Durable queues and topic endpoints are provisioned objects on the message broker that have a life span independent of a particular client session. They also survive a message broker restart and are preserved as part of the message broker configuration for backup and restoration purposes. Administrators can provision durable queues and topic endpoints through the Solace CLI, SEMP, or Broker Manager; client applications can dynamically provision durable endpoints through the Solace messaging APIs.
 
 ## Prerequisite
 

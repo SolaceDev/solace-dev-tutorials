@@ -1,5 +1,5 @@
 - title: SEMP Tutorials
-  summary: SEMP is a RESTful management API for configuring and administrating your Solace PubSub+ event broker.
+  summary: SEMP is a RESTful management API for configuring and administrating your Solace Event Broker.
   icon: semp.svg
   buttons:
     doclink: https://docs.solace.com/SEMP/Using-SEMP.htm#mc-main-content

@@ -23,7 +23,7 @@ Using the Active Flow Indication, a client application can learn if it is the pr
 
 The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow receiving guaranteed messages](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-G-Msg-Receives).
 
-NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
+NOTE:  This is the default configuration in Solace Cloud messaging services.
 
 ## Code
 

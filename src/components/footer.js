@@ -32,7 +32,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Platform
+                    Solace Platform
                   </a>
                 </li>
                 <li>
@@ -41,7 +41,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker
+                    Solace Event Broker
                   </a>
                 </li>
                 <li>
@@ -50,7 +50,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Software
+                    Solace Event Broker Software
                   </a>
                 </li>
                 <li>
@@ -59,7 +59,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Appliance
+                    Solace Event Broker Appliance
                   </a>
                 </li>
                 <li>
@@ -68,7 +68,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Broker: Cloud
+                    Solace Cloud
                   </a>
                 </li>
                 <li>
@@ -77,7 +77,7 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    PubSub+ Event Portal
+                    Solace Event Portal
                   </a>
                 </li>
               </ul>

@@ -1,7 +1,7 @@
 ---
 layout: tutorials
 title: Publish / Subscribe
-summary: Learn how to pub/sub using Solace REST Messaging with a Solace PubSub+ Broker.
+summary: Learn how to pub/sub using Solace REST Messaging with a Solace Event Broker.
 icon: I_dev_P+S.svg
 links:
     - label: feedback
@@ -15,8 +15,8 @@ This tutorial will introduce you to the fundamentals of the Solace REST messagin
 This tutorial assumes the following:
 
 *   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
-*   You have access to a running Solace PubSub+ Broker with the following configuration:
-    *   Connectivity information for a Solace PubSub+ Broker
+*   You have access to a running Solace Event Broker with the following configuration:
+    *   Connectivity information for a Solace Event Broker
     *   Enabled client username and password
     *   Enabled guaranteed messaging support (needed for REST consumers)
     *   Client-profile enabled with guaranteed messaging permissions
@@ -36,7 +36,7 @@ The goal of this tutorial is to demonstrate the most basic messaging interaction
 
 ## Solace REST Messaging API Introduction
 
-As outlined in the [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm), the REST Messaging API enable users to send messages to, and asynchronously receive messages from a Solace PubSub+ Broker over HTTP using a RESTful API.
+As outlined in the [Online REST Messaging Documentation](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm), the REST Messaging API enable users to send messages to, and asynchronously receive messages from a Solace Event Broker over HTTP using a RESTful API.
 
 The Solace API uses HTTP POST requests to allow clients to publish message to a Message VPN. The Solace API follows the asynchronous notification pattern and uses an HTTP POST from a Message VPN to the client to deliver messages. This means that pub and sub messages are sent on different HTTP connections than they are received as shown in the following figure.
 
@@ -61,14 +61,14 @@ There is no API to obtain. The Solace REST messaging API is a wireline RESTful H
 
 ## Receiving a message
 
-Since Solace PubSub+ is a multi-protocol translation broker, messages can be received using any of the other Solace APIs (e.g., JMS or MQTT) which would be a lot less complicated to use when compared to REST Deliver point based setup.
+Since Solace is a multi-protocol translation broker, messages can be received using any of the other Solace APIs (e.g., JMS or MQTT) which would be a lot less complicated to use when compared to REST Deliver point based setup.
 
 
 In this tutorial will show how to setup a subscriber to receive published messages.
 
 ![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-On the consumer side, the Solace REST messaging API depends on a guaranteed messaging queue. As such it is a requirement for REST consumers that Solace PubSub+ Broker support guaranteed messaging and have this feature configured as outlined in the [Assumptions](#Assumptions) section above.
+On the consumer side, the Solace REST messaging API depends on a guaranteed messaging queue. As such it is a requirement for REST consumers that Solace Event Broker support guaranteed messaging and have this feature configured as outlined in the [Assumptions](#Assumptions) section above.
 
 In order to receive REST messages from Solace Message VPN, you must configure a Guaranteed messaging queue and a REST delivery point. The queue is used to attract messages to the consumer application. The REST delivery point is the Solace message router component that delivers the messages from the queue to the consumer application asynchronously through HTTP POST requests. This is explained in detail in the [REST Messaging Concepts](https://docs.solace.com/Open-APIs-Protocols/REST-get-start.htm). This tutorial will walk you through the required Solace Message VPN configuration required to create a queue and REST delivery point to connect to your REST consumer application.
 
@@ -105,7 +105,7 @@ Server running at http://<RC_HOST>:<RC_PORT>/
 Again in your environment, the RC\_HOST and RC\_PORT will be the host/IP and port that your server is listening on. For example http://49.210.148.187
 :10000/ or with a public DNS name http://myhost.mydomain.com:10000 (for example).
 
-If running Solace PubSub+ Broker locally, a “localhost” or a local DHCP IP for host name won’t work, since the PubSub+ Broker is usually run on a different subnet.  You have to use your computer’s actual (local) IP address.
+If running Solace Event Broker locally, a “localhost” or a local DHCP IP for host name won’t work, since the Solace Event Broker is usually run on a different subnet.  You have to use your computer’s actual (local) IP address.
 
 **Note:** Even though this tutorial is illustrating how to publish direct messages, for REST delivery points, the messages are always consumed from a queue. Direct messages get promoted in the queue, and are delivered to the REST consumer as Guaranteed messages. For more information on this see the [Features – Topic Matching and Message Delivery Modes](https://docs.solace.com/PubSub-Basics/Topic-Matching-and-Delivery-Modes.htm).
 
@@ -160,11 +160,11 @@ In the script below, update VPNNAME to match that of your Solace Message VPN, an
 
 The REST Delivery Point configuration can be affected on a Message VPN in different ways. Here is the list of options available for us.
 
-  [Option 1: Using PubSub+ Broker Manager](#Option-1-Using-PubSub-Broker-Manager)   
+  [Option 1: Using Solace Event Broker Manager](#Option-1-Using-PubSub-Broker-Manager)   
   [Option 2: Using SEMP and Postman](#Option-2-Using-SEMP-and-Postman)       
   [Option 3: Using SEMP and curl](#Option-3-Using-SEMP-and-codecurlcode)
   [Option 4: Using Solace CLI](#Option-4-Using-Solace-CLI)
-### Option 1: Using PubSub+ Broker Manager
+### Option 1: Using Solace Event Broker Manager
 
  - Create a Queue by name **Q/rdp1/input**
   
@@ -267,11 +267,11 @@ A final, configured RDP settings would look like this.
 ![RDP Configuration](../../../images/screenshots/brokerman-rdp-configured.png)  
 
 
-To know more about PubSub+ Broker Manager check out [PubSub+ Broker Manager overview](https://docs.solace.com/Broker-Manager/PubSub-Manager-Overview.htm).
+To know more about Solace Event Broker Manager check out [Solace Event Broker Manager overview](https://docs.solace.com/Broker-Manager/PubSub-Manager-Overview.htm).
 
 ### Option 2: Using SEMP and Postman
 
-Solace Element Management Protocol version 2 (SEMP v2) is a RESTful API that you can use to configure Solace PubSub+ event brokers. It complements Solace's CLI and PubSub+ Manager, and provides a programmable way to configure Solace PubSub+ event brokers.
+Solace Element Management Protocol version 2 (SEMP v2) is a RESTful API that you can use to configure Solace event brokers. It complements Solace's CLI and Broker Manager, and provides a programmable way to configure Solace event brokers.
 
 1. Download SEMP v2 specification
 
@@ -302,7 +302,7 @@ Where the CLOUD_BROKER_HOST is the host name of where the Cloud Broker is runnin
 4. Note the SEMP v2 URL and access credentials
    <br/>
    
-    **For PubSub+ Software Broker** - the SEMP requests can be posted to the following URL
+    **For Solace Event Broker Software Broker** - the SEMP requests can be posted to the following URL
     ```
     http://<SOFTWARE_BROKER_HOST>:8080/SEMP/v2/config
     ```
@@ -313,7 +313,7 @@ Where the CLOUD_BROKER_HOST is the host name of where the Cloud Broker is runnin
 
     ![SEMP - Software Broker](../../../images/screenshots/enable-sempv2-software.png)
 
-    **For PubSub+ Cloud Broker** - select the Broker Service, Select the **Manage** tab and locate the *SEMP - REST API* section. Note the URL to SEMP spec 
+    **For Solace Cloud Broker** - select the Broker Service, Select the **Manage** tab and locate the *SEMP - REST API* section. Note the URL to SEMP spec 
     ```
     https://CLOUD_BROKER_HOST:943/SEMP/v2/config
     ```
@@ -329,7 +329,7 @@ Where the CLOUD_BROKER_HOST is the host name of where the Cloud Broker is runnin
 <br/>
 
 5. Execute the following SEMP POST requests to create resources associated with REST Delivery Point. <br/>
-    The following steps demonstrate invoking SEMP REST API against a PubSub+ Cloud Broker as identified by the host CLOUD\_BROKER\_HOST and a Message VPN identified by VPN_NAME. For PubSub+ Software Broker, use the host on which the software Broker is running.
+    The following steps demonstrate invoking SEMP REST API against a Solace Cloud Broker as identified by the host CLOUD\_BROKER\_HOST and a Message VPN identified by VPN_NAME. For Solace Event Broker Software Broker, use the host on which the software Broker is running.
 
     <br/>
     Ensure that the REST requests are appropriately updated with user credentials and the <b>APIs are invoked as POST requests</b>.   
@@ -568,7 +568,7 @@ curl \
 
 ### Option 4: Using Solace CLI
 
-The Solace Command Line Interface (CLI) is a text-based, interactive shell for configuring and monitoring Solace event brokers (available for Solace PubSub+ Software and Appliance Brokers). It allows a user to perform event broker administration, configuration and provisioning, and network troubleshooting tasks. The CLI automatically starts after the event broker powers up.
+The Solace Command Line Interface (CLI) is a text-based, interactive shell for configuring and monitoring Solace event brokers (available for Solace Event Broker Software and Appliance Brokers). It allows a user to perform event broker administration, configuration and provisioning, and network troubleshooting tasks. The CLI automatically starts after the event broker powers up.
 
 Reference guides to the Solace CLI can be found in these locations: [Appliance CLI Commands](https://docs.solace.com/Solace-CLI/CLI-Reference/APPL_CLI_Commands.html) and [Software Event Broker CLI Commands](https://docs.solace.com/Solace-CLI/CLI-Reference/VMR_CLI_Commands.html).
 
@@ -628,7 +628,7 @@ Password:
 ```
 BROKER_HOST is the host name where the Broker is running.
 
-At this the REST delivery point is configured and should be operational and connected to your REST consumer application. You can verify this using PubSub+ Manager or through the following CLI command.
+At this the REST delivery point is configured and should be operational and connected to your REST consumer application. You can verify this using Broker Manager or through the following CLI command.
 
 ```
 solace(configure)# show message-vpn VPNNAME rest rest-delivery-point *
@@ -675,7 +675,7 @@ To send a message you can use the following command.
 $ curl -X POST -d "Hello World REST" http://BROKER_HOST:BROKER_REST_PORT/solace/samples/rest -H "content-type: text/plain"
 ```
 
-You will need to update HOST and PORT to match your Solace PubSub+ Broker HOST and configured REST service port. This will send a message with contents “Hello World REST” as a Solace text message using the direct delivery mode. The “content-type” headers and “Solace-delivery-mode” are optional. If they are omitted then the Solace REST messaging default delivery mode of “persistent” will be used and the message contents will be treated as binary.
+You will need to update HOST and PORT to match your Solace Event Broker HOST and configured REST service port. This will send a message with contents “Hello World REST” as a Solace text message using the direct delivery mode. The “content-type” headers and “Solace-delivery-mode” are optional. If they are omitted then the Solace REST messaging default delivery mode of “persistent” will be used and the message contents will be treated as binary.
 
 You can also add credentials to the request by updating the cURL command to the following:
 

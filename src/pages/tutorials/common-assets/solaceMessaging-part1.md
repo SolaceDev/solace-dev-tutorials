@@ -1,7 +1,7 @@
 
 ## Get Solace Messaging
 
-This tutorial requires access Solace PubSub+ messaging and requires that you know several connectivity properties about your Solace messaging. Specifically you need to know the following:
+This tutorial requires access Solace messaging and requires that you know several connectivity properties about your Solace messaging. Specifically you need to know the following:
 
 <table>
   <thead>
@@ -12,12 +12,12 @@ This tutorial requires access Solace PubSub+ messaging and requires that you kno
   <tr>
     <td>Host</td>
     <td>String</td>
-    <td>This is the address clients use when connecting to the PubSub+ messaging to send and receive messages. (Format: <code>DNS_NAME:Port</code> or <code>IP:Port</code>)</td>
+    <td>This is the address clients use when connecting to the Solace messaging to send and receive messages. (Format: <code>DNS_NAME:Port</code> or <code>IP:Port</code>)</td>
   </tr>
   <tr>
     <td>Message VPN</td>
     <td>String</td>
-    <td>The PubSub+ message router Message VPN that this client should connect to. </td>
+    <td>The Solace message router Message VPN that this client should connect to. </td>
   </tr>
   <tr>
     <td>Client Username</td>
@@ -31,11 +31,11 @@ This tutorial requires access Solace PubSub+ messaging and requires that you kno
   </tr>
 </table>
 
-There are several ways you can get access to PubSub+ Messaging and find these required properties.
+There are several ways you can get access to Solace Messaging and find these required properties.
 
-### Option 1: Use PubSub+ Cloud
+### Option 1: Use Solace Cloud
 
-* Follow [these instructions](https://solace.com/products/platform/cloud/) to quickly spin up a cloud-based PubSub+ messaging service for your applications.
+* Follow [these instructions](https://solace.com/products/platform/cloud/) to quickly spin up a cloud-based Solace messaging service for your applications.
 * The messaging connectivity information is found in the service details in the connectivity tab (shown below). You will need:
     * Host:Port (use the SMF URI)
     * Message VPN
