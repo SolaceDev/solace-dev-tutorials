@@ -19,6 +19,8 @@ This feature exploration shows how to use the Solace Schema Registry with JSON S
 
 The Solace Schema Registry provides a centralized repository for managing message schemas, enabling schema validation, versioning, and evolution across your event-driven applications. The Schema Registry SERDES integration with JCSMP allows you to serialize and deserialize messages while automatically validating them against registered schemas.
 
+![Schema Registry Flow](image.png)
+
 Key benefits include:
 * **Automatic Schema Validation**: Messages are validated against registered schemas during serialization and deserialization
 * **Type Safety**: Serialize from and deserialize to Plain Old Java Objects (POJOs) with compile-time type checking
@@ -32,7 +34,7 @@ The Schema Registry SERDES library supports both JSON Schema and Apache Avro for
 * A Solace PubSub+ broker (version 10.5 or later) with Schema Registry deployed
 * Access to the Schema Registry with appropriate credentials
 * JSON Schema files uploaded to the Schema Registry 
-* The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to support your messaging requirements
+* There must be a suitable [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) configured on your broker
 For guidance on schema registry setup complete the [Schema registry codelab](https://codelabs.solace.dev/codelabs/schema-registry/?index=..%2F..index#0)
 
 For more information about the Solace Schema Registry, refer to the [Schema Registry Overview](https://docs.solace.com/Schema-Registry/schema-registry-overview.htm) documentation.
