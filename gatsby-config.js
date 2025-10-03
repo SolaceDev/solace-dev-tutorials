@@ -258,7 +258,7 @@ module.exports = {
       options: {
         name: `JCSMP-Samples`,
         remote: `https://github.com/SolaceSamples/solace-samples-java-jcsmp`,
-        commit: '7ce4d7edfb53d03e44a8b45a405aa53ed10348ef',
+        commit: '7333ce5eb44953f41fae402b58045f69134b603b',
       }
     },
     {
