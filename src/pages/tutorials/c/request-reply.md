@@ -24,7 +24,7 @@ This tutorial assumes the following:
     *   Connectivity information for a Solace message-VPN
     *   Enabled client username and password
 
-One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Solace Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
+One simple way to get access to Solace messaging quickly is to create a messaging service in Solace Cloud [as outlined here](https://solace.com/products/event-broker/cloud/). You can find other ways to get access to Solace messaging below.
 
 The build instructions in this tutorial assume you are using a Linux shell. If your environment differs, adapt the instructions.
 
@@ -35,14 +35,14 @@ The goal of this tutorial is to understand the following:
 *   On the requestor side:
     1.  How to create a request
     2.  How to receive a response
-    3.  How to use the Solace Solace Messaging API to correlate the request and response
+    3.  How to use the Solace Messaging API to correlate the request and response
 *   On the replier side:
     1.  How to detect a request expecting a reply
     2.  How to generate a reply message
 
 ## Overview
 
-Request-reply messaging is supported by the Solace Event Broker for all delivery modes. For direct messaging, the Solace Solace Messaging APIs provide the Requestor object for convenience. This object makes it easy to send a request and wait for the reply message. It is a convenience object that makes use of the API provided “inbox” topic that is automatically created for each PubSub+ client and automatically correlates requests with replies using the message correlation ID. (See Message Correlation below for more details). On the reply side another convenience method enables applications to easily send replies for specific requests. Direct messaging request reply is the delivery mode that is illustrated in this sample.
+Request-reply messaging is supported by the Solace Event Broker for all delivery modes. For direct messaging, the Solace Messaging APIs provide the Requestor object for convenience. This object makes it easy to send a request and wait for the reply message. It is a convenience object that makes use of the API provided “inbox” topic that is automatically created for each PubSub+ client and automatically correlates requests with replies using the message correlation ID. (See Message Correlation below for more details). On the reply side another convenience method enables applications to easily send replies for specific requests. Direct messaging request reply is the delivery mode that is illustrated in this sample.
 
 It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. The requestor and replier must manually correlate the messages. This is explained further in the [Solace PubSub+ documentation](https://docs.solace.com/Solace-PubSub-Messaging-APIs/API-Developer-Guide/Request-Reply-Messaging.htm) and shown in the API samples named `RRGuaranteedRequestor` and `RRGuaranteedReplier`.
 
