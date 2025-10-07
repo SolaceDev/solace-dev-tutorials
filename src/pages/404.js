@@ -77,7 +77,7 @@ const NotFoundPage = () => (
                 >
                   docs.solace.com
                 </a>{" "}
-                houses all PubSub+ Event Broker technical documentation
+                houses all Solace Event Broker technical documentation
               </ListGroup.Item>
               <ListGroup.Item>
                 <FontAwesomeIcon

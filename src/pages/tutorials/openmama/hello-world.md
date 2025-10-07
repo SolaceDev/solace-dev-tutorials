@@ -275,7 +275,7 @@ int main(int argc, const char** argv)
 }
 ```
 
-Now our program runs without any errors and it successfully connects to **Solace messaging**. If you sleep the main thread before the `mamaTransport_destroy(transport)` call, you can see use **PubSub+ Manager** to see this program as a client connected to **Solace messaging**.
+Now our program runs without any errors and it successfully connects to **Solace messaging**. If you sleep the main thread before the `mamaTransport_destroy(transport)` call, you can see use **Broker Manager** to see this program as a client connected to **Solace messaging**.
 
 #### Create publisher
 

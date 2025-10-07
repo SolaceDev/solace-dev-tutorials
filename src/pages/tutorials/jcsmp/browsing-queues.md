@@ -21,7 +21,7 @@ A Browser could be used by an application to pre-screen messages by detecting me
 
 The [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) must be configured to [allow receiving guaranteed messages](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm#Allow-G-Msg-Receives)
 
-NOTE:  This is the default configuration in PubSub+ Cloud messaging services.
+NOTE:  This is the default configuration in Solace Cloud messaging services.
 
 ## Code
 

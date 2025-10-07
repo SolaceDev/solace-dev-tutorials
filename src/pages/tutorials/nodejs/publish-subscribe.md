@@ -65,7 +65,7 @@ try {
 }
 ```
 
-At this point your Node.js application is connected as a client to the Solace message router. You can use PubSub+ Manager to view this client connection and related details.
+At this point your Node.js application is connected as a client to the Solace message router. You can use Broker Manager to view this client connection and related details.
 
 ## Session Events
 

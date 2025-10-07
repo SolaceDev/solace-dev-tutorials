@@ -31,7 +31,7 @@ The Schema Registry SERDES library supports both JSON Schema and Apache Avro for
 
 ## Prerequisites
 
-* A Solace PubSub+ broker (version 10.5 or later) with Schema Registry deployed
+* A Solace Event Broker (version 10.5 or later) with Schema Registry deployed
 * Access to the Schema Registry with appropriate credentials
 * JSON Schema files uploaded to the Schema Registry 
 * There must be a suitable [Client Profile](https://docs.solace.com/Configuring-and-Managing/Configuring-Client-Profiles.htm) configured on your broker

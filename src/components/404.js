@@ -30,7 +30,7 @@
                                 <a href="http://solace.dev/" target="_blank" rel="noopener noreferrer">solace.dev</a> is the homebase where developers start building all of the things
                             </li>
 							<li>
-                                <a href="http://docs.solace.com/" target="_blank" rel="noopener noreferrer">docs.solace.com</a> houses all PubSub+ Event Broker technical documentation
+                                <a href="http://docs.solace.com/" target="_blank" rel="noopener noreferrer">docs.solace.com</a> houses all Solace Event Broker technical documentation
                             </li>
 							<li>
                                 Explore success stories within your <a href="https://solace.com/use-cases/industries/" target="_blank" rel="noopener noreferrer">Industry</a> or the <a href="https://solace.com/use-cases/environments/" target="_blank" rel="noopener noreferrer">Environment</a> you’re interested in

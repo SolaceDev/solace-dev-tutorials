@@ -10,18 +10,18 @@ links:
 
 ## Overview
 
-This tutorial is part of a series of tutorials which aims to introduce users to Solace PubSub+ in Pivotal Cloud Foundry. Solace PubSub+ in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network](https://network.pivotal.io/). You can see the [Solace PubSub+ for Pivotal Cloud Foundry Documentation](https://docs.pivotal.io/solace-messaging) for full details.
+This tutorial is part of a series of tutorials which aims to introduce users to Solace PubSub+ in Pivotal Cloud Foundry. Solace PubSub+ in Pivotal Cloud Foundry is delivered as a Tile on the [Pivotal Network](https://network.pivotal.io/). You can see the [Solace for Pivotal Cloud Foundry Documentation](https://docs.pivotal.io/solace-messaging) for full details.
 
-This tutorial is similar to the [Java App](../java-app/) tutorial. Like the Java App tutorial, it will introduce you to Solace PubSub+ for Pivotal Cloud Foundry by creating a Java application.  In contrast to the Java App, this application uses the Spring Cloud Connectors library to simplify the parsing of the `VCAP_SERVICES` environment variable.
+This tutorial is similar to the [Java App](../java-app/) tutorial. Like the Java App tutorial, it will introduce you to Solace for Pivotal Cloud Foundry by creating a Java application.  In contrast to the Java App, this application uses the Spring Cloud Connectors library to simplify the parsing of the `VCAP_SERVICES` environment variable.
 
 ![Diagram: Spring Cloud App Architecture](../../../images/diagrams/spring-cloud-app-architecture.png)
 
 ## Goals
 
-The goal of this tutorial is to demonstrate extracting the information from the application's Cloud Foundry Service Bindings and connect to the Solace PubSub+ service instance.  This tutorial will show you:
+The goal of this tutorial is to demonstrate extracting the information from the application's Cloud Foundry Service Bindings and connect to the Solace service instance.  This tutorial will show you:
 
-1. How to extract the Solace PubSub+ service credentials from the Cloud Foundry environment using Spring Cloud Connectors.
-1. How to establish a connection to the Solace PubSub+ service.
+1. How to extract the Solace service credentials from the Cloud Foundry environment using Spring Cloud Connectors.
+1. How to establish a connection to the Solace service.
 1. How to publish, subscribe and receive messages.
 
 ## Assumptions
@@ -32,11 +32,11 @@ This tutorial assumes the following:
 * You are familiar with [Spring RESTful Web Services](https://spring.io/guides/gs/rest-service).
 * You are familiar with [Cloud Foundry](https://www.cloudfoundry.org/).
 * You have access to a running Pivotal Cloud Foundry environment.
-* Solace PubSub+ for PCF has been installed in your Pivotal Cloud Foundry environment.
+* Solace for PCF has been installed in your Pivotal Cloud Foundry environment.
 
 ## Obtaining the Solace API
 
-This tutorial depends on you having the Solace PubSub+ API for Java (JCSMP). Here are a few easy ways to get the Java API. The instructions in the [Building](#building) section assume you're using Gradle and pulling the jars from maven central. If your environment differs then adjust the build instructions appropriately.
+This tutorial depends on you having the Solace Messaging API for Java (JCSMP). Here are a few easy ways to get the Java API. The instructions in the [Building](#building) section assume you're using Gradle and pulling the jars from maven central. If your environment differs then adjust the build instructions appropriately.
 
 ### Get the API: Using Gradle
 
@@ -69,11 +69,11 @@ The sample application contains the following source files :
 | Source File      | Description |
 | ---------------- | ----------- |
 | Application.java | The Sprint Boot application class |
-| SolaceController.java | The Application's REST controller which provides an interface to subscribe, publish and receive messages.  This class also implements the initialization procedure which connects the application to the Solace PubSub+ Service. |
+| SolaceController.java | The Application's REST controller which provides an interface to subscribe, publish and receive messages.  This class also implements the initialization procedure which connects the application to the Solace Service. |
 | SimpleMessage.java | This class wraps the information to be stored in a message |
 | SimpleSubscription.java | This class wraps the information describing a topic subscription |
 
-This tutorial will only cover the source code in `SolaceController.java` as the other files do not contain logic related to establishing a connection to the Solace PubSub+ Service.
+This tutorial will only cover the source code in `SolaceController.java` as the other files do not contain logic related to establishing a connection to the Solace Service.
 
 ### Obtaining the Solace Credentials in the Application
 
@@ -103,11 +103,11 @@ The Pivotal Cloud Foundry environment exposes any bound Service Instances in a J
 }
 ```
 
-You can see the full structure of the Solace PubSub+ `VCAP_SERVICES` in the [Solace PubSub+ for PCF documentation](https://docs.pivotal.io/solace-messaging/credentials.html).
+You can see the full structure of the Solace PubSub+ `VCAP_SERVICES` in the [Solace for PCF documentation](https://docs.pivotal.io/solace-messaging/credentials.html).
 
 This sample use the [Spring Cloud Connectors](https://cloud.spring.io/spring-cloud-connectors) project to retrieve the `VCAP_SERVICES` information in the form of a `ServiceInfo` object. For Solace PubSub+ in Cloud Foundry, there is a Spring Cloud Connectors extension in GitHub called [sl-spring-cloud-connectors](https://github.com/SolaceProducts/sl-spring-cloud-connectors). This library parses the `VCAP_SERVICES` environment variable and exposes the information by implementing the `ServiceInfo` interface in the `SolaceMessagingInfo` object.
 
-The `init()` method retrieves the Solace PubSub+ Service Instance details for the service named `solace-pubsub-sample-instance` as follows:
+The `init()` method retrieves the Solace Service Instance details for the service named `solace-pubsub-sample-instance` as follows:
 
 ```java
 CloudFactory cloudFactory = new CloudFactory();
@@ -123,7 +123,7 @@ if (solaceServiceCredentials == null) {
 }
 ```
 
-### Connecting to the Solace PubSub+ Service
+### Connecting to the Solace Service
 
 Once you have the `SolaceServiceCredentials`, you can create and then connect the Solace Session in the conventional way as outlined in the [Publish/Subscribe tutorial](../../jcsmp/publish-subscribe/). You set the JCSMP properties and then use the `JCSMPFactory` to create a `Session`:
 
@@ -239,7 +239,7 @@ cd solace-samples-cloudfoundry-java
 
 ## Cloud Foundry Setup
 
-The sample application specifies a dependency on a service instance named `solace-pubsub-sample-instance` in its manifiest (See `spring-cloud/manifest.yml`).  This must be an instance of the Solace PubSub+ Service which can be created with this command:
+The sample application specifies a dependency on a service instance named `solace-pubsub-sample-instance` in its manifiest (See `spring-cloud/manifest.yml`).  This must be an instance of the Solace Service which can be created with this command:
 
 ```
 cf create-service solace-pubsub enterprise-shared solace-pubsub-sample-instance
