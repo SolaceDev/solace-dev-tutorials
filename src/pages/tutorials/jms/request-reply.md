@@ -5,9 +5,9 @@ summary: Learn how to set up request/reply messaging.
 icon: I_dev_R+R.svg
 links:
     - label: BasicRequestor.java
-      link: /blob/master/src/main/java/com/solace/samples/BasicRequestor.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/BasicRequestor.java
     - label: BasicReplier.java
-      link: /blob/master/src/main/java/com/solace/samples/BasicReplier.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/BasicReplier.java
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/request-reply.md
 ---
@@ -24,24 +24,24 @@ The goal of this tutorial is to understand the following:
 *   On the requestor side:
     1.  How to create a request
     2.  How to receive a response
-    3.  How to use the Solace JMS API to correlate the request and response
+    3.  How to use the Solace Jakarta JMS API to correlate the request and response
 *   On the replier side:
     1.  How to detect a request expecting a reply
     2.  How to generate a reply message
 
-## Java Messaging Service (JMS) Introduction
+## Jakarta Messaging (JMS) Introduction
 
-JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
+Jakarta Messaging (the successor to Java Message Service — JMS — under the Jakarta EE project) is a standard API for sending and receiving messages. It uses the `jakarta.jms.*` namespace where earlier JMS versions used `javax.jms.*`. In addition to information provided on the Solace developer portal, you may also look at some external sources for more details. The following are good places to start:
 
-1.  [https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html)
-2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
-3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
+1.  [Jakarta Messaging 3.1 Specification](https://jakarta.ee/specifications/messaging/3.1/)
+2.  [Jakarta Messaging 3.1 API Javadoc](https://jakarta.ee/specifications/messaging/3.1/apidocs/jakarta.messaging/jakarta/jms/package-summary.html)
+3.  [https://en.wikipedia.org/wiki/Jakarta_Messaging](https://en.wikipedia.org/wiki/Jakarta_Messaging)
 
-The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
+The Jakarta EE links above provide the official specification and API reference. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
 ## Overview
 
-Request-reply messaging is supported by Solace messaging for all delivery modes. The JMS API does provide a `TopicRequestor` and `QueueRequestor` interface which is very simple. However, this interface lacks the ability to timeout the requests. This limitation means that it is often simpler to implement the request – reply pattern in your application. This tutorial will follow this approach.
+Request-reply messaging is supported by Solace messaging for all delivery modes. The Jakarta Messaging API does provide a `TopicRequestor` and `QueueRequestor` interface which is very simple. However, this interface lacks the ability to timeout the requests. This limitation means that it is often simpler to implement the request – reply pattern in your application. This tutorial will follow this approach.
 
 It is also possible to use guaranteed messaging for request reply scenarios. In this case the replier can listen on a queue for incoming requests and the requestor can use a temporary endpoint to attract replies. This is explained further in the [Solace product documentation](https://docs.solace.com/Solace-JMS-API/Using-Topic-Requestors.htm) and shown in the API samples named `SolJMSRRGuaranteedRequestor` and `SolJMSRRGuaranteedReplier`.
 
@@ -51,7 +51,7 @@ For request-reply messaging to be successful it must be possible for the request
 
 ![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
-Note: In JMS it also common for the requestor to put a unique message ID into the message on send and have the replier respond with this message ID in the correlation ID field of the response message. This is equally possible with the Solace JMS API. This tutorial favors the correlation ID approach because it works commonly with all Solace messaging APIs.
+Note: In Jakarta Messaging it is also common for the requestor to put a unique message ID into the message on send and have the replier respond with this message ID in the correlation ID field of the response message. This is equally possible with the Solace Jakarta JMS API. This tutorial favors the correlation ID approach because it works commonly with all Solace messaging APIs.
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
@@ -190,10 +190,10 @@ System.out.printf("Message Content:%n%s%n", SolJmsUtility.dumpMessage(reply));
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms-jakarta). If you combine the example source code shown above results in the following source:
 
-* [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/BasicRequestor.java)
-* [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/BasicReplier.java)
+* [BasicRequestor.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/BasicRequestor.java)
+* [BasicReplier.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/BasicReplier.java)
 
 
 ### Getting the Source
@@ -201,8 +201,8 @@ The full source code for this example is available in [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone https://github.com/SolaceSamples/solace-samples-jms
-cd solace-samples-jms
+git clone https://github.com/SolaceSamples/solace-samples-jms-jakarta
+cd solace-samples-jms-jakarta
 ```
 
 ### Building
@@ -213,7 +213,7 @@ Building these examples is simple.  You can simply build the project using Gradl
 ./gradlew assemble
 ```
 
-This builds all of the JMS Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
+This builds all of the Jakarta Messaging Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
 
 ### Running the Sample
 
@@ -224,4 +224,4 @@ $ ./build/staged/bin/basicReplier <host:port> <client-username>@<message-vpn> <c
 $ ./build/staged/bin/basicRequestor <host:port> <client-username>@<message-vpn> <client-password>
 ```
 
-With that you now know how to successfully implement the request-reply message exchange pattern using JMS NON-PERSISTENT messages and temporary endpoints.
+With that you now know how to successfully implement the request-reply message exchange pattern using Jakarta Messaging NON-PERSISTENT messages and temporary endpoints.

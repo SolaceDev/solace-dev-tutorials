@@ -5,9 +5,9 @@ summary: Learn how to use JNDI as a way to create JMS objects.
 icon: I_dev_JNDI.svg
 links:
     - label: QueueProducerJNDI.java
-      link: /blob/master/src/main/java/com/solace/samples/QueueProducerJNDI.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueProducerJNDI.java
     - label: QueueConsumerJNDI.java
-      link: /blob/master/src/main/java/com/solace/samples/QueueConsumerJNDI.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueConsumerJNDI.java
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/using-jndi.md
 ---
@@ -30,7 +30,7 @@ This tutorial assumes the following:
 *   You have an understanding or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for
     *   the Java Messaging Service (JMS) basics
     *   how to send and receive a message using the JMS API
-    *   how obtain the Solace JMS API
+    *   how to obtain the Solace Jakarta JMS API
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
@@ -185,7 +185,7 @@ ConnectionFactory connectionFactory = (ConnectionFactory) initialContext.lookup(
 
 ### JMS Properties
 
-This is a good place to talk about the JMS Properties, which provide access to Solace JMS API functionality that extends the JMS standard.
+This is a good place to talk about the JMS Properties, which provide access to Solace Jakarta JMS API functionality that extends the Jakarta Messaging standard.
 
 JMS Properties can be used to:
 
@@ -256,10 +256,10 @@ Once the JMS queue object has been created using JNDI, producers and consumers c
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms-jakarta). If you combine the example source code shown above results in the following source:
 
-* [QueueProducerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueProducerJNDI.java)
-* [QueueConsumerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueConsumerJNDI.java)
+* [QueueProducerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueProducerJNDI.java)
+* [QueueConsumerJNDI.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueConsumerJNDI.java)
 
 
 ### Getting the Source
@@ -267,8 +267,8 @@ The full source code for this example is available in [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone https://github.com/SolaceSamples/solace-samples-jms
-cd solace-samples-jms
+git clone https://github.com/SolaceSamples/solace-samples-jms-jakarta
+cd solace-samples-jms-jakarta
 ```
 
 ### Building
@@ -279,7 +279,7 @@ Building these examples is simple.  You can simply build the project using Gradl
 ./gradlew assemble
 ```
 
-This builds all of the JMS Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
+This builds all of the Jakarta Messaging Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
 
 
 ### Running the Sample

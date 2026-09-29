@@ -1,8 +1,8 @@
-- title: JMS Tutorials
-  summary: These tutorials get you up to speed sending and receiving messages with Solace technology in your JMS applications.
+- title: Solace Jakarta Messaging (JMS) Tutorials
+  summary: These tutorials get you up to speed sending and receiving messages with Solace using the Jakarta Messaging API (the successor to JMS, using the jakarta.jms namespace).
   icon: jms.svg
   buttons:
     doclink: https://docs.solace.com/Solace-PubSub-Messaging-APIs/C-API/c-api-home.htm
-    github: https://github.com/SolaceSamples/solace-samples-jms
+    github: https://github.com/SolaceSamples/solace-samples-jms-jakarta
   type: solace
 

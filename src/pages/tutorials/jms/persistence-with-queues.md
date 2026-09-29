@@ -5,9 +5,9 @@ summary: Learn how to set up persistence for guaranteed delivery.
 icon: I_dev_Persistent.svg
 links:
     - label: QueueProducer.java
-      link: /blob/master/src/main/java/com/solace/samples/QueueProducer.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueProducer.java
     - label: QueueConsumer.java
-      link: /blob/master/src/main/java/com/solace/samples/QueueConsumer.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueConsumer.java
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/persistence-with-queues.md
 ---
@@ -34,15 +34,15 @@ The goal of this tutorial is to understand the following:
 2.  How to send a persistent message to a Solace queue
 3.  How to bind to this queue and receive a persistent message
 
-## Java Messaging Service (JMS) Introduction
+## Jakarta Messaging (JMS) Introduction
 
-JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
+Jakarta Messaging (the successor to Java Message Service — JMS — under the Jakarta EE project) is a standard API for sending and receiving messages. It uses the `jakarta.jms.*` namespace where earlier JMS versions used `javax.jms.*`. In addition to information provided on the Solace developer portal, you may also look at some external sources for more details. The following are good places to start:
 
-1.  [https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html)
-2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
-3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
+1.  [Jakarta Messaging 3.1 Specification](https://jakarta.ee/specifications/messaging/3.1/)
+2.  [Jakarta Messaging 3.1 API Javadoc](https://jakarta.ee/specifications/messaging/3.1/apidocs/jakarta.messaging/jakarta/jms/package-summary.html)
+3.  [https://en.wikipedia.org/wiki/Jakarta_Messaging](https://en.wikipedia.org/wiki/Jakarta_Messaging)
 
-The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
+The Jakarta EE links above provide the official specification and API reference. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
@@ -85,7 +85,7 @@ Now it is time to send a message to the queue.
 
 ![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue-300x160.png)
 
-There is no difference in the actual method calls to the JMS `MessageProducer` when sending a PERSISTENT message as compared to a NON-PERSISTENT message shown in the publish/subscribe tutorial. The difference in the PERSISTENT message is that Solace messaging will acknowledge the message once it is successfully stored on the message router and the `MessageProducer.send()` call will not return until it has successfully received this acknowledgement. This means that in JMS, all calls to the `MessageProducer.send()` are blocking calls and they wait for message confirmation from Solace messaging before proceeding. This is outlined in the JMS 1.1 specification and Solace JMS adheres to this requirement.
+There is no difference in the actual method calls to the JMS `MessageProducer` when sending a PERSISTENT message as compared to a NON-PERSISTENT message shown in the publish/subscribe tutorial. The difference in the PERSISTENT message is that Solace messaging will acknowledge the message once it is successfully stored on the message router and the `MessageProducer.send()` call will not return until it has successfully received this acknowledgement. This means that in Jakarta Messaging, all calls to the `MessageProducer.send()` are blocking calls and they wait for message confirmation from Solace messaging before proceeding. This is outlined in the Jakarta Messaging specification and the Solace Jakarta JMS API adheres to this requirement.
 
 To send a message, you must still create a message. The difference from sending a NON-PERSISTENT message is that you must set the message delivery mode to PERSISTENT on send.
 
@@ -135,10 +135,10 @@ messageConsumer.setMessageListener(new MessageListener() {
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms-jakarta). If you combine the example source code shown above results in the following source:
 
-* [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueProducer.java)
-* [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/QueueConsumer.java)
+* [QueueProducer.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueProducer.java)
+* [QueueConsumer.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/QueueConsumer.java)
 
 
 ### Getting the Source
@@ -146,8 +146,8 @@ The full source code for this example is available in [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone https://github.com/SolaceSamples/solace-samples-jms
-cd solace-samples-jms
+git clone https://github.com/SolaceSamples/solace-samples-jms-jakarta
+cd solace-samples-jms-jakarta
 ```
 
 ### Building
@@ -158,7 +158,7 @@ Building these examples is simple.  You can simply build the project using Gradl
 ./gradlew assemble
 ```
 
-This builds all of the JMS Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
+This builds all of the Jakarta Messaging Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
 
 
 ### Running the Sample
