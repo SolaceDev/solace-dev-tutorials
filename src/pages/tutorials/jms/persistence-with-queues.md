@@ -102,7 +102,7 @@ Now it is time to receive the messages sent to your queue.
 
 ![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
-You still need a Jakarta Messaging `Connection` just as you did with the producer. With a connection, you then need to create a Session and bind to Solace messaging queue by creating a `MessageConsumer`. This is nearly identical to what was shown in the publish/subscribe tutorial. In this case, create a Session but use the Solace client acknowledgement mode. This allows the consumers to acknowledge each message individually without side-effects. You can learn more about acknowledgement modes in the Establishing Connections sections of [Solace JMS Documentation – Establishing Connections](https://docs.solace.com/Solace-JMS-API/Establishing-Connections.htm).
+You still need a Jakarta Messaging `Connection` just as you did with the producer. With a connection, you then need to create a Session and bind to Solace messaging queue by creating a `MessageConsumer`. This is nearly identical to what was shown in the publish/subscribe tutorial. In this case, create a Session but use the Solace client acknowledgement mode. This allows the consumers to acknowledge each message individually without side-effects. You can learn more about acknowledgement modes in the Establishing Connections sections of [Solace Jakarta Messaging Documentation – Establishing Connections](https://docs.solace.com/API/Solace-Jakarta-API/jakarta-get-started-open.htm).
 
 ```java
 Session session = connection.createSession(false, SupportedProperty.SOL_CLIENT_ACKNOWLEDGE));

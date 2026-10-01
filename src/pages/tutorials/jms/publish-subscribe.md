@@ -33,7 +33,7 @@ The Jakarta EE links above provide the official specification and API reference.
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
-## JMS administered objects
+## Jakarta Messaging administered objects
 
 This tutorial will make use of two Jakarta Messaging administered objects:
 
@@ -51,14 +51,14 @@ This tutorial will use the approach of programmatically creating the required ob
 *   No requirement to preconfigure the JNDI on Solace messaging or within an LDAP server
 *   Easier integration into frameworks by avoiding external JNDI lookups.
 
-The programmatic approach is also the convention most often followed with Jakarta Messaging samples. So it should be familiar to developers of Jakarta Messaging applications. The Solace Jakarta JMS API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about the Solace Jakarta JMS API by referring to the [Solace JMS Documentation](https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm).
+The programmatic approach is also the convention most often followed with Jakarta Messaging samples. So it should be familiar to developers of Jakarta Messaging applications. The Solace Jakarta Messaging API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about the Solace Jakarta Messaging API by referring to the [Solace Jakarta Messaging Documentation](https://docs.solace.com/API/Solace-Jakarta-API/jakarta-get-started-open.htm).
 
 
 ## Connecting to Solace Messaging
 
 In order to send or receive messages, an application must connect to Solace messaging. In Jakarta Messaging, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a Jakarta Messaging `Session` is used as a factory for consumers and producers.
 
-The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace JMS Documentation - Obtaining Connection Factories](https://docs.solace.com/Solace-JMS-API/Obtaining-Connection-Fac.htm).
+The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace Jakarta Messaging Documentation - Obtaining Connection Factories](https://docs.solace.com/API/Solace-Jakarta-API/jakarta-get-started-open.htm).
 
 ```java
 

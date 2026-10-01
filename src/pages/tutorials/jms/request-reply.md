@@ -51,7 +51,7 @@ For request-reply messaging to be successful it must be possible for the request
 
 ![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
-Note: In Jakarta Messaging it is also common for the requestor to put a unique message ID into the message on send and have the replier respond with this message ID in the correlation ID field of the response message. This is equally possible with the Solace Jakarta JMS API. This tutorial favors the correlation ID approach because it works commonly with all Solace messaging APIs.
+Note: In Jakarta Messaging it is also common for the requestor to put a unique message ID into the message on send and have the replier respond with this message ID in the correlation ID field of the response message. This is equally possible with the Solace Jakarta Messaging API. This tutorial favors the correlation ID approach because it works commonly with all Solace messaging APIs.
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
