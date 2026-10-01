@@ -5,45 +5,45 @@ summary: Learn how to set up pub/sub messaging on a Solace VMR.
 icon: I_dev_P+S.svg
 links:
     - label: TopicPublisher.java
-      link: /blob/master/src/main/java/com/solace/samples/TopicPublisher.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/TopicPublisher.java
     - label: TopicSubscriber.java
-      link: /blob/master/src/main/java/com/solace/samples/TopicSubscriber.java
+      link: /blob/master/src/main/java/com/solace/samples/jakarta/messaging/TopicSubscriber.java
     - label: feedback
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/publish-subscribe.md
 ---
 
-This tutorial will introduce you to the fundamentals of the JMS 1.1 API as implemented by Solace. The tutorial will exemplify connecting a client, subscribing to a topic and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.
+This tutorial will introduce you to the fundamentals of the Jakarta Messaging 3.1 API as implemented by Solace. The tutorial will exemplify connecting a client, subscribing to a topic and sending a message matching this topic subscription. This forms the basis for any publish / subscribe message exchange.
 
 `markdown:assumption.md`
 
 `markdown:pubSubGoal.md`
 
-## Java Messaging Service (JMS) Introduction
+## Jakarta Messaging (JMS) Introduction
 
-JMS is a standard API for sending and receiving messages. As such, in addition to information provided on the Solace developer portal, you may also look at some external sources for more details about JMS. The following are good places to start
+Jakarta Messaging (the successor to Java Message Service — JMS — under the Jakarta EE project) is a standard API for sending and receiving messages. It uses the `jakarta.jms.*` namespace where earlier JMS versions used `javax.jms.*`. In addition to information provided on the Solace developer portal, you may also look at some external sources for more details. The following are good places to start:
 
-1.  [https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html)
-2.  [https://en.wikipedia.org/wiki/Java_Message_Service](https://en.wikipedia.org/wiki/Java_Message_Service)
-3.  [https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3](https://docs.oracle.com/javaee/7/tutorial/partmessaging.htm#GFIRP3)
+1.  [Jakarta Messaging 3.1 Specification](https://jakarta.ee/specifications/messaging/3.1/)
+2.  [Jakarta Messaging 3.1 API Javadoc](https://jakarta.ee/specifications/messaging/3.1/apidocs/jakarta.messaging/jakarta/jms/package-summary.html)
+3.  [https://en.wikipedia.org/wiki/Jakarta_Messaging](https://en.wikipedia.org/wiki/Jakarta_Messaging)
 
-The oracle link points you to the JavaEE official tutorials which provide a good introduction to JMS. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
+The Jakarta EE links above provide the official specification and API reference. This getting started tutorial follows a similar path and shows you the Solace specifics that you need to do to get this working with Solace messaging.
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
-## JMS administered objects
+## Jakarta Messaging administered objects
 
-This tutorial will make use of two JMS administered objects:
+This tutorial will make use of two Jakarta Messaging administered objects:
 
-*   A ConnectionFactory object – used by JMS clients to successfully connect to a message broker like a Solace message router
+*   A ConnectionFactory object – used by Jakarta Messaging clients to successfully connect to a message broker like a Solace message router
 *   A Topic Destination – used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/pubsub`
 
-The [JMS specification](https://docs.oracle.com/javaee/7/api/javax/jms/package-summary.html) provides two ways to create administered objects:
+The [Jakarta Messaging specification](https://jakarta.ee/specifications/messaging/3.1/) provides two ways to create administered objects:
 
 *   JNDI Lookup
-*   Programmatic creation through the JMS API.
+*   Programmatic creation through the Jakarta Messaging API.
 
 This tutorial will use the approach of programmatically creating the required objects. For developers, this is the recommended approach as this enables:
 
@@ -51,14 +51,14 @@ This tutorial will use the approach of programmatically creating the required ob
 *   No requirement to preconfigure the JNDI on Solace messaging or within an LDAP server
 *   Easier integration into frameworks by avoiding external JNDI lookups.
 
-The programmatic approach is also the convention most often followed with JMS samples. So it should be familiar to developers of JMS application. The Solace JMS API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about Solace JMS by referring to the [Solace JMS Documentation](https://docs.solace.com/Solace-JMS-API/jms-get-started-open.htm).
+The programmatic approach is also the convention most often followed with Jakarta Messaging samples. So it should be familiar to developers of Jakarta Messaging applications. The Solace Jakarta Messaging API supports both programmatically creating administered objects and JNDI lookup. Developers can learn all about the Solace Jakarta Messaging API by referring to the [Solace Jakarta Messaging Documentation](https://docs.solace.com/API/Solace-Jakarta-API/jakarta-get-started-open.htm).
 
 
 ## Connecting to Solace Messaging
 
-In order to send or receive messages, an application must connect to Solace messaging. In JMS, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a JMS `Session` is used as a factory for consumers and producers.
+In order to send or receive messages, an application must connect to Solace messaging. In Jakarta Messaging, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a Jakarta Messaging `Session` is used as a factory for consumers and producers.
 
-The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace JMS Documentation - Obtaining Connection Factories](https://docs.solace.com/Solace-JMS-API/Obtaining-Connection-Fac.htm).
+The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace Jakarta Messaging Documentation - Obtaining Connection Factories](https://docs.solace.com/API/Solace-Jakarta-API/Connection-Factories.htm).
 
 ```java
 
@@ -79,21 +79,21 @@ Connection connection = connectionFactory.createConnection();
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 ```
 
-This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in JMS to suit your application needs. Solace supports all of the JMS acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default JMS client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
+This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in Jakarta Messaging to suit your application needs. Solace supports all of the Jakarta Messaging acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default Jakarta Messaging client acknowledgement. Learn more in the [Solace Jakarta Messaging Documentation - Managing Sessions](https://docs.solace.com/API/Solace-Jakarta-API/Managing-Sessions.htm).
 
 At this point your client is connected to Solace messaging. You can use Broker Manager to view the client connection and related details.
 
 ## Receiving a message
 
-This tutorial uses JMS “Non-Persistent” messages which are at most once delivery messages. So first, let’s express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
+This tutorial uses Jakarta Messaging “Non-Persistent” messages which are at most once delivery messages. So first, let’s express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
 
-With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the synchronous or asynchronous receipt of messages. Asynchronous receipt of messages is accomplished through callbacks. These callbacks are defined in JMS by the `MessageListener` interface.
+With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the synchronous or asynchronous receipt of messages. Asynchronous receipt of messages is accomplished through callbacks. These callbacks are defined in Jakarta Messaging by the `MessageListener` interface.
 
 ![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-First a `Topic` object is required. Here we create a topic from the JMS Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
+First a `Topic` object is required. Here we create a topic from the Jakarta Messaging Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace Jakarta Messaging Documentation - Working with Destinations](https://docs.solace.com/API/Solace-Jakarta-API/Working-with-Destination.htm).
 
-Then create the `MessageConsumer` using the JMS `Session`.
+Then create the `MessageConsumer` using the Jakarta Messaging `Session`.
 
 ```java
 final String TOPIC_NAME = "T/GettingStarted/pubsub";
@@ -150,7 +150,7 @@ Now it is time to send a message to the waiting consumer.
 
 ### Establishing the publisher flow
 
-In JMS, a message producer is required for sending messages to Solace messaging.
+In Jakarta Messaging, a message producer is required for sending messages to Solace messaging.
 
 ```java
 final String TOPIC_NAME = "T/GettingStarted/pubsub";
@@ -159,11 +159,11 @@ Topic topic = session.createTopic(TOPIC_NAME);
 MessageProducer messageProducer = session.createProducer(topic);
 ```
 
-JMS Message Producers are created from the session object and are assigned a default destination on creation.
+Jakarta Messaging Message Producers are created from the session object and are assigned a default destination on creation.
 
 ### Creating and sending the message
 
-To send a message, first create a message from the JMS `Session`. Then use the MessageProducer to send the message. The message producer offers several options for sending. Since we wish to send a non-persistent message in this tutorial, we will use the most flexible option where delivery mode, priority and time to live is specified.
+To send a message, first create a message from the Jakarta Messaging `Session`. Then use the MessageProducer to send the message. The message producer offers several options for sending. Since we wish to send a non-persistent message in this tutorial, we will use the most flexible option where delivery mode, priority and time to live is specified.
 
 ```java
 TextMessage message = session.createTextMessage("Hello world!");
@@ -175,10 +175,10 @@ At this point the producer has sent a message to Solace messaging and your waiti
 
 ## Summarizing
 
-The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms). If you combine the example source code shown above results in the following source:
+The full source code for this example is available in [GitHub](https://github.com/SolaceSamples/solace-samples-jms-jakarta). If you combine the example source code shown above results in the following source:
 
-* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/TopicPublisher.java)
-* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-jms/blob/master/src/main/java/com/solace/samples/TopicSubscriber.java)
+* [TopicPublisher.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/TopicPublisher.java)
+* [TopicSubscriber.java](https://github.com/SolaceSamples/solace-samples-jms-jakarta/blob/master/src/main/java/com/solace/samples/jakarta/messaging/TopicSubscriber.java)
 
 
 ### Getting the Source
@@ -186,8 +186,8 @@ The full source code for this example is available in [GitHub](https://github.co
 Clone the GitHub repository containing the Solace samples.
 
 ```
-git clone https://github.com/SolaceSamples/solace-samples-jms
-cd solace-samples-jms
+git clone https://github.com/SolaceSamples/solace-samples-jms-jakarta
+cd solace-samples-jms-jakarta
 ```
 
 ### Building
@@ -198,7 +198,7 @@ Building these examples is simple.  You can simply build the project using Gradl
 ./gradlew assemble
 ```
 
-This builds all of the JMS Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
+This builds all of the Jakarta Messaging Getting Started Samples with OS specific launch scripts. The files are staged in the `build/staged` directory.
 
 ### Running the Sample
 

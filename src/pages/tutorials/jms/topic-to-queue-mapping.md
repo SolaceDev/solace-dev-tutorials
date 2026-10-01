@@ -14,13 +14,13 @@ In addition to spooling messages published directly to the queue, it is possible
 
 The following diagram illustrates this feature.
 
-![Diagram: JMS Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
+![Diagram: Jakarta Messaging Queue Mapping](../../../images/diagrams/topic-to-queue-mapping-detail.png)
 
 If you have a durable queue named “Q”, it will receive messages published directly to the queue destination named “Q”. However, it is also possible to add subscriptions to this queue in the form of topics. This example adds topics “A” and “B”. Once these subscriptions are added, the queue will start receiving messages published to the topic destinations “A” and “B”. When you combine this with the wildcard support provided by Solace topics this opens up a number of interesting use cases.
 
-## Topic to Queue Mapping and JMS
+## Topic to Queue Mapping and Jakarta Messaging
 
-JMS is a standard programmatic interface with a design goal of being messaging middleware agnostic. As such, the JMS interface does not provide a way for applications to directly take advantage of the Solace Topic to Queue Mapping feature. However JMS applications wishing to take advantage of this Solace feature have a few options.
+Jakarta Messaging (and its JMS predecessors) is a standard programmatic interface with a design goal of being messaging middleware agnostic. As such, the Jakarta Messaging interface does not provide a way for applications to directly take advantage of the Solace Topic to Queue Mapping feature. However Jakarta Messaging applications wishing to take advantage of this Solace feature have a few options.
 
 One option is to use a management interface to administratively configure the topic to queue mapping, by adding topic subscriptions to the queue. This can either be done through the CLI or Broker Manager application; or the SEMP programmatic management API. The SEMP API enables applications to fully configure Solace message routers. Applications can use this API by logging in to the Solace message router using a Message-VPN admin account. This concept is introduced in the [Technology – Messaging Platform Features](https://solace.com/products/tech/) and further details are available in the [Solace Message Router Product Documentation](https://docs.solace.com/SEMP/Using-Legacy-SEMP.htm).
 
@@ -28,7 +28,7 @@ A second option is to consider using a Solace Java API session directly for this
 
 ## Summarizing
 
-So in summary JMS applications wishing to take advantage of this feature have two options:
+So in summary Jakarta Messaging applications wishing to take advantage of this feature have two options:
 
 *   [Use one of the Solace management interfaces and directly configure the topic subscriptions on the queue](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   [Use the Solace API for Java directly for this part of your application](https://solace.com/samples/solace-samples-java/topic-to-queue-mapping/).
