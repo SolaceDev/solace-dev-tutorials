@@ -49,11 +49,11 @@ The Jakarta EE links above provide the official specification and API reference.
 `markdown:solaceMessaging-part2.md` 
 `markdown:solaceApi.md`
 
-## JMS administered objects
+## Jakarta Messaging administered objects
 
-This tutorial will make use of two JMS administered objects:
+This tutorial will make use of two Jakarta Messaging administered objects:
 
-*   A ConnectionFactory object – Used by JMS clients to successfully connect to a message broker like Solace messaging
+*   A ConnectionFactory object – Used by Jakarta Messaging clients to successfully connect to a message broker like Solace messaging
 *   A Queue Destination – Used for publishing and subscribing to messages. This example will use the queue `Q/tutorial`
 
 As described in the [publish/subscribe tutorial](../publish-subscribe/) we will use the approach of programmatically creating the required objects.
@@ -62,15 +62,15 @@ As described in the [publish/subscribe tutorial](../publish-subscribe/) we will 
 
 A difference to the publish/subscribe tutorial is that here a physical endpoint resource – a durable queue, associated with the Queue Destination – needs to be created on Solace messaging, which will persist the messages until consumed.
 
-We will use the Dynamic Durables feature, which enables the physical endpoint resource to be dynamically created without any additional steps, when the JMS Queue Destination is created programmatically. It is also possible to create resources administratively on the router using the Solace message router [Management Tools](https://docs.solace.com/#Management).
+We will use the Dynamic Durables feature, which enables the physical endpoint resource to be dynamically created without any additional steps, when the Jakarta Messaging Queue Destination is created programmatically. It is also possible to create resources administratively on the router using the Solace message router [Management Tools](https://docs.solace.com/#Management).
 
-To use Dynamic Durables, you need to connect the JMS Connection as outlined in the [publish/subscribe tutorial](../publish-subscribe/) with one additional property:
+To use Dynamic Durables, you need to connect the Jakarta Messaging Connection as outlined in the [publish/subscribe tutorial](../publish-subscribe/) with one additional property:
 
 ```java
 connectionFactory.setDynamicDurables(true);
 ```
 
-Then we simply create a queue from the JMS `Session`. For other ways of obtaining a queue, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
+Then we simply create a queue from the Jakarta Messaging `Session`. For other ways of obtaining a queue, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
 
 ```java
 final String QUEUE_NAME = "Q/tutorial";
@@ -85,7 +85,7 @@ Now it is time to send a message to the queue.
 
 ![Diagram: Sending a Message to a Queue](../../../images/diagrams/sending-message-to-queue-300x160.png)
 
-There is no difference in the actual method calls to the JMS `MessageProducer` when sending a PERSISTENT message as compared to a NON-PERSISTENT message shown in the publish/subscribe tutorial. The difference in the PERSISTENT message is that Solace messaging will acknowledge the message once it is successfully stored on the message router and the `MessageProducer.send()` call will not return until it has successfully received this acknowledgement. This means that in Jakarta Messaging, all calls to the `MessageProducer.send()` are blocking calls and they wait for message confirmation from Solace messaging before proceeding. This is outlined in the Jakarta Messaging specification and the Solace Jakarta JMS API adheres to this requirement.
+There is no difference in the actual method calls to the Jakarta Messaging `MessageProducer` when sending a PERSISTENT message as compared to a NON-PERSISTENT message shown in the publish/subscribe tutorial. The difference in the PERSISTENT message is that Solace messaging will acknowledge the message once it is successfully stored on the message router and the `MessageProducer.send()` call will not return until it has successfully received this acknowledgement. This means that in Jakarta Messaging, all calls to the `MessageProducer.send()` are blocking calls and they wait for message confirmation from Solace messaging before proceeding. This is outlined in the Jakarta Messaging specification and the Solace Jakarta JMS API adheres to this requirement.
 
 To send a message, you must still create a message. The difference from sending a NON-PERSISTENT message is that you must set the message delivery mode to PERSISTENT on send.
 
@@ -102,7 +102,7 @@ Now it is time to receive the messages sent to your queue.
 
 ![Diagram: Receiving a Message from a Queue](../../../images/diagrams/receiving-message-from-queue-300x160.png)
 
-You still need a JMS `Connection` just as you did with the producer. With a connection, you then need to create a Session and bind to Solace messaging queue by creating a `MessageConsumer`. This is nearly identical to what was shown in the publish/subscribe tutorial. In this case, create a Session but use the Solace client acknowledgement mode. This allows the consumers to acknowledge each message individually without side-effects. You can learn more about acknowledgement modes in the Establishing Connections sections of [Solace JMS Documentation – Establishing Connections](https://docs.solace.com/Solace-JMS-API/Establishing-Connections.htm).
+You still need a Jakarta Messaging `Connection` just as you did with the producer. With a connection, you then need to create a Session and bind to Solace messaging queue by creating a `MessageConsumer`. This is nearly identical to what was shown in the publish/subscribe tutorial. In this case, create a Session but use the Solace client acknowledgement mode. This allows the consumers to acknowledge each message individually without side-effects. You can learn more about acknowledgement modes in the Establishing Connections sections of [Solace JMS Documentation – Establishing Connections](https://docs.solace.com/Solace-JMS-API/Establishing-Connections.htm).
 
 ```java
 Session session = connection.createSession(false, SupportedProperty.SOL_CLIENT_ACKNOWLEDGE));

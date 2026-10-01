@@ -1,7 +1,7 @@
 ---
 layout: tutorials
-title: Obtaining JMS objects using external JNDI service
-summary: Learn how to provision and lookup Solace Jakarta JMS objects when using an external JNDI service.
+title: Using an external Java Naming and Directory Interface (JNDI) service to look up Jakarta Messaging administered objects
+summary: Learn how to provision and lookup Solace Jakarta Messaging administered objects when using an external JNDI service.
 icon: I_dev_JNDI.svg
 links:
     - label: ExtJndiImport.java
@@ -12,19 +12,19 @@ links:
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/using-external-jndi.md
 ---
 
-This tutorial shows how to provision and look up Solace Jakarta JMS objects from an external [Java Naming and Directory Interface (JNDI)](https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface) service, hosted outside the Solace message broker.
+This tutorial shows how to provision and look up Solace Jakarta Messaging administered objects from an external [Java Naming and Directory Interface (JNDI)](https://en.wikipedia.org/wiki/Java_Naming_and_Directory_Interface) service, hosted outside the Solace message broker.
 
-The [Obtaining JMS objects using JNDI](../using-jndi/) tutorial provided an introduction to JNDI and the use of JNDI services hosted by the message broker. Using the Solace built-in (internal) JNDI server makes integration easy, but some enterprise use-cases already utilize a dedicated JNDI server, and prefer to store Solace Jakarta JMS objects at the same location. 
+The [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects](../using-jndi/) tutorial provided an introduction to JNDI and the use of JNDI services hosted by the message broker. Using the Solace built-in (internal) JNDI server makes integration easy, but some enterprise use-cases already utilize a dedicated JNDI server, and prefer to store Solace Jakarta Messaging administered objects at the same location. 
 
 ## Assumptions
 
 This tutorial assumes the following:
 
-*   You are familiar with JNDI basics and the Solace message broker's built-in JNDI service. Refer to the [Java JNDI](https://docs.oracle.com/javase/jndi/tutorial/) and the [Obtaining JMS objects using JNDI](../using-jndi/) tutorials for more.
+*   You are familiar with JNDI basics and the Solace message broker's built-in JNDI service. Refer to the [Java JNDI](https://docs.oracle.com/javase/jndi/tutorial/) and the [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects](../using-jndi/) tutorials for more.
 *   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have an understanding, or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for:
-    *   the Java Messaging Service (JMS) basics
-    *   how to send and receive a message using the JMS API
+    *   the Jakarta Messaging basics
+    *   how to send and receive a message using the Jakarta Messaging API
     *   how to obtain the Solace Jakarta JMS API
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace Message-VPN configured for guaranteed messaging support
@@ -36,7 +36,7 @@ This tutorial assumes the following:
 
 The goal of this tutorial is to provide guidance and sample code to:
 
-1. Populate Solace Jakarta JMS objects into a non-Solace external JNDI store
+1. Populate Solace Jakarta Messaging administered objects into a non-Solace external JNDI store
 2. Use the external JNDI service for Solace JNDI messaging
 
 `markdown:solaceMessaging-part1.md`
@@ -46,26 +46,26 @@ The goal of this tutorial is to provide guidance and sample code to:
 
 ## Overview
 
-This tutorial will use the two JMS objects from the [Persistence with Queues](../persistence-with-queues/) and [Obtaining JMS objects using JNDI](../using-jndi/) tutorials:
+This tutorial will use the two Jakarta Messaging administered objects from the [Persistence with Queues](../persistence-with-queues/) and [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects](../using-jndi/) tutorials:
 
-*   A `ConnectionFactory` – used by JMS clients to connect to the message broker
+*   A `ConnectionFactory` – used by Jakarta Messaging clients to connect to the message broker
 *   A Queue `Destination` – used for publishing and subscribing to guaranteed messages.
 
 This time they will be created from an external JNDI server lookup, essentially de-serialized from the respective references returned. The sample code will act as a client to the JNDI server.
 
-JNDI has a wide range of server implementations. We will use the simplest: a local file system based JNDI implementation that is so simple that it will not even use authentication. Your JNDI service provider will likely be more complex in that you will need specific configuration, but this example will give an idea of usage, and the kind of data being stored in JNDI for the Solace Jakarta JMS objects. Examples of JNDI providers include LDAP or CORBA Naming Service implementations, the native JNDI service of application servers like IBM WebSphere, JBoss and Oracle WebLogic.
+JNDI has a wide range of server implementations. We will use the simplest: a local file system based JNDI implementation that is so simple that it will not even use authentication. Your JNDI service provider will likely be more complex in that you will need specific configuration, but this example will give an idea of usage, and the kind of data being stored in JNDI for the Solace Jakarta Messaging administered objects. Examples of JNDI providers include LDAP or CORBA Naming Service implementations, the native JNDI service of application servers like IBM WebSphere, JBoss and Oracle WebLogic.
 
-The first sample application will provision Solace Jakarta JMS object data (entries) into the external JNDI server. The sample code will show how to create, read, update, or delete JNDI entries. When creating JNDI entries, we will import existing real JNDI data from the Solace internal JNDI server by using a separate JNDI connection to read from there. This tutorial can be used together with the [Obtaining JMS objects using JNDI](../using-jndi/) tutorial to learn more and experiment with the differences.
+The first sample application will provision Solace Jakarta Messaging administered object data (entries) into the external JNDI server. The sample code will show how to create, read, update, or delete JNDI entries. When creating JNDI entries, we will import existing real JNDI data from the Solace internal JNDI server by using a separate JNDI connection to read from there. This tutorial can be used together with the [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects](../using-jndi/) tutorial to learn more and experiment with the differences.
 
 Next, another sample will look up the external JNDI data, and use it to connect and send a message to the message broker then read it back.
 
-## Importing JMS objects from Solace internal JNDI
+## Importing Jakarta Messaging administered objects from Solace internal JNDI
 
 The following sections describe the code building blocks of the "ExtJndiImport" sample. Section [Running the Sample](#running-the-sample) demonstrates how to use it.
 
 Importing involves the following steps:
 * Connecting to both the Solace and the external JNDI servers
-* Creating a local JMS object from lookup in Solace internal JNDI
+* Creating a local Jakarta Messaging object from lookup in Solace internal JNDI
 * Creating an entry for that object in the external JNDI server
 
 Additional basic administration operations included are:
@@ -106,9 +106,9 @@ solEnv.put(Context.SECURITY_CREDENTIALS, solacePassword);
 solInitialContext = new InitialContext(solEnv);
 ```
 
-### Creating a local JMS object from lookup of a JNDI entry
+### Creating a local Jakarta Messaging object from lookup of a JNDI entry
 
-A local JMS object will be created when looked up by its JNDI name. Here are examples of looking up ConnectionFactory and Queue type objects from the Solace internal JNDI:
+A local Jakarta Messaging object will be created when looked up by its JNDI name. Here are examples of looking up ConnectionFactory and Queue type objects from the Solace internal JNDI:
 
 ```java
 // ConnectionFactory
@@ -121,7 +121,7 @@ SolQueue queue = (SolQueue) solInitialContext.solInitialContext(queueName);
 
 ### Creating a new JNDI entry
 
-A local JMS object needs to exist as a starting point, and information that is necessary to recreate it will be entered into the JNDI store. The following example will take above `cf` and `queue` JMS objects and insert them into the external JNDI store. There will be an exception thrown if there is already an entry for that name.
+A local Jakarta Messaging object needs to exist as a starting point, and information that is necessary to recreate it will be entered into the JNDI store. The following example will take above `cf` and `queue` Jakarta Messaging objects and insert them into the external JNDI store. There will be an exception thrown if there is already an entry for that name.
 
 ```
 // ConnectionFactory
@@ -184,16 +184,16 @@ try {
 
 ## Messaging using external JNDI server lookup
 
-The previous section described how the "ExtJndiImport" sample can be used to create JNDI entries for a Solace Jakarta JMS ConnectionFactory and a Queue in the external JNDI server.
+The previous section described how the "ExtJndiImport" sample can be used to create JNDI entries for a Solace Jakarta Messaging ConnectionFactory and a Queue in the external JNDI server.
 
 The "ExtJndiTest" sample will look up these JNDI entries to connect to the message broker and send or receive messages.
 
-The code consists of the building blocks from earlier sections of this tutorial and the [Obtaining JMS objects using JNDI](../using-jndi/) tutorial:
+The code consists of the building blocks from earlier sections of this tutorial and the [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects](../using-jndi/) tutorial:
 
 - Create the LDAP Initial Context to the external JNDI server
-- Lookup the connection factory and queue destination by names and create the Solace Jakarta JMS ConnectionFactory and Queue objects
-- Create a JMS connection to the message broker using the JMS ConnectionFactory
-- Create a JMS session, MessageProducer and MessageConsumer
+- Lookup the connection factory and queue destination by names and create the Solace Jakarta Messaging ConnectionFactory and Queue objects
+- Create a Jakarta Messaging connection to the message broker using the Jakarta Messaging ConnectionFactory
+- Create a Jakarta Messaging session, MessageProducer and MessageConsumer
 - Send a message using the MessageProducer and wait for the MessageConsumer to receive it
 
 ## Summarizing
@@ -227,7 +227,7 @@ Note: the file-based JNDI provider jar "fscontext" is included as a Maven depend
 
 ### Running the Sample
 
-First, ensure that the Solace internal JNDI has been configured as described in the [Obtaining JMS objects using JNDI tutorial](../using-jndi/), so we can assume followings exist:
+First, ensure that the Solace internal JNDI has been configured as described in the [Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects tutorial](../using-jndi/), so we can assume followings exist:
 
 | Solace JNDI ConnectionFactory name | /JNDI/CF/GettingStarted |
 | Solace JNDI Queue name             | /JNDI/Q/tutorial |
@@ -241,8 +241,8 @@ Using the "ExtJndiImport" sample, export the JNDI configuration to the external 
     * The url for the file-based JNDI must be an existing directory, where a file named `.bindings` will be created if it didn't exist and it can be considered as a simple database. There is no control over the filename. In this tutorial we use the `/tmp` directory, which in Windows may refer to a `\tmp` folder under the current drive.
     * The file-based JNDI example will ignore username and password; the code has been written to require it.
 * Operation: BIND, REBIND, UNBIND or LIST (UNBIND and LIST don't require Solace JNDI access details)
-* The JMS object reference name in Solace JNDI (-cf for ConnectionFactory, -queue or -topic)
-* The JMS object reference name to be created in External JNDI (-name)
+* The Jakarta Messaging administered object reference name in Solace JNDI (-cf for ConnectionFactory, -queue or -topic)
+* The Jakarta Messaging administered object reference name to be created in External JNDI (-name)
 
 ```shell-session
 # Export first the connection factory
@@ -283,4 +283,4 @@ $ ./build/staged/bin/extJndiTest -jndiUrl file:///tmp/ \
 :
 ```
 
-You have now successfully imported settings into the external JNDI server, then used it to access the Solace message broker for JMS messaging.
+You have now successfully imported settings into the external JNDI server, then used it to access the Solace message broker for Jakarta Messaging.

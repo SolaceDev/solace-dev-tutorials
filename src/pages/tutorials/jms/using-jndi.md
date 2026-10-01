@@ -1,7 +1,7 @@
 ---
 layout: tutorials
-title: Obtaining JMS objects using JNDI
-summary: Learn how to use JNDI as a way to create JMS objects.
+title: Using Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects
+summary: Learn how to use JNDI to look up Jakarta Messaging administered objects.
 icon: I_dev_JNDI.svg
 links:
     - label: QueueProducerJNDI.java
@@ -12,11 +12,11 @@ links:
       link: https://github.com/SolaceDev/solace-dev-tutorials/blob/master/src/pages/tutorials/jms/using-jndi.md
 ---
 
-This tutorial outlines the use of Java Naming and Directory Interface (JNDI) to create JMS objects including ConnectionFactories and Topic or Queue destinations. The [Publish/Subscribe](../publish-subscribe/) and other tutorials use the approach of programmatically creating these JMS objects, which is usually recommended for developers but JNDI is also a good option which increases the portability of your JMS application code.
+This tutorial outlines the use of Java Naming and Directory Interface (JNDI) to look up Jakarta Messaging administered objects including ConnectionFactories and Topic or Queue destinations. The [Publish/Subscribe](../publish-subscribe/) and other tutorials use the approach of programmatically creating these Jakarta Messaging administered objects, which is usually recommended for developers but JNDI is also a good option which increases the portability of your Jakarta Messaging application code.
 
-In this tutorial, we’ll follow the same flow as the [Persistence with Queues](../persistence-with-queues/) tutorial but use JNDI to retrieve the JMS Objects.
+In this tutorial, we’ll follow the same flow as the [Persistence with Queues](../persistence-with-queues/) tutorial but use JNDI to retrieve the Jakarta Messaging administered objects.
 
-Obtaining JMS objects using JNDI requires a lookup of a Solace messaging resource by its reference in a JNDI store and then creating a local JMS object from the information returned. With the local JMS object available, the client can start using the associated resource:
+Obtaining Jakarta Messaging administered objects using JNDI requires a lookup of a Solace messaging resource by its reference in a JNDI store and then creating a local Jakarta Messaging object from the information returned. With the local Jakarta Messaging object available, the client can start using the associated resource:
 
 ![Diagram: Using Jindi](../../../images/diagrams/jndi-tutorial.png)
 
@@ -28,8 +28,8 @@ This tutorial assumes the following:
 
 *   You are familiar with Solace [core concepts](https://docs.solace.com/PubSub-Basics/Core-Concepts.htm).
 *   You have an understanding or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for
-    *   the Java Messaging Service (JMS) basics
-    *   how to send and receive a message using the JMS API
+    *   the Jakarta Messaging basics
+    *   how to send and receive a message using the Jakarta Messaging API
     *   how to obtain the Solace Jakarta JMS API
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
@@ -41,11 +41,11 @@ One simple way to get access to Solace messaging quickly is to create a messagin
 
 ### Goals
 
-The goal of this tutorial is to demonstrate the use of JNDI as a way to create JMS objects. This tutorial will show you following steps:
+The goal of this tutorial is to demonstrate the use of JNDI as a way to look up Jakarta Messaging administered objects. This tutorial will show you following steps:
 
 1. How to configure the JNDI service on Solace messaging
-2. How to retrieve a JMS Connection Factory using JNDI so the client can connect to Solace messaging
-3. How to lookup a JMS Queue destination object using JNDI so the client can publish or subscribe to it
+2. How to retrieve a Jakarta Messaging Connection Factory using JNDI so the client can connect to Solace messaging
+3. How to lookup a Jakarta Messaging Queue destination object using JNDI so the client can publish or subscribe to it
 
 `markdown:solaceMessaging-part1.md`
 ![Screenshot: Messaging Connectivity Information](../../../images/screenshots/connectivity-info.png)
@@ -54,9 +54,9 @@ The goal of this tutorial is to demonstrate the use of JNDI as a way to create J
 
 ## Step 1: Configuring the JNDI service
 
-This tutorial will make use of the same two JMS objects as the [Persistence with Queues](../persistence-with-queues/):
+This tutorial will make use of the same two Jakarta Messaging administered objects as the [Persistence with Queues](../persistence-with-queues/):
 
-*   A ConnectionFactory object – Used by JMS clients to successfully connect to a message broker like a Solace message router
+*   A ConnectionFactory object – Used by Jakarta Messaging clients to successfully connect to a message broker like a Solace message router
 *   A Queue Destination – Used for publishing and subscribing to messages.
 
 This time we will take the approach of using JNDI lookup to create these objects.
@@ -159,9 +159,9 @@ See the [Solace Documentation - Solace Router CLI](https://docs.solace.com/Solac
 
 To learn how to use the SEMP API, refer to the [Solace Element Management Protocol (SEMP) tutorials](https://docs.solace.com/SEMP/Using-SEMP.htm). To learn about the Broker Manager application, refer to the [Solace Documentation - Broker Manager Overview](https://docs.solace.com/Broker-Manager/PubSub-Manager-Overview.htm) and the application's online Help.
 
-## Step 2: Obtaining a JMS ConnectionFactory object using JNDI
+## Step 2: Obtaining a Jakarta Messaging ConnectionFactory object using JNDI
 
-In order to send or receive messages, an application must connect Solace messaging using a `ConnectionFactory`. The following code shows how to obtain a `ConnectionFactory` JMS object using Solace JNDI.
+In order to send or receive messages, an application must connect Solace messaging using a `ConnectionFactory`. The following code shows how to obtain a `ConnectionFactory` Jakarta Messaging object using Solace JNDI.
 
 ```java
 final String CONNECTION_FACTORY_JNDI_NAME = "/JNDI/CF/GettingStarted";
@@ -183,17 +183,17 @@ InitialContext initialContext = new InitialContext(env);
 ConnectionFactory connectionFactory = (ConnectionFactory) initialContext.lookup(CONNECTION_FACTORY_JNDI_NAME);
 ```
 
-### JMS Properties
+### Jakarta Messaging Properties
 
-This is a good place to talk about the JMS Properties, which provide access to Solace Jakarta JMS API functionality that extends the Jakarta Messaging standard.
+This is a good place to talk about the Jakarta Messaging Properties, which provide access to Solace Jakarta JMS API functionality that extends the Jakarta Messaging standard.
 
-JMS Properties can be used to:
+Jakarta Messaging Properties can be used to:
 
-*   Configure the JNDI or JMS data connection properties such as security, connection retry or timeouts
+*   Configure the JNDI or Jakarta Messaging data connection properties such as security, connection retry or timeouts
 *   Set message or message delivery properties, such as marking a message as a Reply Message, as seen in the [Request/Reply](../request-reply/) tutorial.
 *   Set general API properties, such as when Dynamic Durables were set to enable dynamic creation of a resource in the [Persistence with Queues](../persistence-with-queues/) tutorial.
 
-JMS Properties can be passed to the API in several ways, allowing flexibility to have them preset or a runtime setting. Here we show the use of `Username` as a JMS Property, which the JMS standard does not define.
+Jakarta Messaging Properties can be passed to the API in several ways, allowing flexibility to have them preset or a runtime setting. Here we show the use of `Username` as a Jakarta Messaging Property, which the Jakarta Messaging standard does not define.
 
 Following example used above shows the configuration of the JNDI connection runtime with the Username through Initial Context:
 
@@ -219,24 +219,24 @@ Or it could have also been taken as preset default from a `jndi.properties` file
 java.naming.security.principal=my-username
 ```
 
-Some JMS properties can even be configured on Solace messaging and the API will use this setting as a default, for example when the JNDI connection factory Delivery Mode property was set by the CLI script:
+Some Jakarta Messaging properties can even be configured on Solace messaging and the API will use this setting as a default, for example when the JNDI connection factory Delivery Mode property was set by the CLI script:
 
 ```
 property "default-delivery-mode" "persistent"
 ```
 
-The [Solace JMS Documentation - JMS Properties Reference](https://docs.solace.com/Solace-JMS-API/JMS-Properties-Reference.htm) provides detailed description of the use and the list of all JMS properties with options how to configure them. It is recommended to carefully consider the effect of the JMS Properties applied in order to achieve the desired configuration goal.
+The [Solace JMS Documentation - JMS Properties Reference](https://docs.solace.com/Solace-JMS-API/JMS-Properties-Reference.htm) provides detailed description of the use and the list of all Jakarta Messaging properties with options how to configure them. It is recommended to carefully consider the effect of the Jakarta Messaging Properties applied in order to achieve the desired configuration goal.
 
 ### Connecting to the Solace Messaging
 
-Next, the 'ConnectionFactory' can be used the same way as described in the Persistence with Queues tutorial to create a JMS Connection, at which point your client is connected to Solace messaging and can create a JMS Session.
+Next, the 'ConnectionFactory' can be used the same way as described in the Persistence with Queues tutorial to create a Jakarta Messaging Connection, at which point your client is connected to Solace messaging and can create a Jakarta Messaging Session.
 
 ```java
 Connection connection = connectionFactory.createConnection();
 final Session session = connection.createSession(false, SupportedProperty.SOL_CLIENT_ACKNOWLEDGE);
 ```
 
-## Step 3: Obtaining JMS Destination objects using JNDI
+## Step 3: Obtaining Jakarta Messaging Destination objects using JNDI
 
 A Queue or Topic destination is needed to send and receive messages. When using JNDI, destination objects are looked up by their JNDI reference.
 
@@ -248,11 +248,11 @@ final String QUEUE_JNDI_NAME = "/JNDI/" + QUEUE_NAME;
 Queue queue = (Queue) initialContext.lookup(QUEUE_JNDI_NAME);
 ```
 
-In contrast to the Persistence with Queues tutorial, the physical queue resource name `Q/tutorial` is not used here directly; it has been associated with `/JNDI/Q/tutorial` when the JNDI reference was created by the CLI script. Also note that same CLI script has already administratively created the physical queue object behind  `Q/tutorial` and the `Dynamic Durables` JMS Property does not need to be enabled to automatically create it.
+In contrast to the Persistence with Queues tutorial, the physical queue resource name `Q/tutorial` is not used here directly; it has been associated with `/JNDI/Q/tutorial` when the JNDI reference was created by the CLI script. Also note that same CLI script has already administratively created the physical queue object behind  `Q/tutorial` and the `Dynamic Durables` Jakarta Messaging Property does not need to be enabled to automatically create it.
 
 ### Sending and Receiving messages to a queue
 
-Once the JMS queue object has been created using JNDI, producers and consumers can use it to send and receive messages the same way as described in the Persistence with Queues and other tutorials.
+Once the Jakarta Messaging queue object has been created using JNDI, producers and consumers can use it to send and receive messages the same way as described in the Persistence with Queues and other tutorials.
 
 ## Summarizing
 

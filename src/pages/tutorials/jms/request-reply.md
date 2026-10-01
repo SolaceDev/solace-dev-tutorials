@@ -47,7 +47,7 @@ It is also possible to use guaranteed messaging for request reply scenarios. In 
 
 ### Message Correlation
 
-For request-reply messaging to be successful it must be possible for the requestor to correlate the request with the subsequent reply. Solace messages support two fields that are needed to enable request-reply correlation. The reply-to field can be used by the requestor to indicate a Solace Topic or Queue where the reply should be sent. In JMS, a natural choice for this is a temporary queue. The second requirement is to be able to identify the reply message within the stream of incoming messages. This is accomplished using the correlation-id field. This field will transit the Solace messaging system unmodified. Repliers can include the same correlation-id in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
+For request-reply messaging to be successful it must be possible for the requestor to correlate the request with the subsequent reply. Solace messages support two fields that are needed to enable request-reply correlation. The reply-to field can be used by the requestor to indicate a Solace Topic or Queue where the reply should be sent. In Jakarta Messaging, a natural choice for this is a temporary queue. The second requirement is to be able to identify the reply message within the stream of incoming messages. This is accomplished using the correlation-id field. This field will transit the Solace messaging system unmodified. Repliers can include the same correlation-id in a reply message to allow the requestor to detect the corresponding reply. The figure below outlines this exchange.
 
 ![Diagram: Message Correlation](../../../images/diagrams/Request-Reply_diagram-1.png)
 
@@ -58,18 +58,18 @@ Note: In Jakarta Messaging it is also common for the requestor to put a unique m
 `markdown:solaceMessaging-part2.md`
 `markdown:solaceApi.md`
 
-## JMS administered objects
+## Jakarta Messaging administered objects
 
-This tutorial will make use of two JMS administered objects:
+This tutorial will make use of two Jakarta Messaging administered objects:
 
-*   A ConnectionFactory object – Used by JMS clients to successfully connect to a message broker like Solace messaging
+*   A ConnectionFactory object – Used by Jakarta Messaging clients to successfully connect to a message broker like Solace messaging
 *   A Queue Destination – Used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/requests`
 
 As described in the [publish/subscribe tutorial](../publish-subscribe/) we will use the approach of programmatically creating the required objects.
 
 ## Connecting a session to Solace Messaging
 
-As with other tutorials, this tutorial requires a JMS `Connection` connected to the default message VPN of a Solace VMR which has authentication disabled. So the only required information to proceed is the Solace VMR host string which this tutorial accepts as an argument. Connect the JMS `Connection` as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
+As with other tutorials, this tutorial requires a Jakarta Messaging `Connection` connected to the default message VPN of a Solace VMR which has authentication disabled. So the only required information to proceed is the Solace VMR host string which this tutorial accepts as an argument. Connect the Jakarta Messaging `Connection` as outlined in the [publish/subscribe tutorial](../publish-subscribe/).
 
 ## Making a request
 
@@ -77,7 +77,7 @@ First let’s look at the requestor. This is the application that will send the 
 
 ![Diagram: Making a Request](../../../images/diagrams/Request-Reply_diagram-2.png)
 
-In order to be able to receive the response message back from the Replier, the Requestor must setup a JMS `Consumer`. For simplicity, this tutorial will use a blocking Consumer to receive the response messages using a temporary queue.
+In order to be able to receive the response message back from the Replier, the Requestor must setup a Jakarta Messaging `Consumer`. For simplicity, this tutorial will use a blocking Consumer to receive the response messages using a temporary queue.
 
 ```java
 TemporaryQueue replyToQueue = session.createTemporaryQueue();
@@ -85,7 +85,7 @@ MessageConsumer replyConsumer = session.createConsumer(replyToQueue);
 connection.start();
 ```
 
-With the connection started, now the Requestor is ready to receive any reply messages on its temporary JMS Queue. Next you must create a message and the topic to send the message to. This is done in the same way as illustrated in the [publish/subscribe tutorial](../publish-subscribe/).
+With the connection started, now the Requestor is ready to receive any reply messages on its temporary Jakarta Messaging Queue. Next you must create a message and the topic to send the message to. This is done in the same way as illustrated in the [publish/subscribe tutorial](../publish-subscribe/).
 
 ```java
 final String REQUEST_TOPIC_NAME = "T/GettingStarted/requests";
@@ -121,7 +121,7 @@ Now it is time to receive the request and generate an appropriate reply.
 
 ![Diagram: Replying to a Request](../../../images/diagrams/Request-Reply_diagram-3.png)
 
-Just as with previous tutorials, you still need to connect a JMS Connection and Session and create a MessageConsumer to receive request messages. However, in order to send replies back to the requestor, you will also need a MessageProducer. The following code will create the producer and consumer that is required.
+Just as with previous tutorials, you still need to connect a Jakarta Messaging Connection and Session and create a MessageConsumer to receive request messages. However, in order to send replies back to the requestor, you will also need a MessageProducer. The following code will create the producer and consumer that is required.
 
 ```java
 final String REQUEST_TOPIC_NAME = "T/GettingStarted/requests";
@@ -132,7 +132,7 @@ final MessageProducer replyProducer = session.createProducer(null);
 
 Then you simply have to modify the `onMessage()` method of the `MessageConsumer` from the publish/subscribe tutorial to inspect incoming messages and generate appropriate replies.
 
-For example, the following code will send a response to all messages that have a reply-to field. It will copy over any `JMSCorrelationID` found in the incoming messages. It will also set a Solace specific boolean field indicating this message is a reply message. This is a Solace extension to enable JMS applications to exchange requests and replies easily with applications using other Solace APIs.
+For example, the following code will send a response to all messages that have a reply-to field. It will copy over any `JMSCorrelationID` found in the incoming messages. It will also set a Solace specific boolean field indicating this message is a reply message. This is a Solace extension to enable Jakarta Messaging applications to exchange requests and replies easily with applications using other Solace APIs.
 
 ```java
 public void onMessage(Message request) {

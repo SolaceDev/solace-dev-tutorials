@@ -202,7 +202,7 @@ module.exports = {
           },
           {
             pathname: "/jms",
-            crumbLabel: "JMS",
+            crumbLabel: "Jakarta Messaging",
           },
           {
             pathname: "/tanzu",

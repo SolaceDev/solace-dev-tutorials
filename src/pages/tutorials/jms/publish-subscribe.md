@@ -35,15 +35,15 @@ The Jakarta EE links above provide the official specification and API reference.
 
 ## JMS administered objects
 
-This tutorial will make use of two JMS administered objects:
+This tutorial will make use of two Jakarta Messaging administered objects:
 
-*   A ConnectionFactory object – used by JMS clients to successfully connect to a message broker like a Solace message router
+*   A ConnectionFactory object – used by Jakarta Messaging clients to successfully connect to a message broker like a Solace message router
 *   A Topic Destination – used for publishing and subscribing to messages. This example will use the topic `T/GettingStarted/pubsub`
 
 The [Jakarta Messaging specification](https://jakarta.ee/specifications/messaging/3.1/) provides two ways to create administered objects:
 
 *   JNDI Lookup
-*   Programmatic creation through the JMS API.
+*   Programmatic creation through the Jakarta Messaging API.
 
 This tutorial will use the approach of programmatically creating the required objects. For developers, this is the recommended approach as this enables:
 
@@ -56,7 +56,7 @@ The programmatic approach is also the convention most often followed with Jakart
 
 ## Connecting to Solace Messaging
 
-In order to send or receive messages, an application must connect to Solace messaging. In JMS, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a JMS `Session` is used as a factory for consumers and producers.
+In order to send or receive messages, an application must connect to Solace messaging. In Jakarta Messaging, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a Jakarta Messaging `Session` is used as a factory for consumers and producers.
 
 The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace JMS Documentation - Obtaining Connection Factories](https://docs.solace.com/Solace-JMS-API/Obtaining-Connection-Fac.htm).
 
@@ -79,21 +79,21 @@ Connection connection = connectionFactory.createConnection();
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 ```
 
-This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in JMS to suit your application needs. Solace supports all of the JMS acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default JMS client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
+This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in Jakarta Messaging to suit your application needs. Solace supports all of the Jakarta Messaging acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default Jakarta Messaging client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
 
 At this point your client is connected to Solace messaging. You can use Broker Manager to view the client connection and related details.
 
 ## Receiving a message
 
-This tutorial uses JMS “Non-Persistent” messages which are at most once delivery messages. So first, let’s express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
+This tutorial uses Jakarta Messaging “Non-Persistent” messages which are at most once delivery messages. So first, let’s express interest in the messages by subscribing to a Solace topic. Then you can look at publishing a matching message and see it received.
 
-With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the synchronous or asynchronous receipt of messages. Asynchronous receipt of messages is accomplished through callbacks. These callbacks are defined in JMS by the `MessageListener` interface.
+With a session connected in the previous step, the next step is to create a message consumer. Message consumers enable the synchronous or asynchronous receipt of messages. Asynchronous receipt of messages is accomplished through callbacks. These callbacks are defined in Jakarta Messaging by the `MessageListener` interface.
 
 ![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-First a `Topic` object is required. Here we create a topic from the JMS Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
+First a `Topic` object is required. Here we create a topic from the Jakarta Messaging Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
 
-Then create the `MessageConsumer` using the JMS `Session`.
+Then create the `MessageConsumer` using the Jakarta Messaging `Session`.
 
 ```java
 final String TOPIC_NAME = "T/GettingStarted/pubsub";
@@ -150,7 +150,7 @@ Now it is time to send a message to the waiting consumer.
 
 ### Establishing the publisher flow
 
-In JMS, a message producer is required for sending messages to Solace messaging.
+In Jakarta Messaging, a message producer is required for sending messages to Solace messaging.
 
 ```java
 final String TOPIC_NAME = "T/GettingStarted/pubsub";
@@ -159,11 +159,11 @@ Topic topic = session.createTopic(TOPIC_NAME);
 MessageProducer messageProducer = session.createProducer(topic);
 ```
 
-JMS Message Producers are created from the session object and are assigned a default destination on creation.
+Jakarta Messaging Message Producers are created from the session object and are assigned a default destination on creation.
 
 ### Creating and sending the message
 
-To send a message, first create a message from the JMS `Session`. Then use the MessageProducer to send the message. The message producer offers several options for sending. Since we wish to send a non-persistent message in this tutorial, we will use the most flexible option where delivery mode, priority and time to live is specified.
+To send a message, first create a message from the Jakarta Messaging `Session`. Then use the MessageProducer to send the message. The message producer offers several options for sending. Since we wish to send a non-persistent message in this tutorial, we will use the most flexible option where delivery mode, priority and time to live is specified.
 
 ```java
 TextMessage message = session.createTextMessage("Hello world!");
