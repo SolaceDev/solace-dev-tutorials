@@ -25,7 +25,7 @@ This tutorial assumes the following:
 *   You have an understanding, or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for:
     *   the Jakarta Messaging basics
     *   how to send and receive a message using the Jakarta Messaging API
-    *   how to obtain the Solace Jakarta JMS API
+    *   how to obtain the Solace Jakarta Messaging API
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace Message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
@@ -75,7 +75,7 @@ Additional basic administration operations included are:
 
 ### Connecting to a JNDI server
 
-JNDI clients need a Java jar library supplied by the service provider to connect and use the JNDI server. The jar client library contains the implementation of [javax.naming.spi.InitialContextFactory](https://docs.oracle.com/javase/8/docs/api/javax/naming/spi/InitialContextFactory.html) (note: the JNDI API itself still lives in the `javax.naming` namespace in Jakarta EE). For example, for the Solace message broker internal JNDI this is included in the Solace Jakarta JMS API jar file, and the factory class is `com.solacesystems.jndi.SolJNDIInitialContextFactory`. The jar file for the file system based JNDI implementation used in this tutorial is [fscontext.jar](https://mvnrepository.com/artifact/com.sun.messaging.mq/fscontext), and the factory class is `com.sun.jndi.fscontext.RefFSContextFactory`.
+JNDI clients need a Java jar library supplied by the service provider to connect and use the JNDI server. The jar client library contains the implementation of [javax.naming.spi.InitialContextFactory](https://docs.oracle.com/javase/8/docs/api/javax/naming/spi/InitialContextFactory.html) (note: the JNDI API itself still lives in the `javax.naming` namespace in Jakarta EE). For example, for the Solace message broker internal JNDI this is included in the Solace Jakarta Messaging API jar file, and the factory class is `com.solacesystems.jndi.SolJNDIInitialContextFactory`. The jar file for the file system based JNDI implementation used in this tutorial is [fscontext.jar](https://mvnrepository.com/artifact/com.sun.messaging.mq/fscontext), and the factory class is `com.sun.jndi.fscontext.RefFSContextFactory`.
 
 This is the typical pattern to connect to a JNDI server. Generally, it requires the InitialContextFactory implementation class name (INITIAL_CONTEXT_FACTORY), connection url (PROVIDER_URL), username (SECURITY_PRINCIPAL), and password (SECURITY_CREDENTIALS). In our simple file system based JNDI example the username and password will be ignored.
 

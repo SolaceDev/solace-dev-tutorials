@@ -24,7 +24,7 @@ The goal of this tutorial is to understand the following:
 *   On the requestor side:
     1.  How to create a request
     2.  How to receive a response
-    3.  How to use the Solace Jakarta JMS API to correlate the request and response
+    3.  How to use the Solace Jakarta Messaging API to correlate the request and response
 *   On the replier side:
     1.  How to detect a request expecting a reply
     2.  How to generate a reply message
