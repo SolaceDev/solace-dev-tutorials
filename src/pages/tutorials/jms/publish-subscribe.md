@@ -58,7 +58,7 @@ The programmatic approach is also the convention most often followed with Jakart
 
 In order to send or receive messages, an application must connect to Solace messaging. In Jakarta Messaging, a client connects by creating a `Connection` from the `ConnectionFactory`. Then a Jakarta Messaging `Session` is used as a factory for consumers and producers.
 
-The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace Jakarta Messaging Documentation - Obtaining Connection Factories](https://docs.solace.com/API/Solace-Jakarta-API/jakarta-get-started-open.htm).
+The following code shows how to create a connection using a programmatically created `ConnectionFactory`. You can learn more about other ways to create ConnectionFactories by referring to [Solace Jakarta Messaging Documentation - Obtaining Connection Factories](https://docs.solace.com/API/Solace-Jakarta-API/Connection-Factories.htm).
 
 ```java
 
