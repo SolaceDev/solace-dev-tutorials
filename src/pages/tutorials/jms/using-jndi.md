@@ -30,7 +30,7 @@ This tutorial assumes the following:
 *   You have an understanding or you can refer to the [Persistence with Queues](../persistence-with-queues/) tutorial for
     *   the Jakarta Messaging basics
     *   how to send and receive a message using the Jakarta Messaging API
-    *   how to obtain the Solace Jakarta JMS API
+    *   how to obtain the Solace Jakarta Messaging API
 *   You have access to Solace messaging with the following configuration details:
     *   Connectivity information for a Solace message-VPN configured for guaranteed messaging support
     *   Enabled client username and password
@@ -185,7 +185,7 @@ ConnectionFactory connectionFactory = (ConnectionFactory) initialContext.lookup(
 
 ### Jakarta Messaging Properties
 
-This is a good place to talk about the Jakarta Messaging Properties, which provide access to Solace Jakarta JMS API functionality that extends the Jakarta Messaging standard.
+This is a good place to talk about the Jakarta Messaging Properties, which provide access to Solace Jakarta Messaging API functionality that extends the Jakarta Messaging standard.
 
 Jakarta Messaging Properties can be used to:
 
@@ -225,7 +225,7 @@ Some Jakarta Messaging properties can even be configured on Solace messaging and
 property "default-delivery-mode" "persistent"
 ```
 
-The [Solace JMS Documentation - JMS Properties Reference](https://docs.solace.com/Solace-JMS-API/JMS-Properties-Reference.htm) provides detailed description of the use and the list of all Jakarta Messaging properties with options how to configure them. It is recommended to carefully consider the effect of the Jakarta Messaging Properties applied in order to achieve the desired configuration goal.
+The [Solace Jakarta Messaging Documentation - Jakarta Messaging Properties Reference](https://docs.solace.com/API/Solace-Jakarta-API/Jakarta-Properties-Reference.htm) provides a detailed description of the use and the list of all Jakarta Messaging properties with options how to configure them. It is recommended to carefully consider the effect of the Jakarta Messaging Properties applied in order to achieve the desired configuration goal.
 
 ### Connecting to the Solace Messaging
 

@@ -79,7 +79,7 @@ Connection connection = connectionFactory.createConnection();
 Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 ```
 
-This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in Jakarta Messaging to suit your application needs. Solace supports all of the Jakarta Messaging acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default Jakarta Messaging client acknowledgement. Learn more in the [Solace JMS Documentation - Managing Sessions](https://docs.solace.com/Solace-JMS-API/Managing-Sessions.htm).
+This tutorial uses an auto acknowledgement session. This is the simplest to use. However, it often makes sense to customize the acknowledgement mode in Jakarta Messaging to suit your application needs. Solace supports all of the Jakarta Messaging acknowledgement modes and introduces an extension which allows applications to individually acknowledge each message which we believe is a significant improvement of the behaviour of the default Jakarta Messaging client acknowledgement. Learn more in the [Solace Jakarta Messaging Documentation - Managing Sessions](https://docs.solace.com/API/Solace-Jakarta-API/Managing-Sessions.htm).
 
 At this point your client is connected to Solace messaging. You can use Broker Manager to view the client connection and related details.
 
@@ -91,7 +91,7 @@ With a session connected in the previous step, the next step is to create a mess
 
 ![Diagram: Receiving a Message](../../../images/diagrams/pub-sub-receiving-message-300x134.png)
 
-First a `Topic` object is required. Here we create a topic from the Jakarta Messaging Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace JMS Documentation - Working with Destinations](https://docs.solace.com/Solace-JMS-API/Working-with-Destination.htm).
+First a `Topic` object is required. Here we create a topic from the Jakarta Messaging Session session programmatically. For other ways of obtaining a `Topic`, for example using JNDI, refer to the [Solace Jakarta Messaging Documentation - Working with Destinations](https://docs.solace.com/API/Solace-Jakarta-API/Working-with-Destination.htm).
 
 Then create the `MessageConsumer` using the Jakarta Messaging `Session`.
 
