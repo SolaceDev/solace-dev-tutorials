@@ -193,10 +193,6 @@ module.exports = {
             crumbLabel: "Node.js",
           },
           {
-            pathname: "/openmama",
-            crumbLabel: "OpenMAMA",
-          },
-          {
             pathname: "/javascript",
             crumbLabel: "JavaScript",
           },
