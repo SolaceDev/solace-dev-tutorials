@@ -6,12 +6,17 @@ on:
     # Run at midnight every sunday
     - cron: "0 0 * * 0"
 
+permissions:
+  contents: read
+
 jobs:
   Broken_Link_Checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      - uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089  # master
+        with:
+          persist-credentials: false
+      - uses: gaurav-nelson/github-action-markdown-link-check@5c5dfc0ac2e225883c0e5f03a85311ec2830d368  # v1
         with:
           folder-path: "src/pages"
           use-quiet-mode: "yes"
