@@ -2,16 +2,22 @@ name: Broken Links Checker
 on:
   pull_request:
     branches: [ master ]
+
+permissions:
+  contents: read
+
 jobs:
   Broken_Link_Checker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@61b9e3751b92087fd0b06925ba6dd6314e06f089  # master
+        with:
+          persist-credentials: false
       - name: Checkout PR
-        uses: dawidd6/action-checkout-pr@v1
+        uses: dawidd6/action-checkout-pr@a7598e18433a763b784f17d666372913d8bd4205  # v1
         with:
           pr: ${{ github.event.pull_request.number }}
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      - uses: gaurav-nelson/github-action-markdown-link-check@5c5dfc0ac2e225883c0e5f03a85311ec2830d368  # v1
         with:
           folder-path: "src/pages"
           use-quiet-mode: "yes"
